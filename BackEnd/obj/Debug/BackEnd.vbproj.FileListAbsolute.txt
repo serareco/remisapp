@@ -1,0 +1,10 @@
+C:\Users\Sergio\source\repos\Remisapp\BackEnd\bin\Debug\BackEnd.dll
+C:\Users\Sergio\source\repos\Remisapp\BackEnd\bin\Debug\BackEnd.pdb
+C:\Users\Sergio\source\repos\Remisapp\BackEnd\bin\Debug\BackEnd.xml
+C:\Users\Sergio\source\repos\Remisapp\BackEnd\obj\Debug\BackEnd.vbprojAssemblyReference.cache
+C:\Users\Sergio\source\repos\Remisapp\BackEnd\obj\Debug\BackEnd.Resources.resources
+C:\Users\Sergio\source\repos\Remisapp\BackEnd\obj\Debug\BackEnd.vbproj.GenerateResource.cache
+C:\Users\Sergio\source\repos\Remisapp\BackEnd\obj\Debug\BackEnd.vbproj.CoreCompileInputs.cache
+C:\Users\Sergio\source\repos\Remisapp\BackEnd\obj\Debug\BackEnd.dll
+C:\Users\Sergio\source\repos\Remisapp\BackEnd\obj\Debug\BackEnd.xml
+C:\Users\Sergio\source\repos\Remisapp\BackEnd\obj\Debug\BackEnd.pdb
