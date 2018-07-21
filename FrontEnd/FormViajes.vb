@@ -57,4 +57,5 @@ Public Class FormViajes
     Private Sub dgvViajes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvViajes.CellClick
         _idClickCell = dgvViajes.Rows(e.RowIndex).Cells(0).Value
     End Sub
+
 End Class

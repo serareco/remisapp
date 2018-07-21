@@ -23,6 +23,7 @@ Partial Class FormViajes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dtpFechaSalida = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cbbTipoEstadoViaje = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -33,7 +34,6 @@ Partial Class FormViajes
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.dtpFechaSalida = New System.Windows.Forms.DateTimePicker()
         Me.cbbIdaYVuelta = New System.Windows.Forms.ComboBox()
         Me.cbbCliente = New System.Windows.Forms.ComboBox()
         Me.cbbChofer = New System.Windows.Forms.ComboBox()
@@ -49,6 +49,7 @@ Partial Class FormViajes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.dtpFechaSalida)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.cbbTipoEstadoViaje)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -59,7 +60,6 @@ Partial Class FormViajes
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.BtnCancelar)
         Me.GroupBox1.Controls.Add(Me.BtnGuardar)
-        Me.GroupBox1.Controls.Add(Me.dtpFechaSalida)
         Me.GroupBox1.Controls.Add(Me.cbbIdaYVuelta)
         Me.GroupBox1.Controls.Add(Me.cbbCliente)
         Me.GroupBox1.Controls.Add(Me.cbbChofer)
@@ -71,6 +71,14 @@ Partial Class FormViajes
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Viaje"
+        '
+        'dtpFechaSalida
+        '
+        Me.dtpFechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpFechaSalida.Location = New System.Drawing.Point(121, 166)
+        Me.dtpFechaSalida.Name = "dtpFechaSalida"
+        Me.dtpFechaSalida.Size = New System.Drawing.Size(227, 20)
+        Me.dtpFechaSalida.TabIndex = 16
         '
         'Label7
         '
@@ -101,7 +109,7 @@ Partial Class FormViajes
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(24, 172)
+        Me.Label5.Location = New System.Drawing.Point(24, 170)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(36, 13)
         Me.Label5.TabIndex = 12
@@ -160,13 +168,6 @@ Partial Class FormViajes
         Me.BtnGuardar.TabIndex = 6
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
-        '
-        'dtpFechaSalida
-        '
-        Me.dtpFechaSalida.Location = New System.Drawing.Point(121, 166)
-        Me.dtpFechaSalida.Name = "dtpFechaSalida"
-        Me.dtpFechaSalida.Size = New System.Drawing.Size(227, 20)
-        Me.dtpFechaSalida.TabIndex = 5
         '
         'cbbIdaYVuelta
         '
@@ -269,7 +270,6 @@ Partial Class FormViajes
     Friend WithEvents Label1 As Label
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnGuardar As Button
-    Friend WithEvents dtpFechaSalida As DateTimePicker
     Friend WithEvents cbbIdaYVuelta As ComboBox
     Friend WithEvents cbbCliente As ComboBox
     Friend WithEvents cbbChofer As ComboBox
@@ -280,4 +280,5 @@ Partial Class FormViajes
     Friend WithEvents BtnNotificarArribo As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents cbbTipoEstadoViaje As ComboBox
+    Friend WithEvents dtpFechaSalida As DateTimePicker
 End Class

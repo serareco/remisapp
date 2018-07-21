@@ -23,7 +23,6 @@ Partial Class FormArribo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.TxtKilometrosRecorridos = New System.Windows.Forms.TextBox()
-        Me.dtpFechaArribo = New System.Windows.Forms.DateTimePicker()
         Me.TxtPrecio = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -31,10 +30,11 @@ Partial Class FormArribo
         Me.TxtComentarios = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.gbxViajes = New System.Windows.Forms.GroupBox()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.BtnCerrar = New System.Windows.Forms.Button()
-        Me.cbbTipoEstadoViaje = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.cbbTipoEstadoViaje = New System.Windows.Forms.ComboBox()
+        Me.BtnCerrar = New System.Windows.Forms.Button()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
+        Me.dtpFechaArribo = New System.Windows.Forms.DateTimePicker()
         Me.gbxViajes.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,21 +42,14 @@ Partial Class FormArribo
         '
         Me.TxtKilometrosRecorridos.Location = New System.Drawing.Point(141, 30)
         Me.TxtKilometrosRecorridos.Name = "TxtKilometrosRecorridos"
-        Me.TxtKilometrosRecorridos.Size = New System.Drawing.Size(200, 20)
+        Me.TxtKilometrosRecorridos.Size = New System.Drawing.Size(209, 20)
         Me.TxtKilometrosRecorridos.TabIndex = 0
-        '
-        'dtpFechaArribo
-        '
-        Me.dtpFechaArribo.Location = New System.Drawing.Point(141, 133)
-        Me.dtpFechaArribo.Name = "dtpFechaArribo"
-        Me.dtpFechaArribo.Size = New System.Drawing.Size(200, 20)
-        Me.dtpFechaArribo.TabIndex = 1
         '
         'TxtPrecio
         '
         Me.TxtPrecio.Location = New System.Drawing.Point(141, 55)
         Me.TxtPrecio.Name = "TxtPrecio"
-        Me.TxtPrecio.Size = New System.Drawing.Size(200, 20)
+        Me.TxtPrecio.Size = New System.Drawing.Size(209, 20)
         Me.TxtPrecio.TabIndex = 2
         '
         'Label1
@@ -91,7 +84,7 @@ Partial Class FormArribo
         Me.TxtComentarios.Location = New System.Drawing.Point(141, 81)
         Me.TxtComentarios.Multiline = True
         Me.TxtComentarios.Name = "TxtComentarios"
-        Me.TxtComentarios.Size = New System.Drawing.Size(200, 46)
+        Me.TxtComentarios.Size = New System.Drawing.Size(209, 46)
         Me.TxtComentarios.TabIndex = 6
         '
         'Label4
@@ -105,42 +98,17 @@ Partial Class FormArribo
         '
         'gbxViajes
         '
+        Me.gbxViajes.Controls.Add(Me.dtpFechaArribo)
         Me.gbxViajes.Controls.Add(Me.Label5)
         Me.gbxViajes.Controls.Add(Me.cbbTipoEstadoViaje)
         Me.gbxViajes.Controls.Add(Me.BtnCerrar)
         Me.gbxViajes.Controls.Add(Me.BtnGuardar)
         Me.gbxViajes.Location = New System.Drawing.Point(12, 12)
         Me.gbxViajes.Name = "gbxViajes"
-        Me.gbxViajes.Size = New System.Drawing.Size(344, 216)
+        Me.gbxViajes.Size = New System.Drawing.Size(358, 216)
         Me.gbxViajes.TabIndex = 8
         Me.gbxViajes.TabStop = False
         Me.gbxViajes.Text = "Datos del Arribo"
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.Location = New System.Drawing.Point(69, 187)
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnGuardar.TabIndex = 0
-        Me.BtnGuardar.Text = "Guardar"
-        Me.BtnGuardar.UseVisualStyleBackColor = True
-        '
-        'BtnCerrar
-        '
-        Me.BtnCerrar.Location = New System.Drawing.Point(172, 187)
-        Me.BtnCerrar.Name = "BtnCerrar"
-        Me.BtnCerrar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnCerrar.TabIndex = 1
-        Me.BtnCerrar.Text = "Cerrar"
-        Me.BtnCerrar.UseVisualStyleBackColor = True
-        '
-        'cbbTipoEstadoViaje
-        '
-        Me.cbbTipoEstadoViaje.FormattingEnabled = True
-        Me.cbbTipoEstadoViaje.Location = New System.Drawing.Point(129, 148)
-        Me.cbbTipoEstadoViaje.Name = "cbbTipoEstadoViaje"
-        Me.cbbTipoEstadoViaje.Size = New System.Drawing.Size(200, 21)
-        Me.cbbTipoEstadoViaje.TabIndex = 2
         '
         'Label5
         '
@@ -151,18 +119,51 @@ Partial Class FormArribo
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Estado Final"
         '
+        'cbbTipoEstadoViaje
+        '
+        Me.cbbTipoEstadoViaje.FormattingEnabled = True
+        Me.cbbTipoEstadoViaje.Location = New System.Drawing.Point(129, 148)
+        Me.cbbTipoEstadoViaje.Name = "cbbTipoEstadoViaje"
+        Me.cbbTipoEstadoViaje.Size = New System.Drawing.Size(209, 21)
+        Me.cbbTipoEstadoViaje.TabIndex = 2
+        '
+        'BtnCerrar
+        '
+        Me.BtnCerrar.Location = New System.Drawing.Point(193, 187)
+        Me.BtnCerrar.Name = "BtnCerrar"
+        Me.BtnCerrar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnCerrar.TabIndex = 1
+        Me.BtnCerrar.Text = "Cerrar"
+        Me.BtnCerrar.UseVisualStyleBackColor = True
+        '
+        'BtnGuardar
+        '
+        Me.BtnGuardar.Location = New System.Drawing.Point(88, 187)
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnGuardar.TabIndex = 0
+        Me.BtnGuardar.Text = "Guardar"
+        Me.BtnGuardar.UseVisualStyleBackColor = True
+        '
+        'dtpFechaArribo
+        '
+        Me.dtpFechaArribo.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpFechaArribo.Location = New System.Drawing.Point(129, 121)
+        Me.dtpFechaArribo.Name = "dtpFechaArribo"
+        Me.dtpFechaArribo.Size = New System.Drawing.Size(209, 20)
+        Me.dtpFechaArribo.TabIndex = 10
+        '
         'FormArribo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(371, 244)
+        Me.ClientSize = New System.Drawing.Size(382, 244)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TxtComentarios)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtPrecio)
-        Me.Controls.Add(Me.dtpFechaArribo)
         Me.Controls.Add(Me.TxtKilometrosRecorridos)
         Me.Controls.Add(Me.gbxViajes)
         Me.Name = "FormArribo"
@@ -175,7 +176,6 @@ Partial Class FormArribo
     End Sub
 
     Friend WithEvents TxtKilometrosRecorridos As TextBox
-    Friend WithEvents dtpFechaArribo As DateTimePicker
     Friend WithEvents TxtPrecio As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
@@ -187,4 +187,5 @@ Partial Class FormArribo
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents cbbTipoEstadoViaje As ComboBox
+    Friend WithEvents dtpFechaArribo As DateTimePicker
 End Class
