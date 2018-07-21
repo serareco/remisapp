@@ -45,7 +45,7 @@ Public Class Usuario
         Dim datatable As New DataTable
         con.EjecutarConsulta("     
         select u.id_usuario, p.apellido, p.nombre, u.nro_documento, p.telefono, p.domicilio
-        from Usuarios u inner join Personas p on u.id_persona = p.id_persona")
+        from Usuarios u inner join Personas p on u.id_persona = p.id_persona where estado = 'A'")
         con.adp.Fill(datatable)
         Return datatable
     End Function
