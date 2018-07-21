@@ -68,8 +68,7 @@ Public Class FormChoferes
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        If chofer.Id > 0 Then
-            'Dim chofer As Chofer = New Chofer()
+        If chofer IsNot Nothing Then
             TxtNombre.Text() = chofer.Nombre
             TxtApellido.Text() = chofer.Apellido
             TxtDomicilio.Text() = chofer.Domicilio

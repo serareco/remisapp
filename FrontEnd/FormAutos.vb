@@ -17,7 +17,7 @@ Public Class FormAutos
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        If (auto Is Nothing) Then
+        If auto Is Nothing Then
             auto = New Auto()
         End If
         Dim erroresValidaciones As Boolean = False
@@ -76,8 +76,7 @@ Public Class FormAutos
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        If auto.Id > 0 Then
-            'Dim chofer As Chofer = New Chofer()
+        If auto IsNot Nothing Then
             txtAnioFabricacion.Text() = auto.AnioFabricacion
             txtChasis.Text() = auto.Chasis
             txtMotor.Text() = auto.Motor

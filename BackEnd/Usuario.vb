@@ -64,4 +64,30 @@ Public Class Usuario
         parametros.Add(New SqlClient.SqlParameter("@email", Me.Email))
         con.EjecutarStoredProcedure("dbo.GuardarUsuario", parametros)
     End Sub
+
+    Public Sub Quitar()
+        Dim con As New Conexion
+        Dim parametros As New List(Of SqlClient.SqlParameter)
+        parametros.Add(New SqlClient.SqlParameter("@usuario", Me.Usuario))
+        con.EjecutarStoredProcedure("dbo.QuitarUsuario", parametros)
+    End Sub
+
+
+    Public Sub GetByUsuario(pUsuario As String)
+        Dim con As New Conexion
+        Dim datatable As New DataTable
+        con.EjecutarConsulta("select id_usuario, p.nombre, p.apellido,p.domicilio,p.email,p.telefono, nro_documento, fecha_nacimiento from usuarios u inner join Personas p on u.id_persona = p.id_persona where id_usuario = '" + pUsuario + "'")
+        con.adp.Fill(datatable)
+        If (datatable.Rows.Count > 0) Then
+            Me.Usuario = datatable.Rows(0).ItemArray(0).ToString()
+            Me.Nombre = datatable.Rows(0).ItemArray(1).ToString()
+            Me.Apellido = datatable.Rows(0).ItemArray(2).ToString()
+            Me.Domicilio = datatable.Rows(0).ItemArray(3).ToString()
+            Me.Email = datatable.Rows(0).ItemArray(4).ToString()
+            Me.Telefono = datatable.Rows(0).ItemArray(5).ToString()
+            Me.NroDocumento = datatable.Rows(0).ItemArray(6).ToString()
+            Me.FechaNacimiento = datatable.Rows(0).ItemArray(7).ToString()
+        End If
+    End Sub
+
 End Class

@@ -23,10 +23,11 @@ Partial Class FormUsuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.TxtDomicilio = New System.Windows.Forms.TextBox()
@@ -58,7 +59,7 @@ Partial Class FormUsuarios
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.BtnEliminar)
         Me.GroupBox2.Controls.Add(Me.BtnModificar)
         Me.GroupBox2.Controls.Add(Me.dgvUsuarios)
         Me.GroupBox2.Location = New System.Drawing.Point(373, 20)
@@ -68,14 +69,14 @@ Partial Class FormUsuarios
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado Usuarios"
         '
-        'Button1
+        'BtnEliminar
         '
-        Me.Button1.Location = New System.Drawing.Point(115, 289)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(102, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Eliminar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnEliminar.Location = New System.Drawing.Point(115, 289)
+        Me.BtnEliminar.Name = "BtnEliminar"
+        Me.BtnEliminar.Size = New System.Drawing.Size(102, 23)
+        Me.BtnEliminar.TabIndex = 4
+        Me.BtnEliminar.Text = "Eliminar"
+        Me.BtnEliminar.UseVisualStyleBackColor = True
         '
         'BtnModificar
         '
@@ -102,6 +103,7 @@ Partial Class FormUsuarios
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.BtnLimpiar)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.dtpFechaNacimiento)
         Me.GroupBox1.Controls.Add(Me.TxtDomicilio)
@@ -132,6 +134,15 @@ Partial Class FormUsuarios
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Usuario"
+        '
+        'BtnLimpiar
+        '
+        Me.BtnLimpiar.Location = New System.Drawing.Point(255, 305)
+        Me.BtnLimpiar.Name = "BtnLimpiar"
+        Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLimpiar.TabIndex = 48
+        Me.BtnLimpiar.Text = "Limpiar"
+        Me.BtnLimpiar.UseVisualStyleBackColor = True
         '
         'Label11
         '
@@ -314,7 +325,7 @@ Partial Class FormUsuarios
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(203, 306)
+        Me.BtnCancelar.Location = New System.Drawing.Point(145, 305)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(94, 23)
         Me.BtnCancelar.TabIndex = 12
@@ -323,7 +334,7 @@ Partial Class FormUsuarios
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(56, 305)
+        Me.BtnGuardar.Location = New System.Drawing.Point(33, 305)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(97, 23)
         Me.BtnGuardar.TabIndex = 11
@@ -372,10 +383,11 @@ Partial Class FormUsuarios
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtApellido As TextBox
     Friend WithEvents TxtNombre As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents TxtDomicilio As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents dtpFechaNacimiento As DateTimePicker
+    Friend WithEvents BtnLimpiar As Button
 End Class
