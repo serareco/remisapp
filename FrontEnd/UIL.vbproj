@@ -193,9 +193,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BackEnd\BackEnd.vbproj">
+    <ProjectReference Include="..\BackEnd\BLL.vbproj">
       <Project>{c6c98fe7-86ae-4b6f-8ead-91f7290c21d2}</Project>
-      <Name>BackEnd</Name>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EL\EL.vbproj">
+      <Project>{e64ff015-e149-4c7c-a718-e5023ef9437f}</Project>
+      <Name>EL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

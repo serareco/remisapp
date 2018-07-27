@@ -1,15 +1,15 @@
-﻿Imports BackEnd
-Public Class FrmLogin
+﻿Public Class FrmLogin
     Private Sub Ingresar()
+        Dim datosLogin As New EL.Login()
         '
         'PARA LAS PRUEBAS:
         'Usuario: serareco
         'Contraseña: test123
         '
-        Login.Usuario = TxtUsuario.Text()
-        Login.Password = TxtPassword.Text()
+        datosLogin.Usuario = TxtUsuario.Text()
+        datosLogin.Password = TxtPassword.Text()
 
-        If (Login.Login) Then
+        If (BLL.Login.Login(datosLogin)) Then
             LblMsjValidacion.Text() = ""
             FormPrincipal.Show()
             Me.Close()
@@ -34,4 +34,5 @@ Public Class FrmLogin
             Ingresar()
         End If
     End Sub
+
 End Class

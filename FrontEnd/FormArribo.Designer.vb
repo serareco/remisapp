@@ -30,11 +30,11 @@ Partial Class FormArribo
         Me.TxtComentarios = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.gbxViajes = New System.Windows.Forms.GroupBox()
+        Me.dtpFechaArribo = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cbbTipoEstadoViaje = New System.Windows.Forms.ComboBox()
         Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.dtpFechaArribo = New System.Windows.Forms.DateTimePicker()
         Me.gbxViajes.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -110,6 +110,14 @@ Partial Class FormArribo
         Me.gbxViajes.TabStop = False
         Me.gbxViajes.Text = "Datos del Arribo"
         '
+        'dtpFechaArribo
+        '
+        Me.dtpFechaArribo.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpFechaArribo.Location = New System.Drawing.Point(129, 121)
+        Me.dtpFechaArribo.Name = "dtpFechaArribo"
+        Me.dtpFechaArribo.Size = New System.Drawing.Size(209, 20)
+        Me.dtpFechaArribo.TabIndex = 10
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -144,14 +152,6 @@ Partial Class FormArribo
         Me.BtnGuardar.TabIndex = 0
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
-        '
-        'dtpFechaArribo
-        '
-        Me.dtpFechaArribo.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpFechaArribo.Location = New System.Drawing.Point(129, 121)
-        Me.dtpFechaArribo.Name = "dtpFechaArribo"
-        Me.dtpFechaArribo.Size = New System.Drawing.Size(209, 20)
-        Me.dtpFechaArribo.TabIndex = 10
         '
         'FormArribo
         '

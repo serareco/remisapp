@@ -1,6 +1,7 @@
-﻿Imports BackEnd
-Public Class FormUsuarios
-    Private usuario As Usuario
+﻿Public Class FormUsuarios
+    Dim usuario As EL.Usuario
+    Dim datosUsuario As New BLL.Usuario()
+    Dim datosRol As New BLL.Rol()
     Public Sub ActualizarLista()
         TxtUsuario.Text() = ""
         TxtPassword.Text() = ""
@@ -12,26 +13,29 @@ Public Class FormUsuarios
         TxtDomicilio.Text() = ""
         TxtEmail.Text() = ""
         TxtTelefono.Text() = ""
+        ClbRoles.DataSource = datosRol.Listar()
+        ClbRoles.DisplayMember = "descripcion"
+        ClbRoles.ValueMember = "id_rol"
         dgvUsuarios.DataSource = Nothing
-        dgvUsuarios.DataSource = New Usuario().MostrarLista()
+        dgvUsuarios.DataSource = datosUsuario.MostrarLista()
         usuario = Nothing
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         If usuario Is Nothing Then
-            usuario = New Usuario()
+            usuario = New EL.Usuario()
         End If
         Dim erroresValidaciones As Boolean = False
         Dim msjValidaciones As String = ""
-        If (Not (Validacion.FormatoEmail(TxtEmail.Text()))) Then
+        If (Not (BLL.Validacion.FormatoEmail(TxtEmail.Text()))) Then
             msjValidaciones += "Formato de e-mail incorrecto" + vbLf
             erroresValidaciones = True
         End If
-        If (Not (Validacion.FormatoNumeros(TxtNroDocumento.Text()))) Then
+        If (Not (BLL.Validacion.FormatoNumeros(TxtNroDocumento.Text()))) Then
             msjValidaciones += "El Nro. Documento solo admite números" + vbLf
             erroresValidaciones = True
         End If
-        If (Not (Validacion.FormatoNumeros(TxtTelefono.Text()))) Then
+        If (Not (BLL.Validacion.FormatoNumeros(TxtTelefono.Text()))) Then
             msjValidaciones += "El Nro. Teléfono solo admite números" + vbLf
             erroresValidaciones = True
         End If
@@ -47,7 +51,15 @@ Public Class FormUsuarios
             usuario.Domicilio = TxtDomicilio.Text()
             usuario.Email = TxtEmail.Text()
             usuario.Telefono = TxtTelefono.Text()
-            usuario.Guardar()
+            usuario.Roles = New List(Of EL.Rol)
+            For Each itemChecked As Object In ClbRoles.CheckedItems
+                Dim rol As New EL.Rol With {
+                .Id = CType(itemChecked, DataRowView).Row.ItemArray(0),
+                .Descripcion = CType(itemChecked, DataRowView).Row.ItemArray(1)
+                }
+                usuario.Roles.Add(rol)
+            Next
+            datosUsuario.Guardar(usuario)
             ActualizarLista()
         End If
     End Sub
@@ -76,7 +88,7 @@ Public Class FormUsuarios
         If usuario IsNot Nothing Then
             Dim result As Integer = MessageBox.Show("Estas seguro que deseas eliminar este usuario?", "caption", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                usuario.Quitar()
+                datosUsuario.Quitar(usuario)
                 ActualizarLista()
             End If
         End If
@@ -84,10 +96,10 @@ Public Class FormUsuarios
 
     Private Sub dgvUsuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellClick
         usuario = Nothing
-        usuario = New Usuario With {
+        usuario = New EL.Usuario With {
             .Usuario = dgvUsuarios.Rows(e.RowIndex).Cells(0).Value
         }
-        usuario.GetByUsuario(usuario.Usuario)
+        datosUsuario.GetByUsuario(usuario.Usuario)
     End Sub
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click

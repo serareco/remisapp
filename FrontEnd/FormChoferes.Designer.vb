@@ -27,6 +27,7 @@ Partial Class FormChoferes
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.dgvChoferes = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.TxtDomicilio = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -47,7 +48,6 @@ Partial Class FormChoferes
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.TxtApellido = New System.Windows.Forms.TextBox()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
-        Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvChoferes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -126,6 +126,15 @@ Partial Class FormChoferes
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Chofer"
+        '
+        'BtnLimpiar
+        '
+        Me.BtnLimpiar.Location = New System.Drawing.Point(247, 274)
+        Me.BtnLimpiar.Name = "BtnLimpiar"
+        Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLimpiar.TabIndex = 47
+        Me.BtnLimpiar.Text = "Limpiar"
+        Me.BtnLimpiar.UseVisualStyleBackColor = True
         '
         'TxtDomicilio
         '
@@ -296,15 +305,6 @@ Partial Class FormChoferes
         Me.TxtNombre.Name = "TxtNombre"
         Me.TxtNombre.Size = New System.Drawing.Size(222, 20)
         Me.TxtNombre.TabIndex = 0
-        '
-        'BtnLimpiar
-        '
-        Me.BtnLimpiar.Location = New System.Drawing.Point(247, 274)
-        Me.BtnLimpiar.Name = "BtnLimpiar"
-        Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnLimpiar.TabIndex = 47
-        Me.BtnLimpiar.Text = "Limpiar"
-        Me.BtnLimpiar.UseVisualStyleBackColor = True
         '
         'FormChoferes
         '

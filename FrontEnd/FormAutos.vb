@@ -1,10 +1,11 @@
-﻿Imports BackEnd
-Public Class FormAutos
-    Private auto As Auto
+﻿Public Class FormAutos
+    Dim auto As EL.Auto
+    Dim datosAuto As New BLL.Auto()
+
     Public Sub ActualizarLista()
         cbbMarca.DataSource = Nothing
         cbbModelo.DataSource = Nothing
-        cbbMarca.DataSource = New Auto().MostrarMarcas()
+        cbbMarca.DataSource = New BLL.Auto().MostrarMarcas()
         cbbMarca.DisplayMember = "descripcion"
         cbbMarca.ValueMember = "id_marca"
         txtAnioFabricacion.Text() = ""
@@ -12,37 +13,37 @@ Public Class FormAutos
         txtChasis.Text() = ""
         txtMotor.Text() = ""
         dgvAutos.DataSource = Nothing
-        dgvAutos.DataSource = New Auto().Mostrar()
+        dgvAutos.DataSource = datosAuto.Mostrar()
         auto = Nothing
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         If auto Is Nothing Then
-            auto = New Auto()
+            auto = New EL.Auto()
         End If
         Dim erroresValidaciones As Boolean = False
         Dim msjValidaciones As String = ""
-        If (Not (Validacion.FormatoNumeros(txtAnioFabricacion.Text()))) Then
+        If (Not (BLL.Validacion.FormatoNumeros(txtAnioFabricacion.Text()))) Then
             msjValidaciones += "El año de fabricación solo admite números" + vbLf
             erroresValidaciones = True
         End If
-        If (Not (Validacion.RangoNumeros(txtAnioFabricacion.Text(), 1994, CType(Date.Now.Date.ToString("yyyy"), Decimal)))) Then
+        If (Not (BLL.Validacion.RangoNumeros(txtAnioFabricacion.Text(), 1994, CType(Date.Now.Date.ToString("yyyy"), Decimal)))) Then
             msjValidaciones += "Año de fabricación inválido. No está dentro de [1994-" + Date.Now.Date.ToString("yyyy") + "]" + vbLf
             erroresValidaciones = True
         End If
-        If (Validacion.DatoObligatorioVacio(cbbMarca.SelectedValue, "0")) Then
+        If (BLL.Validacion.DatoObligatorioVacio(cbbMarca.SelectedValue, "0")) Then
             msjValidaciones += "Debe seleccionar una Marca" + vbLf
             erroresValidaciones = True
         End If
-        If (Validacion.DatoObligatorioVacio(cbbModelo.SelectedValue, "0")) Then
+        If (BLL.Validacion.DatoObligatorioVacio(cbbModelo.SelectedValue, "0")) Then
             msjValidaciones += "Debe seleccionar un Modelo" + vbLf
             erroresValidaciones = True
         End If
-        If (Validacion.DatoObligatorioVacio(txtChasis.Text, "")) Then
+        If (BLL.Validacion.DatoObligatorioVacio(txtChasis.Text, "")) Then
             msjValidaciones += "El Chasis es Obligatorio" + vbLf
             erroresValidaciones = True
         End If
-        If (Validacion.DatoObligatorioVacio(txtMotor.Text, "")) Then
+        If (BLL.Validacion.DatoObligatorioVacio(txtMotor.Text, "")) Then
             msjValidaciones += "El Motor es Obligatorio" + vbLf
             erroresValidaciones = True
         End If
@@ -55,14 +56,14 @@ Public Class FormAutos
             auto.Patente = txtPatente.Text
             auto.Chasis = txtChasis.Text
             auto.Motor = txtMotor.Text
-            auto.Guardar()
+            datosAuto.Guardar(auto)
             ActualizarLista()
         End If
     End Sub
 
     Private Sub cbbMarca_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbbMarca.SelectedValueChanged
         cbbModelo.DataSource = Nothing
-        cbbModelo.DataSource = New Auto().MostrarModelos(cbbMarca.SelectedIndex)
+        cbbModelo.DataSource = datosAuto.MostrarModelos(cbbMarca.SelectedIndex)
         cbbModelo.DisplayMember = "descripcion"
         cbbModelo.ValueMember = "id_modelo"
     End Sub
@@ -90,7 +91,7 @@ Public Class FormAutos
         If auto IsNot Nothing Then
             Dim result As Integer = MessageBox.Show("Estas seguro que deseas eliminar este auto?", "caption", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                auto.Quitar()
+                datosAuto.Quitar(auto)
                 ActualizarLista()
             End If
         End If
@@ -102,9 +103,9 @@ Public Class FormAutos
 
     Private Sub dgvAutos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAutos.CellClick
         auto = Nothing
-        auto = New Auto With {
+        auto = New EL.Auto With {
             .Id = dgvAutos.Rows(e.RowIndex).Cells(0).Value
         }
-        auto.GetById(auto.Id)
+        auto = datosAuto.GetById(auto.Id)
     End Sub
 End Class

@@ -7,7 +7,7 @@ Public Class Conexion
     Private _sqlError As String
 
     Sub New()
-        con = New SqlConnection
+        con = New SqlConnection()
         con.ConnectionString = "Data Source=.\SQLEXPRESS;Initial Catalog=remisapp;Integrated Security=True;MultipleActiveResultSets=true;"
     End Sub
 

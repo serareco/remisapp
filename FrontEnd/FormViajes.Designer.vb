@@ -42,6 +42,8 @@ Partial Class FormViajes
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnNotificarArribo = New System.Windows.Forms.Button()
         Me.dgvViajes = New System.Windows.Forms.DataGridView()
+        Me.BtnCancelarViaje = New System.Windows.Forms.Button()
+        Me.BtnNotificarSalida = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvViajes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -210,6 +212,8 @@ Partial Class FormViajes
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.BtnNotificarSalida)
+        Me.GroupBox2.Controls.Add(Me.BtnCancelarViaje)
         Me.GroupBox2.Controls.Add(Me.BtnNotificarArribo)
         Me.GroupBox2.Controls.Add(Me.dgvViajes)
         Me.GroupBox2.Location = New System.Drawing.Point(373, 20)
@@ -241,6 +245,24 @@ Partial Class FormViajes
         Me.dgvViajes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvViajes.Size = New System.Drawing.Size(614, 254)
         Me.dgvViajes.TabIndex = 0
+        '
+        'BtnCancelarViaje
+        '
+        Me.BtnCancelarViaje.Location = New System.Drawing.Point(228, 279)
+        Me.BtnCancelarViaje.Name = "BtnCancelarViaje"
+        Me.BtnCancelarViaje.Size = New System.Drawing.Size(131, 23)
+        Me.BtnCancelarViaje.TabIndex = 2
+        Me.BtnCancelarViaje.Text = "Cancelar Viaje"
+        Me.BtnCancelarViaje.UseVisualStyleBackColor = True
+        '
+        'BtnNotificarSalida
+        '
+        Me.BtnNotificarSalida.Location = New System.Drawing.Point(114, 279)
+        Me.BtnNotificarSalida.Name = "BtnNotificarSalida"
+        Me.BtnNotificarSalida.Size = New System.Drawing.Size(108, 23)
+        Me.BtnNotificarSalida.TabIndex = 3
+        Me.BtnNotificarSalida.Text = "Notificar Salida"
+        Me.BtnNotificarSalida.UseVisualStyleBackColor = True
         '
         'FormViajes
         '
@@ -281,4 +303,6 @@ Partial Class FormViajes
     Friend WithEvents Label7 As Label
     Friend WithEvents cbbTipoEstadoViaje As ComboBox
     Friend WithEvents dtpFechaSalida As DateTimePicker
+    Friend WithEvents BtnNotificarSalida As Button
+    Friend WithEvents BtnCancelarViaje As Button
 End Class

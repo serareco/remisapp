@@ -1,23 +1,31 @@
-﻿Imports BackEnd
-Public Class FormViajes
-    Private _idClickCell As Int16
+﻿Public Class FormViajes
+    Dim viaje As EL.Viaje
+    Dim datosViaje As New BLL.Viaje()
+    Dim datosChofer As New BLL.Chofer()
+    Dim datosEstadoViaje As New BLL.EstadoViaje()
+    Dim datosCliente As New BLL.Cliente()
+
     Public Sub ActualizarLista()
         cbbChofer.DataSource = Nothing
-        cbbChofer.DataSource = New Chofer().MostrarDisponibles()
+        cbbChofer.DataSource = datosChofer.MostrarDisponibles()
         cbbChofer.DisplayMember = "descripcion"
         cbbChofer.ValueMember = "id_chofer"
         cbbTipoEstadoViaje.DataSource = Nothing
-        cbbTipoEstadoViaje.DataSource = New EstadoViaje().MostrarAlta()
+        cbbTipoEstadoViaje.DataSource = datosEstadoViaje.MostrarAlta()
         cbbTipoEstadoViaje.DisplayMember = "descripcion"
         cbbTipoEstadoViaje.ValueMember = "id_estado"
         cbbCliente.DataSource = Nothing
-        cbbCliente.DataSource = New Cliente().Mostrar()
+        cbbCliente.DataSource = datosCliente.Mostrar()
         cbbCliente.DisplayMember = "descripcion"
         cbbCliente.ValueMember = "id_cliente"
         txtOrigen.Text() = ""
         txtDestino.Text() = ""
         dgvViajes.DataSource = Nothing
-        dgvViajes.DataSource = New Viaje().MostrarEnCurso()
+        dgvViajes.DataSource = datosViaje.MostrarEnCurso()
+        viaje = Nothing
+        BtnCancelarViaje.Enabled = False
+        BtnNotificarArribo.Enabled = False
+        BtnNotificarSalida.Enabled = False
     End Sub
 
     Private Sub FormViajes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -25,7 +33,9 @@ Public Class FormViajes
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        Dim viaje As New Viaje()
+        If viaje Is Nothing Then
+            viaje = New EL.Viaje()
+        End If
         viaje.Origen = txtOrigen.Text()
         viaje.Destino = txtDestino.Text()
         viaje.FechaSalida = dtpFechaSalida.Value
@@ -34,13 +44,10 @@ Public Class FormViajes
         Else
             viaje.IdaYVuelta = False
         End If
-        viaje.Chofer = New Chofer()
-        viaje.Chofer.GetById(cbbChofer.SelectedValue)
-        viaje.Cliente = New Cliente
-        viaje.Cliente.GetById(cbbCliente.SelectedValue)
-        viaje.Estado = New EstadoViaje
-        viaje.Estado.GetById(cbbTipoEstadoViaje.SelectedValue)
-        viaje.Guardar()
+        viaje.Chofer = datosChofer.GetById(cbbChofer.SelectedValue)
+        viaje.Cliente = datosCliente.GetById(cbbCliente.SelectedValue)
+        viaje.Estado = datosEstadoViaje.GetById(cbbTipoEstadoViaje.SelectedValue)
+        datosViaje.Guardar(viaje)
         ActualizarLista()
     End Sub
 
@@ -49,13 +56,21 @@ Public Class FormViajes
     End Sub
 
     Private Sub BtnNotificarArribo_Click(sender As Object, e As EventArgs) Handles BtnNotificarArribo.Click
-        FormArribo.viaje = New Viaje
-        FormArribo.viaje.GetById(_idClickCell) 'le paso el id del viaje que sale de la grid.
-        FormArribo.Show()
+        If viaje IsNot Nothing Then
+            FormArribo.viaje = viaje
+            FormArribo.Show()
+        End If
     End Sub
 
     Private Sub dgvViajes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvViajes.CellClick
-        _idClickCell = dgvViajes.Rows(e.RowIndex).Cells(0).Value
+        viaje = Nothing
+        viaje = New EL.Viaje With {
+            .Id = dgvViajes.Rows(e.RowIndex).Cells(0).Value
+        }
+        viaje = datosViaje.GetById(viaje.Id)
+        BtnCancelarViaje.Enabled = True
+        BtnNotificarArribo.Enabled = True
+        BtnNotificarSalida.Enabled = True
     End Sub
 
 End Class
