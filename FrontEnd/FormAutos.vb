@@ -5,7 +5,7 @@
     Public Sub ActualizarLista()
         cbbMarca.DataSource = Nothing
         cbbModelo.DataSource = Nothing
-        cbbMarca.DataSource = New BLL.Auto().MostrarMarcas()
+        cbbMarca.DataSource = datosAuto.MostrarMarcas()
         cbbMarca.DisplayMember = "descripcion"
         cbbMarca.ValueMember = "id_marca"
         txtAnioFabricacion.Text() = ""

@@ -66,6 +66,7 @@
     <Compile Include="Auto.vb" />
     <Compile Include="Chofer.vb" />
     <Compile Include="Cliente.vb" />
+    <Compile Include="Comision.vb" />
     <Compile Include="Domicilio.vb" />
     <Compile Include="EstadoViaje.vb" />
     <Compile Include="Login.vb" />

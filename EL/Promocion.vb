@@ -1,6 +1,16 @@
 ﻿Public Class Promocion
+    Private _id As Int16
+    Public Property Id() As Int16
+        Get
+            Return _id
+        End Get
+        Set(ByVal value As Int16)
+            _id = value
+        End Set
+    End Property
+
     Private _descuento As Decimal
-    Public Property NewProperty() As Decimal
+    Public Property Descuento() As Decimal
         Get
             Return _descuento
         End Get
