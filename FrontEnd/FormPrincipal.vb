@@ -103,4 +103,13 @@ Public Class FormPrincipal
         FormUsuarios.Show()
     End Sub
 
+    Private Sub ComisionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComisionesToolStripMenuItem.Click
+        FormComisiones.MdiParent = Me
+        FormComisiones.Show()
+    End Sub
+
+    Private Sub PromocionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PromocionesToolStripMenuItem.Click
+        FormPromociones.MdiParent = Me
+        FormPromociones.Show()
+    End Sub
 End Class

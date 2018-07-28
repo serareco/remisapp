@@ -95,6 +95,12 @@
     <Compile Include="FormClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormComisiones.Designer.vb">
+      <DependentUpon>FormComisiones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormComisiones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPromociones.Designer.vb">
+      <DependentUpon>FormPromociones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPromociones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormUsuarios.Designer.vb">
