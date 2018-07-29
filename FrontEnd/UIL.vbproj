@@ -179,6 +179,9 @@
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPromociones.resx">
+      <DependentUpon>FormPromociones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </EmbeddedResource>
