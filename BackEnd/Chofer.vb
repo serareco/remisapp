@@ -16,7 +16,7 @@
         chofer.Domicilio = datatable.Rows(0).ItemArray(3).ToString()
         chofer.Email = datatable.Rows(0).ItemArray(4).ToString()
         chofer.Telefono = datatable.Rows(0).ItemArray(5).ToString()
-        chofer.Comision = datatable.Rows(0).ItemArray(6).ToString()
+        chofer.Comision = New Comision().GetById(datatable.Rows(0).ItemArray(6).ToString())
         chofer.Auto = New Auto().GetById(datatable.Rows(0).ItemArray(7).ToString())
         chofer.FechaVencimiento = datatable.Rows(0).ItemArray(8).ToString()
         chofer.FechaNacimiento = datatable.Rows(0).ItemArray(9).ToString()

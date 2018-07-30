@@ -9,12 +9,12 @@
             _id = value
         End Set
     End Property
-    Private _comision As Decimal
-    Public Property Comision() As Decimal
+    Private _comision As Comision
+    Public Property Comision() As Comision
         Get
             Return _comision
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As Comision)
             _comision = value
         End Set
     End Property

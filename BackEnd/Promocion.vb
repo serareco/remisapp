@@ -3,6 +3,10 @@
         Return New DAL.Promocion().Mostrar()
     End Function
 
+    Public Function MostrarVigentes() As DataTable
+        Return New DAL.Promocion().MostrarVigentes()
+    End Function
+
     Public Function GetById(pId As Int16) As EL.Promocion
         Dim promocion As New EL.Promocion()
         Dim datatable As DataTable

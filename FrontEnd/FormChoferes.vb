@@ -2,12 +2,17 @@
     Dim chofer As EL.Chofer
     Dim datosChofer As New BLL.Chofer()
     Dim datosAuto As New BLL.Auto()
+    Dim datosComision As New BLL.Comision()
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
 
     Public Sub ActualizarLista()
+        cbbComision.DataSource = datosComision.MostrarVigentes()
+        cbbComision.DisplayMember = "descripcion"
+        cbbComision.ValueMember = "id_comision"
+
         cbbAutos.DataSource = datosAuto.MostrarDisponibles()
         cbbAutos.DisplayMember = "descripcion"
         cbbAutos.ValueMember = "id_auto"
@@ -37,14 +42,12 @@
         chofer.FechaVencimiento = dtpFechaVencimientoRegistro.Value()
         chofer.Telefono = TxtTelefono.Text()
         chofer.Auto = datosAuto.GetById(cbbAutos.SelectedValue)
+        chofer.Comision = datosComision.GetById(cbbComision.SelectedValue)
         datosChofer.Guardar(chofer)
         ActualizarLista()
     End Sub
 
     Private Sub FormChoferes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbbAutos.DataSource = datosAuto.MostrarDisponibles()
-        cbbAutos.DisplayMember = "descripcion"
-        cbbAutos.ValueMember = "id_auto"
         ActualizarLista()
     End Sub
 
@@ -77,6 +80,7 @@
             dtpFechaVencimientoRegistro.Value() = chofer.FechaVencimiento
             TxtTelefono.Text() = chofer.Telefono
             cbbAutos.SelectedValue() = chofer.Auto.Id
+            cbbComision.SelectedValue() = chofer.Comision.Id
         End If
     End Sub
 

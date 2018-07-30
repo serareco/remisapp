@@ -92,7 +92,18 @@
         End If
         parametros.Add(New SqlClient.SqlParameter("@ida_Vuelta", _idaYVuelta))
         parametros.Add(New SqlClient.SqlParameter("@id_estado", viaje.Estado.Id))
-        con.EjecutarStoredProcedure("dbo.GuardarViaje", parametros)
+        If Not IsNothing(viaje.Promociones) Then
+            If viaje.Promociones.Count > 0 Then
+                parametros.Add(New SqlClient.SqlParameter("@id_viaje", viaje.Id))
+                Dim promociones As String = ""
+                For Each promocion As EL.Promocion In viaje.Promociones
+                    promociones += promocion.Id.ToString() + ";"
+                Next
+                promociones = promociones.Substring(0, promociones.Length() - 1)
+                parametros.Add(New SqlClient.SqlParameter("@promociones", promociones))
+            End If
+        End If
+            con.EjecutarStoredProcedure("dbo.GuardarViaje", parametros)
     End Sub
 
 End Class

@@ -23,6 +23,7 @@ Partial Class FormViajes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.dtpFechaSalida = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cbbTipoEstadoViaje = New System.Windows.Forms.ComboBox()
@@ -40,10 +41,11 @@ Partial Class FormViajes
         Me.txtDestino = New System.Windows.Forms.TextBox()
         Me.txtOrigen = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BtnNotificarSalida = New System.Windows.Forms.Button()
+        Me.BtnCancelarViaje = New System.Windows.Forms.Button()
         Me.BtnNotificarArribo = New System.Windows.Forms.Button()
         Me.dgvViajes = New System.Windows.Forms.DataGridView()
-        Me.BtnCancelarViaje = New System.Windows.Forms.Button()
-        Me.BtnNotificarSalida = New System.Windows.Forms.Button()
+        Me.clbPromociones = New System.Windows.Forms.CheckedListBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvViajes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,6 +53,8 @@ Partial Class FormViajes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.clbPromociones)
+        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.dtpFechaSalida)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.cbbTipoEstadoViaje)
@@ -74,10 +78,19 @@ Partial Class FormViajes
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Viaje"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(24, 213)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(68, 13)
+        Me.Label8.TabIndex = 18
+        Me.Label8.Text = "Promociones"
+        '
         'dtpFechaSalida
         '
         Me.dtpFechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpFechaSalida.Location = New System.Drawing.Point(121, 166)
+        Me.dtpFechaSalida.Location = New System.Drawing.Point(121, 129)
         Me.dtpFechaSalida.Name = "dtpFechaSalida"
         Me.dtpFechaSalida.Size = New System.Drawing.Size(227, 20)
         Me.dtpFechaSalida.TabIndex = 16
@@ -85,7 +98,7 @@ Partial Class FormViajes
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(24, 223)
+        Me.Label7.Location = New System.Drawing.Point(24, 186)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 13)
         Me.Label7.TabIndex = 15
@@ -94,7 +107,7 @@ Partial Class FormViajes
         'cbbTipoEstadoViaje
         '
         Me.cbbTipoEstadoViaje.FormattingEnabled = True
-        Me.cbbTipoEstadoViaje.Location = New System.Drawing.Point(121, 220)
+        Me.cbbTipoEstadoViaje.Location = New System.Drawing.Point(121, 183)
         Me.cbbTipoEstadoViaje.Name = "cbbTipoEstadoViaje"
         Me.cbbTipoEstadoViaje.Size = New System.Drawing.Size(227, 21)
         Me.cbbTipoEstadoViaje.TabIndex = 14
@@ -102,7 +115,7 @@ Partial Class FormViajes
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(24, 195)
+        Me.Label6.Location = New System.Drawing.Point(24, 158)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(78, 13)
         Me.Label6.TabIndex = 13
@@ -111,7 +124,7 @@ Partial Class FormViajes
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(24, 170)
+        Me.Label5.Location = New System.Drawing.Point(24, 133)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(36, 13)
         Me.Label5.TabIndex = 12
@@ -120,7 +133,7 @@ Partial Class FormViajes
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(24, 142)
+        Me.Label4.Location = New System.Drawing.Point(24, 105)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(39, 13)
         Me.Label4.TabIndex = 11
@@ -129,7 +142,7 @@ Partial Class FormViajes
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(24, 114)
+        Me.Label3.Location = New System.Drawing.Point(24, 77)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(38, 13)
         Me.Label3.TabIndex = 10
@@ -138,7 +151,7 @@ Partial Class FormViajes
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 87)
+        Me.Label2.Location = New System.Drawing.Point(24, 50)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 9
@@ -147,7 +160,7 @@ Partial Class FormViajes
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 60)
+        Me.Label1.Location = New System.Drawing.Point(24, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(38, 13)
         Me.Label1.TabIndex = 8
@@ -155,7 +168,7 @@ Partial Class FormViajes
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(148, 279)
+        Me.BtnCancelar.Location = New System.Drawing.Point(198, 284)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(94, 23)
         Me.BtnCancelar.TabIndex = 7
@@ -164,7 +177,7 @@ Partial Class FormViajes
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(27, 279)
+        Me.BtnGuardar.Location = New System.Drawing.Point(77, 284)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(97, 23)
         Me.BtnGuardar.TabIndex = 6
@@ -175,7 +188,7 @@ Partial Class FormViajes
         '
         Me.cbbIdaYVuelta.FormattingEnabled = True
         Me.cbbIdaYVuelta.Items.AddRange(New Object() {"S", "N"})
-        Me.cbbIdaYVuelta.Location = New System.Drawing.Point(121, 192)
+        Me.cbbIdaYVuelta.Location = New System.Drawing.Point(121, 155)
         Me.cbbIdaYVuelta.Name = "cbbIdaYVuelta"
         Me.cbbIdaYVuelta.Size = New System.Drawing.Size(227, 21)
         Me.cbbIdaYVuelta.TabIndex = 4
@@ -183,7 +196,7 @@ Partial Class FormViajes
         'cbbCliente
         '
         Me.cbbCliente.FormattingEnabled = True
-        Me.cbbCliente.Location = New System.Drawing.Point(121, 139)
+        Me.cbbCliente.Location = New System.Drawing.Point(121, 102)
         Me.cbbCliente.Name = "cbbCliente"
         Me.cbbCliente.Size = New System.Drawing.Size(227, 21)
         Me.cbbCliente.TabIndex = 3
@@ -191,21 +204,21 @@ Partial Class FormViajes
         'cbbChofer
         '
         Me.cbbChofer.FormattingEnabled = True
-        Me.cbbChofer.Location = New System.Drawing.Point(121, 111)
+        Me.cbbChofer.Location = New System.Drawing.Point(121, 74)
         Me.cbbChofer.Name = "cbbChofer"
         Me.cbbChofer.Size = New System.Drawing.Size(227, 21)
         Me.cbbChofer.TabIndex = 2
         '
         'txtDestino
         '
-        Me.txtDestino.Location = New System.Drawing.Point(121, 84)
+        Me.txtDestino.Location = New System.Drawing.Point(121, 47)
         Me.txtDestino.Name = "txtDestino"
         Me.txtDestino.Size = New System.Drawing.Size(227, 20)
         Me.txtDestino.TabIndex = 1
         '
         'txtOrigen
         '
-        Me.txtOrigen.Location = New System.Drawing.Point(121, 57)
+        Me.txtOrigen.Location = New System.Drawing.Point(121, 20)
         Me.txtOrigen.Name = "txtOrigen"
         Me.txtOrigen.Size = New System.Drawing.Size(227, 20)
         Me.txtOrigen.TabIndex = 0
@@ -223,9 +236,27 @@ Partial Class FormViajes
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Viajes en Curso"
         '
+        'BtnNotificarSalida
+        '
+        Me.BtnNotificarSalida.Location = New System.Drawing.Point(114, 285)
+        Me.BtnNotificarSalida.Name = "BtnNotificarSalida"
+        Me.BtnNotificarSalida.Size = New System.Drawing.Size(108, 23)
+        Me.BtnNotificarSalida.TabIndex = 3
+        Me.BtnNotificarSalida.Text = "Notificar Salida"
+        Me.BtnNotificarSalida.UseVisualStyleBackColor = True
+        '
+        'BtnCancelarViaje
+        '
+        Me.BtnCancelarViaje.Location = New System.Drawing.Point(228, 285)
+        Me.BtnCancelarViaje.Name = "BtnCancelarViaje"
+        Me.BtnCancelarViaje.Size = New System.Drawing.Size(131, 23)
+        Me.BtnCancelarViaje.TabIndex = 2
+        Me.BtnCancelarViaje.Text = "Cancelar Viaje"
+        Me.BtnCancelarViaje.UseVisualStyleBackColor = True
+        '
         'BtnNotificarArribo
         '
-        Me.BtnNotificarArribo.Location = New System.Drawing.Point(6, 279)
+        Me.BtnNotificarArribo.Location = New System.Drawing.Point(6, 285)
         Me.BtnNotificarArribo.Name = "BtnNotificarArribo"
         Me.BtnNotificarArribo.Size = New System.Drawing.Size(102, 23)
         Me.BtnNotificarArribo.TabIndex = 1
@@ -246,23 +277,13 @@ Partial Class FormViajes
         Me.dgvViajes.Size = New System.Drawing.Size(614, 254)
         Me.dgvViajes.TabIndex = 0
         '
-        'BtnCancelarViaje
+        'clbPromociones
         '
-        Me.BtnCancelarViaje.Location = New System.Drawing.Point(228, 279)
-        Me.BtnCancelarViaje.Name = "BtnCancelarViaje"
-        Me.BtnCancelarViaje.Size = New System.Drawing.Size(131, 23)
-        Me.BtnCancelarViaje.TabIndex = 2
-        Me.BtnCancelarViaje.Text = "Cancelar Viaje"
-        Me.BtnCancelarViaje.UseVisualStyleBackColor = True
-        '
-        'BtnNotificarSalida
-        '
-        Me.BtnNotificarSalida.Location = New System.Drawing.Point(114, 279)
-        Me.BtnNotificarSalida.Name = "BtnNotificarSalida"
-        Me.BtnNotificarSalida.Size = New System.Drawing.Size(108, 23)
-        Me.BtnNotificarSalida.TabIndex = 3
-        Me.BtnNotificarSalida.Text = "Notificar Salida"
-        Me.BtnNotificarSalida.UseVisualStyleBackColor = True
+        Me.clbPromociones.FormattingEnabled = True
+        Me.clbPromociones.Location = New System.Drawing.Point(121, 208)
+        Me.clbPromociones.Name = "clbPromociones"
+        Me.clbPromociones.Size = New System.Drawing.Size(227, 64)
+        Me.clbPromociones.TabIndex = 19
         '
         'FormViajes
         '
@@ -305,4 +326,6 @@ Partial Class FormViajes
     Friend WithEvents dtpFechaSalida As DateTimePicker
     Friend WithEvents BtnNotificarSalida As Button
     Friend WithEvents BtnCancelarViaje As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents clbPromociones As CheckedListBox
 End Class

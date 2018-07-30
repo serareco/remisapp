@@ -47,7 +47,7 @@ Public Class Chofer
 	        p.domicilio,
 	        p.email,
 	        p.telefono,
-	        c.comision,
+	        c.id_comision,
 	        c.id_auto,
 	        c.fecha_vencimiento_registro,
 	        c.fecha_nacimiento,
@@ -61,7 +61,7 @@ Public Class Chofer
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_chofer", chofer.Id))
-        parametros.Add(New SqlClient.SqlParameter("@comision", chofer.Comision))
+        parametros.Add(New SqlClient.SqlParameter("@id_comision", chofer.Comision.Id))
         parametros.Add(New SqlClient.SqlParameter("@fecha_vencimiento_registro", chofer.FechaVencimiento))
         parametros.Add(New SqlClient.SqlParameter("@id_auto", chofer.Auto.Id))
         parametros.Add(New SqlClient.SqlParameter("@nombre", chofer.Nombre))

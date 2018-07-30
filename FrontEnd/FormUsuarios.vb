@@ -2,6 +2,7 @@
     Dim usuario As EL.Usuario
     Dim datosUsuario As New BLL.Usuario()
     Dim datosRol As New BLL.Rol()
+
     Public Sub ActualizarLista()
         TxtUsuario.Text() = ""
         TxtPassword.Text() = ""
@@ -81,6 +82,28 @@
             TxtTelefono.Text() = usuario.Telefono
             TxtEmail.Text() = usuario.Email
             dtpFechaNacimiento.Value() = usuario.FechaNacimiento
+
+            'For Each item As Object In ClbRoles.Items
+            '   For Each rol As EL.Rol In usuario.Roles
+            '       If (item.Row.ItemArray(0) = rol.Id) Then
+            '           ClbRoles.SelectedItem = item
+            '       End If
+            '   Next
+            'Next
+
+            'Dim i As Integer = 0
+            'Dim j As Integer = 0
+            'For Each rol As EL.Rol In usuario.Roles
+            '   i += 1
+            '   j = 0
+            '   For Each item As Object In ClbRoles.Items
+            '       j += 1
+            '       If (item.Row.ItemArray(0) = rol.Id) Then
+            '           ClbRoles.SetItemChecked(j, True)
+            '       End If
+            '   Next
+            'Next
+
         End If
     End Sub
 
@@ -99,7 +122,7 @@
         usuario = New EL.Usuario With {
             .Usuario = dgvUsuarios.Rows(e.RowIndex).Cells(0).Value
         }
-        datosUsuario.GetByUsuario(usuario.Usuario)
+        usuario = datosUsuario.GetByUsuario(usuario.Usuario)
     End Sub
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click

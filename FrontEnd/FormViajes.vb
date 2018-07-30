@@ -4,6 +4,7 @@
     Dim datosChofer As New BLL.Chofer()
     Dim datosEstadoViaje As New BLL.EstadoViaje()
     Dim datosCliente As New BLL.Cliente()
+    Dim datosPromocion As New BLL.Promocion()
 
     Public Sub ActualizarLista()
         cbbChofer.DataSource = Nothing
@@ -18,6 +19,9 @@
         cbbCliente.DataSource = datosCliente.Mostrar()
         cbbCliente.DisplayMember = "descripcion"
         cbbCliente.ValueMember = "id_cliente"
+        clbPromociones.DataSource = datosPromocion.MostrarVigentes()
+        clbPromociones.ValueMember = "id_promocion"
+        clbPromociones.DisplayMember = "descripcion"
         txtOrigen.Text() = ""
         txtDestino.Text() = ""
         dgvViajes.DataSource = Nothing
@@ -47,6 +51,14 @@
         viaje.Chofer = datosChofer.GetById(cbbChofer.SelectedValue)
         viaje.Cliente = datosCliente.GetById(cbbCliente.SelectedValue)
         viaje.Estado = datosEstadoViaje.GetById(cbbTipoEstadoViaje.SelectedValue)
+        viaje.Promociones = New List(Of EL.Promocion)
+        For Each itemChecked As Object In ClbPromociones.CheckedItems
+            Dim promocion As New EL.Promocion With {
+                .Id = CType(itemChecked, DataRowView).Row.ItemArray(0),
+                .Descripcion = CType(itemChecked, DataRowView).Row.ItemArray(1)
+                }
+            viaje.Promociones.Add(promocion)
+        Next
         datosViaje.Guardar(viaje)
         ActualizarLista()
     End Sub

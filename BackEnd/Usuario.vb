@@ -26,6 +26,13 @@
             usuario.NroDocumento = DataTable.Rows(0).ItemArray(6).ToString()
             usuario.FechaNacimiento = DataTable.Rows(0).ItemArray(7).ToString()
         End If
+        Dim datatableRoles As DataTable = New DAL.Usuario().GetRolesByUsuario(pUsuario)
+        If (datatableRoles.Rows.Count > 0) Then
+            usuario.Roles = New List(Of EL.Rol)
+            For Each row As DataRow In datatableRoles.Rows
+                usuario.Roles.Add(New Rol().GetById(row.ItemArray(1)))
+            Next
+        End If
         Return usuario
     End Function
 

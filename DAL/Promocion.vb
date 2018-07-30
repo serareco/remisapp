@@ -18,7 +18,9 @@
     Public Function MostrarVigentes() As DataTable
         Dim con As New Conexion
         Dim datatable As New DataTable()
-        con.EjecutarConsulta("select * From dbo.promociones where estado = 'A' and  ISNULL(vigencia_hasta,GETDATE()) >= GETDATE()")
+        con.EjecutarConsulta("  
+        select id_promocion, descripcion From dbo.promociones where estado = 'A' and  ISNULL(vigencia_hasta,GETDATE()) >= GETDATE()
+        ")
         con.adp.Fill(datatable)
         Return datatable
     End Function

@@ -105,8 +105,8 @@
             Return _promociones
         End Get
         Set(ByVal value As List(Of Promocion))
-            _promociones = value
-        End Set
+           _promociones = value
+    End Set
     End Property
 
     Private _estado As EstadoViaje

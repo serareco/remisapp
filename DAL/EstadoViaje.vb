@@ -24,9 +24,7 @@
         Dim datatable As New DataTable
         con.EjecutarConsulta("select * from tipos_estado_viaje where id_estado = " & pId)
         con.adp.Fill(datatable)
-
         Return datatable
-
     End Function
 
 End Class
