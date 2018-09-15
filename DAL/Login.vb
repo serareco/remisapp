@@ -18,4 +18,15 @@
 
     End Function
 
+    Public Function GetRoles(pUsuario As String) As List(Of EL.Rol)
+        Dim roles As New List(Of EL.Rol)
+
+        Dim rol As New EL.Rol With {.Id = "R",
+        .Descripcion = "Responsable"
+        }
+        roles.Add(rol)
+
+        Return roles
+    End Function
+
 End Class

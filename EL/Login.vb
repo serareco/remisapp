@@ -18,4 +18,14 @@
             _password = value
         End Set
     End Property
+
+    Private _roles As List(Of Rol)
+    Public Property Roles() As List(Of Rol)
+        Get
+            Return _roles
+        End Get
+        Set(ByVal value As List(Of Rol))
+            _roles = value
+        End Set
+    End Property
 End Class

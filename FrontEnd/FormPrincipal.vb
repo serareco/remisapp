@@ -35,7 +35,6 @@ Public Class FormPrincipal
         End If
     End Sub
 
-
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
         FormViajes.MdiParent = Me
         FormViajes.Show()
@@ -112,4 +111,37 @@ Public Class FormPrincipal
         FormPromociones.MdiParent = Me
         FormPromociones.Show()
     End Sub
+
+    Private Sub FormPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.ChoferesToolStripMenuItem.Visible = False
+        Me.ComisionesToolStripMenuItem.Visible = False
+        Me.PromocionesToolStripMenuItem.Visible = False
+        Me.UsuariosToolStripMenuItem.Visible = False
+        Me.OptionsToolStripMenuItem.Visible = False ' Viajes
+        Me.ReportesToolStripMenuItem.Visible = False
+        Me.ExitToolStripMenuItem.Visible = False 'nuevo viaje
+        Me.ToolsMenu.Visible = False ' ABMC
+        Me.FileMenu.Visible = False ' Viajes
+        Me.ClientesToolStripMenuItem.Visible = False
+
+        If BLL.Login.EsResponsable() Then
+            Me.ChoferesToolStripMenuItem.Visible = True
+            Me.ComisionesToolStripMenuItem.Visible = True
+            Me.PromocionesToolStripMenuItem.Visible = True
+            Me.UsuariosToolStripMenuItem.Visible = True
+            Me.OptionsToolStripMenuItem.Visible = True
+            Me.ReportesToolStripMenuItem.Visible = True
+        End If
+
+        If BLL.Login.EsOperador() Then
+            'Rol Operador
+            Me.ToolsMenu.Visible = True ' ABMC
+            Me.ClientesToolStripMenuItem.Visible = True
+            Me.OptionsToolStripMenuItem.Visible = True ' VIajes
+            Me.ExitToolStripMenuItem.Visible = True 'nuevo viaje
+            Me.HistóricoToolStripMenuItem.Visible = True ' historico
+        End If
+
+    End Sub
+
 End Class

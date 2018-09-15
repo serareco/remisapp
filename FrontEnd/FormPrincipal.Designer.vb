@@ -34,6 +34,8 @@ Partial Class FormPrincipal
         Me.ChoferesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComisionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PromocionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowsMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.CascadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TileVerticalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,8 +44,7 @@ Partial Class FormPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ComisionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PromocionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -57,7 +58,7 @@ Partial Class FormPrincipal
         '
         'FileMenu
         '
-        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.HistóricoToolStripMenuItem})
+        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.HistóricoToolStripMenuItem, Me.ReportesToolStripMenuItem})
         resources.ApplyResources(Me.FileMenu, "FileMenu")
         Me.FileMenu.Name = "FileMenu"
         '
@@ -97,6 +98,16 @@ Partial Class FormPrincipal
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
         resources.ApplyResources(Me.UsuariosToolStripMenuItem, "UsuariosToolStripMenuItem")
         '
+        'ComisionesToolStripMenuItem
+        '
+        Me.ComisionesToolStripMenuItem.Name = "ComisionesToolStripMenuItem"
+        resources.ApplyResources(Me.ComisionesToolStripMenuItem, "ComisionesToolStripMenuItem")
+        '
+        'PromocionesToolStripMenuItem
+        '
+        Me.PromocionesToolStripMenuItem.Name = "PromocionesToolStripMenuItem"
+        resources.ApplyResources(Me.PromocionesToolStripMenuItem, "PromocionesToolStripMenuItem")
+        '
         'WindowsMenu
         '
         Me.WindowsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CascadeToolStripMenuItem, Me.TileVerticalToolStripMenuItem, Me.TileHorizontalToolStripMenuItem, Me.CloseAllToolStripMenuItem})
@@ -134,15 +145,10 @@ Partial Class FormPrincipal
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
         resources.ApplyResources(Me.ToolStripStatusLabel, "ToolStripStatusLabel")
         '
-        'ComisionesToolStripMenuItem
+        'ReportesToolStripMenuItem
         '
-        Me.ComisionesToolStripMenuItem.Name = "ComisionesToolStripMenuItem"
-        resources.ApplyResources(Me.ComisionesToolStripMenuItem, "ComisionesToolStripMenuItem")
-        '
-        'PromocionesToolStripMenuItem
-        '
-        Me.PromocionesToolStripMenuItem.Name = "PromocionesToolStripMenuItem"
-        resources.ApplyResources(Me.PromocionesToolStripMenuItem, "PromocionesToolStripMenuItem")
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        resources.ApplyResources(Me.ReportesToolStripMenuItem, "ReportesToolStripMenuItem")
         '
         'FormPrincipal
         '
@@ -181,4 +187,5 @@ Partial Class FormPrincipal
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ComisionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PromocionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
 End Class

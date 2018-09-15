@@ -1,11 +1,11 @@
 ﻿Public Class Rol
-    Private _Id As String
+    Private _id As String
     Public Property Id() As String
         Get
-            Return _Id
+            Return _id
         End Get
         Set(ByVal value As String)
-            _Id = value
+            _id = value
         End Set
     End Property
     Private _descripcion As String

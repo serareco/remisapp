@@ -108,7 +108,7 @@ Partial Class FormArribo
         Me.gbxViajes.Size = New System.Drawing.Size(358, 216)
         Me.gbxViajes.TabIndex = 8
         Me.gbxViajes.TabStop = False
-        Me.gbxViajes.Text = "Datos del Arribo"
+        Me.gbxViajes.Text = "Registro Arribo"
         '
         'dtpFechaArribo
         '

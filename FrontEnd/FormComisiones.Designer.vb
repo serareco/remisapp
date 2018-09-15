@@ -38,6 +38,7 @@ Partial Class FormComisiones
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtPorcentaje = New System.Windows.Forms.TextBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvComisiones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxComisiones.SuspendLayout()
@@ -89,6 +90,7 @@ Partial Class FormComisiones
         '
         'gbxComisiones
         '
+        Me.gbxComisiones.Controls.Add(Me.CheckBox1)
         Me.gbxComisiones.Controls.Add(Me.dtpVigenciaHasta)
         Me.gbxComisiones.Controls.Add(Me.dtpVigenciaDesde)
         Me.gbxComisiones.Controls.Add(Me.BtnLimpiar)
@@ -153,18 +155,19 @@ Partial Class FormComisiones
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(24, 142)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 13)
+        Me.Label2.Size = New System.Drawing.Size(54, 13)
         Me.Label2.TabIndex = 9
-        Me.Label2.Text = "Año Fabricación"
+        Me.Label2.Text = "Fecha Fin"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(24, 115)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 13)
+        Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label1.Size = New System.Drawing.Size(65, 13)
         Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Patente"
+        Me.Label1.Text = "Fecha Inicio"
         '
         'BtnCancelar
         '
@@ -197,6 +200,16 @@ Partial Class FormComisiones
         Me.txtPorcentaje.Name = "txtPorcentaje"
         Me.txtPorcentaje.Size = New System.Drawing.Size(227, 20)
         Me.txtPorcentaje.TabIndex = 2
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(121, 165)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(125, 17)
+        Me.CheckBox1.TabIndex = 20
+        Me.CheckBox1.Text = "Comisión por defecto"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'FormComisiones
         '
@@ -235,4 +248,5 @@ Partial Class FormComisiones
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents txtPorcentaje As TextBox
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

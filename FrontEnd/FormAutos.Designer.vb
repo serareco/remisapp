@@ -27,6 +27,7 @@ Partial Class FormAutos
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.dgvAutos = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtChasis = New System.Windows.Forms.TextBox()
@@ -41,7 +42,8 @@ Partial Class FormAutos
         Me.cbbMarca = New System.Windows.Forms.ComboBox()
         Me.txtAnioFabricacion = New System.Windows.Forms.TextBox()
         Me.txtPatente = New System.Windows.Forms.TextBox()
-        Me.BtnLimpiar = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.dtpFechaVTV = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvAutos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -93,6 +95,8 @@ Partial Class FormAutos
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.dtpFechaVTV)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.BtnLimpiar)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -114,6 +118,15 @@ Partial Class FormAutos
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Auto"
+        '
+        'BtnLimpiar
+        '
+        Me.BtnLimpiar.Location = New System.Drawing.Point(263, 275)
+        Me.BtnLimpiar.Name = "BtnLimpiar"
+        Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLimpiar.TabIndex = 16
+        Me.BtnLimpiar.Text = "Limpiar"
+        Me.BtnLimpiar.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -231,14 +244,21 @@ Partial Class FormAutos
         Me.txtPatente.Size = New System.Drawing.Size(227, 20)
         Me.txtPatente.TabIndex = 2
         '
-        'BtnLimpiar
+        'Label7
         '
-        Me.BtnLimpiar.Location = New System.Drawing.Point(263, 275)
-        Me.BtnLimpiar.Name = "BtnLimpiar"
-        Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnLimpiar.TabIndex = 16
-        Me.BtnLimpiar.Text = "Limpiar"
-        Me.BtnLimpiar.UseVisualStyleBackColor = True
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(24, 224)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(89, 13)
+        Me.Label7.TabIndex = 17
+        Me.Label7.Text = "Vencimiento VTV"
+        '
+        'dtpFechaVTV
+        '
+        Me.dtpFechaVTV.Location = New System.Drawing.Point(121, 218)
+        Me.dtpFechaVTV.Name = "dtpFechaVTV"
+        Me.dtpFechaVTV.Size = New System.Drawing.Size(227, 20)
+        Me.dtpFechaVTV.TabIndex = 18
         '
         'FormAutos
         '
@@ -279,4 +299,6 @@ Partial Class FormAutos
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnLimpiar As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents dtpFechaVTV As DateTimePicker
 End Class
