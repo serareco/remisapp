@@ -117,7 +117,7 @@ Public Class FormPrincipal
         Me.ComisionesToolStripMenuItem.Visible = False
         Me.PromocionesToolStripMenuItem.Visible = False
         Me.UsuariosToolStripMenuItem.Visible = False
-        Me.OptionsToolStripMenuItem.Visible = False ' Viajes
+        Me.OptionsToolStripMenuItem.Visible = False ' Autos
         Me.ReportesToolStripMenuItem.Visible = False
         Me.ExitToolStripMenuItem.Visible = False 'nuevo viaje
         Me.ToolsMenu.Visible = False ' ABMC
@@ -125,6 +125,8 @@ Public Class FormPrincipal
         Me.ClientesToolStripMenuItem.Visible = False
 
         If BLL.Login.EsResponsable() Then
+            Me.ToolsMenu.Visible = True ' ABMC
+            Me.FileMenu.Visible = True
             Me.ChoferesToolStripMenuItem.Visible = True
             Me.ComisionesToolStripMenuItem.Visible = True
             Me.PromocionesToolStripMenuItem.Visible = True
@@ -135,9 +137,9 @@ Public Class FormPrincipal
 
         If BLL.Login.EsOperador() Then
             'Rol Operador
+            Me.FileMenu.Visible = True
             Me.ToolsMenu.Visible = True ' ABMC
             Me.ClientesToolStripMenuItem.Visible = True
-            Me.OptionsToolStripMenuItem.Visible = True ' VIajes
             Me.ExitToolStripMenuItem.Visible = True 'nuevo viaje
             Me.HistóricoToolStripMenuItem.Visible = True ' historico
         End If

@@ -21,11 +21,14 @@
     Public Function GetRoles(pUsuario As String) As List(Of EL.Rol)
         Dim roles As New List(Of EL.Rol)
 
-        Dim rol As New EL.Rol With {.Id = "R",
-        .Descripcion = "Responsable"
+        'Dim rol1 As New EL.Rol With {.Id = "R",
+        '.Descripcion = "Responsable"
+        '}
+        'roles.Add(rol1)
+        Dim rol As New EL.Rol With {.Id = "O",
+        .Descripcion = "Operador"
         }
         roles.Add(rol)
-
         Return roles
     End Function
 

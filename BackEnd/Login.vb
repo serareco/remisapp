@@ -20,19 +20,21 @@
     End Function
 
     Public Function EsOperador() As Boolean
-        If UsuarioConectado.Roles(0).Id = "O" Then
-            Return True
-        Else
-            Return False
-        End If
+        For Each rol As EL.Rol In UsuarioConectado.Roles
+            If rol.Id = "O" Then
+                Return True
+            End If
+        Next
+        Return False
     End Function
 
     Public Function EsResponsable() As Boolean
-        If UsuarioConectado.Roles(0).Id = "R" Then
-            Return True
-        Else
-            Return False
-        End If
+        For Each rol As EL.Rol In UsuarioConectado.Roles
+            If rol.Id = "R" Then
+                Return True
+            End If
+        Next
+        Return False
     End Function
 
 End Module
