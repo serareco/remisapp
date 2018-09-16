@@ -18,18 +18,12 @@
 
     End Function
 
-    Public Function GetRoles(pUsuario As String) As List(Of EL.Rol)
-        Dim roles As New List(Of EL.Rol)
-
-        'Dim rol1 As New EL.Rol With {.Id = "R",
-        '.Descripcion = "Responsable"
-        '}
-        'roles.Add(rol1)
-        Dim rol As New EL.Rol With {.Id = "O",
-        .Descripcion = "Operador"
-        }
-        roles.Add(rol)
-        Return roles
+    Public Function GetRoles(pUsuario As String) As DataTable
+        Dim con As New Conexion
+        Dim datatable As New DataTable
+        con.EjecutarConsulta("select id_rol from usuarios_roles where id_usuario = '" + pUsuario + "'")
+        con.adp.Fill(datatable)
+        Return datatable
     End Function
 
 End Class

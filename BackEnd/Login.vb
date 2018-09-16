@@ -13,10 +13,18 @@
         Dim resultLogin As Boolean = New DAL.Login().Login(pDatosLogin)
         If resultLogin Then
             UsuarioConectado = pDatosLogin
-            UsuarioConectado.Roles = New DAL.Login().GetRoles(pDatosLogin.Usuario)
+            UsuarioConectado.Roles = GetRoles(pDatosLogin.Usuario)
         End If
         Return resultLogin
 
+    End Function
+
+    Public Function GetRoles(pUsuario As String) As List(Of EL.Rol)
+        Dim roles As New List(Of EL.Rol)
+        For Each item As DataRow In New DAL.Login().GetRoles(pUsuario).Rows
+            roles.Add(New BLL.Rol().GetById(item.ItemArray(0).ToString()))
+        Next
+        Return roles
     End Function
 
     Public Function EsOperador() As Boolean
