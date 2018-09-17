@@ -3,23 +3,33 @@
     Dim datosUsuario As New BLL.Usuario()
     Dim datosRol As New BLL.Rol()
 
-    Public Sub ActualizarLista()
-        TxtUsuario.Text() = ""
-        TxtPassword.Text() = ""
-        TxtRepetirPassword.Text() = ""
+    Private Sub CleanCheckList()
+        ClbRoles.ClearSelected()
+        For index = 0 To ClbRoles.Items.Count - 1
+            ClbRoles.SetItemChecked(index, False)
+        Next
+    End Sub
+
+    Private Sub ActualizarLista()
+        TxtPassword.Visible = True
+        TxtRepetirPassword.Visible = True
+        TxtUsuario.Text = ""
+        TxtPassword.Text = ""
+        TxtRepetirPassword.Text = ""
         'dtpFechaNacimiento.Value()
-        TxtNroDocumento.Text() = ""
-        TxtNombre.Text() = ""
-        TxtApellido.Text() = ""
-        TxtDomicilio.Text() = ""
-        TxtEmail.Text() = ""
-        TxtTelefono.Text() = ""
+        TxtNroDocumento.Text = ""
+        TxtNombre.Text = ""
+        TxtApellido.Text = ""
+        TxtDomicilio.Text = ""
+        TxtEmail.Text = ""
+        TxtTelefono.Text = ""
         ClbRoles.DataSource = datosRol.Listar()
         ClbRoles.DisplayMember = "descripcion"
         ClbRoles.ValueMember = "id_rol"
         dgvUsuarios.DataSource = Nothing
         dgvUsuarios.DataSource = datosUsuario.MostrarLista()
         usuario = Nothing
+        CleanCheckList()
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -75,35 +85,47 @@
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If usuario IsNot Nothing Then
-            TxtNombre.Text() = usuario.Nombre
-            TxtApellido.Text() = usuario.Apellido
-            TxtDomicilio.Text() = usuario.Domicilio
-            TxtNroDocumento.Text() = usuario.NroDocumento
-            TxtTelefono.Text() = usuario.Telefono
-            TxtEmail.Text() = usuario.Email
-            dtpFechaNacimiento.Value() = usuario.FechaNacimiento
+            CleanCheckList()
+            ClbRoles.ClearSelected()
+            TxtNombre.Text = usuario.Nombre
+            TxtApellido.Text = usuario.Apellido
+            TxtDomicilio.Text = usuario.Domicilio
+            TxtNroDocumento.Text = usuario.NroDocumento
+            TxtTelefono.Text = usuario.Telefono
+            TxtEmail.Text = usuario.Email
+            dtpFechaNacimiento.Value = usuario.FechaNacimiento
+            Dim index As Int16 = 0
+            Dim listIndexs = New List(Of Int16)
+            For Each item As Object In ClbRoles.Items
+                For Each rol As EL.Rol In usuario.Roles
+                    If (item.Row.ItemArray(0) = rol.Id) Then
+                        listIndexs.Add(index)
+                    End If
+                Next
+                index = index + 1
+            Next
 
-            'For Each item As Object In ClbRoles.Items
-            '   For Each rol As EL.Rol In usuario.Roles
-            '       If (item.Row.ItemArray(0) = rol.Id) Then
-            '           ClbRoles.SelectedItem = item
-            '       End If
-            '   Next
-            'Next
+            For Each i As Int16 In listIndexs
+                ClbRoles.SetItemChecked(i, True)
+            Next
 
             'Dim i As Integer = 0
             'Dim j As Integer = 0
             'For Each rol As EL.Rol In usuario.Roles
-            '   i += 1
-            '   j = 0
-            '   For Each item As Object In ClbRoles.Items
-            '       j += 1
-            '       If (item.Row.ItemArray(0) = rol.Id) Then
-            '           ClbRoles.SetItemChecked(j, True)
-            '       End If
+            ' 'MessageBox.Show(rol.Descripcion)
+            ' i += 1
+            'j = 0
+            'For Each item As Object In ClbRoles.Items
+            'j += 1
+            'If (item.Row.ItemArray(0) = rol.Id) Then
+            'ClbRoles.SetItemChecked(j, True)
+            'End If
             '   Next
-            'Next
+            '  Next
 
+            TxtUsuario.Text = usuario.Usuario
+            TxtPassword.Visible = False
+            TxtRepetirPassword.Visible = False
         End If
     End Sub
 
