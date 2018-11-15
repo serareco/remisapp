@@ -1,6 +1,6 @@
 ﻿Public Class Comision
-    Public Function Mostrar() As DataTable
-        Return New DAL.Comision().Mostrar()
+    Public Function Listar() As List(Of EL.Comision)
+        Return New DAL.Comision().Listar()
     End Function
 
     Public Function MostrarVigentes() As DataTable
@@ -8,17 +8,7 @@
     End Function
 
     Public Function GetById(pId As Int16) As EL.Comision
-        Dim comision As New EL.Comision()
-        Dim datatable As DataTable
-        datatable = New DAL.Comision().GetById(pId)
-        comision.Id = datatable.Rows(0).ItemArray(0).ToString()
-        comision.Porcentaje = datatable.Rows(0).ItemArray(1).ToString()
-        comision.Descripcion = datatable.Rows(0).ItemArray(2).ToString()
-        comision.VigenciaDesde = datatable.Rows(0).ItemArray(3).ToString()
-        If Not datatable.Rows(0).ItemArray(4).ToString() = "" Then
-            comision.VigenciaHasta = datatable.Rows(0).ItemArray(4).ToString()
-        End If
-        Return comision
+        Return New DAL.Comision().GetById(pId)
     End Function
 
     Public Sub Guardar(comision As EL.Comision)

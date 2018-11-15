@@ -29,6 +29,7 @@ Partial Class FrmLogin
         Me.TxtPassword = New System.Windows.Forms.TextBox()
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.LblMsjValidacion = New System.Windows.Forms.Label()
+        Me.ChkChangePss = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -91,11 +92,22 @@ Partial Class FrmLogin
         Me.LblMsjValidacion.Size = New System.Drawing.Size(0, 13)
         Me.LblMsjValidacion.TabIndex = 6
         '
+        'ChkChangePss
+        '
+        Me.ChkChangePss.AutoSize = True
+        Me.ChkChangePss.Location = New System.Drawing.Point(54, 118)
+        Me.ChkChangePss.Name = "ChkChangePss"
+        Me.ChkChangePss.Size = New System.Drawing.Size(120, 17)
+        Me.ChkChangePss.TabIndex = 7
+        Me.ChkChangePss.Text = "Cambiar contraseña"
+        Me.ChkChangePss.UseVisualStyleBackColor = True
+        '
         'FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(288, 189)
+        Me.Controls.Add(Me.ChkChangePss)
         Me.Controls.Add(Me.LblMsjValidacion)
         Me.Controls.Add(Me.BtnIngresar)
         Me.Controls.Add(Me.TxtPassword)
@@ -124,4 +136,6 @@ Partial Class FrmLogin
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
 
     End Sub
+
+    Friend WithEvents ChkChangePss As CheckBox
 End Class

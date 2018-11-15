@@ -13,23 +13,23 @@
         Dim resultLogin As Boolean = New DAL.Login().Login(pDatosLogin)
         If resultLogin Then
             UsuarioConectado = pDatosLogin
-            UsuarioConectado.Roles = GetRoles(pDatosLogin.Usuario)
+            UsuarioConectado.Permisos = GetRoles(pDatosLogin.Usuario)
         End If
         Return resultLogin
 
     End Function
 
-    Public Function GetRoles(pUsuario As String) As List(Of EL.Rol)
-        Dim roles As New List(Of EL.Rol)
+    Public Function GetRoles(pUsuario As String) As List(Of EL.Permiso)
+        Dim permisos As New List(Of EL.Permiso)
         For Each item As DataRow In New DAL.Login().GetRoles(pUsuario).Rows
-            roles.Add(New BLL.Rol().GetById(item.ItemArray(0).ToString()))
+            permisos.Add(New BLL.Permiso().GetById(item.ItemArray(0).ToString()))
         Next
-        Return roles
+        Return permisos
     End Function
 
     Public Function EsOperador() As Boolean
-        For Each rol As EL.Rol In UsuarioConectado.Roles
-            If rol.Id = "O" Then
+        For Each permiso As EL.Permiso In UsuarioConectado.Permisos
+            If permiso.Id = "O" Then
                 Return True
             End If
         Next
@@ -37,8 +37,26 @@
     End Function
 
     Public Function EsResponsable() As Boolean
-        For Each rol As EL.Rol In UsuarioConectado.Roles
-            If rol.Id = "R" Then
+        For Each permiso As EL.Permiso In UsuarioConectado.Permisos
+            If permiso.Id = "R" Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+
+    Public Function EsGerente() As Boolean
+        For Each permiso As EL.Permiso In UsuarioConectado.Permisos
+            If permiso.Id = "G" Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+
+    Public Function EsChofer() As Boolean
+        For Each permiso As EL.Permiso In UsuarioConectado.Permisos
+            If permiso.Id = "C" Then
                 Return True
             End If
         Next

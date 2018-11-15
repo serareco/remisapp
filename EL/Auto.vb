@@ -8,21 +8,12 @@
             _id = value
         End Set
     End Property
-    Private _marca As String
-    Public Property Marca() As String
-        Get
-            Return _marca
-        End Get
-        Set(ByVal value As String)
-            _marca = value
-        End Set
-    End Property
-    Private _modelo As String
-    Public Property Modelo() As String
+    Private _modelo As Modelo
+    Public Property Modelo() As Modelo
         Get
             Return _modelo
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Modelo)
             _modelo = value
         End Set
     End Property

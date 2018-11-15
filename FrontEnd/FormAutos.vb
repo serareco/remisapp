@@ -1,20 +1,30 @@
 ﻿Public Class FormAutos
     Dim auto As EL.Auto
     Dim datosAuto As New BLL.Auto()
+    Dim datosMarcas As New BLL.Marca()
+    Dim datosModelos As New BLL.Modelo()
 
     Public Sub ActualizarLista()
+        txtAnioFabricacion.Clear()
+        txtPatente.Clear()
+        txtChasis.Clear()
+        txtMotor.Clear()
+
         cbbMarca.DataSource = Nothing
         cbbModelo.DataSource = Nothing
-        cbbMarca.DataSource = datosAuto.MostrarMarcas()
-        cbbMarca.DisplayMember = "descripcion"
-        cbbMarca.ValueMember = "id_marca"
-        txtAnioFabricacion.Text() = ""
-        txtPatente.Text() = ""
-        txtChasis.Text() = ""
-        txtMotor.Text() = ""
         dgvAutos.DataSource = Nothing
-        dgvAutos.DataSource = datosAuto.Mostrar()
+
         auto = Nothing
+
+        cbbMarca.DataSource = New BindingSource With {
+            .DataSource = datosMarcas.Listar()
+        }
+        cbbMarca.DisplayMember = "Descripcion"
+        cbbMarca.ValueMember = "Id"
+
+        dgvAutos.DataSource = New BindingSource With {
+            .DataSource = datosAuto.Listar()
+        }
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -50,8 +60,7 @@
         If erroresValidaciones Then
             MessageBox.Show(msjValidaciones)
         Else
-            auto.Marca = cbbMarca.SelectedValue
-            auto.Modelo = cbbModelo.SelectedValue
+            auto.Modelo = datosModelos.GetById(cbbModelo.SelectedValue)
             auto.AnioFabricacion = txtAnioFabricacion.Text
             auto.Patente = txtPatente.Text
             auto.Chasis = txtChasis.Text
@@ -63,9 +72,17 @@
 
     Private Sub cbbMarca_SelectedValueChanged(sender As Object, e As EventArgs) Handles cbbMarca.SelectedValueChanged
         cbbModelo.DataSource = Nothing
-        cbbModelo.DataSource = datosAuto.MostrarModelos(cbbMarca.SelectedIndex)
-        cbbModelo.DisplayMember = "descripcion"
-        cbbModelo.ValueMember = "id_modelo"
+        Dim valueIdSelected As Int16
+        If TypeOf cbbMarca.SelectedValue Is EL.Marca Then
+            valueIdSelected = cbbMarca.SelectedValue.Id
+        Else
+            valueIdSelected = cbbMarca.SelectedValue
+        End If
+        cbbModelo.DataSource = New BindingSource With {
+                .DataSource = datosModelos.Listar(valueIdSelected)
+            }
+        cbbModelo.DisplayMember = "Descripcion"
+        cbbModelo.ValueMember = "Id"
     End Sub
 
     Private Sub FormAutos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -82,8 +99,8 @@
             txtChasis.Text() = auto.Chasis
             txtMotor.Text() = auto.Motor
             txtPatente.Text() = auto.Patente
-            cbbMarca.SelectedValue() = auto.Marca
-            cbbModelo.SelectedValue() = auto.Modelo
+            cbbMarca.SelectedValue() = auto.Modelo.Marca.Id
+            cbbModelo.SelectedValue() = auto.Modelo.Id
         End If
     End Sub
 

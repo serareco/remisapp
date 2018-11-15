@@ -1,7 +1,7 @@
 ﻿Public Class FormUsuarios
     Dim usuario As EL.Usuario
     Dim datosUsuario As New BLL.Usuario()
-    Dim datosRol As New BLL.Rol()
+    Dim datosPermiso As New BLL.Permiso()
 
     Private Sub CleanCheckList()
         ClbRoles.ClearSelected()
@@ -13,19 +13,21 @@
     Private Sub ActualizarLista()
         TxtPassword.Visible = True
         TxtRepetirPassword.Visible = True
-        TxtUsuario.Text = ""
-        TxtPassword.Text = ""
-        TxtRepetirPassword.Text = ""
+        TxtUsuario.Clear()
+        TxtPassword.Clear()
+        TxtRepetirPassword.Clear()
         'dtpFechaNacimiento.Value()
-        TxtNroDocumento.Text = ""
-        TxtNombre.Text = ""
-        TxtApellido.Text = ""
-        TxtDomicilio.Text = ""
-        TxtEmail.Text = ""
-        TxtTelefono.Text = ""
-        ClbRoles.DataSource = datosRol.Listar()
-        ClbRoles.DisplayMember = "descripcion"
-        ClbRoles.ValueMember = "id_rol"
+        TxtNroDocumento.Clear()
+        TxtNombre.Clear()
+        TxtApellido.Clear()
+        TxtDomicilio.Clear()
+        TxtEmail.Clear()
+        TxtTelefono.Clear()
+        ClbRoles.DataSource = New BindingSource With {
+            .DataSource = datosPermiso.Listar()
+        }
+        ClbRoles.DisplayMember = "Descripcion"
+        ClbRoles.ValueMember = "Id"
         dgvUsuarios.DataSource = Nothing
         dgvUsuarios.DataSource = datosUsuario.MostrarLista()
         usuario = Nothing
@@ -62,13 +64,13 @@
             usuario.Domicilio = TxtDomicilio.Text()
             usuario.Email = TxtEmail.Text()
             usuario.Telefono = TxtTelefono.Text()
-            usuario.Roles = New List(Of EL.Rol)
+            usuario.Permisos = New List(Of EL.Permiso)
             For Each itemChecked As Object In ClbRoles.CheckedItems
-                Dim rol As New EL.Rol With {
+                Dim permiso As New EL.Permiso With {
                 .Id = CType(itemChecked, DataRowView).Row.ItemArray(0),
                 .Descripcion = CType(itemChecked, DataRowView).Row.ItemArray(1)
                 }
-                usuario.Roles.Add(rol)
+                usuario.Permisos.Add(permiso)
             Next
             datosUsuario.Guardar(usuario)
             ActualizarLista()
@@ -97,8 +99,8 @@
             Dim index As Int16 = 0
             Dim listIndexs = New List(Of Int16)
             For Each item As Object In ClbRoles.Items
-                For Each rol As EL.Rol In usuario.Roles
-                    If (item.Row.ItemArray(0) = rol.Id) Then
+                For Each permiso As EL.Permiso In usuario.Permisos
+                    If (item.Id = permiso.Id) Then
                         listIndexs.Add(index)
                     End If
                 Next

@@ -11,7 +11,15 @@
 
         If (BLL.Login.Login(datosLogin)) Then
             LblMsjValidacion.Text() = ""
-            FormPrincipal.Show()
+            If ChkChangePss.Checked Then
+                FormCambiarPassword.Show()
+            ElseIf BLL.Login.EsChofer() Then
+                ' TODO: Mostrar el menu para el chofer
+                FormPrincipalChoferes.Show()
+            Else
+                FormPrincipal.Show()
+            End If
+            ' Mostrar menu para personal de oficina
             Me.Close()
         Else
             LblMsjValidacion.Text() = "Usuario/Password incorrecto."

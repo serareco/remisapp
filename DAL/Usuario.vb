@@ -26,7 +26,7 @@
         parametros = New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@usuario", usuario.Usuario))
         Dim roles As String = ""
-        For Each rol As EL.Rol In usuario.Roles
+        For Each rol As EL.Permiso In usuario.Permisos
             roles += rol.Id + ";"
         Next
         roles = roles.Substring(0, roles.Length() - 1)

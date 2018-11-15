@@ -1,5 +1,5 @@
 ﻿Public Class Chofer
-    Inherits Persona : Implements IEmpleado
+    Inherits Usuario
     Private _id As Int16
     Public Property Id() As Int16
         Get
@@ -37,23 +37,13 @@
         End Set
     End Property
 
-    Private _fechaNacimiento As String
-    Public Property FechaNacimiento As String Implements IEmpleado.FechaNacimiento
+    Private _turnos As List(Of Turno)
+    Public Property Turnos() As List(Of Turno)
         Get
-            Return _fechaNacimiento
+            Return _turnos
         End Get
-        Set(ByVal value As String)
-            _fechaNacimiento = value
-        End Set
-    End Property
-
-    Private _nroDocumento As String
-    Public Property NroDocumento As String Implements IEmpleado.NroDocumento
-        Get
-            Return _nroDocumento
-        End Get
-        Set(ByVal value As String)
-            _nroDocumento = value
+        Set(ByVal value As List(Of Turno))
+            _turnos = value
         End Set
     End Property
 End Class

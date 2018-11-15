@@ -8,17 +8,21 @@
 
     Public Sub ActualizarLista()
         cbbChofer.DataSource = Nothing
-        cbbChofer.DataSource = datosChofer.MostrarDisponibles()
+        'cbbChofer.DataSource = datosChofer.MostrarDisponibles()
         cbbChofer.DisplayMember = "descripcion"
         cbbChofer.ValueMember = "id_chofer"
         cbbTipoEstadoViaje.DataSource = Nothing
         cbbTipoEstadoViaje.DataSource = datosEstadoViaje.MostrarAlta()
         cbbTipoEstadoViaje.DisplayMember = "descripcion"
         cbbTipoEstadoViaje.ValueMember = "id_estado"
+
         cbbCliente.DataSource = Nothing
-        cbbCliente.DataSource = datosCliente.Mostrar()
-        cbbCliente.DisplayMember = "descripcion"
-        cbbCliente.ValueMember = "id_cliente"
+        cbbCliente.DataSource = New BindingSource With {
+            .DataSource = datosCliente.Listar()
+        }
+        cbbCliente.DisplayMember = "Nombre"
+        cbbCliente.ValueMember = "Id"
+
         clbPromociones.DataSource = datosPromocion.MostrarVigentes()
         clbPromociones.ValueMember = "id_promocion"
         clbPromociones.DisplayMember = "descripcion"

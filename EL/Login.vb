@@ -19,13 +19,14 @@
         End Set
     End Property
 
-    Private _roles As List(Of Rol)
-    Public Property Roles() As List(Of Rol)
+    Private _permisos As List(Of Permiso)
+    Public Property Permisos() As List(Of Permiso)
         Get
-            Return _roles
+            Return _permisos
         End Get
-        Set(ByVal value As List(Of Rol))
-            _roles = value
+        Set(ByVal value As List(Of Permiso))
+            _permisos = value
         End Set
     End Property
+
 End Class

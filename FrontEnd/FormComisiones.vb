@@ -8,7 +8,9 @@
         dtpVigenciaDesde.Value() = DateTime.Now
         'dtpVigenciaHasta.Value() = Nothing
         dgvComisiones.DataSource = Nothing
-        dgvComisiones.DataSource = datosComision.Mostrar()
+        dgvComisiones.DataSource = New BindingSource With {
+            .DataSource = datosComision.Listar()
+        }
         comision = Nothing
     End Sub
 

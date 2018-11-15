@@ -1,5 +1,5 @@
 ﻿Public Class Usuario
-    Inherits Persona : Implements IEmpleado
+    Inherits Persona
     Private _usuario As String
     Public Property Usuario() As String
         Get
@@ -20,7 +20,7 @@
     End Property
 
     Private _fechaNacimiento As String
-    Public Property FechaNacimiento As String Implements IEmpleado.FechaNacimiento
+    Public Property FechaNacimiento As String
         Get
             Return _fechaNacimiento
         End Get
@@ -30,7 +30,7 @@
     End Property
 
     Private _nroDocumento As String
-    Public Property NroDocumento As String Implements IEmpleado.NroDocumento
+    Public Property NroDocumento As String
         Get
             Return _nroDocumento
         End Get
@@ -39,13 +39,13 @@
         End Set
     End Property
 
-    Private _roles As List(Of Rol)
-    Public Property Roles() As List(Of Rol)
+    Private _permisos As List(Of Permiso)
+    Public Property Permisos() As List(Of Permiso)
         Get
-            Return _roles
+            Return _permisos
         End Get
-        Set(ByVal value As List(Of Rol))
-            _roles = value
+        Set(ByVal value As List(Of Permiso))
+            _permisos = value
         End Set
     End Property
 

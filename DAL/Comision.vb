@@ -1,18 +1,31 @@
 ﻿Public Class Comision
-    Public Function GetById(pId As Int16) As DataTable
+    Public Function GetById(pId As Int16) As EL.Comision
         Dim con As New Conexion
         Dim datatable As New DataTable()
         con.EjecutarConsulta("select * from comisiones where estado = 'A' and id_comision = " & pId)
         con.adp.Fill(datatable)
-        Return datatable
+        Dim comision As New EL.Comision()
+        comision.Id = datatable.Rows(0).ItemArray(0).ToString()
+        comision.Porcentaje = datatable.Rows(0).ItemArray(1).ToString()
+        comision.Descripcion = datatable.Rows(0).ItemArray(2).ToString()
+        comision.VigenciaDesde = datatable.Rows(0).ItemArray(3).ToString()
+        If Not datatable.Rows(0).ItemArray(4).ToString() = "" Then
+            comision.VigenciaHasta = datatable.Rows(0).ItemArray(4).ToString()
+        End If
+        Return comision
     End Function
 
-    Public Function Mostrar() As DataTable
+    Public Function Listar() As List(Of EL.Comision)
         Dim con As New Conexion
         Dim datatable As New DataTable()
+        Dim comisiones As New List(Of EL.Comision)
         con.EjecutarConsulta("select * From dbo.comisiones where estado = 'A' ")
         con.adp.Fill(datatable)
-        Return datatable
+
+        For index = 0 To datatable.Rows.Count - 1
+            comisiones.Add(New Comision().GetById(datatable.Rows(index).ItemArray(0).ToString()))
+        Next
+        Return comisiones
     End Function
 
     Public Function MostrarVigentes() As DataTable

@@ -1,4 +1,4 @@
-﻿Public Class Rol
+﻿Public Class Permiso
     Private _id As String
     Public Property Id() As String
         Get
@@ -17,5 +17,4 @@
             _descripcion = value
         End Set
     End Property
-
 End Class

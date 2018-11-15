@@ -2,13 +2,15 @@
     Dim cliente As EL.Cliente
     Dim datosCliente As New BLL.Cliente()
     Public Sub actualizarlista()
-        TxtNombre.Text() = ""
-        TxtApellido.Text() = ""
-        TxtDomicilio.Text() = ""
-        TxtEmail.Text() = ""
-        TxtTelefono.Text() = ""
+        TxtNombre.Clear()
+        TxtApellido.Clear()
+        TxtDomicilio.Clear()
+        TxtEmail.Clear()
+        TxtTelefono.Clear()
         dgvClientes.DataSource = Nothing
-        dgvClientes.DataSource = datosCliente.MostrarLista()
+        dgvClientes.DataSource = New BindingSource With {
+            .DataSource = datosCliente.Listar()
+        }
         cliente = Nothing
     End Sub
 

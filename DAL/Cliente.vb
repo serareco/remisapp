@@ -1,31 +1,32 @@
 ﻿Public Class Cliente
-    Public Function GetById(pId As Int16) As DataTable
+    Public Function GetById(pId As Int16) As EL.Cliente
         Dim con As New Conexion
         Dim datatable As New DataTable
         con.EjecutarConsulta("select id_cliente, nro_cliente, p.nombre, p.apellido,p.domicilio,p.email,p.telefono from clientes c inner join Personas p on c.id_persona = p.id_persona where id_cliente = " & pId)
         con.adp.Fill(datatable)
-        Return datatable
+        Dim cliente As New EL.Cliente()
+        If (datatable.Rows.Count > 0) Then
+            cliente.Id = datatable.Rows(0).ItemArray(0).ToString()
+            cliente.NroCliente = datatable.Rows(0).ItemArray(1).ToString()
+            cliente.Nombre = datatable.Rows(0).ItemArray(2).ToString()
+            cliente.Apellido = datatable.Rows(0).ItemArray(3).ToString()
+            cliente.Domicilio = datatable.Rows(0).ItemArray(4).ToString()
+            cliente.Email = datatable.Rows(0).ItemArray(5).ToString()
+            cliente.Telefono = datatable.Rows(0).ItemArray(6).ToString()
+        End If
+        Return cliente
     End Function
 
-    Public Function Mostrar()
+    Public Function Listar() As List(Of EL.Cliente)
         Dim con As New Conexion
         Dim datatable As New DataTable
-        con.EjecutarConsulta("
-        Select 0 id_cliente,'Seleccione una opción' descripcion union         
-        select id_cliente, p.apellido + ' ' + p.nombre + ' ('+ convert(varchar(18),c.nro_cliente)+')'from Clientes c inner join Personas p on c.id_persona = p.id_persona")
+        Dim clientes As New List(Of EL.Cliente)
+        con.EjecutarConsulta("select id_cliente from Clientes c inner join Personas p on c.id_persona = p.id_persona")
         con.adp.Fill(datatable)
-        Return datatable
-    End Function
-
-    Public Function MostrarLista()
-        Dim con As New Conexion
-        Dim datatable As New DataTable
-        con.EjecutarConsulta("     
-        select id_cliente, p.apellido, p.nombre, c.nro_cliente, p.telefono, p.domicilio
-        from Clientes c inner join Personas p on c.id_persona = p.id_persona
-        where c.estado = 'A' ")
-        con.adp.Fill(datatable)
-        Return datatable
+        For index = 0 To datatable.Rows.Count - 1
+            clientes.Add(New Cliente().GetById(datatable.Rows(index).ItemArray(0).ToString()))
+        Next
+        Return clientes
     End Function
 
     Public Sub Guardar(cliente As EL.Cliente)

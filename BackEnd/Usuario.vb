@@ -28,9 +28,9 @@
         End If
         Dim datatableRoles As DataTable = New DAL.Usuario().GetRolesByUsuario(pUsuario)
         If (datatableRoles.Rows.Count > 0) Then
-            usuario.Roles = New List(Of EL.Rol)
+            usuario.Permisos = New List(Of EL.Permiso)
             For Each row As DataRow In datatableRoles.Rows
-                usuario.Roles.Add(New Rol().GetById(row.ItemArray(1)))
+                usuario.Permisos.Add(New Permiso().GetById(row.ItemArray(1)))
             Next
         End If
         Return usuario

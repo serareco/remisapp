@@ -144,6 +144,15 @@ Public Class FormPrincipal
             Me.HistóricoToolStripMenuItem.Visible = True ' historico
         End If
 
+        If BLL.Login.EsGerente() Then
+            'Rol Gerente
+            Me.FileMenu.Visible = True
+            Me.ToolsMenu.Visible = True ' ABMC
+            Me.ClientesToolStripMenuItem.Visible = True
+            Me.ExitToolStripMenuItem.Visible = True 'nuevo viaje
+            Me.HistóricoToolStripMenuItem.Visible = True ' historico
+        End If
+
     End Sub
 
 End Class

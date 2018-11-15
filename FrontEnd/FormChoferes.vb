@@ -9,23 +9,32 @@
     End Sub
 
     Public Sub ActualizarLista()
-        cbbComision.DataSource = datosComision.MostrarVigentes()
-        cbbComision.DisplayMember = "descripcion"
-        cbbComision.ValueMember = "id_comision"
+        cbbComision.DataSource = Nothing
+        cbbComision.DataSource = New BindingSource With {
+            .DataSource = datosComision.Listar()
+        }
+        cbbComision.DisplayMember = "Descripcion"
+        cbbComision.ValueMember = "Id"
 
-        cbbAutos.DataSource = datosAuto.MostrarDisponibles()
-        cbbAutos.DisplayMember = "descripcion"
-        cbbAutos.ValueMember = "id_auto"
-        TxtNombre.Text() = ""
-        TxtApellido.Text() = ""
-        TxtDomicilio.Text() = ""
-        TxtNroDocumento.Text() = ""
-        TxtEmail.Text() = ""
+        cbbAutos.DataSource = Nothing
+        cbbAutos.DataSource = New BindingSource With {
+            .DataSource = datosAuto.Listar()
+        }
+        cbbAutos.DisplayMember = "Patente"
+        cbbAutos.ValueMember = "Id"
+
+        TxtNombre.Clear()
+        TxtApellido.Clear()
+        TxtDomicilio.Clear()
+        TxtNroDocumento.Clear()
+        TxtEmail.Clear()
+        TxtTelefono.Clear()
         'dtpFechaNacimiento.Value() = DateAndTime.Now()
         'dtpFechaVencimientoRegistro.Value() = DateAndTime.Now()
-        TxtTelefono.Text() = ""
         dgvChoferes.DataSource = Nothing
-        dgvChoferes.DataSource = datosChofer.Mostrar()
+        dgvChoferes.DataSource = New BindingSource With {
+            .DataSource = datosChofer.Listar()
+        }
         chofer = Nothing
     End Sub
 
