@@ -18,27 +18,15 @@
             _password = value
         End Set
     End Property
-
-    Private _fechaNacimiento As String
-    Public Property FechaNacimiento As String
+    Private _fechaNacimiento As Date
+    Public Property FechaNacimiento As Date
         Get
             Return _fechaNacimiento
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Date)
             _fechaNacimiento = value
         End Set
     End Property
-
-    Private _nroDocumento As String
-    Public Property NroDocumento As String
-        Get
-            Return _nroDocumento
-        End Get
-        Set(ByVal value As String)
-            _nroDocumento = value
-        End Set
-    End Property
-
     Private _permisos As List(Of Permiso)
     Public Property Permisos() As List(Of Permiso)
         Get
@@ -48,5 +36,4 @@
             _permisos = value
         End Set
     End Property
-
 End Class

@@ -80,8 +80,8 @@
             parametros.Add(New SqlClient.SqlParameter("@precio", viaje.Precio))
         End If
         parametros.Add(New SqlClient.SqlParameter("@comentarios", viaje.Comentarios))
-        If (viaje.Cliente.Id > 0) Then
-            parametros.Add(New SqlClient.SqlParameter("@id_cliente", viaje.Cliente.Id))
+        If (viaje.Socio.Id > 0) Then
+            parametros.Add(New SqlClient.SqlParameter("@id_cliente", viaje.Socio.Id))
         End If
         parametros.Add(New SqlClient.SqlParameter("@id_chofer", viaje.Chofer.Id))
         Dim _idaYVuelta As String

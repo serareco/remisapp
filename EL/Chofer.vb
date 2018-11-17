@@ -1,14 +1,5 @@
 ﻿Public Class Chofer
     Inherits Usuario
-    Private _id As Int16
-    Public Property Id() As Int16
-        Get
-            Return _id
-        End Get
-        Set(ByVal value As Int16)
-            _id = value
-        End Set
-    End Property
     Private _comision As Comision
     Public Property Comision() As Comision
         Get
@@ -36,7 +27,6 @@
             _auto = value
         End Set
     End Property
-
     Private _turnos As List(Of Turno)
     Public Property Turnos() As List(Of Turno)
         Get
@@ -44,6 +34,15 @@
         End Get
         Set(ByVal value As List(Of Turno))
             _turnos = value
+        End Set
+    End Property
+    Private _registro As Registro
+    Public Property Registro() As Registro
+        Get
+            Return _registro
+        End Get
+        Set(ByVal value As Registro)
+            _registro = value
         End Set
     End Property
 End Class

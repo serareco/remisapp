@@ -18,10 +18,10 @@
 
     End Function
 
-    Public Function GetRoles(pUsuario As String) As DataTable
+    Public Function GetPermisos(pUsuario As String) As DataTable
         Dim con As New Conexion
         Dim datatable As New DataTable
-        con.EjecutarConsulta("select id_rol from usuarios_roles where id_usuario = '" + pUsuario + "'")
+        con.EjecutarConsulta("select id_permiso from usuarios_permisos where id_usuario = '" + pUsuario + "'")
         con.adp.Fill(datatable)
         Return datatable
     End Function

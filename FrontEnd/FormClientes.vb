@@ -1,6 +1,6 @@
 ﻿Public Class FormClientes
-    Dim cliente As EL.Cliente
-    Dim datosCliente As New BLL.Cliente()
+    Dim socio As EL.Socio
+    Dim datosSocio As New BLL.Socio()
     Public Sub actualizarlista()
         TxtNombre.Clear()
         TxtApellido.Clear()
@@ -9,21 +9,21 @@
         TxtTelefono.Clear()
         dgvClientes.DataSource = Nothing
         dgvClientes.DataSource = New BindingSource With {
-            .DataSource = datosCliente.Listar()
+            .DataSource = datosSocio.Listar()
         }
-        cliente = Nothing
+        socio = Nothing
     End Sub
 
     Private Sub btnguardar_click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        If cliente Is Nothing Then
-            cliente = New EL.Cliente()
+        If socio Is Nothing Then
+            socio = New EL.Socio()
         End If
-        cliente.Nombre = TxtNombre.Text()
-        cliente.Apellido = TxtApellido.Text()
-        cliente.Domicilio = TxtDomicilio.Text()
-        cliente.Email = TxtEmail.Text()
-        cliente.Telefono = TxtTelefono.Text()
-        datosCliente.Guardar(cliente)
+        socio.Nombre = TxtNombre.Text()
+        socio.Apellido = TxtApellido.Text()
+        ' cliente.Domicilio = TxtDomicilio.Text() VEr!!!!
+        socio.Email = TxtEmail.Text()
+        socio.Telefono = TxtTelefono.Text()
+        datosSocio.Guardar(socio)
         actualizarlista()
     End Sub
 
@@ -36,28 +36,28 @@
     End Sub
 
     Private Sub btnmodificar_click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        If (cliente IsNot Nothing) Then
-            TxtNombre.Text() = cliente.nombre
-            TxtApellido.Text() = cliente.apellido
-            TxtDomicilio.Text() = cliente.domicilio
-            TxtEmail.Text() = cliente.email
-            TxtTelefono.Text() = cliente.telefono
+        If (socio IsNot Nothing) Then
+            TxtNombre.Text() = socio.Nombre
+            TxtApellido.Text() = socio.Apellido
+            ' TxtDomicilio.Text() = cliente.domicilio VER!!!
+            TxtEmail.Text() = socio.Email
+            TxtTelefono.Text() = socio.Telefono
         End If
     End Sub
 
     Private Sub dgvclientes_cellclick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvClientes.CellClick
-        cliente = Nothing
-        cliente = New EL.Cliente With {
+        socio = Nothing
+        socio = New EL.Socio With {
             .Id = dgvClientes.Rows(e.RowIndex).Cells(0).Value
         }
-        cliente = datosCliente.GetById(cliente.Id)
+        socio = datosSocio.GetById(socio.Id)
     End Sub
 
     Private Sub btneliminar_click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        If cliente IsNot Nothing Then
+        If socio IsNot Nothing Then
             Dim result As Integer = MessageBox.Show("estas seguro que deseas dar de baja este cliente?", "caption", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                datosCliente.Quitar(cliente)
+                datosSocio.Quitar(socio)
                 actualizarlista()
             End If
         End If

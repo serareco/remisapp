@@ -79,13 +79,13 @@
         End Set
     End Property
 
-    Private _cliente As Cliente
-    Public Property Cliente() As Cliente
+    Private _socio As Socio
+    Public Property Socio() As Socio
         Get
-            Return _cliente
+            Return _socio
         End Get
-        Set(ByVal value As Cliente)
-            _cliente = value
+        Set(ByVal value As Socio)
+            _socio = value
         End Set
     End Property
 

@@ -2,7 +2,7 @@
     Public Function GetById(pId As Int16) As EL.Comision
         Dim con As New Conexion
         Dim datatable As New DataTable()
-        con.EjecutarConsulta("select * from comisiones where estado = 'A' and id_comision = " & pId)
+        con.EjecutarConsulta("select * from dbo.comisiones where estado = 'A' and id_comision = " & pId)
         con.adp.Fill(datatable)
         Dim comision As New EL.Comision()
         comision.Id = datatable.Rows(0).ItemArray(0).ToString()

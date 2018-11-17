@@ -23,7 +23,7 @@
             End If
             viaje.Comentarios = datatable.Rows(0).ItemArray(6).ToString()
             If (datatable.Rows(0).ItemArray(7).ToString() <> "") Then
-                viaje.Cliente = New Cliente().GetById(datatable.Rows(0).ItemArray(7).ToString())
+                viaje.Socio = New Socio().GetById(datatable.Rows(0).ItemArray(7).ToString())
             End If
             If (datatable.Rows(0).ItemArray(8).ToString() = "S") Then
                 viaje.IdaYVuelta = True

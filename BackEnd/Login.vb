@@ -13,15 +13,15 @@
         Dim resultLogin As Boolean = New DAL.Login().Login(pDatosLogin)
         If resultLogin Then
             UsuarioConectado = pDatosLogin
-            UsuarioConectado.Permisos = GetRoles(pDatosLogin.Usuario)
+            UsuarioConectado.Permisos = GetPermisos(pDatosLogin.Usuario)
         End If
         Return resultLogin
 
     End Function
 
-    Public Function GetRoles(pUsuario As String) As List(Of EL.Permiso)
+    Public Function GetPermisos(pUsuario As String) As List(Of EL.Permiso)
         Dim permisos As New List(Of EL.Permiso)
-        For Each item As DataRow In New DAL.Login().GetRoles(pUsuario).Rows
+        For Each item As DataRow In New DAL.Login().GetPermisos(pUsuario).Rows
             permisos.Add(New BLL.Permiso().GetById(item.ItemArray(0).ToString()))
         Next
         Return permisos

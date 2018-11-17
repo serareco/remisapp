@@ -67,8 +67,8 @@
             usuario.Permisos = New List(Of EL.Permiso)
             For Each itemChecked As Object In ClbRoles.CheckedItems
                 Dim permiso As New EL.Permiso With {
-                .Id = CType(itemChecked, DataRowView).Row.ItemArray(0),
-                .Descripcion = CType(itemChecked, DataRowView).Row.ItemArray(1)
+                .Id = CType(itemChecked, EL.Permiso).Id,
+                .Descripcion = CType(itemChecked, EL.Permiso).Descripcion
                 }
                 usuario.Permisos.Add(permiso)
             Next

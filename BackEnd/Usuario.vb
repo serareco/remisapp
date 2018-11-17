@@ -20,7 +20,7 @@
             usuario.Usuario = DataTable.Rows(0).ItemArray(0).ToString()
             usuario.Nombre = DataTable.Rows(0).ItemArray(1).ToString()
             usuario.Apellido = DataTable.Rows(0).ItemArray(2).ToString()
-            usuario.Domicilio = DataTable.Rows(0).ItemArray(3).ToString()
+            usuario.Domicilio = datatable.Rows(0).ItemArray(3).ToString()
             usuario.Email = DataTable.Rows(0).ItemArray(4).ToString()
             usuario.Telefono = DataTable.Rows(0).ItemArray(5).ToString()
             usuario.NroDocumento = DataTable.Rows(0).ItemArray(6).ToString()

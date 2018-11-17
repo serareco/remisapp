@@ -35,7 +35,7 @@ Partial Class FrmLogin
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(51, 65)
+        Me.Label1.Location = New System.Drawing.Point(51, 55)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(43, 13)
         Me.Label1.TabIndex = 0
@@ -44,7 +44,7 @@ Partial Class FrmLogin
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(51, 94)
+        Me.Label2.Location = New System.Drawing.Point(51, 84)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 13)
         Me.Label2.TabIndex = 1
@@ -61,14 +61,14 @@ Partial Class FrmLogin
         '
         'TxtUsuario
         '
-        Me.TxtUsuario.Location = New System.Drawing.Point(123, 62)
+        Me.TxtUsuario.Location = New System.Drawing.Point(123, 52)
         Me.TxtUsuario.Name = "TxtUsuario"
         Me.TxtUsuario.Size = New System.Drawing.Size(100, 20)
         Me.TxtUsuario.TabIndex = 3
         '
         'TxtPassword
         '
-        Me.TxtPassword.Location = New System.Drawing.Point(123, 91)
+        Me.TxtPassword.Location = New System.Drawing.Point(123, 81)
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPassword.Size = New System.Drawing.Size(100, 20)
@@ -76,7 +76,7 @@ Partial Class FrmLogin
         '
         'BtnIngresar
         '
-        Me.BtnIngresar.Location = New System.Drawing.Point(54, 149)
+        Me.BtnIngresar.Location = New System.Drawing.Point(54, 159)
         Me.BtnIngresar.Name = "BtnIngresar"
         Me.BtnIngresar.Size = New System.Drawing.Size(169, 23)
         Me.BtnIngresar.TabIndex = 5
@@ -87,7 +87,7 @@ Partial Class FrmLogin
         '
         Me.LblMsjValidacion.AutoSize = True
         Me.LblMsjValidacion.ForeColor = System.Drawing.Color.IndianRed
-        Me.LblMsjValidacion.Location = New System.Drawing.Point(51, 123)
+        Me.LblMsjValidacion.Location = New System.Drawing.Point(51, 137)
         Me.LblMsjValidacion.Name = "LblMsjValidacion"
         Me.LblMsjValidacion.Size = New System.Drawing.Size(0, 13)
         Me.LblMsjValidacion.TabIndex = 6
@@ -95,7 +95,7 @@ Partial Class FrmLogin
         'ChkChangePss
         '
         Me.ChkChangePss.AutoSize = True
-        Me.ChkChangePss.Location = New System.Drawing.Point(54, 118)
+        Me.ChkChangePss.Location = New System.Drawing.Point(54, 112)
         Me.ChkChangePss.Name = "ChkChangePss"
         Me.ChkChangePss.Size = New System.Drawing.Size(120, 17)
         Me.ChkChangePss.TabIndex = 7
@@ -106,7 +106,7 @@ Partial Class FrmLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(288, 189)
+        Me.ClientSize = New System.Drawing.Size(288, 196)
         Me.Controls.Add(Me.ChkChangePss)
         Me.Controls.Add(Me.LblMsjValidacion)
         Me.Controls.Add(Me.BtnIngresar)

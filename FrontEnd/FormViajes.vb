@@ -3,7 +3,7 @@
     Dim datosViaje As New BLL.Viaje()
     Dim datosChofer As New BLL.Chofer()
     Dim datosEstadoViaje As New BLL.EstadoViaje()
-    Dim datosCliente As New BLL.Cliente()
+    Dim datosSocio As New BLL.Socio()
     Dim datosPromocion As New BLL.Promocion()
 
     Public Sub ActualizarLista()
@@ -18,7 +18,7 @@
 
         cbbCliente.DataSource = Nothing
         cbbCliente.DataSource = New BindingSource With {
-            .DataSource = datosCliente.Listar()
+            .DataSource = datosSocio.Listar()
         }
         cbbCliente.DisplayMember = "Nombre"
         cbbCliente.ValueMember = "Id"
@@ -53,7 +53,7 @@
             viaje.IdaYVuelta = False
         End If
         viaje.Chofer = datosChofer.GetById(cbbChofer.SelectedValue)
-        viaje.Cliente = datosCliente.GetById(cbbCliente.SelectedValue)
+        viaje.Socio = datosSocio.GetById(cbbCliente.SelectedValue)
         viaje.Estado = datosEstadoViaje.GetById(cbbTipoEstadoViaje.SelectedValue)
         viaje.Promociones = New List(Of EL.Promocion)
         For Each itemChecked As Object In ClbPromociones.CheckedItems

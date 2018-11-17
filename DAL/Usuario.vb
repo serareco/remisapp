@@ -25,13 +25,13 @@
         parametros = Nothing
         parametros = New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@usuario", usuario.Usuario))
-        Dim roles As String = ""
-        For Each rol As EL.Permiso In usuario.Permisos
-            roles += rol.Id + ";"
+        Dim permisos As String = ""
+        For Each permiso As EL.Permiso In usuario.Permisos
+            permisos += permiso.Id + ";"
         Next
-        roles = roles.Substring(0, roles.Length() - 1)
-        parametros.Add(New SqlClient.SqlParameter("@roles", roles))
-        con.EjecutarStoredProcedure("dbo.GuardarRolesUsuario", parametros)
+        permisos = permisos.Substring(0, permisos.Length() - 1)
+        parametros.Add(New SqlClient.SqlParameter("@permisos", permisos))
+        con.EjecutarStoredProcedure("dbo.GuardarPermisosUsuario", parametros)
     End Sub
 
     Public Sub Quitar(usuario As EL.Usuario)
