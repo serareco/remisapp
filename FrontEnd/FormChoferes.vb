@@ -18,7 +18,7 @@
 
         TxtNombre.Clear()
         TxtApellido.Clear()
-        TxtDomicilio.Clear()
+        'TxtDomicilio.Clear() TO DO: Implementar "clear" de en la clase domicilio.
         TxtNroDocumento.Clear()
         TxtEmail.Clear()
         TxtTelefono.Clear()
@@ -37,7 +37,14 @@
         End If
         chofer.Nombre = TxtNombre.Text()
         chofer.Apellido = TxtApellido.Text()
-        chofer.Domicilio = TxtDomicilio.Text()
+        chofer.Domicilio = New EL.Domicilio() With {
+            .Calle = TxtCalle.Text(),
+            .Localidad = TxtLocalidad.Text(),
+            .Nro = TxtNumero.Text(),
+            .Piso = TxtPiso.Text(),
+            .Provincia = TxtProvincia.Text(),
+            .CP = TxtCP.Text()
+            }
         chofer.NroDocumento = TxtNroDocumento.Text()
         chofer.Email = TxtEmail.Text()
         chofer.FechaNacimiento = dtpFechaNacimiento.Value()
@@ -78,7 +85,12 @@
         If chofer IsNot Nothing Then
             TxtNombre.Text() = chofer.Nombre
             TxtApellido.Text() = chofer.Apellido
-            TxtDomicilio.Text() = chofer.Domicilio
+            TxtCalle.Text() = chofer.Domicilio.Calle
+            TxtLocalidad.Text() = chofer.Domicilio.Localidad
+            TxtNumero.Text() = chofer.Domicilio.Nro
+            TxtPiso.Text() = chofer.Domicilio.Piso
+            TxtProvincia.Text() = chofer.Domicilio.Provincia
+            TxtCP.Text() = chofer.Domicilio.CP
             TxtNroDocumento.Text() = chofer.NroDocumento
             TxtEmail.Text() = chofer.Email
             dtpFechaNacimiento.Value() = chofer.FechaNacimiento

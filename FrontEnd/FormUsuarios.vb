@@ -61,7 +61,14 @@
             usuario.NroDocumento = TxtNroDocumento.Text()
             usuario.Nombre = TxtNombre.Text()
             usuario.Apellido = TxtApellido.Text()
-            usuario.Domicilio = TxtDomicilio.Text()
+            ' usuario.Domicilio = = New EL.Domicilio() With {
+            ' .Calle = TxtCalle.Text(),
+            ' .Localidad = TxtLocalidad.Text(),
+            '.Nro = TxtNumero.Text(),
+            '.Piso = TxtPiso.Text(),
+            '.Provincia = TxtProvincia.Text(),
+            '.CP = TxtCP.Text()
+            '}
             usuario.Email = TxtEmail.Text()
             usuario.Telefono = TxtTelefono.Text()
             usuario.Permisos = New List(Of EL.Permiso)
@@ -91,7 +98,7 @@
             ClbRoles.ClearSelected()
             TxtNombre.Text = usuario.Nombre
             TxtApellido.Text = usuario.Apellido
-            TxtDomicilio.Text = usuario.Domicilio
+            'TxtDomicilio.Text = usuario.Domicilio
             TxtNroDocumento.Text = usuario.NroDocumento
             TxtTelefono.Text = usuario.Telefono
             TxtEmail.Text = usuario.Email

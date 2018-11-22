@@ -37,7 +37,7 @@ Public Class Chofer
         chofer.Id = datatable.Rows(0).ItemArray(0).ToString()
         chofer.Apellido = datatable.Rows(0).ItemArray(1).ToString()
         chofer.Nombre = datatable.Rows(0).ItemArray(2).ToString()
-        chofer.Domicilio = datatable.Rows(0).ItemArray(3).ToString()
+        chofer.Domicilio = New Domicilio().GetById(datatable.Rows(0).ItemArray(6).ToString()) 'datatable.Rows(0).ItemArray(3).ToString()
         chofer.Email = datatable.Rows(0).ItemArray(4).ToString()
         chofer.Telefono = datatable.Rows(0).ItemArray(5).ToString()
         chofer.Comision = New Comision().GetById(datatable.Rows(0).ItemArray(6).ToString())

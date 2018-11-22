@@ -26,24 +26,24 @@
             _apellido = value
         End Set
     End Property
-    '   Private _domicilio As Domicilio
-    ' Public Property Domicilio() As Domicilio
-    '      Get
-    'Return _domicilio
-    'End Get
-    'Set(ByVal value As Domicilio)
-    '       _domicilio = value
-    'End Set
-    'End Property
-    Private _domicilio As String
-    Public Property Domicilio() As String
+    Private _domicilio As Domicilio
+    Public Property Domicilio() As Domicilio
         Get
             Return _domicilio
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Domicilio)
             _domicilio = value
         End Set
     End Property
+    'Private _domicilio As String
+    'Public Property Domicilio() As String
+    'Get
+    'Return _domicilio
+    'End Get
+    'Set(ByVal value As String)
+    '       _domicilio = value
+    'End Set
+    'End Property
     Private _email As String
     Public Property Email() As String
         Get

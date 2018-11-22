@@ -1,13 +1,4 @@
 ﻿Public Class Domicilio
-    Private _id As Int16
-    Public Property Id() As Int16
-        Get
-            Return _id
-        End Get
-        Set(ByVal value As Int16)
-            _id = value
-        End Set
-    End Property
     Private _calle As String
     Public Property Calle() As String
         Get
@@ -33,6 +24,15 @@
         End Get
         Set(ByVal value As Int16)
             _piso = value
+        End Set
+    End Property
+    Private _dpto As String
+    Public Property Dpto() As String
+        Get
+            Return _dpto
+        End Get
+        Set(ByVal value As String)
+            _dpto = value
         End Set
     End Property
     Private _cp As String
