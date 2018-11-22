@@ -77,10 +77,10 @@
     <Compile Include="FormArribo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAutos.Designer.vb">
-      <DependentUpon>FormAutos.vb</DependentUpon>
+    <Compile Include="FormVehiculos.Designer.vb">
+      <DependentUpon>FormVehiculos.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAutos.vb">
+    <Compile Include="FormVehiculos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCambiarPassword.Designer.vb">
@@ -126,10 +126,10 @@
     <Compile Include="FormPrincipalChoferes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPromociones.Designer.vb">
-      <DependentUpon>FormPromociones.vb</DependentUpon>
+    <Compile Include="FormBeneficios.Designer.vb">
+      <DependentUpon>FormBeneficios.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPromociones.vb">
+    <Compile Include="FormBeneficios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSalida.Designer.vb">
@@ -176,8 +176,8 @@
     <EmbeddedResource Include="FormArribo.resx">
       <DependentUpon>FormArribo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAutos.resx">
-      <DependentUpon>FormAutos.vb</DependentUpon>
+    <EmbeddedResource Include="FormVehiculos.resx">
+      <DependentUpon>FormVehiculos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCambiarPassword.resx">
       <DependentUpon>FormCambiarPassword.vb</DependentUpon>
@@ -203,8 +203,8 @@
     <EmbeddedResource Include="FormPrincipalChoferes.resx">
       <DependentUpon>FormPrincipalChoferes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPromociones.resx">
-      <DependentUpon>FormPromociones.vb</DependentUpon>
+    <EmbeddedResource Include="FormBeneficios.resx">
+      <DependentUpon>FormBeneficios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSalida.resx">
       <DependentUpon>FormSalida.vb</DependentUpon>

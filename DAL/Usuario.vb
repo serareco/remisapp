@@ -4,7 +4,7 @@
         Dim datatable As New DataTable
         con.EjecutarConsulta("     
         select u.id_usuario, p.apellido, p.nombre, u.nro_documento, p.telefono, p.domicilio
-        from Usuarios u inner join Personas p on u.id_persona = p.id_persona where u.estado = 'A'")
+        from dbo.Usuario u inner join dbo.Persona p on u.id_persona = p.id_persona where u.estado = 'A'")
         con.adp.Fill(datatable)
         Return datatable
     End Function
@@ -44,7 +44,7 @@
     Public Function GetByUsuario(pUsuario As String) As DataTable
         Dim con As New Conexion()
         Dim datatable As New DataTable()
-        con.EjecutarConsulta("select id_usuario, p.nombre, p.apellido,p.domicilio,p.email,p.telefono, nro_documento, fecha_nacimiento from usuarios u inner join Personas p on u.id_persona = p.id_persona where id_usuario = '" + pUsuario + "'")
+        con.EjecutarConsulta("select id_usuario, p.nombre, p.apellido,p.domicilio,p.email,p.telefono, nro_documento, fecha_nacimiento from dbo.usuario u inner join dbo.Persona p on u.id_persona = p.id_persona where id_usuario = '" + pUsuario + "'")
         con.adp.Fill(datatable)
         Return datatable
     End Function
@@ -52,7 +52,7 @@
     Public Function GetRolesByUsuario(pUsuario As String) As DataTable
         Dim con As New Conexion()
         Dim datatable As New DataTable()
-        con.EjecutarConsulta("select id_usuario, id_rol from usuarios_roles where id_usuario = '" + pUsuario + "'")
+        con.EjecutarConsulta("select id_usuario, id_permiso from dbo.usuario_permiso where id_usuario = '" + pUsuario + "'")
         con.adp.Fill(datatable)
         Return datatable
     End Function

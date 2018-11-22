@@ -4,7 +4,7 @@
     Dim datosChofer As New BLL.Chofer()
     Dim datosEstadoViaje As New BLL.EstadoViaje()
     Dim datosSocio As New BLL.Socio()
-    Dim datosPromocion As New BLL.Promocion()
+    Dim datosPromocion As New BLL.Beneficio()
 
     Public Sub ActualizarLista()
         cbbChofer.DataSource = Nothing
@@ -55,9 +55,9 @@
         viaje.Chofer = datosChofer.GetById(cbbChofer.SelectedValue)
         viaje.Socio = datosSocio.GetById(cbbCliente.SelectedValue)
         viaje.Estado = datosEstadoViaje.GetById(cbbTipoEstadoViaje.SelectedValue)
-        viaje.Promociones = New List(Of EL.Promocion)
+        viaje.Promociones = New List(Of EL.Beneficio)
         For Each itemChecked As Object In ClbPromociones.CheckedItems
-            Dim promocion As New EL.Promocion With {
+            Dim promocion As New EL.Beneficio With {
                 .Id = CType(itemChecked, DataRowView).Row.ItemArray(0),
                 .Descripcion = CType(itemChecked, DataRowView).Row.ItemArray(1)
                 }

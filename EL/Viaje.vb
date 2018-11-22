@@ -99,12 +99,12 @@
         End Set
     End Property
 
-    Private _promociones As List(Of Promocion)
-    Public Property Promociones() As List(Of Promocion)
+    Private _promociones As List(Of Beneficio)
+    Public Property Promociones() As List(Of Beneficio)
         Get
             Return _promociones
         End Get
-        Set(ByVal value As List(Of Promocion))
+        Set(ByVal value As List(Of Beneficio))
            _promociones = value
     End Set
     End Property

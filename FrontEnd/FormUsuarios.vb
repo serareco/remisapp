@@ -23,14 +23,14 @@
         TxtDomicilio.Clear()
         TxtEmail.Clear()
         TxtTelefono.Clear()
+        dgvUsuarios.DataSource = Nothing
+        dgvUsuarios.DataSource = datosUsuario.MostrarLista()
+        usuario = Nothing
         ClbRoles.DataSource = New BindingSource With {
             .DataSource = datosPermiso.Listar()
         }
         ClbRoles.DisplayMember = "Descripcion"
         ClbRoles.ValueMember = "Id"
-        dgvUsuarios.DataSource = Nothing
-        dgvUsuarios.DataSource = datosUsuario.MostrarLista()
-        usuario = Nothing
         CleanCheckList()
     End Sub
 

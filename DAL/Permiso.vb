@@ -5,7 +5,7 @@
         Dim permisos As New List(Of EL.Permiso)
         con.EjecutarConsulta("
         select id_permiso,descripcion
-        from dbo.Permisos 
+        from dbo.Permiso 
         where estado = 'A' ")
         con.adp.Fill(datatable)
         For index = 0 To datatable.Rows.Count - 1
@@ -18,7 +18,7 @@
         Dim con As New Conexion
         Dim datatable As New DataTable
         Dim permiso As New EL.Permiso()
-        con.EjecutarConsulta("select * from dbo.permisos where id_permiso = '" + pId + "'")
+        con.EjecutarConsulta("select * from dbo.Permiso where id_permiso = '" + pId + "'")
         con.adp.Fill(datatable)
         permiso.Id = datatable.Rows(0).ItemArray(0).ToString()
         permiso.Descripcion = datatable.Rows(0).ItemArray(1).ToString()

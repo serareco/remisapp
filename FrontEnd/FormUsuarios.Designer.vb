@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormUsuarios
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormUsuarios
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnEliminar = New System.Windows.Forms.Button()
@@ -67,7 +67,7 @@ Partial Class FormUsuarios
         Me.GroupBox2.Size = New System.Drawing.Size(626, 334)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Listado Usuarios"
+        Me.GroupBox2.Text = "Listado dbo.Usuario"
         '
         'BtnEliminar
         '
@@ -87,14 +87,14 @@ Partial Class FormUsuarios
         Me.BtnModificar.Text = "Modificar"
         Me.BtnModificar.UseVisualStyleBackColor = True
         '
-        'dgvUsuarios
+        'dgvdbo.Usuario
         '
         Me.dgvUsuarios.AllowUserToAddRows = False
         Me.dgvUsuarios.AllowUserToDeleteRows = False
         Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvUsuarios.Location = New System.Drawing.Point(7, 19)
         Me.dgvUsuarios.MultiSelect = False
-        Me.dgvUsuarios.Name = "dgvUsuarios"
+        Me.dgvUsuarios.Name = "dgvdbo.Usuario"
         Me.dgvUsuarios.ReadOnly = True
         Me.dgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -341,16 +341,16 @@ Partial Class FormUsuarios
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
-        'FormUsuarios
+        'Formdbo.Usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1011, 358)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "FormUsuarios"
+        Me.Name = "Formdbo.Usuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Usuarios"
+        Me.Text = "dbo.Usuario"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()

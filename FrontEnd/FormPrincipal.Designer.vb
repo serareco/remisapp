@@ -29,6 +29,7 @@ Partial Class FormPrincipal
         Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HistóricoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChoferesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,7 +45,6 @@ Partial Class FormPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -71,6 +71,11 @@ Partial Class FormPrincipal
         '
         Me.HistóricoToolStripMenuItem.Name = "HistóricoToolStripMenuItem"
         resources.ApplyResources(Me.HistóricoToolStripMenuItem, "HistóricoToolStripMenuItem")
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        resources.ApplyResources(Me.ReportesToolStripMenuItem, "ReportesToolStripMenuItem")
         '
         'ToolsMenu
         '
@@ -144,11 +149,6 @@ Partial Class FormPrincipal
         '
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
         resources.ApplyResources(Me.ToolStripStatusLabel, "ToolStripStatusLabel")
-        '
-        'ReportesToolStripMenuItem
-        '
-        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        resources.ApplyResources(Me.ReportesToolStripMenuItem, "ReportesToolStripMenuItem")
         '
         'FormPrincipal
         '

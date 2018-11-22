@@ -1,7 +1,7 @@
 ﻿Public Class FormChoferes
     Dim chofer As EL.Chofer
     Dim datosChofer As New BLL.Chofer()
-    Dim datosAuto As New BLL.Auto()
+    Dim datosAuto As New BLL.Vehiculo()
     Dim datosComision As New BLL.Comision()
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
@@ -9,13 +9,6 @@
     End Sub
 
     Public Sub ActualizarLista()
-        cbbComision.DataSource = Nothing
-        cbbComision.DataSource = New BindingSource With {
-            .DataSource = datosComision.Listar()
-        }
-        cbbComision.DisplayMember = "Descripcion"
-        cbbComision.ValueMember = "Id"
-
         cbbAutos.DataSource = Nothing
         cbbAutos.DataSource = New BindingSource With {
             .DataSource = datosAuto.Listar()
@@ -48,10 +41,13 @@
         chofer.NroDocumento = TxtNroDocumento.Text()
         chofer.Email = TxtEmail.Text()
         chofer.FechaNacimiento = dtpFechaNacimiento.Value()
-        chofer.FechaVencimiento = dtpFechaVencimientoRegistro.Value()
+        chofer.Registro = New EL.Registro() With {
+        .Categoria = cbbCategorias.SelectedItem,
+        .FechaVencimiento = dtpFechaVencimientoRegistro.Value()
+        }
         chofer.Telefono = TxtTelefono.Text()
         chofer.Auto = datosAuto.GetById(cbbAutos.SelectedValue)
-        chofer.Comision = datosComision.GetById(cbbComision.SelectedValue)
+        chofer.Comision = datosComision.GetDefault()
         datosChofer.Guardar(chofer)
         ActualizarLista()
     End Sub
@@ -86,10 +82,9 @@
             TxtNroDocumento.Text() = chofer.NroDocumento
             TxtEmail.Text() = chofer.Email
             dtpFechaNacimiento.Value() = chofer.FechaNacimiento
-            dtpFechaVencimientoRegistro.Value() = chofer.FechaVencimiento
+            dtpFechaVencimientoRegistro.Value() = chofer.Registro.FechaVencimiento
             TxtTelefono.Text() = chofer.Telefono
             cbbAutos.SelectedValue() = chofer.Auto.Id
-            cbbComision.SelectedValue() = chofer.Comision.Id
         End If
     End Sub
 

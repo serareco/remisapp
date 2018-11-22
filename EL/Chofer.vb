@@ -9,21 +9,12 @@
             _comision = value
         End Set
     End Property
-    Private _fechaVencimiento As Date
-    Public Property FechaVencimiento() As Date
-        Get
-            Return _fechaVencimiento
-        End Get
-        Set(ByVal value As Date)
-            _fechaVencimiento = value
-        End Set
-    End Property
-    Private _auto As Auto
-    Public Property Auto() As Auto
+    Private _auto As Vehiculo
+    Public Property Auto() As Vehiculo
         Get
             Return _auto
         End Get
-        Set(ByVal value As Auto)
+        Set(ByVal value As Vehiculo)
             _auto = value
         End Set
     End Property

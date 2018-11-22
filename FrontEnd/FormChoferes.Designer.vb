@@ -48,8 +48,8 @@ Partial Class FormChoferes
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.TxtApellido = New System.Windows.Forms.TextBox()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.cbbComision = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.cbbCategorias = New System.Windows.Forms.ComboBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvChoferes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -62,14 +62,14 @@ Partial Class FormChoferes
         Me.GroupBox2.Controls.Add(Me.dgvChoferes)
         Me.GroupBox2.Location = New System.Drawing.Point(373, 20)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(626, 318)
+        Me.GroupBox2.Size = New System.Drawing.Size(626, 326)
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado Choferes"
         '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(114, 285)
+        Me.BtnEliminar.Location = New System.Drawing.Point(114, 297)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(102, 23)
         Me.BtnEliminar.TabIndex = 14
@@ -78,7 +78,7 @@ Partial Class FormChoferes
         '
         'BtnModificar
         '
-        Me.BtnModificar.Location = New System.Drawing.Point(6, 285)
+        Me.BtnModificar.Location = New System.Drawing.Point(6, 297)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(102, 23)
         Me.BtnModificar.TabIndex = 13
@@ -96,13 +96,13 @@ Partial Class FormChoferes
         Me.dgvChoferes.ReadOnly = True
         Me.dgvChoferes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dgvChoferes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvChoferes.Size = New System.Drawing.Size(613, 250)
+        Me.dgvChoferes.Size = New System.Drawing.Size(613, 270)
         Me.dgvChoferes.TabIndex = 12
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.cbbComision)
+        Me.GroupBox1.Controls.Add(Me.cbbCategorias)
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.BtnLimpiar)
         Me.GroupBox1.Controls.Add(Me.TxtDomicilio)
         Me.GroupBox1.Controls.Add(Me.Label10)
@@ -126,14 +126,14 @@ Partial Class FormChoferes
         Me.GroupBox1.Controls.Add(Me.TxtNombre)
         Me.GroupBox1.Location = New System.Drawing.Point(13, 20)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(354, 318)
+        Me.GroupBox1.Size = New System.Drawing.Size(354, 326)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Chofer"
         '
         'BtnLimpiar
         '
-        Me.BtnLimpiar.Location = New System.Drawing.Point(247, 284)
+        Me.BtnLimpiar.Location = New System.Drawing.Point(247, 296)
         Me.BtnLimpiar.Name = "BtnLimpiar"
         Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
         Me.BtnLimpiar.TabIndex = 47
@@ -159,7 +159,7 @@ Partial Class FormChoferes
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(17, 233)
+        Me.Label8.Location = New System.Drawing.Point(17, 271)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(29, 13)
         Me.Label8.TabIndex = 20
@@ -168,7 +168,7 @@ Partial Class FormChoferes
         'cbbAutos
         '
         Me.cbbAutos.FormattingEnabled = True
-        Me.cbbAutos.Location = New System.Drawing.Point(126, 230)
+        Me.cbbAutos.Location = New System.Drawing.Point(126, 268)
         Me.cbbAutos.Name = "cbbAutos"
         Me.cbbAutos.Size = New System.Drawing.Size(222, 21)
         Me.cbbAutos.TabIndex = 8
@@ -176,7 +176,7 @@ Partial Class FormChoferes
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(17, 209)
+        Me.Label7.Location = New System.Drawing.Point(17, 213)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(107, 13)
         Me.Label7.TabIndex = 18
@@ -185,7 +185,7 @@ Partial Class FormChoferes
         'dtpFechaVencimientoRegistro
         '
         Me.dtpFechaVencimientoRegistro.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaVencimientoRegistro.Location = New System.Drawing.Point(126, 203)
+        Me.dtpFechaVencimientoRegistro.Location = New System.Drawing.Point(126, 207)
         Me.dtpFechaVencimientoRegistro.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.dtpFechaVencimientoRegistro.Name = "dtpFechaVencimientoRegistro"
         Me.dtpFechaVencimientoRegistro.Size = New System.Drawing.Size(222, 20)
@@ -216,7 +216,7 @@ Partial Class FormChoferes
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(17, 183)
+        Me.Label6.Location = New System.Drawing.Point(17, 185)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(93, 13)
         Me.Label6.TabIndex = 13
@@ -269,7 +269,7 @@ Partial Class FormChoferes
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(137, 285)
+        Me.BtnCancelar.Location = New System.Drawing.Point(137, 297)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(94, 23)
         Me.BtnCancelar.TabIndex = 10
@@ -278,7 +278,7 @@ Partial Class FormChoferes
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(20, 285)
+        Me.BtnGuardar.Location = New System.Drawing.Point(20, 297)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(97, 23)
         Me.BtnGuardar.TabIndex = 9
@@ -288,7 +288,7 @@ Partial Class FormChoferes
         'dtpFechaNacimiento
         '
         Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(126, 177)
+        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(126, 179)
         Me.dtpFechaNacimiento.MaxDate = New Date(2018, 7, 12, 0, 0, 0, 0)
         Me.dtpFechaNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
@@ -310,22 +310,23 @@ Partial Class FormChoferes
         Me.TxtNombre.Size = New System.Drawing.Size(222, 20)
         Me.TxtNombre.TabIndex = 0
         '
-        'Label9
+        'Label11
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(17, 260)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(49, 13)
-        Me.Label9.TabIndex = 49
-        Me.Label9.Text = "Comisión"
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(16, 240)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(94, 13)
+        Me.Label11.TabIndex = 50
+        Me.Label11.Text = "Categoria Registro"
         '
-        'cbbComision
+        'cbbCategorias
         '
-        Me.cbbComision.FormattingEnabled = True
-        Me.cbbComision.Location = New System.Drawing.Point(126, 257)
-        Me.cbbComision.Name = "cbbComision"
-        Me.cbbComision.Size = New System.Drawing.Size(222, 21)
-        Me.cbbComision.TabIndex = 48
+        Me.cbbCategorias.FormattingEnabled = True
+        Me.cbbCategorias.Items.AddRange(New Object() {"A", "B", "C"})
+        Me.cbbCategorias.Location = New System.Drawing.Point(126, 237)
+        Me.cbbCategorias.Name = "cbbCategorias"
+        Me.cbbCategorias.Size = New System.Drawing.Size(222, 21)
+        Me.cbbCategorias.TabIndex = 51
         '
         'FormChoferes
         '
@@ -372,6 +373,6 @@ Partial Class FormChoferes
     Friend WithEvents TxtDomicilio As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents BtnLimpiar As Button
-    Friend WithEvents Label9 As Label
-    Friend WithEvents cbbComision As ComboBox
+    Friend WithEvents cbbCategorias As ComboBox
+    Friend WithEvents Label11 As Label
 End Class

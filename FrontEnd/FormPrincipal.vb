@@ -83,8 +83,8 @@ Public Class FormPrincipal
     End Sub
 
     Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OptionsToolStripMenuItem.Click
-        FormAutos.MdiParent = Me
-        FormAutos.Show()
+        FormVehiculos.MdiParent = Me
+        FormVehiculos.Show()
     End Sub
 
     Private Sub ChoferesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChoferesToolStripMenuItem.Click
@@ -108,8 +108,8 @@ Public Class FormPrincipal
     End Sub
 
     Private Sub PromocionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PromocionesToolStripMenuItem.Click
-        FormPromociones.MdiParent = Me
-        FormPromociones.Show()
+        FormBeneficios.MdiParent = Me
+        FormBeneficios.Show()
     End Sub
 
     Private Sub FormPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load

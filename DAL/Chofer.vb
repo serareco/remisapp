@@ -6,7 +6,7 @@ Public Class Chofer
         Dim choferes As New List(Of EL.Chofer)
         con.EjecutarConsulta("
         select c.id_chofer
-         from Choferes c
+         from dbo.Chofer c
          where c.estado = 'A'")
         con.adp.Fill(datatable)
         For index = 0 To datatable.Rows.Count - 1
@@ -26,11 +26,12 @@ Public Class Chofer
 	        p.email,
 	        p.telefono,
 	        c.id_comision,
-	        c.id_auto,
-	        c.fecha_vencimiento_registro,
-	        c.fecha_nacimiento,
-            c.nro_documento from choferes c inner join 
-            personas p on c.id_persona = p.id_persona where c.id_chofer = " & pId)
+	        c.id_vehiculo--,
+	        --c.fecha_vencimiento_registro,
+	        --c.fecha_nacimiento,
+            --c.nro_documento 
+            from dbo.Chofer c inner join 
+            dbo.Persona p on c.id_persona = p.id_persona where c.id_chofer = " & pId)
         con.adp.Fill(datatable)
 
         chofer.Id = datatable.Rows(0).ItemArray(0).ToString()
@@ -40,10 +41,10 @@ Public Class Chofer
         chofer.Email = datatable.Rows(0).ItemArray(4).ToString()
         chofer.Telefono = datatable.Rows(0).ItemArray(5).ToString()
         chofer.Comision = New Comision().GetById(datatable.Rows(0).ItemArray(6).ToString())
-        chofer.Auto = New Auto().GetById(datatable.Rows(0).ItemArray(7).ToString())
-        chofer.FechaVencimiento = datatable.Rows(0).ItemArray(8).ToString()
-        chofer.FechaNacimiento = datatable.Rows(0).ItemArray(9).ToString()
-        chofer.NroDocumento = datatable.Rows(0).ItemArray(10).ToString()
+        chofer.Auto = New Vehiculo().GetById(datatable.Rows(0).ItemArray(7).ToString())
+        'chofer.FechaVencimiento = datatable.Rows(0).ItemArray(8).ToString()
+        'chofer.FechaNacimiento = datatable.Rows(0).ItemArray(9).ToString()
+        'chofer.NroDocumento = datatable.Rows(0).ItemArray(10).ToString()
 
         Return chofer
     End Function
@@ -53,15 +54,15 @@ Public Class Chofer
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_chofer", chofer.Id))
         parametros.Add(New SqlClient.SqlParameter("@id_comision", chofer.Comision.Id))
-        parametros.Add(New SqlClient.SqlParameter("@fecha_vencimiento_registro", chofer.FechaVencimiento))
-        parametros.Add(New SqlClient.SqlParameter("@id_auto", chofer.Auto.Id))
+        'parametros.Add(New SqlClient.SqlParameter("@fecha_vencimiento_registro", chofer.FechaVencimiento))
+        parametros.Add(New SqlClient.SqlParameter("@id_vehiculo", chofer.Auto.Id))
         parametros.Add(New SqlClient.SqlParameter("@nombre", chofer.Nombre))
         parametros.Add(New SqlClient.SqlParameter("@apellido", chofer.Apellido))
-        parametros.Add(New SqlClient.SqlParameter("@fecha_nacimiento", chofer.FechaNacimiento))
+        'parametros.Add(New SqlClient.SqlParameter("@fecha_nacimiento", chofer.FechaNacimiento))
         parametros.Add(New SqlClient.SqlParameter("@domicilio", chofer.Domicilio))
         parametros.Add(New SqlClient.SqlParameter("@telefono", chofer.Telefono))
         parametros.Add(New SqlClient.SqlParameter("@email", chofer.Email))
-        parametros.Add(New SqlClient.SqlParameter("@nro_documento", chofer.NroDocumento))
+        'parametros.Add(New SqlClient.SqlParameter("@nro_documento", chofer.NroDocumento))
         con.EjecutarStoredProcedure("dbo.GuardarChofer", parametros)
     End Sub
 

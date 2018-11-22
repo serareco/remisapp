@@ -17,7 +17,7 @@
                 te.descripcion
         from Viajes v	inner join Choferes c on v.id_chofer = c.id_chofer 
 				        inner join Personas p on p.id_persona = c.id_persona
-				        inner join Autos a on a.id_Auto = c.id_auto
+				        inner join Autos a on a.id_vehiculo = c.id_vehiculo
 				        inner join Autos_Modelos am on am.id_modelo = a.id_Modelo
 				        inner join Autos_Marcas ama	on ama.id_marca = a.id_Marca
 				        inner join Tipos_Estado_Viaje te on v.id_estado = te.id_estado
@@ -45,7 +45,7 @@
                 te.descripcion
         from Viajes v	inner join Choferes c on v.id_chofer = c.id_chofer 
 				        inner join Personas p on p.id_persona = c.id_persona
-				        inner join Autos a on a.id_Auto = c.id_auto
+				        inner join Autos a on a.id_vehiculo = c.id_vehiculo
 				        inner join Autos_Modelos am on am.id_modelo = a.id_Modelo
 				        inner join Autos_Marcas ama	on ama.id_marca = a.id_Marca
 				        inner join Tipos_Estado_Viaje te on v.id_estado = te.id_estado")
@@ -96,7 +96,7 @@
             If viaje.Promociones.Count > 0 Then
                 parametros.Add(New SqlClient.SqlParameter("@id_viaje", viaje.Id))
                 Dim promociones As String = ""
-                For Each promocion As EL.Promocion In viaje.Promociones
+                For Each promocion As EL.Beneficio In viaje.Promociones
                     promociones += promocion.Id.ToString() + ";"
                 Next
                 promociones = promociones.Substring(0, promociones.Length() - 1)

@@ -63,7 +63,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auto.vb" />
+    <Compile Include="Vehiculo.vb" />
     <Compile Include="Chofer.vb" />
     <Compile Include="Comision.vb" />
     <Compile Include="Domicilio.vb" />
@@ -90,7 +90,7 @@
     <Compile Include="Persona.vb" />
     <Compile Include="Socio.vb" />
     <Compile Include="Usuario.vb" />
-    <Compile Include="Promocion.vb" />
+    <Compile Include="Beneficio.vb" />
     <Compile Include="Validacion.vb" />
     <Compile Include="Viaje.vb" />
   </ItemGroup>

@@ -11,6 +11,10 @@
         Return New DAL.Comision().GetById(pId)
     End Function
 
+    Public Function GetDefault() As EL.Comision
+        Return New DAL.Comision().GetDefault()
+    End Function
+
     Public Sub Guardar(comision As EL.Comision)
         Dim e As New DAL.Comision()
         e.Guardar(comision)
