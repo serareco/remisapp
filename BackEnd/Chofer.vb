@@ -8,22 +8,23 @@
     End Function
 
     Public Sub Guardar(chofer As EL.Chofer)
+        Dim registrarUsuario As Boolean = (chofer.Id <= 0)
+
+        Dim p As New Persona()
+        p.Guardar(chofer)
+
         Dim e As New DAL.Chofer()
-        Dim u As New EL.Usuario()
-        Dim au As New DAL.Usuario()
         e.Guardar(chofer)
-        u.Usuario = chofer.NroDocumento
-        u.Password = chofer.NroDocumento
-        u.Telefono = chofer.Telefono
-        u.Nombre = chofer.Nombre
-        u.Apellido = chofer.Apellido
-        u.NroDocumento = chofer.NroDocumento
-        u.FechaNacimiento = chofer.FechaNacimiento
-        u.Domicilio = chofer.Domicilio
-        u.Email = chofer.Email
-        u.Permisos = New List(Of EL.Permiso)
-        u.Permisos.Add(New BLL.Permiso().GetById("C"))
-        au.Guardar(u)
+
+        If registrarUsuario Then
+            Dim u As New DAL.Usuario()
+            chofer.Usuario = chofer.NroDocumento
+            chofer.Password = chofer.NroDocumento
+            chofer.Permisos = New List(Of EL.Permiso)
+            chofer.Permisos.Add(New Permiso().GetById("C"))
+            u.Guardar(chofer)
+        End If
+
     End Sub
 
     Public Sub Quitar(chofer As EL.Chofer)

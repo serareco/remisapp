@@ -12,16 +12,11 @@
     Public Sub Guardar(usuario As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
+        parametros.Add(New SqlClient.SqlParameter("@id_persona", usuario.Id))
         parametros.Add(New SqlClient.SqlParameter("@usuario", usuario.Usuario))
         parametros.Add(New SqlClient.SqlParameter("@password", usuario.Password))
-        parametros.Add(New SqlClient.SqlParameter("@fecha_nacimiento", usuario.FechaNacimiento))
-        parametros.Add(New SqlClient.SqlParameter("@nro_documento", usuario.NroDocumento))
-        parametros.Add(New SqlClient.SqlParameter("@nombre", usuario.Nombre))
-        parametros.Add(New SqlClient.SqlParameter("@apellido", usuario.Apellido))
-        parametros.Add(New SqlClient.SqlParameter("@domicilio", usuario.Domicilio))
-        parametros.Add(New SqlClient.SqlParameter("@telefono", usuario.Telefono))
-        parametros.Add(New SqlClient.SqlParameter("@email", usuario.Email))
         con.EjecutarStoredProcedure("dbo.GuardarUsuario", parametros)
+
         parametros = Nothing
         parametros = New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@usuario", usuario.Usuario))

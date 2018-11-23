@@ -21,7 +21,7 @@
     Public Function GetPermisos(pUsuario As String) As DataTable
         Dim con As New Conexion
         Dim datatable As New DataTable
-        con.EjecutarConsulta("select id_permiso from usuario_permiso where id_usuario = '" + pUsuario + "'")
+        con.EjecutarConsulta("select id_permiso from usuario_permiso where usuario = '" + pUsuario + "'")
         con.adp.Fill(datatable)
         Return datatable
     End Function

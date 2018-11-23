@@ -41,10 +41,16 @@
             .Calle = TxtCalle.Text(),
             .Localidad = TxtLocalidad.Text(),
             .Nro = TxtNumero.Text(),
-            .Piso = TxtPiso.Text(),
             .Provincia = TxtProvincia.Text(),
             .CP = TxtCP.Text()
             }
+        If TxtPiso.Text() <> "" Then
+            chofer.Domicilio.Piso = TxtPiso.Text()
+        End If
+        If TxtDpto.Text() <> "" Then
+            chofer.Domicilio.Dpto = TxtDpto.Text()
+        End If
+
         chofer.NroDocumento = TxtNroDocumento.Text()
         chofer.Email = TxtEmail.Text()
         chofer.FechaNacimiento = dtpFechaNacimiento.Value()

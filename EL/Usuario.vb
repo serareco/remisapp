@@ -18,15 +18,6 @@
             _password = value
         End Set
     End Property
-    Private _fechaNacimiento As Date
-    Public Property FechaNacimiento As Date
-        Get
-            Return _fechaNacimiento
-        End Get
-        Set(ByVal value As Date)
-            _fechaNacimiento = value
-        End Set
-    End Property
     Private _permisos As List(Of Permiso)
     Public Property Permisos() As List(Of Permiso)
         Get
