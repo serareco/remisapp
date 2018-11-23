@@ -5,7 +5,16 @@
     Dim datosEstadoViaje As New BLL.EstadoViaje()
     Dim datosSocio As New BLL.Socio()
     Dim datosPromocion As New BLL.Beneficio()
-
+    ' Cuando se ingresa a esta opción del menú, el sistema debe sugerir (seleccionar automaticamente, pero sin confirmar):
+    '
+    'Chofer y Beneficios (en el blur del combo del cliente)
+    '
+    ' VER LA FORMA DE SUGERIR EL VALOR DEL PRECIO, EL TIEMPO DE DEMORA, ETC.
+    '
+    '
+    '
+    '
+    '
     Public Sub ActualizarLista()
         cbbChofer.DataSource = Nothing
         'cbbChofer.DataSource = datosChofer.MostrarDisponibles()
@@ -56,7 +65,7 @@
         viaje.Socio = datosSocio.GetById(cbbCliente.SelectedValue)
         viaje.Estado = datosEstadoViaje.GetById(cbbTipoEstadoViaje.SelectedValue)
         viaje.Promociones = New List(Of EL.Beneficio)
-        For Each itemChecked As Object In ClbPromociones.CheckedItems
+        For Each itemChecked As Object In clbPromociones.CheckedItems
             Dim promocion As New EL.Beneficio With {
                 .Id = CType(itemChecked, DataRowView).Row.ItemArray(0),
                 .Descripcion = CType(itemChecked, DataRowView).Row.ItemArray(1)

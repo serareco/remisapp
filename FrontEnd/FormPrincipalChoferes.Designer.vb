@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormPrincipalChoferes
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,9 +21,10 @@ Partial Class FormPrincipalChoferes
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPrincipalChoferes))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.ViajesRealizadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViajesRealizadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,7 +42,7 @@ Partial Class FormPrincipalChoferes
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViajesRealizadosToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
+        Me.MenuStrip.Size = New System.Drawing.Size(1014, 24)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -55,27 +56,27 @@ Partial Class FormPrincipalChoferes
         'ViajesRealizadosToolStripMenuItem1
         '
         Me.ViajesRealizadosToolStripMenuItem1.Name = "ViajesRealizadosToolStripMenuItem1"
-        Me.ViajesRealizadosToolStripMenuItem1.Size = New System.Drawing.Size(165, 22)
+        Me.ViajesRealizadosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ViajesRealizadosToolStripMenuItem1.Text = "Viajes Realizados"
         '
         'ViajesPendientesToolStripMenuItem
         '
         Me.ViajesPendientesToolStripMenuItem.Name = "ViajesPendientesToolStripMenuItem"
-        Me.ViajesPendientesToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.ViajesPendientesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ViajesPendientesToolStripMenuItem.Text = "Viajes Pendientes"
         '
         'ComisionesToolStripMenuItem
         '
         Me.ComisionesToolStripMenuItem.Name = "ComisionesToolStripMenuItem"
-        Me.ComisionesToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.ComisionesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ComisionesToolStripMenuItem.Text = "Comisiones"
         '
         'StatusStrip
         '
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 385)
         Me.StatusStrip.Name = "StatusStrip"
-        Me.StatusStrip.Size = New System.Drawing.Size(632, 22)
+        Me.StatusStrip.Size = New System.Drawing.Size(1014, 22)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
         '
@@ -89,13 +90,15 @@ Partial Class FormPrincipalChoferes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(632, 453)
+        Me.ClientSize = New System.Drawing.Size(1014, 407)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "FormPrincipalChoferes"
-        Me.Text = "FormPrincipalChoferes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Remisapp - Menú Choferes"
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.StatusStrip.ResumeLayout(False)

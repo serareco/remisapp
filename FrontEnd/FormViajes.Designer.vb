@@ -22,7 +22,9 @@ Partial Class FormViajes
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormViajes))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.clbPromociones = New System.Windows.Forms.CheckedListBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.dtpFechaSalida = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -45,7 +47,6 @@ Partial Class FormViajes
         Me.BtnCancelarViaje = New System.Windows.Forms.Button()
         Me.BtnNotificarArribo = New System.Windows.Forms.Button()
         Me.dgvViajes = New System.Windows.Forms.DataGridView()
-        Me.clbPromociones = New System.Windows.Forms.CheckedListBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvViajes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,6 +78,14 @@ Partial Class FormViajes
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Viaje"
+        '
+        'clbPromociones
+        '
+        Me.clbPromociones.FormattingEnabled = True
+        Me.clbPromociones.Location = New System.Drawing.Point(121, 208)
+        Me.clbPromociones.Name = "clbPromociones"
+        Me.clbPromociones.Size = New System.Drawing.Size(227, 64)
+        Me.clbPromociones.TabIndex = 19
         '
         'Label8
         '
@@ -277,21 +286,15 @@ Partial Class FormViajes
         Me.dgvViajes.Size = New System.Drawing.Size(614, 254)
         Me.dgvViajes.TabIndex = 0
         '
-        'clbPromociones
-        '
-        Me.clbPromociones.FormattingEnabled = True
-        Me.clbPromociones.Location = New System.Drawing.Point(121, 208)
-        Me.clbPromociones.Name = "clbPromociones"
-        Me.clbPromociones.Size = New System.Drawing.Size(227, 64)
-        Me.clbPromociones.TabIndex = 19
-        '
         'FormViajes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1011, 358)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormViajes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Viajes"
