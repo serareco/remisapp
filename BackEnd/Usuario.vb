@@ -1,6 +1,12 @@
 ﻿Public Class Usuario
-    Public Function MostrarLista() As DataTable
-        Return New DAL.Usuario().MostrarLista()
+    Public Function Listar() As List(Of EL.Usuario)
+        Return New DAL.Usuario().Listar()
+    End Function
+
+    Public Function GetById(pId As Int16) As EL.Usuario
+        Dim usuario As EL.Usuario = New DAL.Usuario().GetById(pId)
+        usuario.Permisos = Login.GetPermisos(usuario.Usuario)
+        Return usuario
     End Function
 
     Public Sub Guardar(usuario As EL.Usuario)

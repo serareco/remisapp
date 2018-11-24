@@ -1,4 +1,26 @@
 ﻿Public Class Persona
+
+    Public Function GetById(pId As Int16) As EL.Persona
+        Dim con As New Conexion
+        Dim datatable As New DataTable
+        Dim persona As New EL.Persona()
+        con.EjecutarConsulta("select *
+            from dbo.Persona p 
+            where p.id_persona = " & pId)
+        con.adp.Fill(datatable)
+
+        persona.Id = datatable.Rows(0).ItemArray(0).ToString()
+        persona.Apellido = datatable.Rows(0).ItemArray(1).ToString()
+        persona.Nombre = datatable.Rows(0).ItemArray(2).ToString()
+        persona.Telefono = datatable.Rows(0).ItemArray(3).ToString()
+        persona.Email = datatable.Rows(0).ItemArray(4).ToString()
+        persona.NroDocumento = datatable.Rows(0).ItemArray(6).ToString()
+        persona.FechaNacimiento = datatable.Rows(0).ItemArray(7).ToString()
+        persona.Domicilio = New Domicilio().GetByPersonaId(persona.Id)(0)
+        Return persona
+    End Function
+
+
     Public Sub Guardar(ByRef persona As EL.Persona)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)

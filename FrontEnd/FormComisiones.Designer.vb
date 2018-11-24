@@ -22,11 +22,13 @@ Partial Class FormComisiones
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormComisiones))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.dgvComisiones = New System.Windows.Forms.DataGridView()
         Me.gbxComisiones = New System.Windows.Forms.GroupBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.dtpVigenciaHasta = New System.Windows.Forms.DateTimePicker()
         Me.dtpVigenciaDesde = New System.Windows.Forms.DateTimePicker()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
@@ -38,7 +40,6 @@ Partial Class FormComisiones
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtPorcentaje = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvComisiones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxComisiones.SuspendLayout()
@@ -107,20 +108,32 @@ Partial Class FormComisiones
         Me.gbxComisiones.Size = New System.Drawing.Size(354, 318)
         Me.gbxComisiones.TabIndex = 9
         Me.gbxComisiones.TabStop = False
-        Me.gbxComisiones.Text = "Nueva Comision"
+        Me.gbxComisiones.Text = "Nueva Comisión"
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(121, 165)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(125, 17)
+        Me.CheckBox1.TabIndex = 20
+        Me.CheckBox1.Text = "Comisión por defecto"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'dtpVigenciaHasta
         '
+        Me.dtpVigenciaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpVigenciaHasta.Location = New System.Drawing.Point(121, 139)
         Me.dtpVigenciaHasta.Name = "dtpVigenciaHasta"
-        Me.dtpVigenciaHasta.Size = New System.Drawing.Size(227, 20)
+        Me.dtpVigenciaHasta.Size = New System.Drawing.Size(217, 20)
         Me.dtpVigenciaHasta.TabIndex = 18
         '
         'dtpVigenciaDesde
         '
+        Me.dtpVigenciaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpVigenciaDesde.Location = New System.Drawing.Point(121, 112)
         Me.dtpVigenciaDesde.Name = "dtpVigenciaDesde"
-        Me.dtpVigenciaDesde.Size = New System.Drawing.Size(227, 20)
+        Me.dtpVigenciaDesde.Size = New System.Drawing.Size(217, 20)
         Me.dtpVigenciaDesde.TabIndex = 17
         '
         'BtnLimpiar
@@ -155,9 +168,9 @@ Partial Class FormComisiones
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(24, 142)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 13)
+        Me.Label2.Size = New System.Drawing.Size(65, 13)
         Me.Label2.TabIndex = 9
-        Me.Label2.Text = "Fecha Fin"
+        Me.Label2.Text = "Fin Vigencia"
         '
         'Label1
         '
@@ -165,9 +178,9 @@ Partial Class FormComisiones
         Me.Label1.Location = New System.Drawing.Point(24, 115)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label1.Size = New System.Drawing.Size(65, 13)
+        Me.Label1.Size = New System.Drawing.Size(76, 13)
         Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Fecha Inicio"
+        Me.Label1.Text = "Inicio Vigencia"
         '
         'BtnCancelar
         '
@@ -191,38 +204,30 @@ Partial Class FormComisiones
         '
         Me.txtDescripcion.Location = New System.Drawing.Point(121, 85)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(227, 20)
+        Me.txtDescripcion.Size = New System.Drawing.Size(217, 20)
         Me.txtDescripcion.TabIndex = 3
         '
         'txtPorcentaje
         '
         Me.txtPorcentaje.Location = New System.Drawing.Point(121, 57)
         Me.txtPorcentaje.Name = "txtPorcentaje"
-        Me.txtPorcentaje.Size = New System.Drawing.Size(227, 20)
+        Me.txtPorcentaje.Size = New System.Drawing.Size(217, 20)
         Me.txtPorcentaje.TabIndex = 2
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(121, 165)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(125, 17)
-        Me.CheckBox1.TabIndex = 20
-        Me.CheckBox1.Text = "Comisión por defecto"
-        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'FormComisiones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1011, 358)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.gbxComisiones)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormComisiones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormComisiones"
+        Me.Text = "Comisiones"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dgvComisiones, System.ComponentModel.ISupportInitialize).EndInit()

@@ -20,18 +20,23 @@
         TxtNroDocumento.Clear()
         TxtNombre.Clear()
         TxtApellido.Clear()
-        TxtDomicilio.Clear()
+        'TxtDomicilio.Clear()
         TxtEmail.Clear()
         TxtTelefono.Clear()
-        dgvUsuarios.DataSource = Nothing
-        dgvUsuarios.DataSource = datosUsuario.MostrarLista()
-        usuario = Nothing
+
         ClbRoles.DataSource = New BindingSource With {
             .DataSource = datosPermiso.Listar()
         }
         ClbRoles.DisplayMember = "Descripcion"
         ClbRoles.ValueMember = "Id"
+
+        dgvUsuarios.DataSource = Nothing
+        dgvUsuarios.DataSource = New BindingSource With {
+            .DataSource = datosUsuario.Listar()
+        }
+        usuario = Nothing
         CleanCheckList()
+
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -150,10 +155,7 @@
 
     Private Sub dgvUsuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellClick
         usuario = Nothing
-        usuario = New EL.Usuario With {
-            .Usuario = dgvUsuarios.Rows(e.RowIndex).Cells(0).Value
-        }
-        usuario = datosUsuario.GetByUsuario(usuario.Usuario)
+        usuario = datosUsuario.GetById(dgvUsuarios.Rows(e.RowIndex).Cells(2).Value)
     End Sub
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click

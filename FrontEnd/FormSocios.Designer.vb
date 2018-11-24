@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormClientes
+Partial Class FormSocios
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,11 +22,13 @@ Partial Class FormClientes
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSocios))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.TxtDomicilio = New System.Windows.Forms.TextBox()
@@ -39,7 +41,8 @@ Partial Class FormClientes
         Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.BtnLimpiar = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -55,7 +58,7 @@ Partial Class FormClientes
         Me.GroupBox2.Size = New System.Drawing.Size(626, 318)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Listado Clientes"
+        Me.GroupBox2.Text = "Listado Socios"
         '
         'BtnEliminar
         '
@@ -91,6 +94,8 @@ Partial Class FormClientes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.BtnLimpiar)
         Me.GroupBox1.Controls.Add(Me.TxtEmail)
         Me.GroupBox1.Controls.Add(Me.TxtTelefono)
@@ -109,33 +114,42 @@ Partial Class FormClientes
         Me.GroupBox1.Size = New System.Drawing.Size(354, 318)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Nuevo Cliente"
+        Me.GroupBox1.Text = "Nuevo Socio"
+        '
+        'BtnLimpiar
+        '
+        Me.BtnLimpiar.Location = New System.Drawing.Point(256, 276)
+        Me.BtnLimpiar.Name = "BtnLimpiar"
+        Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLimpiar.TabIndex = 56
+        Me.BtnLimpiar.Text = "Limpiar"
+        Me.BtnLimpiar.UseVisualStyleBackColor = True
         '
         'TxtEmail
         '
-        Me.TxtEmail.Location = New System.Drawing.Point(128, 163)
+        Me.TxtEmail.Location = New System.Drawing.Point(128, 174)
         Me.TxtEmail.Name = "TxtEmail"
-        Me.TxtEmail.Size = New System.Drawing.Size(220, 20)
+        Me.TxtEmail.Size = New System.Drawing.Size(203, 20)
         Me.TxtEmail.TabIndex = 55
         '
         'TxtTelefono
         '
-        Me.TxtTelefono.Location = New System.Drawing.Point(128, 139)
+        Me.TxtTelefono.Location = New System.Drawing.Point(128, 148)
         Me.TxtTelefono.Name = "TxtTelefono"
-        Me.TxtTelefono.Size = New System.Drawing.Size(220, 20)
+        Me.TxtTelefono.Size = New System.Drawing.Size(203, 20)
         Me.TxtTelefono.TabIndex = 54
         '
         'TxtDomicilio
         '
-        Me.TxtDomicilio.Location = New System.Drawing.Point(128, 110)
+        Me.TxtDomicilio.Location = New System.Drawing.Point(128, 122)
         Me.TxtDomicilio.Name = "TxtDomicilio"
-        Me.TxtDomicilio.Size = New System.Drawing.Size(220, 20)
+        Me.TxtDomicilio.Size = New System.Drawing.Size(203, 20)
         Me.TxtDomicilio.TabIndex = 53
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(19, 172)
+        Me.Label5.Location = New System.Drawing.Point(19, 177)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(36, 13)
         Me.Label5.TabIndex = 52
@@ -144,7 +158,7 @@ Partial Class FormClientes
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 142)
+        Me.Label4.Location = New System.Drawing.Point(19, 151)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 51
@@ -153,7 +167,7 @@ Partial Class FormClientes
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(19, 114)
+        Me.Label3.Location = New System.Drawing.Point(19, 125)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 50
@@ -162,7 +176,7 @@ Partial Class FormClientes
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(19, 87)
+        Me.Label2.Location = New System.Drawing.Point(19, 99)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 49
@@ -171,7 +185,7 @@ Partial Class FormClientes
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(19, 60)
+        Me.Label1.Location = New System.Drawing.Point(19, 72)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 48
@@ -179,16 +193,16 @@ Partial Class FormClientes
         '
         'TxtApellido
         '
-        Me.TxtApellido.Location = New System.Drawing.Point(128, 84)
+        Me.TxtApellido.Location = New System.Drawing.Point(128, 96)
         Me.TxtApellido.Name = "TxtApellido"
-        Me.TxtApellido.Size = New System.Drawing.Size(220, 20)
+        Me.TxtApellido.Size = New System.Drawing.Size(203, 20)
         Me.TxtApellido.TabIndex = 47
         '
         'TxtNombre
         '
-        Me.TxtNombre.Location = New System.Drawing.Point(128, 57)
+        Me.TxtNombre.Location = New System.Drawing.Point(128, 69)
         Me.TxtNombre.Name = "TxtNombre"
-        Me.TxtNombre.Size = New System.Drawing.Size(220, 20)
+        Me.TxtNombre.Size = New System.Drawing.Size(203, 20)
         Me.TxtNombre.TabIndex = 46
         '
         'BtnCancelar
@@ -209,25 +223,34 @@ Partial Class FormClientes
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
-        'BtnLimpiar
+        'Label6
         '
-        Me.BtnLimpiar.Location = New System.Drawing.Point(256, 276)
-        Me.BtnLimpiar.Name = "BtnLimpiar"
-        Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnLimpiar.TabIndex = 56
-        Me.BtnLimpiar.Text = "Limpiar"
-        Me.BtnLimpiar.UseVisualStyleBackColor = True
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(19, 46)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(44, 13)
+        Me.Label6.TabIndex = 58
+        Me.Label6.Text = "Número"
         '
-        'FormClientes
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(128, 43)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(203, 20)
+        Me.TextBox1.TabIndex = 57
+        '
+        'FormSocios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1011, 358)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "FormClientes"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "FormSocios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Clientes"
+        Me.Text = "Socios"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).EndInit()
@@ -255,4 +278,6 @@ Partial Class FormClientes
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnLimpiar As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

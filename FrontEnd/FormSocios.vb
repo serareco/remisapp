@@ -1,4 +1,4 @@
-﻿Public Class FormClientes
+﻿Public Class FormSocios
     Dim socio As EL.Socio
     Dim datosSocio As New BLL.Socio()
     Public Sub actualizarlista()

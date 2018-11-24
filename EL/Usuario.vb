@@ -1,5 +1,18 @@
 ﻿Public Class Usuario
     Inherits Persona
+    Public Sub New()
+    End Sub
+    Public Sub New(personBase As Persona)
+        Id = personBase.Id
+        Nombre = personBase.Nombre
+        NroDocumento = personBase.NroDocumento
+        FechaNacimiento = personBase.FechaNacimiento
+        Apellido = personBase.Apellido
+        Email = personBase.Email
+        Telefono = personBase.Telefono
+        Domicilio = personBase.Domicilio
+    End Sub
+
     Private _usuario As String
     Public Property Usuario() As String
         Get
@@ -27,4 +40,5 @@
             _permisos = value
         End Set
     End Property
+
 End Class

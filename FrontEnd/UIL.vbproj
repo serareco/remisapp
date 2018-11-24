@@ -95,10 +95,10 @@
     <Compile Include="FormChoferes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClientes.Designer.vb">
-      <DependentUpon>FormClientes.vb</DependentUpon>
+    <Compile Include="FormSocios.Designer.vb">
+      <DependentUpon>FormSocios.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormClientes.vb">
+    <Compile Include="FormSocios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormComisiones.Designer.vb">
@@ -185,8 +185,8 @@
     <EmbeddedResource Include="FormChoferes.resx">
       <DependentUpon>FormChoferes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormClientes.resx">
-      <DependentUpon>FormClientes.vb</DependentUpon>
+    <EmbeddedResource Include="FormSocios.resx">
+      <DependentUpon>FormSocios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormComisiones.resx">
       <DependentUpon>FormComisiones.vb</DependentUpon>

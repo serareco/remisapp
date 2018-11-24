@@ -93,8 +93,8 @@ Public Class FormPrincipal
     End Sub
 
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
-        FormClientes.MdiParent = Me
-        FormClientes.Show()
+        FormSocios.MdiParent = Me
+        FormSocios.Show()
     End Sub
 
     Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click

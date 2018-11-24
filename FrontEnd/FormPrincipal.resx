@@ -149,40 +149,40 @@
     <value>Viajes</value>
   </data>
   <data name="OptionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="OptionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Autos</value>
   </data>
   <data name="ChoferesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ChoferesToolStripMenuItem.Text" xml:space="preserve">
     <value>Choferes</value>
   </data>
   <data name="ClientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ClientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Clientes</value>
   </data>
   <data name="UsuariosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="UsuariosToolStripMenuItem.Text" xml:space="preserve">
     <value>Usuarios</value>
   </data>
   <data name="ComisionesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="ComisionesToolStripMenuItem.Text" xml:space="preserve">
     <value>Comisiones</value>
   </data>
   <data name="PromocionesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="PromocionesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Promociones</value>
+    <value>Beneficios</value>
   </data>
   <data name="ToolsMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
