@@ -1,19 +1,22 @@
 ﻿Public Module Login
-    Private _usuarioConectado As EL.Login
-    Public Property UsuarioConectado() As EL.Login
+    Private _usuarioConectado As EL.Usuario
+    Public Property UsuarioConectado() As EL.Usuario
         Get
             Return _usuarioConectado
         End Get
-        Set(ByVal value As EL.Login)
+        Set(ByVal value As EL.Usuario)
             _usuarioConectado = value
         End Set
     End Property
 
-    Public Function Login(pDatosLogin As EL.Login) As Boolean
-        Dim resultLogin As Boolean = New DAL.Login().Login(pDatosLogin)
+    Public Function GetInforamcionUsuario() As String
+        Return "Usuario: " + UsuarioConectado.Usuario + " - " + UsuarioConectado.Apellido + ", " + UsuarioConectado.Nombre
+    End Function
+
+    Public Function Login(pUsuarioLogin As EL.Usuario) As Boolean
+        Dim resultLogin As Boolean = New DAL.Login().Login(pUsuarioLogin)
         If resultLogin Then
-            UsuarioConectado = pDatosLogin
-            UsuarioConectado.Permisos = GetPermisos(pDatosLogin.Usuario)
+            UsuarioConectado = New Usuario().GetByUsuario(pUsuarioLogin.Usuario)
         End If
         Return resultLogin
 
@@ -26,6 +29,13 @@
         Next
         Return permisos
     End Function
+
+    Private Sub GetPermisos()
+        UsuarioConectado.Permisos = New List(Of EL.Permiso)
+        For Each item As DataRow In New DAL.Login().GetPermisos(UsuarioConectado.Usuario).Rows
+            UsuarioConectado.Permisos.Add(New BLL.Permiso().GetById(item.ItemArray(0).ToString()))
+        Next
+    End Sub
 
     Public Function EsOperador() As Boolean
         For Each permiso As EL.Permiso In UsuarioConectado.Permisos

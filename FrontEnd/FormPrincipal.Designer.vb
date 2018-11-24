@@ -43,7 +43,7 @@ Partial Class FormPrincipal
         Me.TileHorizontalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.LogInformation = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -141,14 +141,14 @@ Partial Class FormPrincipal
         '
         'StatusStrip
         '
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
+        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogInformation})
         resources.ApplyResources(Me.StatusStrip, "StatusStrip")
         Me.StatusStrip.Name = "StatusStrip"
         '
-        'ToolStripStatusLabel
+        'LogInformation
         '
-        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        resources.ApplyResources(Me.ToolStripStatusLabel, "ToolStripStatusLabel")
+        Me.LogInformation.Name = "LogInformation"
+        resources.ApplyResources(Me.LogInformation, "LogInformation")
         '
         'FormPrincipal
         '
@@ -176,7 +176,7 @@ Partial Class FormPrincipal
     Friend WithEvents TileHorizontalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OptionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolTip As System.Windows.Forms.ToolTip
-    Friend WithEvents ToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents LogInformation As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FileMenu As System.Windows.Forms.ToolStripMenuItem

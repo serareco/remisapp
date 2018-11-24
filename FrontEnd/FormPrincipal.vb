@@ -152,7 +152,7 @@ Public Class FormPrincipal
             Me.ExitToolStripMenuItem.Visible = True 'nuevo viaje
             Me.HistóricoToolStripMenuItem.Visible = True ' historico
         End If
-
+        LogInformation.Text() = BLL.Login.GetInforamcionUsuario()
     End Sub
 
 End Class

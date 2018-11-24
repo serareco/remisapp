@@ -68,20 +68,15 @@
         con.EjecutarStoredProcedure("dbo.QuitarUsuario", parametros)
     End Sub
 
-    Public Function GetByUsuario(pUsuario As String) As DataTable
-        Dim con As New Conexion()
-        Dim datatable As New DataTable()
-        con.EjecutarConsulta("select id_usuario, p.nombre, p.apellido,p.domicilio,p.email,p.telefono, nro_documento, fecha_nacimiento from dbo.usuario u inner join dbo.Persona p on u.id_persona = p.id_persona where id_usuario = '" + pUsuario + "'")
+    Public Function GetByUsuario(pUsuario As String) As EL.Usuario
+        Dim con As New Conexion
+        Dim datatable As New DataTable
+        Dim usuario As EL.Usuario
+        con.EjecutarConsulta("select id_persona from dbo.Usuario u
+            where u.usuario = '" + pUsuario + "'")
         con.adp.Fill(datatable)
-        Return datatable
-    End Function
-
-    Public Function GetRolesByUsuario(pUsuario As String) As DataTable
-        Dim con As New Conexion()
-        Dim datatable As New DataTable()
-        con.EjecutarConsulta("select id_usuario, id_permiso from dbo.usuario_permiso where id_usuario = '" + pUsuario + "'")
-        con.adp.Fill(datatable)
-        Return datatable
+        usuario = New Usuario().GetById(datatable.Rows(0).ItemArray(0).ToString())
+        Return usuario
     End Function
 
 End Class

@@ -1,32 +1,29 @@
 ﻿Public Class Login
-    Private _usuario As String
-    Public Property Usuario() As String
+    Private _usuario As Usuario
+    Public Property Usuario() As Usuario
         Get
             Return _usuario
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Usuario)
             _usuario = value
         End Set
     End Property
-
-    Private _password As String
-    Public Property Password() As String
+    Private _primerIngreso As Boolean
+    Public Property PrimerIngreso() As Boolean
         Get
-            Return _password
+            Return _primerIngreso
         End Get
-        Set(ByVal value As String)
-            _password = value
+        Set(ByVal value As Boolean)
+            _primerIngreso = value
         End Set
     End Property
-
-    Private _permisos As List(Of Permiso)
-    Public Property Permisos() As List(Of Permiso)
+    Private _ultimoIngreso As Date
+    Public Property UltimoIngreso() As Date
         Get
-            Return _permisos
+            Return _ultimoIngreso
         End Get
-        Set(ByVal value As List(Of Permiso))
-            _permisos = value
+        Set(ByVal value As Date)
+            _ultimoIngreso = value
         End Set
     End Property
-
 End Class

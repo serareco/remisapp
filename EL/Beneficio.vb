@@ -48,4 +48,24 @@
             _descripcion = value
         End Set
     End Property
+
+    Private _totalAcumulado As Double
+    Public Property TotalAcumulado() As Double
+        Get
+            Return _totalAcumulado
+        End Get
+        Set(ByVal value As Double)
+            _totalAcumulado = value
+        End Set
+    End Property
+
+    Private _cantidadViajes As Int16
+    Public Property CantidadViajes() As Int16
+        Get
+            Return _cantidadViajes
+        End Get
+        Set(ByVal value As Int16)
+            _cantidadViajes = value
+        End Set
+    End Property
 End Class

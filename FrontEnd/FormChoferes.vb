@@ -18,12 +18,16 @@
 
         TxtNombre.Clear()
         TxtApellido.Clear()
-        'TxtDomicilio.Clear() TO DO: Implementar "clear" de en la clase domicilio.
         TxtNroDocumento.Clear()
         TxtEmail.Clear()
         TxtTelefono.Clear()
-        'dtpFechaNacimiento.Value() = DateAndTime.Now()
-        'dtpFechaVencimientoRegistro.Value() = DateAndTime.Now()
+
+        dtpFechaVencimientoRegistro.CustomFormat = " "
+        dtpFechaVencimientoRegistro.Format = DateTimePickerFormat.Custom
+
+        dtpFechaNacimiento.CustomFormat = "dd/MM/yyyy"
+        dtpFechaNacimiento.Format = DateTimePickerFormat.Custom
+
         dgvChoferes.DataSource = Nothing
         dgvChoferes.DataSource = New BindingSource With {
             .DataSource = datosChofer.Listar()
@@ -108,5 +112,9 @@
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
         ActualizarLista()
+    End Sub
+
+    Private Sub dtpFechaVencimientoRegistro_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaVencimientoRegistro.ValueChanged
+        dtpFechaVencimientoRegistro.CustomFormat = "dd/MM/yyyy"
     End Sub
 End Class

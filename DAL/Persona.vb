@@ -10,8 +10,8 @@
         con.adp.Fill(datatable)
 
         persona.Id = datatable.Rows(0).ItemArray(0).ToString()
-        persona.Apellido = datatable.Rows(0).ItemArray(1).ToString()
-        persona.Nombre = datatable.Rows(0).ItemArray(2).ToString()
+        persona.Nombre = datatable.Rows(0).ItemArray(1).ToString()
+        persona.Apellido = datatable.Rows(0).ItemArray(2).ToString()
         persona.Telefono = datatable.Rows(0).ItemArray(3).ToString()
         persona.Email = datatable.Rows(0).ItemArray(4).ToString()
         persona.NroDocumento = datatable.Rows(0).ItemArray(6).ToString()

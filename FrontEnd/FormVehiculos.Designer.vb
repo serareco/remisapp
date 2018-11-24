@@ -122,9 +122,10 @@ Partial Class FormVehiculos
         '
         'dtpFechaVTV
         '
+        Me.dtpFechaVTV.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaVTV.Location = New System.Drawing.Point(121, 218)
         Me.dtpFechaVTV.Name = "dtpFechaVTV"
-        Me.dtpFechaVTV.Size = New System.Drawing.Size(227, 20)
+        Me.dtpFechaVTV.Size = New System.Drawing.Size(217, 20)
         Me.dtpFechaVTV.TabIndex = 18
         '
         'Label7
@@ -167,14 +168,14 @@ Partial Class FormVehiculos
         '
         Me.txtChasis.Location = New System.Drawing.Point(121, 192)
         Me.txtChasis.Name = "txtChasis"
-        Me.txtChasis.Size = New System.Drawing.Size(227, 20)
+        Me.txtChasis.Size = New System.Drawing.Size(217, 20)
         Me.txtChasis.TabIndex = 5
         '
         'txtMotor
         '
         Me.txtMotor.Location = New System.Drawing.Point(121, 165)
         Me.txtMotor.Name = "txtMotor"
-        Me.txtMotor.Size = New System.Drawing.Size(227, 20)
+        Me.txtMotor.Size = New System.Drawing.Size(217, 20)
         Me.txtMotor.TabIndex = 4
         '
         'Label4
@@ -236,7 +237,7 @@ Partial Class FormVehiculos
         Me.cbbModelo.FormattingEnabled = True
         Me.cbbModelo.Location = New System.Drawing.Point(121, 85)
         Me.cbbModelo.Name = "cbbModelo"
-        Me.cbbModelo.Size = New System.Drawing.Size(227, 21)
+        Me.cbbModelo.Size = New System.Drawing.Size(217, 21)
         Me.cbbModelo.TabIndex = 1
         '
         'cbbMarca
@@ -244,21 +245,21 @@ Partial Class FormVehiculos
         Me.cbbMarca.FormattingEnabled = True
         Me.cbbMarca.Location = New System.Drawing.Point(121, 57)
         Me.cbbMarca.Name = "cbbMarca"
-        Me.cbbMarca.Size = New System.Drawing.Size(227, 21)
+        Me.cbbMarca.Size = New System.Drawing.Size(217, 21)
         Me.cbbMarca.TabIndex = 0
         '
         'txtAnioFabricacion
         '
         Me.txtAnioFabricacion.Location = New System.Drawing.Point(121, 139)
         Me.txtAnioFabricacion.Name = "txtAnioFabricacion"
-        Me.txtAnioFabricacion.Size = New System.Drawing.Size(227, 20)
+        Me.txtAnioFabricacion.Size = New System.Drawing.Size(217, 20)
         Me.txtAnioFabricacion.TabIndex = 3
         '
         'txtPatente
         '
         Me.txtPatente.Location = New System.Drawing.Point(121, 112)
         Me.txtPatente.Name = "txtPatente"
-        Me.txtPatente.Size = New System.Drawing.Size(227, 20)
+        Me.txtPatente.Size = New System.Drawing.Size(217, 20)
         Me.txtPatente.TabIndex = 2
         '
         'FormVehiculos

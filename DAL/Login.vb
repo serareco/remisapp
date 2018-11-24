@@ -1,5 +1,5 @@
 ﻿Public Class Login
-    Public Function Login(pDatosLogin As EL.Login) As Boolean
+    Public Function Login(pDatosLogin As EL.Usuario) As Boolean
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@Usuario", pDatosLogin.Usuario))

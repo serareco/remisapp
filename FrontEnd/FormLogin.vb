@@ -6,10 +6,9 @@
         'Usuario: serareco
         'Contraseña: test123
         '
-        datosLogin.Usuario = TxtUsuario.Text()
-        datosLogin.Password = TxtPassword.Text()
+        datosLogin.Usuario = New EL.Usuario() With {.Usuario = TxtUsuario.Text(), .Password = TxtPassword.Text()}
 
-        If (BLL.Login.Login(datosLogin)) Then
+        If (BLL.Login.Login(datosLogin.Usuario)) Then
             LblMsjValidacion.Text() = ""
             If ChkChangePss.Checked Then
                 FormCambiarPassword.Show()

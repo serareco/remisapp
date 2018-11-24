@@ -28,6 +28,11 @@ Partial Class FormBeneficios
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.dgvPromociones = New System.Windows.Forms.DataGridView()
         Me.gbxComisiones = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TxtViajesSemanal = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtTotalSemanal = New System.Windows.Forms.TextBox()
         Me.dtpVigenciaHasta = New System.Windows.Forms.DateTimePicker()
         Me.dtpVigenciaDesde = New System.Windows.Forms.DateTimePicker()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
@@ -39,11 +44,6 @@ Partial Class FormBeneficios
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtDescuento = New System.Windows.Forms.TextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtTotalSemanal = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TxtViajesSemanal = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvPromociones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxComisiones.SuspendLayout()
@@ -114,6 +114,51 @@ Partial Class FormBeneficios
         Me.gbxComisiones.TabIndex = 11
         Me.gbxComisiones.TabStop = False
         Me.gbxComisiones.Text = "Nuevo Beneficio"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.TxtViajesSemanal)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.TxtTotalSemanal)
+        Me.GroupBox1.Location = New System.Drawing.Point(22, 143)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(311, 104)
+        Me.GroupBox1.TabIndex = 19
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Condiciones"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 62)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(90, 13)
+        Me.Label6.TabIndex = 23
+        Me.Label6.Text = "Viajes Semanales"
+        '
+        'TxtViajesSemanal
+        '
+        Me.TxtViajesSemanal.Location = New System.Drawing.Point(136, 59)
+        Me.TxtViajesSemanal.Name = "TxtViajesSemanal"
+        Me.TxtViajesSemanal.Size = New System.Drawing.Size(153, 20)
+        Me.TxtViajesSemanal.TabIndex = 22
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(12, 36)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(87, 13)
+        Me.Label5.TabIndex = 21
+        Me.Label5.Text = "Total Acumulado"
+        '
+        'TxtTotalSemanal
+        '
+        Me.TxtTotalSemanal.Location = New System.Drawing.Point(136, 33)
+        Me.TxtTotalSemanal.Name = "TxtTotalSemanal"
+        Me.TxtTotalSemanal.Size = New System.Drawing.Size(153, 20)
+        Me.TxtTotalSemanal.TabIndex = 20
         '
         'dtpVigenciaHasta
         '
@@ -207,51 +252,6 @@ Partial Class FormBeneficios
         Me.txtDescuento.Name = "txtDescuento"
         Me.txtDescuento.Size = New System.Drawing.Size(217, 20)
         Me.txtDescuento.TabIndex = 2
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TxtViajesSemanal)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TxtTotalSemanal)
-        Me.GroupBox1.Location = New System.Drawing.Point(22, 143)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(311, 104)
-        Me.GroupBox1.TabIndex = 19
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Condiciones"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 36)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(87, 13)
-        Me.Label5.TabIndex = 21
-        Me.Label5.Text = "Total Acumulado"
-        '
-        'TxtTotalSemanal
-        '
-        Me.TxtTotalSemanal.Location = New System.Drawing.Point(136, 33)
-        Me.TxtTotalSemanal.Name = "TxtTotalSemanal"
-        Me.TxtTotalSemanal.Size = New System.Drawing.Size(153, 20)
-        Me.TxtTotalSemanal.TabIndex = 20
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 62)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(90, 13)
-        Me.Label6.TabIndex = 23
-        Me.Label6.Text = "Viajes Semanales"
-        '
-        'TxtViajesSemanal
-        '
-        Me.TxtViajesSemanal.Location = New System.Drawing.Point(136, 59)
-        Me.TxtViajesSemanal.Name = "TxtViajesSemanal"
-        Me.TxtViajesSemanal.Size = New System.Drawing.Size(153, 20)
-        Me.TxtViajesSemanal.TabIndex = 22
         '
         'FormBeneficios
         '
