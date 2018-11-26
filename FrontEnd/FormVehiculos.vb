@@ -1,6 +1,6 @@
 ﻿Public Class FormVehiculos
     Dim auto As EL.Vehiculo
-    Dim datosAuto As New BLL.Vehiculo()
+    Dim datosVehiculos As New BLL.Vehiculo()
     Dim datosMarcas As New BLL.Marca()
     Dim datosModelos As New BLL.Modelo()
 
@@ -22,9 +22,23 @@
         cbbMarca.DisplayMember = "Descripcion"
         cbbMarca.ValueMember = "Id"
 
+        dgvAutos.AutoGenerateColumns = False
+        dgvAutos.AutoSize = True
         dgvAutos.DataSource = New BindingSource With {
-            .DataSource = datosAuto.Listar()
+            .DataSource = datosVehiculos.Listar()
         }
+
+        dgvAutos.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "Edad",
+                    .Name = "los años que cumplió"
+        })
+
+        dgvAutos.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .DataPropertyName = "Nombre",
+            .Name = "así se llama el turro"
+        })
+
+
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -65,7 +79,7 @@
             auto.Patente = txtPatente.Text
             auto.Chasis = txtChasis.Text
             auto.Motor = txtMotor.Text
-            datosAuto.Guardar(auto)
+            datosVehiculos.Guardar(auto)
             ActualizarLista()
         End If
     End Sub
@@ -108,7 +122,7 @@
         If auto IsNot Nothing Then
             Dim result As Integer = MessageBox.Show("Estas seguro que deseas eliminar este auto?", "caption", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                datosAuto.Quitar(auto)
+                datosVehiculos.Quitar(auto)
                 ActualizarLista()
             End If
         End If
@@ -123,6 +137,6 @@
         auto = New EL.Vehiculo With {
             .Id = dgvAutos.Rows(e.RowIndex).Cells(0).Value
         }
-        auto = datosAuto.GetById(auto.Id)
+        auto = datosVehiculos.GetById(auto.Id)
     End Sub
 End Class
