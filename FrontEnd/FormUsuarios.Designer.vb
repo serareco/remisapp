@@ -92,7 +92,7 @@ Partial Class FormUsuarios
         '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(115, 289)
+        Me.BtnEliminar.Location = New System.Drawing.Point(115, 298)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(102, 23)
         Me.BtnEliminar.TabIndex = 4
@@ -101,7 +101,7 @@ Partial Class FormUsuarios
         '
         'BtnModificar
         '
-        Me.BtnModificar.Location = New System.Drawing.Point(7, 289)
+        Me.BtnModificar.Location = New System.Drawing.Point(7, 298)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(102, 23)
         Me.BtnModificar.TabIndex = 3
@@ -487,7 +487,7 @@ Partial Class FormUsuarios
         '
         'BtnLimpiar
         '
-        Me.BtnLimpiar.Location = New System.Drawing.Point(255, 305)
+        Me.BtnLimpiar.Location = New System.Drawing.Point(255, 298)
         Me.BtnLimpiar.Name = "BtnLimpiar"
         Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
         Me.BtnLimpiar.TabIndex = 48
@@ -496,7 +496,7 @@ Partial Class FormUsuarios
         '
         'BtnCancelar
         '
-        Me.BtnCancelar.Location = New System.Drawing.Point(145, 305)
+        Me.BtnCancelar.Location = New System.Drawing.Point(145, 298)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(94, 23)
         Me.BtnCancelar.TabIndex = 12
@@ -505,7 +505,7 @@ Partial Class FormUsuarios
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(33, 305)
+        Me.BtnGuardar.Location = New System.Drawing.Point(33, 298)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(97, 23)
         Me.BtnGuardar.TabIndex = 11

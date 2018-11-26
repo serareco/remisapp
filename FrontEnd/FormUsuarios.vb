@@ -13,10 +13,12 @@
     Private Sub ActualizarLista()
         TxtPassword.Visible = True
         TxtRepetirPassword.Visible = True
+        dtpFechaNacimiento.CustomFormat = " "
+        dtpFechaNacimiento.Format = DateTimePickerFormat.Custom
+
         TxtUsuario.Clear()
         TxtPassword.Clear()
         TxtRepetirPassword.Clear()
-        'dtpFechaNacimiento.Value()
         TxtNroDocumento.Clear()
         TxtNombre.Clear()
         TxtApellido.Clear()
@@ -66,14 +68,15 @@
             usuario.NroDocumento = TxtNroDocumento.Text()
             usuario.Nombre = TxtNombre.Text()
             usuario.Apellido = TxtApellido.Text()
-            ' usuario.Domicilio = = New EL.Domicilio() With {
-            ' .Calle = TxtCalle.Text(),
-            ' .Localidad = TxtLocalidad.Text(),
-            '.Nro = TxtNumero.Text(),
-            '.Piso = TxtPiso.Text(),
-            '.Provincia = TxtProvincia.Text(),
-            '.CP = TxtCP.Text()
-            '}
+            usuario.Domicilio = New EL.Domicilio() With {
+                .Calle = TxtCalle.Text(),
+                .Nro = TxtNumero.Text(),
+                .Dpto = TxtDpto.Text(),
+                .Piso = TxtPiso.Text(),
+                .Localidad = TxtLocalidad.Text(),
+                .Provincia = TxtProvincia.Text(),
+                .CP = TxtCP.Text()
+            }
             usuario.Email = TxtEmail.Text()
             usuario.Telefono = TxtTelefono.Text()
             usuario.Permisos = New List(Of EL.Permiso)
@@ -101,9 +104,17 @@
         If usuario IsNot Nothing Then
             CleanCheckList()
             ClbRoles.ClearSelected()
+
+            TxtCalle.Text = usuario.Domicilio.Calle
+            TxtNumero.Text = usuario.Domicilio.Nro
+            TxtPiso.Text = usuario.Domicilio.Piso
+            TxtDpto.Text = usuario.Domicilio.Dpto
+            TxtLocalidad.Text = usuario.Domicilio.Localidad
+            TxtCP.Text = usuario.Domicilio.CP
+            TxtProvincia.Text = usuario.Domicilio.Provincia
+
             TxtNombre.Text = usuario.Nombre
             TxtApellido.Text = usuario.Apellido
-            'TxtDomicilio.Text = usuario.Domicilio
             TxtNroDocumento.Text = usuario.NroDocumento
             TxtTelefono.Text = usuario.Telefono
             TxtEmail.Text = usuario.Email
@@ -162,4 +173,7 @@
         ActualizarLista()
     End Sub
 
+    Private Sub dtpFechaNacimiento_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaNacimiento.ValueChanged
+        dtpFechaNacimiento.CustomFormat = "dd/MM/yyyy"
+    End Sub
 End Class
