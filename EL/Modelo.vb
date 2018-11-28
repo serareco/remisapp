@@ -26,4 +26,8 @@
             _marca = value
         End Set
     End Property
+
+    Public Overrides Function ToString() As String
+        Return Marca.Descripcion + " - " + Descripcion
+    End Function
 End Class

@@ -24,20 +24,24 @@
 
         dgvAutos.AutoGenerateColumns = False
         dgvAutos.AutoSize = True
-        dgvAutos.DataSource = New BindingSource With {
-            .DataSource = datosVehiculos.Listar()
-        }
-
+        dgvAutos.Columns.Clear()
+        dgvAutos.DataSource = datosVehiculos.Listar()
         dgvAutos.Columns.Add(New DataGridViewTextBoxColumn() With {
-                    .DataPropertyName = "Edad",
-                    .Name = "los años que cumplió"
+                    .DataPropertyName = "Id",
+                    .Name = "ID"
         })
-
         dgvAutos.Columns.Add(New DataGridViewTextBoxColumn() With {
-            .DataPropertyName = "Nombre",
-            .Name = "así se llama el turro"
+                    .DataPropertyName = "Patente",
+                    .Name = "Patente"
         })
-
+        dgvAutos.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .DataPropertyName = "AnioFabricacion",
+            .Name = "Modelo"
+        })
+        dgvAutos.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .DataPropertyName = "Modelo",
+            .Name = "Marca - Modelo", .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        })
 
     End Sub
 
