@@ -45,6 +45,7 @@ Partial Class FormPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.LogInformation = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -58,7 +59,7 @@ Partial Class FormPrincipal
         '
         'FileMenu
         '
-        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.HistóricoToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.HistóricoToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.ConsultaToolStripMenuItem})
         resources.ApplyResources(Me.FileMenu, "FileMenu")
         Me.FileMenu.Name = "FileMenu"
         '
@@ -150,6 +151,11 @@ Partial Class FormPrincipal
         Me.LogInformation.Name = "LogInformation"
         resources.ApplyResources(Me.LogInformation, "LogInformation")
         '
+        'ConsultaToolStripMenuItem
+        '
+        Me.ConsultaToolStripMenuItem.Name = "ConsultaToolStripMenuItem"
+        resources.ApplyResources(Me.ConsultaToolStripMenuItem, "ConsultaToolStripMenuItem")
+        '
         'FormPrincipal
         '
         resources.ApplyResources(Me, "$this")
@@ -189,4 +195,5 @@ Partial Class FormPrincipal
     Friend WithEvents ComisionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PromocionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ConsultaToolStripMenuItem As ToolStripMenuItem
 End Class

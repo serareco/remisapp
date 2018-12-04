@@ -46,4 +46,15 @@
         e.Guardar(viaje)
     End Sub
 
+    Public Sub ConsultarAPI(ByRef viaje As EL.Viaje)
+        Dim request As New MapService.MapServiceRequest()
+        request.From = viaje.Origen
+        request.Dest = viaje.Destino
+
+        Dim response As MapService.MapServiceResponse = request.SendRequest()
+
+        viaje.KmRecorridos = response.Distance
+
+    End Sub
+
 End Class

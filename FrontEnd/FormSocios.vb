@@ -4,7 +4,7 @@
     Public Sub actualizarlista()
         TxtNombre.Clear()
         TxtApellido.Clear()
-        TxtDomicilio.Clear()
+        'TxtDomicilio.Clear()
         TxtEmail.Clear()
         TxtTelefono.Clear()
         dgvClientes.DataSource = Nothing
@@ -20,9 +20,18 @@
         End If
         socio.Nombre = TxtNombre.Text()
         socio.Apellido = TxtApellido.Text()
-        ' cliente.Domicilio = TxtDomicilio.Text() VEr!!!!
+        socio.Domicilio = New EL.Domicilio() With {
+            .Calle = TxtCalle.Text(),
+            .Nro = TxtNumero.Text(),
+            .Piso = TxtPiso.Text,
+            .Dpto = TxtDpto.Text(),
+            .Localidad = TxtLocalidad.Text(),
+            .Provincia = TxtProvincia.Text(),
+            .CP = TxtCP.Text()
+            }
         socio.Email = TxtEmail.Text()
         socio.Telefono = TxtTelefono.Text()
+        socio.FechaNacimiento = dtpFechaNacimiento.Value()
         datosSocio.Guardar(socio)
         actualizarlista()
     End Sub
@@ -39,7 +48,12 @@
         If (socio IsNot Nothing) Then
             TxtNombre.Text() = socio.Nombre
             TxtApellido.Text() = socio.Apellido
-            ' TxtDomicilio.Text() = cliente.domicilio VER!!!
+            TxtCalle.Text() = socio.Domicilio.Calle
+            TxtLocalidad.Text() = socio.Domicilio.Localidad
+            TxtNumero.Text() = socio.Domicilio.Nro
+            TxtPiso.Text() = socio.Domicilio.Piso
+            TxtProvincia.Text() = socio.Domicilio.Provincia
+            TxtCP.Text() = socio.Domicilio.CP
             TxtEmail.Text() = socio.Email
             TxtTelefono.Text() = socio.Telefono
         End If

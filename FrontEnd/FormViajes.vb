@@ -67,9 +67,9 @@
         viaje.Promociones = New List(Of EL.Beneficio)
         For Each itemChecked As Object In clbPromociones.CheckedItems
             Dim promocion As New EL.Beneficio With {
-                .Id = CType(itemChecked, DataRowView).Row.ItemArray(0),
-                .Descripcion = CType(itemChecked, DataRowView).Row.ItemArray(1)
-                }
+        .Id = CType(itemChecked, DataRowView).Row.ItemArray(0),
+        .Descripcion = CType(itemChecked, DataRowView).Row.ItemArray(1)
+              }
             viaje.Promociones.Add(promocion)
         Next
         datosViaje.Guardar(viaje)

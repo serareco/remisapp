@@ -8,8 +8,11 @@
     End Function
 
     Public Sub Guardar(cliente As EL.Socio)
+        Dim p As New Persona()
+        p.Guardar(cliente)
         Dim e As New DAL.Socio()
         e.Guardar(cliente)
+
     End Sub
 
     Public Sub Quitar(cliente As EL.Socio)

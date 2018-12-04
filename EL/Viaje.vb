@@ -49,13 +49,23 @@
         End Set
     End Property
 
-    Private _kmRecorridos As Int16
-    Public Property KmRecorridos() As Int16
+    Private _kmRecorridos As Decimal
+    Public Property KmRecorridos() As Decimal
         Get
             Return _kmRecorridos
         End Get
-        Set(ByVal value As Int16)
+        Set(ByVal value As Decimal)
             _kmRecorridos = value
+        End Set
+    End Property
+
+    Private _kmARecorrer As Decimal
+    Public Property KmARecorrer() As Decimal
+        Get
+            Return _kmARecorrer
+        End Get
+        Set(ByVal value As Decimal)
+            _kmARecorrer = value
         End Set
     End Property
 
@@ -116,6 +126,16 @@
         End Get
         Set(ByVal value As EstadoViaje)
             _estado = value
+        End Set
+    End Property
+
+    Private _precioEstimado As Decimal
+    Public Property PrecioEstimado() As Decimal
+        Get
+            Return _precioEstimado
+        End Get
+        Set(ByVal value As Decimal)
+            _precioEstimado = value
         End Set
     End Property
 

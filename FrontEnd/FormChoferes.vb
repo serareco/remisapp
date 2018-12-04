@@ -43,8 +43,10 @@
         chofer.Apellido = TxtApellido.Text()
         chofer.Domicilio = New EL.Domicilio() With {
             .Calle = TxtCalle.Text(),
-            .Localidad = TxtLocalidad.Text(),
             .Nro = TxtNumero.Text(),
+            .Piso = TxtPiso.Text,
+            .Dpto = TxtDpto.Text(),
+            .Localidad = TxtLocalidad.Text(),
             .Provincia = TxtProvincia.Text(),
             .CP = TxtCP.Text()
             }

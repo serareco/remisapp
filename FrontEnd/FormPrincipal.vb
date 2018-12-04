@@ -155,4 +155,8 @@ Public Class FormPrincipal
         LogInformation.Text() = BLL.Login.GetInforamcionUsuario()
     End Sub
 
+    Private Sub ConsultaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaToolStripMenuItem.Click
+        FormATM.MdiParent = Me
+        FormATM.Show()
+    End Sub
 End Class

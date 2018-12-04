@@ -22,6 +22,7 @@ Partial Class FormArribo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormArribo))
         Me.TxtKilometrosRecorridos = New System.Windows.Forms.TextBox()
         Me.TxtPrecio = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -157,6 +158,7 @@ Partial Class FormArribo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(382, 244)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TxtComentarios)
@@ -166,6 +168,7 @@ Partial Class FormArribo
         Me.Controls.Add(Me.TxtPrecio)
         Me.Controls.Add(Me.TxtKilometrosRecorridos)
         Me.Controls.Add(Me.gbxViajes)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormArribo"
         Me.Text = "FormArribo"
         Me.gbxViajes.ResumeLayout(False)

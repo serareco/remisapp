@@ -25,18 +25,19 @@ Partial Class FrmLogin
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLogin))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.TxtPassword = New System.Windows.Forms.TextBox()
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.LblMsjValidacion = New System.Windows.Forms.Label()
         Me.ChkChangePss = New System.Windows.Forms.CheckBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(51, 55)
+        Me.Label1.Location = New System.Drawing.Point(163, 32)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(43, 13)
         Me.Label1.TabIndex = 0
@@ -45,31 +46,22 @@ Partial Class FrmLogin
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(51, 84)
+        Me.Label2.Location = New System.Drawing.Point(163, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(66, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Constraseña"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(21, 18)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(245, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Ingresá al sistema usando tu Usuario y Contraseña"
-        '
         'TxtUsuario
         '
-        Me.TxtUsuario.Location = New System.Drawing.Point(123, 52)
+        Me.TxtUsuario.Location = New System.Drawing.Point(235, 29)
         Me.TxtUsuario.Name = "TxtUsuario"
         Me.TxtUsuario.Size = New System.Drawing.Size(100, 20)
         Me.TxtUsuario.TabIndex = 3
         '
         'TxtPassword
         '
-        Me.TxtPassword.Location = New System.Drawing.Point(123, 81)
+        Me.TxtPassword.Location = New System.Drawing.Point(235, 58)
         Me.TxtPassword.Name = "TxtPassword"
         Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPassword.Size = New System.Drawing.Size(100, 20)
@@ -77,7 +69,7 @@ Partial Class FrmLogin
         '
         'BtnIngresar
         '
-        Me.BtnIngresar.Location = New System.Drawing.Point(54, 159)
+        Me.BtnIngresar.Location = New System.Drawing.Point(166, 136)
         Me.BtnIngresar.Name = "BtnIngresar"
         Me.BtnIngresar.Size = New System.Drawing.Size(169, 23)
         Me.BtnIngresar.TabIndex = 5
@@ -88,7 +80,7 @@ Partial Class FrmLogin
         '
         Me.LblMsjValidacion.AutoSize = True
         Me.LblMsjValidacion.ForeColor = System.Drawing.Color.IndianRed
-        Me.LblMsjValidacion.Location = New System.Drawing.Point(51, 137)
+        Me.LblMsjValidacion.Location = New System.Drawing.Point(163, 114)
         Me.LblMsjValidacion.Name = "LblMsjValidacion"
         Me.LblMsjValidacion.Size = New System.Drawing.Size(0, 13)
         Me.LblMsjValidacion.TabIndex = 6
@@ -96,12 +88,22 @@ Partial Class FrmLogin
         'ChkChangePss
         '
         Me.ChkChangePss.AutoSize = True
-        Me.ChkChangePss.Location = New System.Drawing.Point(54, 114)
+        Me.ChkChangePss.Location = New System.Drawing.Point(166, 91)
         Me.ChkChangePss.Name = "ChkChangePss"
         Me.ChkChangePss.Size = New System.Drawing.Size(120, 17)
         Me.ChkChangePss.TabIndex = 7
         Me.ChkChangePss.Text = "Cambiar contraseña"
         Me.ChkChangePss.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(22, 28)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(128, 128)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 8
+        Me.PictureBox1.TabStop = False
         '
         'FrmLogin
         '
@@ -109,13 +111,13 @@ Partial Class FrmLogin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(288, 196)
+        Me.ClientSize = New System.Drawing.Size(347, 196)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ChkChangePss)
         Me.Controls.Add(Me.LblMsjValidacion)
         Me.Controls.Add(Me.BtnIngresar)
         Me.Controls.Add(Me.TxtPassword)
         Me.Controls.Add(Me.TxtUsuario)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
@@ -125,6 +127,7 @@ Partial Class FrmLogin
         Me.Name = "FrmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Remisapp - Login"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -132,15 +135,10 @@ Partial Class FrmLogin
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents TxtUsuario As TextBox
     Friend WithEvents TxtPassword As TextBox
     Friend WithEvents BtnIngresar As Button
     Friend WithEvents LblMsjValidacion As Label
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
     Friend WithEvents ChkChangePss As CheckBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

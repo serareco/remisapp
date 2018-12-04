@@ -6,12 +6,27 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A85CD5CD-A915-4E78-85F4-1DE1D693487F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>FrontEnd.My.MyApplication</StartupObject>
-    <RootNamespace>FrontEnd</RootNamespace>
-    <AssemblyName>FrontEnd</AssemblyName>
+    <StartupObject>UIL.My.MyApplication</StartupObject>
+    <RootNamespace>UIL</RootNamespace>
+    <AssemblyName>UIL</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -20,7 +35,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>FrontEnd.xml</DocumentationFile>
+    <DocumentationFile>UIL.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -30,7 +45,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>FrontEnd.xml</DocumentationFile>
+    <DocumentationFile>UIL.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -75,6 +90,18 @@
       <DependentUpon>FormArribo.vb</DependentUpon>
     </Compile>
     <Compile Include="FormArribo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormATM.Designer.vb">
+      <DependentUpon>FormATM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormATM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSeleccionSistema.Designer.vb">
+      <DependentUpon>FormSeleccionSistema.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSeleccionSistema.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormVehiculos.Designer.vb">
@@ -176,6 +203,12 @@
     <EmbeddedResource Include="FormArribo.resx">
       <DependentUpon>FormArribo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormATM.resx">
+      <DependentUpon>FormATM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSeleccionSistema.resx">
+      <DependentUpon>FormSeleccionSistema.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormVehiculos.resx">
       <DependentUpon>FormVehiculos.vb</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +279,13 @@
       <Project>{e64ff015-e149-4c7c-a718-e5023ef9437f}</Project>
       <Name>EL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6C98FE7-86AE-4B6F-8EAD-91F7290C21D2}</ProjectGuid>
+    <ProjectGuid>{8E9AD52E-796A-482B-B57C-C8861F04372F}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>BLL</RootNamespace>
-    <AssemblyName>BLL</AssemblyName>
+    <RootNamespace>MapService</RootNamespace>
+    <AssemblyName>MapService</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -18,7 +19,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>BLL.xml</DocumentationFile>
+    <DocumentationFile>MapService.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -27,14 +28,14 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>BLL.xml</DocumentationFile>
+    <DocumentationFile>MapService.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionCompare>Text</OptionCompare>
+    <OptionCompare>Binary</OptionCompare>
   </PropertyGroup>
   <PropertyGroup>
     <OptionStrict>Off</OptionStrict>
@@ -63,15 +64,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Registro.vb" />
-    <Compile Include="Vehiculo.vb" />
-    <Compile Include="Chofer.vb" />
-    <Compile Include="Comision.vb" />
-    <Compile Include="Domicilio.vb" />
-    <Compile Include="EstadoViaje.vb" />
-    <Compile Include="Login.vb" />
-    <Compile Include="Marca.vb" />
-    <Compile Include="Modelo.vb" />
+    <Compile Include="MapServiceRequest.vb" />
+    <Compile Include="MapServiceResponse.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -87,13 +81,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Permiso.vb" />
-    <Compile Include="Persona.vb" />
-    <Compile Include="Socio.vb" />
-    <Compile Include="Usuario.vb" />
-    <Compile Include="Beneficio.vb" />
-    <Compile Include="Validacion.vb" />
-    <Compile Include="Viaje.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -113,20 +100,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.vbproj">
-      <Project>{e69a9320-398a-4741-892a-586ed958604a}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EL\EL.vbproj">
-      <Project>{e64ff015-e149-4c7c-a718-e5023ef9437f}</Project>
-      <Name>EL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MapService\MapService.vbproj">
-      <Project>{8e9ad52e-796a-482b-b57c-c8861f04372f}</Project>
-      <Name>MapService</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

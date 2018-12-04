@@ -43,16 +43,10 @@ Partial Class FormChoferes
         Me.TxtNroDocumento = New System.Windows.Forms.TextBox()
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.TabDomicilio = New System.Windows.Forms.TabPage()
-        Me.TabRegistro = New System.Windows.Forms.TabPage()
-        Me.cbbCategorias = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.dtpFechaVencimientoRegistro = New System.Windows.Forms.DateTimePicker()
-        Me.cbbAutos = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.BtnLimpiar = New System.Windows.Forms.Button()
-        Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.TxtProvincia = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TxtLocalidad = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtCalle = New System.Windows.Forms.TextBox()
         Me.TxtNumero = New System.Windows.Forms.TextBox()
@@ -63,10 +57,16 @@ Partial Class FormChoferes
         Me.TxtCP = New System.Windows.Forms.TextBox()
         Me.TxtPiso = New System.Windows.Forms.TextBox()
         Me.TxtDpto = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.TxtLocalidad = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.TxtProvincia = New System.Windows.Forms.TextBox()
+        Me.TabRegistro = New System.Windows.Forms.TabPage()
+        Me.cbbCategorias = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.dtpFechaVencimientoRegistro = New System.Windows.Forms.DateTimePicker()
+        Me.cbbAutos = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.BtnLimpiar = New System.Windows.Forms.Button()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvChoferes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -289,6 +289,118 @@ Partial Class FormChoferes
         Me.TabDomicilio.Text = "Domicilio"
         Me.TabDomicilio.UseVisualStyleBackColor = True
         '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(7, 171)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(51, 13)
+        Me.Label16.TabIndex = 26
+        Me.Label16.Text = "Provincia"
+        '
+        'TxtProvincia
+        '
+        Me.TxtProvincia.Location = New System.Drawing.Point(116, 168)
+        Me.TxtProvincia.Name = "TxtProvincia"
+        Me.TxtProvincia.Size = New System.Drawing.Size(196, 20)
+        Me.TxtProvincia.TabIndex = 25
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(7, 145)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(53, 13)
+        Me.Label15.TabIndex = 24
+        Me.Label15.Text = "Localidad"
+        '
+        'TxtLocalidad
+        '
+        Me.TxtLocalidad.Location = New System.Drawing.Point(116, 142)
+        Me.TxtLocalidad.Name = "TxtLocalidad"
+        Me.TxtLocalidad.Size = New System.Drawing.Size(196, 20)
+        Me.TxtLocalidad.TabIndex = 23
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(7, 66)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(44, 13)
+        Me.Label9.TabIndex = 19
+        Me.Label9.Text = "Número"
+        '
+        'TxtCalle
+        '
+        Me.TxtCalle.Location = New System.Drawing.Point(116, 36)
+        Me.TxtCalle.Name = "TxtCalle"
+        Me.TxtCalle.Size = New System.Drawing.Size(196, 20)
+        Me.TxtCalle.TabIndex = 13
+        '
+        'TxtNumero
+        '
+        Me.TxtNumero.Location = New System.Drawing.Point(116, 63)
+        Me.TxtNumero.Name = "TxtNumero"
+        Me.TxtNumero.Size = New System.Drawing.Size(196, 20)
+        Me.TxtNumero.TabIndex = 14
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(7, 39)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(30, 13)
+        Me.Label10.TabIndex = 18
+        Me.Label10.Text = "Calle"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(7, 93)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(27, 13)
+        Me.Label12.TabIndex = 20
+        Me.Label12.Text = "Piso"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(197, 93)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(33, 13)
+        Me.Label13.TabIndex = 21
+        Me.Label13.Text = "Dpto."
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(7, 119)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(27, 13)
+        Me.Label14.TabIndex = 22
+        Me.Label14.Text = "C.P."
+        '
+        'TxtCP
+        '
+        Me.TxtCP.Location = New System.Drawing.Point(116, 116)
+        Me.TxtCP.Name = "TxtCP"
+        Me.TxtCP.Size = New System.Drawing.Size(196, 20)
+        Me.TxtCP.TabIndex = 17
+        '
+        'TxtPiso
+        '
+        Me.TxtPiso.Location = New System.Drawing.Point(116, 89)
+        Me.TxtPiso.Name = "TxtPiso"
+        Me.TxtPiso.Size = New System.Drawing.Size(75, 20)
+        Me.TxtPiso.TabIndex = 15
+        '
+        'TxtDpto
+        '
+        Me.TxtDpto.Location = New System.Drawing.Point(229, 90)
+        Me.TxtDpto.Name = "TxtDpto"
+        Me.TxtDpto.Size = New System.Drawing.Size(83, 20)
+        Me.TxtDpto.TabIndex = 16
+        '
         'TabRegistro
         '
         Me.TabRegistro.Controls.Add(Me.cbbCategorias)
@@ -386,124 +498,12 @@ Partial Class FormChoferes
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(7, 66)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(44, 13)
-        Me.Label9.TabIndex = 19
-        Me.Label9.Text = "Número"
-        '
-        'TxtCalle
-        '
-        Me.TxtCalle.Location = New System.Drawing.Point(116, 36)
-        Me.TxtCalle.Name = "TxtCalle"
-        Me.TxtCalle.Size = New System.Drawing.Size(196, 20)
-        Me.TxtCalle.TabIndex = 13
-        '
-        'TxtNumero
-        '
-        Me.TxtNumero.Location = New System.Drawing.Point(116, 63)
-        Me.TxtNumero.Name = "TxtNumero"
-        Me.TxtNumero.Size = New System.Drawing.Size(196, 20)
-        Me.TxtNumero.TabIndex = 14
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(7, 39)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(30, 13)
-        Me.Label10.TabIndex = 18
-        Me.Label10.Text = "Calle"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(7, 93)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(27, 13)
-        Me.Label12.TabIndex = 20
-        Me.Label12.Text = "Piso"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(197, 93)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(33, 13)
-        Me.Label13.TabIndex = 21
-        Me.Label13.Text = "Dpto."
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(7, 119)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(27, 13)
-        Me.Label14.TabIndex = 22
-        Me.Label14.Text = "C.P."
-        '
-        'TxtCP
-        '
-        Me.TxtCP.Location = New System.Drawing.Point(116, 116)
-        Me.TxtCP.Name = "TxtCP"
-        Me.TxtCP.Size = New System.Drawing.Size(196, 20)
-        Me.TxtCP.TabIndex = 17
-        '
-        'TxtPiso
-        '
-        Me.TxtPiso.Location = New System.Drawing.Point(116, 89)
-        Me.TxtPiso.Name = "TxtPiso"
-        Me.TxtPiso.Size = New System.Drawing.Size(75, 20)
-        Me.TxtPiso.TabIndex = 15
-        '
-        'TxtDpto
-        '
-        Me.TxtDpto.Location = New System.Drawing.Point(229, 90)
-        Me.TxtDpto.Name = "TxtDpto"
-        Me.TxtDpto.Size = New System.Drawing.Size(83, 20)
-        Me.TxtDpto.TabIndex = 16
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(7, 145)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(53, 13)
-        Me.Label15.TabIndex = 24
-        Me.Label15.Text = "Localidad"
-        '
-        'TxtLocalidad
-        '
-        Me.TxtLocalidad.Location = New System.Drawing.Point(116, 142)
-        Me.TxtLocalidad.Name = "TxtLocalidad"
-        Me.TxtLocalidad.Size = New System.Drawing.Size(196, 20)
-        Me.TxtLocalidad.TabIndex = 23
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(7, 171)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(51, 13)
-        Me.Label16.TabIndex = 26
-        Me.Label16.Text = "Provincia"
-        '
-        'TxtProvincia
-        '
-        Me.TxtProvincia.Location = New System.Drawing.Point(116, 168)
-        Me.TxtProvincia.Name = "TxtProvincia"
-        Me.TxtProvincia.Size = New System.Drawing.Size(196, 20)
-        Me.TxtProvincia.TabIndex = 25
-        '
         'FormChoferes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1011, 358)
+        Me.ClientSize = New System.Drawing.Size(1011, 509)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
