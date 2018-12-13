@@ -53,12 +53,39 @@
         Return datatable
     End Function
 
-    Public Function GetById(pId As Int16) As DataTable
+    Public Function Listar() As List(Of EL.Viaje)
         Dim con As New Conexion
         Dim datatable As New DataTable
-        con.EjecutarConsulta("select * from viajes v where id_viaje = " & pId)
+        Dim viajes As New List(Of EL.Viaje)
+        con.EjecutarConsulta("
+        select v.id_viaje
+         from dbo.Viaje v")
         con.adp.Fill(datatable)
-        Return datatable
+        For index = 0 To datatable.Rows.Count - 1
+            viajes.Add(New Viaje().GetById(datatable.Rows(index).ItemArray(0).ToString()))
+        Next
+        Return viajes
+    End Function
+
+    Public Function GetById(pId As Int16) As EL.Viaje
+        Dim con As New Conexion
+        Dim datatable As New DataTable
+        Dim viaje As New EL.Viaje()
+        con.EjecutarConsulta("select * from dbo.viaje v where id_viaje = " & pId)
+        con.adp.Fill(datatable)
+        viaje.Id = datatable.Rows(0).ItemArray(0).ToString()
+        viaje.Origen = datatable.Rows(0).ItemArray(1).ToString()
+        viaje.Destino = datatable.Rows(0).ItemArray(2).ToString()
+        'viaje.FechaSalida = datatable.Rows(0).ItemArray(3).ToString()
+        'viaje.FechaArribo = datatable.Rows(0).ItemArray(4).ToString()
+        viaje.KmRecorridos = datatable.Rows(0).ItemArray(5).ToString()
+        viaje.Comentarios = datatable.Rows(0).ItemArray(6).ToString()
+        'viaje.Socio = datatable.Rows(0).ItemArray(7).ToString()
+        'viaje.IdaYVuelta = datatable.Rows(0).ItemArray(8).ToString()
+        viaje.Chofer = New Chofer().GetById(datatable.Rows(0).ItemArray(9).ToString())
+        'viaje.Estado = datatable.Rows(0).ItemArray(10).ToString()
+        viaje.Precio = datatable.Rows(0).ItemArray(11).ToString()
+        Return viaje
     End Function
 
     Public Sub Guardar(viaje As EL.Viaje)

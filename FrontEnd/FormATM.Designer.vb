@@ -27,7 +27,7 @@ Partial Class FormATM
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.LblHorarioSalir = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.LblOrigenSalir = New System.Windows.Forms.Label()
@@ -43,7 +43,7 @@ Partial Class FormATM
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DgvServiciosPendientes = New System.Windows.Forms.DataGridView()
         Me.DgvServiciosEnCurso = New System.Windows.Forms.DataGridView()
-        Me.ActualizarInformacion = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerActualizarInformacion = New System.Windows.Forms.Timer(Me.components)
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -84,7 +84,7 @@ Partial Class FormATM
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.LblHorarioSalir)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.LblOrigenSalir)
@@ -97,15 +97,15 @@ Partial Class FormATM
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Próximos en salir"
         '
-        'Label5
+        'LblHorarioSalir
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 61)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(106, 22)
-        Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Hoy, 12:35"
+        Me.LblHorarioSalir.AutoSize = True
+        Me.LblHorarioSalir.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblHorarioSalir.Location = New System.Drawing.Point(6, 61)
+        Me.LblHorarioSalir.Name = "LblHorarioSalir"
+        Me.LblHorarioSalir.Size = New System.Drawing.Size(106, 22)
+        Me.LblHorarioSalir.TabIndex = 5
+        Me.LblHorarioSalir.Text = "Hoy, 12:35"
         '
         'Label3
         '
@@ -256,9 +256,9 @@ Partial Class FormATM
         Me.DgvServiciosEnCurso.Size = New System.Drawing.Size(648, 206)
         Me.DgvServiciosEnCurso.TabIndex = 5
         '
-        'ActualizarInformacion
+        'TimerActualizarInformacion
         '
-        Me.ActualizarInformacion.Interval = 10000
+        Me.TimerActualizarInformacion.Interval = 10000
         '
         'FormATM
         '
@@ -285,7 +285,7 @@ Partial Class FormATM
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label5 As Label
+    Friend WithEvents LblHorarioSalir As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents LblOrigenSalir As Label
@@ -301,5 +301,5 @@ Partial Class FormATM
     Friend WithEvents Label1 As Label
     Friend WithEvents DgvServiciosPendientes As DataGridView
     Friend WithEvents DgvServiciosEnCurso As DataGridView
-    Friend WithEvents ActualizarInformacion As Timer
+    Friend WithEvents TimerActualizarInformacion As Timer
 End Class
