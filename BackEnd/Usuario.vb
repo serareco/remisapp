@@ -10,6 +10,9 @@
     End Function
 
     Public Sub Guardar(usuario As EL.Usuario)
+        Dim registrarUsuario As Boolean = (usuario.Id <= 0)
+        Dim p As New Persona()
+        p.Guardar(usuario)
         Dim e As New DAL.Usuario()
         e.Guardar(usuario)
     End Sub

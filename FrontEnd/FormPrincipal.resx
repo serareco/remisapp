@@ -121,109 +121,37 @@
     <value>118, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ExitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="ExitToolStripMenuItem.Text" xml:space="preserve">
-    <value>En curso</value>
-  </data>
-  <data name="HistóricoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="HistóricoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Consulta histórico</value>
-  </data>
-  <data name="ReportesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="ReportesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Reportes</value>
-  </data>
-  <data name="ConsultaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="ConsultaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Consulta</value>
-  </data>
-  <data name="FileMenu.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+  <data name="MenuViajes.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>ActiveBorder</value>
   </data>
-  <data name="FileMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MenuViajes.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 20</value>
   </data>
-  <data name="FileMenu.Text" xml:space="preserve">
+  <data name="MenuViajes.Text" xml:space="preserve">
     <value>Viajes</value>
   </data>
-  <data name="OptionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
-  </data>
-  <data name="OptionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Autos</value>
-  </data>
-  <data name="ChoferesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
-  </data>
-  <data name="ChoferesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Choferes</value>
-  </data>
-  <data name="ClientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
-  </data>
-  <data name="ClientesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clientes</value>
-  </data>
-  <data name="UsuariosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
-  </data>
-  <data name="UsuariosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Usuarios</value>
-  </data>
-  <data name="ComisionesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
-  </data>
-  <data name="ComisionesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Comisiones</value>
-  </data>
-  <data name="PromocionesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
-  </data>
-  <data name="PromocionesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Beneficios</value>
-  </data>
-  <data name="ToolsMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MenuABMC.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
   </data>
-  <data name="ToolsMenu.Text" xml:space="preserve">
+  <data name="MenuABMC.Text" xml:space="preserve">
     <value>ABMC</value>
   </data>
-  <data name="CascadeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+  <data name="OpcionReportesViajes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="CascadeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cascada</value>
+  <data name="OpcionReportesViajes.Text" xml:space="preserve">
+    <value>Viajes</value>
   </data>
-  <data name="TileVerticalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
+  <data name="MenuReportes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 20</value>
   </data>
-  <data name="TileVerticalToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mosaico Vertical</value>
+  <data name="MenuReportes.Text" xml:space="preserve">
+    <value>Reportes</value>
   </data>
-  <data name="TileHorizontalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="TileHorizontalToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mosaico Horizontal</value>
-  </data>
-  <data name="CloseAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="CloseAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cerrar Todo</value>
-  </data>
-  <data name="WindowsMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="MenuVentana.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 20</value>
   </data>
-  <data name="WindowsMenu.Text" xml:space="preserve">
+  <data name="MenuVentana.Text" xml:space="preserve">
     <value>Ventana</value>
   </data>
   <data name="MenuStrip.Location" type="System.Drawing.Point, System.Drawing">
@@ -251,15 +179,81 @@
   <data name="&gt;&gt;MenuStrip.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="OpcionViajesCurso.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="OpcionViajesCurso.Text" xml:space="preserve">
+    <value>En curso</value>
+  </data>
+  <data name="OpcionConsultaHistorico.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="OpcionConsultaHistorico.Text" xml:space="preserve">
+    <value>Consulta histórico</value>
+  </data>
+  <data name="OpcionAutos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="OpcionAutos.Text" xml:space="preserve">
+    <value>Autos</value>
+  </data>
+  <data name="OpcionChoferes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="OpcionChoferes.Text" xml:space="preserve">
+    <value>Choferes</value>
+  </data>
+  <data name="OpcionSocios.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="OpcionSocios.Text" xml:space="preserve">
+    <value>Socios</value>
+  </data>
+  <data name="OpcionUsuarios.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="OpcionUsuarios.Text" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="OpcionComisiones.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="OpcionComisiones.Text" xml:space="preserve">
+    <value>Comisiones</value>
+  </data>
+  <data name="OpcionBeneficios.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 22</value>
+  </data>
+  <data name="OpcionBeneficios.Text" xml:space="preserve">
+    <value>Beneficios</value>
+  </data>
+  <data name="CascadeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="CascadeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cascada</value>
+  </data>
+  <data name="TileVerticalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="TileVerticalToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mosaico Vertical</value>
+  </data>
+  <data name="TileHorizontalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="TileHorizontalToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mosaico Horizontal</value>
+  </data>
+  <data name="CloseAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="CloseAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cerrar Todo</value>
+  </data>
   <metadata name="StatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>226, 17</value>
   </metadata>
-  <data name="LogInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 17</value>
-  </data>
-  <data name="LogInformation.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
   <data name="StatusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 385</value>
   </data>
@@ -283,6 +277,12 @@
   </data>
   <data name="&gt;&gt;StatusStrip.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="LogInformation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 17</value>
+  </data>
+  <data name="LogInformation.Text" xml:space="preserve">
+    <value>Status</value>
   </data>
   <metadata name="ToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>336, 17</value>
@@ -3149,76 +3149,82 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Remisapp - Menú Operaciones</value>
   </data>
-  <data name="&gt;&gt;FileMenu.Name" xml:space="preserve">
-    <value>FileMenu</value>
+  <data name="&gt;&gt;MenuViajes.Name" xml:space="preserve">
+    <value>MenuViajes</value>
   </data>
-  <data name="&gt;&gt;FileMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;MenuViajes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ExitToolStripMenuItem.Name" xml:space="preserve">
-    <value>ExitToolStripMenuItem</value>
+  <data name="&gt;&gt;OpcionViajesCurso.Name" xml:space="preserve">
+    <value>OpcionViajesCurso</value>
   </data>
-  <data name="&gt;&gt;ExitToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpcionViajesCurso.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;HistóricoToolStripMenuItem.Name" xml:space="preserve">
-    <value>HistóricoToolStripMenuItem</value>
+  <data name="&gt;&gt;OpcionConsultaHistorico.Name" xml:space="preserve">
+    <value>OpcionConsultaHistorico</value>
   </data>
-  <data name="&gt;&gt;HistóricoToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpcionConsultaHistorico.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ReportesToolStripMenuItem.Name" xml:space="preserve">
-    <value>ReportesToolStripMenuItem</value>
+  <data name="&gt;&gt;MenuABMC.Name" xml:space="preserve">
+    <value>MenuABMC</value>
   </data>
-  <data name="&gt;&gt;ReportesToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;MenuABMC.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ToolsMenu.Name" xml:space="preserve">
-    <value>ToolsMenu</value>
+  <data name="&gt;&gt;OpcionAutos.Name" xml:space="preserve">
+    <value>OpcionAutos</value>
   </data>
-  <data name="&gt;&gt;ToolsMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpcionAutos.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;OptionsToolStripMenuItem.Name" xml:space="preserve">
-    <value>OptionsToolStripMenuItem</value>
+  <data name="&gt;&gt;OpcionChoferes.Name" xml:space="preserve">
+    <value>OpcionChoferes</value>
   </data>
-  <data name="&gt;&gt;OptionsToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpcionChoferes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ChoferesToolStripMenuItem.Name" xml:space="preserve">
-    <value>ChoferesToolStripMenuItem</value>
+  <data name="&gt;&gt;OpcionSocios.Name" xml:space="preserve">
+    <value>OpcionSocios</value>
   </data>
-  <data name="&gt;&gt;ChoferesToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpcionSocios.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ClientesToolStripMenuItem.Name" xml:space="preserve">
-    <value>ClientesToolStripMenuItem</value>
+  <data name="&gt;&gt;OpcionUsuarios.Name" xml:space="preserve">
+    <value>OpcionUsuarios</value>
   </data>
-  <data name="&gt;&gt;ClientesToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpcionUsuarios.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;UsuariosToolStripMenuItem.Name" xml:space="preserve">
-    <value>UsuariosToolStripMenuItem</value>
+  <data name="&gt;&gt;OpcionComisiones.Name" xml:space="preserve">
+    <value>OpcionComisiones</value>
   </data>
-  <data name="&gt;&gt;UsuariosToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpcionComisiones.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;ComisionesToolStripMenuItem.Name" xml:space="preserve">
-    <value>ComisionesToolStripMenuItem</value>
+  <data name="&gt;&gt;OpcionBeneficios.Name" xml:space="preserve">
+    <value>OpcionBeneficios</value>
   </data>
-  <data name="&gt;&gt;ComisionesToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpcionBeneficios.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;PromocionesToolStripMenuItem.Name" xml:space="preserve">
-    <value>PromocionesToolStripMenuItem</value>
+  <data name="&gt;&gt;MenuReportes.Name" xml:space="preserve">
+    <value>MenuReportes</value>
   </data>
-  <data name="&gt;&gt;PromocionesToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;MenuReportes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;WindowsMenu.Name" xml:space="preserve">
-    <value>WindowsMenu</value>
+  <data name="&gt;&gt;OpcionReportesViajes.Name" xml:space="preserve">
+    <value>OpcionReportesViajes</value>
   </data>
-  <data name="&gt;&gt;WindowsMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpcionReportesViajes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MenuVentana.Name" xml:space="preserve">
+    <value>MenuVentana</value>
+  </data>
+  <data name="&gt;&gt;MenuVentana.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CascadeToolStripMenuItem.Name" xml:space="preserve">
@@ -3256,12 +3262,6 @@
   </data>
   <data name="&gt;&gt;ToolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ConsultaToolStripMenuItem.Name" xml:space="preserve">
-    <value>ConsultaToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ConsultaToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormPrincipal</value>

@@ -35,21 +35,9 @@ Public Class FormPrincipal
         End If
     End Sub
 
-    Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
+    Private Sub OpcionViajesCurso_Click(ByVal sender As Object, ByVal e As EventArgs) Handles OpcionViajesCurso.Click
         FormViajes.MdiParent = Me
         FormViajes.Show()
-    End Sub
-
-    Private Sub CutToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        ' Use My.Computer.Clipboard to insert the selected text or images into the clipboard
-    End Sub
-
-    Private Sub CopyToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        ' Use My.Computer.Clipboard to insert the selected text or images into the clipboard
-    End Sub
-
-    Private Sub PasteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        'Use My.Computer.Clipboard.GetText() or My.Computer.Clipboard.GetData to retrieve information from the clipboard.
     End Sub
 
     Private Sub CascadeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CascadeToolStripMenuItem.Click
@@ -77,86 +65,83 @@ Public Class FormPrincipal
 
     Private m_ChildFormNumber As Integer
 
-    Private Sub HistóricoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HistóricoToolStripMenuItem.Click
+    Private Sub OpcionConsultaHistorico_Click(sender As Object, e As EventArgs) Handles OpcionConsultaHistorico.Click
         FormViajesHistorico.MdiParent = Me
         FormViajesHistorico.Show()
     End Sub
 
-    Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OptionsToolStripMenuItem.Click
+    Private Sub OpcionAutos_Click(sender As Object, e As EventArgs) Handles OpcionAutos.Click
         FormVehiculos.MdiParent = Me
         FormVehiculos.Show()
     End Sub
 
-    Private Sub ChoferesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChoferesToolStripMenuItem.Click
+    Private Sub OpcionChoferes_Click(sender As Object, e As EventArgs) Handles OpcionChoferes.Click
         FormChoferes.MdiParent = Me
         FormChoferes.Show()
     End Sub
 
-    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+    Private Sub OpcionSocios_Click(sender As Object, e As EventArgs) Handles OpcionSocios.Click
         FormSocios.MdiParent = Me
         FormSocios.Show()
     End Sub
 
-    Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
+    Private Sub OpcionUsuarios_Click(sender As Object, e As EventArgs) Handles OpcionUsuarios.Click
         FormUsuarios.MdiParent = Me
         FormUsuarios.Show()
     End Sub
 
-    Private Sub ComisionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComisionesToolStripMenuItem.Click
+    Private Sub OpcionComisiones_Click(sender As Object, e As EventArgs) Handles OpcionComisiones.Click
         FormComisiones.MdiParent = Me
         FormComisiones.Show()
     End Sub
 
-    Private Sub PromocionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PromocionesToolStripMenuItem.Click
+    Private Sub OpcionBeneficios_Click(sender As Object, e As EventArgs) Handles OpcionBeneficios.Click
         FormBeneficios.MdiParent = Me
         FormBeneficios.Show()
     End Sub
 
     Private Sub FormPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Me.ChoferesToolStripMenuItem.Visible = False
-        Me.ComisionesToolStripMenuItem.Visible = False
-        Me.PromocionesToolStripMenuItem.Visible = False
-        Me.UsuariosToolStripMenuItem.Visible = False
-        Me.OptionsToolStripMenuItem.Visible = False ' Autos
-        Me.ReportesToolStripMenuItem.Visible = False
-        Me.ExitToolStripMenuItem.Visible = False 'nuevo viaje
-        Me.ToolsMenu.Visible = False ' ABMC
-        Me.FileMenu.Visible = False ' Viajes
-        Me.ClientesToolStripMenuItem.Visible = False
+        Me.MenuABMC.Visible = False
+        Me.MenuViajes.Visible = False
+        Me.MenuReportes.Visible = False
+
+        Me.OpcionChoferes.Visible = False
+        Me.OpcionComisiones.Visible = False
+        Me.OpcionBeneficios.Visible = False
+        Me.OpcionUsuarios.Visible = False
+        Me.OpcionAutos.Visible = False
+        Me.OpcionViajesCurso.Visible = False
+        Me.OpcionSocios.Visible = False
+        Me.OpcionReportesViajes.Visible = False
+
+        If BLL.Login.EsAdministrador() Then
+            Me.MenuABMC.Visible = True
+            Me.OpcionUsuarios.Visible = True
+        End If
 
         If BLL.Login.EsResponsable() Then
-            Me.ToolsMenu.Visible = True ' ABMC
-            Me.FileMenu.Visible = True
-            Me.ChoferesToolStripMenuItem.Visible = True
-            Me.ComisionesToolStripMenuItem.Visible = True
-            Me.PromocionesToolStripMenuItem.Visible = True
-            Me.UsuariosToolStripMenuItem.Visible = True
-            Me.OptionsToolStripMenuItem.Visible = True
-            Me.ReportesToolStripMenuItem.Visible = True
+            Me.MenuABMC.Visible = True
+            Me.OpcionChoferes.Visible = True
+            Me.OpcionBeneficios.Visible = True
+            Me.OpcionAutos.Visible = True
         End If
 
         If BLL.Login.EsOperador() Then
-            'Rol Operador
-            Me.FileMenu.Visible = True
-            Me.ToolsMenu.Visible = True ' ABMC
-            Me.ClientesToolStripMenuItem.Visible = True
-            Me.ExitToolStripMenuItem.Visible = True 'nuevo viaje
-            Me.HistóricoToolStripMenuItem.Visible = True ' historico
+            Me.MenuViajes.Visible = True
+            Me.MenuABMC.Visible = True
+            Me.OpcionSocios.Visible = True
+            Me.OpcionViajesCurso.Visible = True
+            Me.OpcionConsultaHistorico.Visible = True
         End If
 
         If BLL.Login.EsGerente() Then
-            'Rol Gerente
-            Me.FileMenu.Visible = True
-            Me.ToolsMenu.Visible = True ' ABMC
-            Me.ClientesToolStripMenuItem.Visible = True
-            Me.ExitToolStripMenuItem.Visible = True 'nuevo viaje
-            Me.HistóricoToolStripMenuItem.Visible = True ' historico
+            Me.MenuViajes.Visible = True
+            Me.MenuABMC.Visible = True
+            Me.OpcionComisiones.Visible = True
+            Me.OpcionViajesCurso.Visible = True
+            Me.OpcionConsultaHistorico.Visible = True
         End If
         LogInformation.Text() = BLL.Login.GetInforamcionUsuario()
     End Sub
 
-    Private Sub ConsultaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultaToolStripMenuItem.Click
-        FormATM.MdiParent = Me
-        FormATM.Show()
-    End Sub
 End Class

@@ -37,6 +37,15 @@
         Next
     End Sub
 
+    Public Function EsAdministrador() As Boolean
+        For Each permiso As EL.Permiso In UsuarioConectado.Permisos
+            If permiso.Id = "A" Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+
     Public Function EsOperador() As Boolean
         For Each permiso As EL.Permiso In UsuarioConectado.Permisos
             If permiso.Id = "O" Then

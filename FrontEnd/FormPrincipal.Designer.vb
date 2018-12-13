@@ -26,18 +26,19 @@ Partial Class FormPrincipal
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPrincipal))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
-        Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HistóricoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolsMenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChoferesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ComisionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PromocionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WindowsMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuViajes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionViajesCurso = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionConsultaHistorico = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuABMC = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionAutos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionChoferes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionSocios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionUsuarios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionComisiones = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionBeneficios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuReportes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionReportesViajes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuVentana = New System.Windows.Forms.ToolStripMenuItem()
         Me.CascadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TileVerticalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TileHorizontalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,80 +46,85 @@ Partial Class FormPrincipal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.LogInformation = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.ConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ToolsMenu, Me.WindowsMenu})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuViajes, Me.MenuABMC, Me.MenuReportes, Me.MenuVentana})
         resources.ApplyResources(Me.MenuStrip, "MenuStrip")
-        Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
+        Me.MenuStrip.MdiWindowListItem = Me.MenuVentana
         Me.MenuStrip.Name = "MenuStrip"
         '
-        'FileMenu
+        'MenuViajes
         '
-        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.HistóricoToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.ConsultaToolStripMenuItem})
-        resources.ApplyResources(Me.FileMenu, "FileMenu")
-        Me.FileMenu.Name = "FileMenu"
+        Me.MenuViajes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionViajesCurso, Me.OpcionConsultaHistorico})
+        resources.ApplyResources(Me.MenuViajes, "MenuViajes")
+        Me.MenuViajes.Name = "MenuViajes"
         '
-        'ExitToolStripMenuItem
+        'OpcionViajesCurso
         '
-        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        resources.ApplyResources(Me.ExitToolStripMenuItem, "ExitToolStripMenuItem")
+        Me.OpcionViajesCurso.Name = "OpcionViajesCurso"
+        resources.ApplyResources(Me.OpcionViajesCurso, "OpcionViajesCurso")
         '
-        'HistóricoToolStripMenuItem
+        'OpcionConsultaHistorico
         '
-        Me.HistóricoToolStripMenuItem.Name = "HistóricoToolStripMenuItem"
-        resources.ApplyResources(Me.HistóricoToolStripMenuItem, "HistóricoToolStripMenuItem")
+        Me.OpcionConsultaHistorico.Name = "OpcionConsultaHistorico"
+        resources.ApplyResources(Me.OpcionConsultaHistorico, "OpcionConsultaHistorico")
         '
-        'ReportesToolStripMenuItem
+        'MenuABMC
         '
-        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        resources.ApplyResources(Me.ReportesToolStripMenuItem, "ReportesToolStripMenuItem")
+        Me.MenuABMC.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionAutos, Me.OpcionChoferes, Me.OpcionSocios, Me.OpcionUsuarios, Me.OpcionComisiones, Me.OpcionBeneficios})
+        Me.MenuABMC.Name = "MenuABMC"
+        resources.ApplyResources(Me.MenuABMC, "MenuABMC")
         '
-        'ToolsMenu
+        'OpcionAutos
         '
-        Me.ToolsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsToolStripMenuItem, Me.ChoferesToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ComisionesToolStripMenuItem, Me.PromocionesToolStripMenuItem})
-        Me.ToolsMenu.Name = "ToolsMenu"
-        resources.ApplyResources(Me.ToolsMenu, "ToolsMenu")
+        Me.OpcionAutos.Name = "OpcionAutos"
+        resources.ApplyResources(Me.OpcionAutos, "OpcionAutos")
         '
-        'OptionsToolStripMenuItem
+        'OpcionChoferes
         '
-        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        resources.ApplyResources(Me.OptionsToolStripMenuItem, "OptionsToolStripMenuItem")
+        Me.OpcionChoferes.Name = "OpcionChoferes"
+        resources.ApplyResources(Me.OpcionChoferes, "OpcionChoferes")
         '
-        'ChoferesToolStripMenuItem
+        'OpcionSocios
         '
-        Me.ChoferesToolStripMenuItem.Name = "ChoferesToolStripMenuItem"
-        resources.ApplyResources(Me.ChoferesToolStripMenuItem, "ChoferesToolStripMenuItem")
+        Me.OpcionSocios.Name = "OpcionSocios"
+        resources.ApplyResources(Me.OpcionSocios, "OpcionSocios")
         '
-        'ClientesToolStripMenuItem
+        'OpcionUsuarios
         '
-        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        resources.ApplyResources(Me.ClientesToolStripMenuItem, "ClientesToolStripMenuItem")
+        Me.OpcionUsuarios.Name = "OpcionUsuarios"
+        resources.ApplyResources(Me.OpcionUsuarios, "OpcionUsuarios")
         '
-        'UsuariosToolStripMenuItem
+        'OpcionComisiones
         '
-        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        resources.ApplyResources(Me.UsuariosToolStripMenuItem, "UsuariosToolStripMenuItem")
+        Me.OpcionComisiones.Name = "OpcionComisiones"
+        resources.ApplyResources(Me.OpcionComisiones, "OpcionComisiones")
         '
-        'ComisionesToolStripMenuItem
+        'OpcionBeneficios
         '
-        Me.ComisionesToolStripMenuItem.Name = "ComisionesToolStripMenuItem"
-        resources.ApplyResources(Me.ComisionesToolStripMenuItem, "ComisionesToolStripMenuItem")
+        Me.OpcionBeneficios.Name = "OpcionBeneficios"
+        resources.ApplyResources(Me.OpcionBeneficios, "OpcionBeneficios")
         '
-        'PromocionesToolStripMenuItem
+        'MenuReportes
         '
-        Me.PromocionesToolStripMenuItem.Name = "PromocionesToolStripMenuItem"
-        resources.ApplyResources(Me.PromocionesToolStripMenuItem, "PromocionesToolStripMenuItem")
+        Me.MenuReportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionReportesViajes})
+        Me.MenuReportes.Name = "MenuReportes"
+        resources.ApplyResources(Me.MenuReportes, "MenuReportes")
         '
-        'WindowsMenu
+        'OpcionReportesViajes
         '
-        Me.WindowsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CascadeToolStripMenuItem, Me.TileVerticalToolStripMenuItem, Me.TileHorizontalToolStripMenuItem, Me.CloseAllToolStripMenuItem})
-        Me.WindowsMenu.Name = "WindowsMenu"
-        resources.ApplyResources(Me.WindowsMenu, "WindowsMenu")
+        Me.OpcionReportesViajes.Name = "OpcionReportesViajes"
+        resources.ApplyResources(Me.OpcionReportesViajes, "OpcionReportesViajes")
+        '
+        'MenuVentana
+        '
+        Me.MenuVentana.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CascadeToolStripMenuItem, Me.TileVerticalToolStripMenuItem, Me.TileHorizontalToolStripMenuItem, Me.CloseAllToolStripMenuItem})
+        Me.MenuVentana.Name = "MenuVentana"
+        resources.ApplyResources(Me.MenuVentana, "MenuVentana")
         '
         'CascadeToolStripMenuItem
         '
@@ -151,11 +157,6 @@ Partial Class FormPrincipal
         Me.LogInformation.Name = "LogInformation"
         resources.ApplyResources(Me.LogInformation, "LogInformation")
         '
-        'ConsultaToolStripMenuItem
-        '
-        Me.ConsultaToolStripMenuItem.Name = "ConsultaToolStripMenuItem"
-        resources.ApplyResources(Me.ConsultaToolStripMenuItem, "ConsultaToolStripMenuItem")
-        '
         'FormPrincipal
         '
         resources.ApplyResources(Me, "$this")
@@ -176,24 +177,24 @@ Partial Class FormPrincipal
 
     End Sub
     Friend WithEvents CloseAllToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents WindowsMenu As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MenuVentana As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CascadeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TileVerticalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TileHorizontalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OptionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OpcionAutos As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolTip As System.Windows.Forms.ToolTip
     Friend WithEvents LogInformation As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
-    Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents FileMenu As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OpcionViajesCurso As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MenuViajes As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
-    Friend WithEvents ToolsMenu As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HistóricoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ChoferesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ComisionesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PromocionesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ConsultaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MenuABMC As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OpcionConsultaHistorico As ToolStripMenuItem
+    Friend WithEvents OpcionChoferes As ToolStripMenuItem
+    Friend WithEvents OpcionSocios As ToolStripMenuItem
+    Friend WithEvents OpcionUsuarios As ToolStripMenuItem
+    Friend WithEvents OpcionComisiones As ToolStripMenuItem
+    Friend WithEvents OpcionBeneficios As ToolStripMenuItem
+    Friend WithEvents MenuReportes As ToolStripMenuItem
+    Friend WithEvents OpcionReportesViajes As ToolStripMenuItem
 End Class

@@ -16,7 +16,11 @@
         persona.Email = datatable.Rows(0).ItemArray(4).ToString()
         persona.NroDocumento = datatable.Rows(0).ItemArray(6).ToString()
         persona.FechaNacimiento = datatable.Rows(0).ItemArray(7).ToString()
-        persona.Domicilio = New Domicilio().GetByPersonaId(persona.Id)(0)
+
+        If New Domicilio().GetByPersonaId(persona.Id).Count > 0 Then
+            persona.Domicilio = New Domicilio().GetByPersonaId(persona.Id)(0)
+        End If
+
         Return persona
     End Function
 

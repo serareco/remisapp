@@ -11,14 +11,10 @@
     End Sub
 
     Private Sub ActualizarLista()
-        TxtPassword.Visible = True
-        TxtRepetirPassword.Visible = True
         dtpFechaNacimiento.CustomFormat = " "
         dtpFechaNacimiento.Format = DateTimePickerFormat.Custom
 
         TxtUsuario.Clear()
-        TxtPassword.Clear()
-        TxtRepetirPassword.Clear()
         TxtNroDocumento.Clear()
         TxtNombre.Clear()
         TxtApellido.Clear()
@@ -62,8 +58,8 @@
         If erroresValidaciones Then
             MessageBox.Show(msjValidaciones)
         Else
-            usuario.Usuario = TxtUsuario.Text()
-            usuario.Password = TxtPassword.Text()
+            usuario.Usuario = TxtNroDocumento.Text()
+            usuario.Password = TxtNroDocumento.Text()
             usuario.FechaNacimiento = dtpFechaNacimiento.Value()
             usuario.NroDocumento = TxtNroDocumento.Text()
             usuario.Nombre = TxtNombre.Text()
@@ -105,13 +101,15 @@
             CleanCheckList()
             ClbRoles.ClearSelected()
 
-            TxtCalle.Text = usuario.Domicilio.Calle
-            TxtNumero.Text = usuario.Domicilio.Nro
-            TxtPiso.Text = usuario.Domicilio.Piso
-            TxtDpto.Text = usuario.Domicilio.Dpto
-            TxtLocalidad.Text = usuario.Domicilio.Localidad
-            TxtCP.Text = usuario.Domicilio.CP
-            TxtProvincia.Text = usuario.Domicilio.Provincia
+            If usuario.Domicilio IsNot Nothing Then
+                TxtCalle.Text = usuario.Domicilio.Calle
+                TxtNumero.Text = usuario.Domicilio.Nro
+                TxtPiso.Text = usuario.Domicilio.Piso
+                TxtDpto.Text = usuario.Domicilio.Dpto
+                TxtLocalidad.Text = usuario.Domicilio.Localidad
+                TxtCP.Text = usuario.Domicilio.CP
+                TxtProvincia.Text = usuario.Domicilio.Provincia
+            End If
 
             TxtNombre.Text = usuario.Nombre
             TxtApellido.Text = usuario.Apellido
@@ -134,23 +132,7 @@
                 ClbRoles.SetItemChecked(i, True)
             Next
 
-            'Dim i As Integer = 0
-            'Dim j As Integer = 0
-            'For Each rol As EL.Rol In usuario.Roles
-            ' 'MessageBox.Show(rol.Descripcion)
-            ' i += 1
-            'j = 0
-            'For Each item As Object In ClbRoles.Items
-            'j += 1
-            'If (item.Row.ItemArray(0) = rol.Id) Then
-            'ClbRoles.SetItemChecked(j, True)
-            'End If
-            '   Next
-            '  Next
-
             TxtUsuario.Text = usuario.Usuario
-            TxtPassword.Visible = False
-            TxtRepetirPassword.Visible = False
         End If
     End Sub
 
@@ -175,5 +157,9 @@
 
     Private Sub dtpFechaNacimiento_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaNacimiento.ValueChanged
         dtpFechaNacimiento.CustomFormat = "dd/MM/yyyy"
+    End Sub
+
+    Private Sub BtnBlanqueoPss_Click(sender As Object, e As EventArgs) Handles BtnBlanqueoPss.Click
+
     End Sub
 End Class

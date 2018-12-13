@@ -31,12 +31,8 @@ Partial Class FormUsuarios
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TxtPassword = New System.Windows.Forms.TextBox()
         Me.ClbRoles = New System.Windows.Forms.CheckedListBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TxtRepetirPassword = New System.Windows.Forms.TextBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TxtNroDocumento = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -69,6 +65,8 @@ Partial Class FormUsuarios
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
+        Me.BtnBlanqueoPss = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -124,36 +122,35 @@ Partial Class FormUsuarios
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(6, 19)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(342, 264)
+        Me.TabControl1.Size = New System.Drawing.Size(342, 273)
         Me.TabControl1.TabIndex = 5
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Label6)
+        Me.TabPage2.Controls.Add(Me.BtnBlanqueoPss)
         Me.TabPage2.Controls.Add(Me.TxtUsuario)
         Me.TabPage2.Controls.Add(Me.Label7)
-        Me.TabPage2.Controls.Add(Me.Label6)
-        Me.TabPage2.Controls.Add(Me.TxtPassword)
         Me.TabPage2.Controls.Add(Me.ClbRoles)
         Me.TabPage2.Controls.Add(Me.Label8)
-        Me.TabPage2.Controls.Add(Me.Label9)
-        Me.TabPage2.Controls.Add(Me.TxtRepetirPassword)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(334, 238)
+        Me.TabPage2.Size = New System.Drawing.Size(334, 247)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Usuario"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'TxtUsuario
         '
-        Me.TxtUsuario.Location = New System.Drawing.Point(116, 20)
+        Me.TxtUsuario.Enabled = False
+        Me.TxtUsuario.Location = New System.Drawing.Point(116, 12)
         Me.TxtUsuario.Name = "TxtUsuario"
         Me.TxtUsuario.Size = New System.Drawing.Size(204, 20)
         Me.TxtUsuario.TabIndex = 6
@@ -161,33 +158,16 @@ Partial Class FormUsuarios
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(10, 24)
+        Me.Label7.Location = New System.Drawing.Point(10, 16)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(43, 13)
         Me.Label7.TabIndex = 37
         Me.Label7.Text = "Usuario"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(10, 50)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(61, 13)
-        Me.Label6.TabIndex = 38
-        Me.Label6.Text = "Contraseña"
-        '
-        'TxtPassword
-        '
-        Me.TxtPassword.Location = New System.Drawing.Point(116, 46)
-        Me.TxtPassword.Name = "TxtPassword"
-        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtPassword.Size = New System.Drawing.Size(204, 20)
-        Me.TxtPassword.TabIndex = 7
-        '
         'ClbRoles
         '
         Me.ClbRoles.FormattingEnabled = True
-        Me.ClbRoles.Location = New System.Drawing.Point(116, 96)
+        Me.ClbRoles.Location = New System.Drawing.Point(116, 38)
         Me.ClbRoles.Name = "ClbRoles"
         Me.ClbRoles.Size = New System.Drawing.Size(204, 124)
         Me.ClbRoles.TabIndex = 10
@@ -195,28 +175,11 @@ Partial Class FormUsuarios
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(10, 97)
+        Me.Label8.Location = New System.Drawing.Point(10, 39)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(34, 13)
         Me.Label8.TabIndex = 36
         Me.Label8.Text = "Roles"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(10, 74)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(98, 13)
-        Me.Label9.TabIndex = 41
-        Me.Label9.Text = "Repetir Contraseña"
-        '
-        'TxtRepetirPassword
-        '
-        Me.TxtRepetirPassword.Location = New System.Drawing.Point(116, 70)
-        Me.TxtRepetirPassword.Name = "TxtRepetirPassword"
-        Me.TxtRepetirPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtRepetirPassword.Size = New System.Drawing.Size(204, 20)
-        Me.TxtRepetirPassword.TabIndex = 8
         '
         'TabPage1
         '
@@ -512,6 +475,25 @@ Partial Class FormUsuarios
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
+        'BtnBlanqueoPss
+        '
+        Me.BtnBlanqueoPss.Location = New System.Drawing.Point(13, 168)
+        Me.BtnBlanqueoPss.Name = "BtnBlanqueoPss"
+        Me.BtnBlanqueoPss.Size = New System.Drawing.Size(307, 23)
+        Me.BtnBlanqueoPss.TabIndex = 38
+        Me.BtnBlanqueoPss.Text = "Blanquear Contraseña"
+        Me.BtnBlanqueoPss.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(10, 194)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(301, 39)
+        Me.Label6.TabIndex = 39
+        Me.Label6.Text = "Nota: El blanqueo de contraseña implica que se establezca el " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "número de document" &
+    "o como contraseña, y que en el proximo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ingreso deberá modificarla."
+        '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -545,11 +527,7 @@ Partial Class FormUsuarios
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents ClbRoles As CheckedListBox
-    Friend WithEvents TxtRepetirPassword As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TxtPassword As TextBox
     Friend WithEvents TxtUsuario As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents TxtEmail As TextBox
@@ -585,4 +563,6 @@ Partial Class FormUsuarios
     Friend WithEvents TxtCP As TextBox
     Friend WithEvents TxtPiso As TextBox
     Friend WithEvents TxtDpto As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents BtnBlanqueoPss As Button
 End Class
