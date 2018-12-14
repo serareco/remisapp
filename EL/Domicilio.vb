@@ -18,12 +18,12 @@
             _calle = value
         End Set
     End Property
-    Private _nro As Int16
-    Public Property Nro() As Int16
+    Private _nro As String
+    Public Property Nro() As String
         Get
             Return _nro
         End Get
-        Set(ByVal value As Int16)
+        Set(ByVal value As String)
             _nro = value
         End Set
     End Property

@@ -22,6 +22,14 @@
         TxtEmail.Clear()
         TxtTelefono.Clear()
 
+        TxtCalle.Clear()
+        TxtNumero.Clear()
+        TxtPiso.Clear()
+        TxtDpto.Clear()
+        TxtCP.Clear()
+        TxtLocalidad.Clear()
+        TxtProvincia.Clear()
+
         dtpFechaVencimientoRegistro.CustomFormat = " "
         dtpFechaVencimientoRegistro.Format = DateTimePickerFormat.Custom
 
@@ -44,8 +52,6 @@
         chofer.Domicilio = New EL.Domicilio() With {
             .Calle = TxtCalle.Text(),
             .Nro = TxtNumero.Text(),
-            .Piso = TxtPiso.Text,
-            .Dpto = TxtDpto.Text(),
             .Localidad = TxtLocalidad.Text(),
             .Provincia = TxtProvincia.Text(),
             .CP = TxtCP.Text()

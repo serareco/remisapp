@@ -26,23 +26,25 @@ Partial Class FormSocios
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
-        Me.dgvClientes = New System.Windows.Forms.DataGridView()
+        Me.dgvSocios = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
-        Me.TxtEmail = New System.Windows.Forms.TextBox()
-        Me.TxtTelefono = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TxtApellido = New System.Windows.Forms.TextBox()
-        Me.TxtNombre = New System.Windows.Forms.TextBox()
-        Me.BtnCancelar = New System.Windows.Forms.Button()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TxtNroDocumento = New System.Windows.Forms.TextBox()
+        Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtEmail = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtTelefono = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtNombre = New System.Windows.Forms.TextBox()
+        Me.TxtApellido = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtProvincia = New System.Windows.Forms.TextBox()
@@ -58,12 +60,10 @@ Partial Class FormSocios
         Me.TxtCP = New System.Windows.Forms.TextBox()
         Me.TxtPiso = New System.Windows.Forms.TextBox()
         Me.TxtDpto = New System.Windows.Forms.TextBox()
-        Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtNroDocumento = New System.Windows.Forms.TextBox()
+        Me.BtnCancelar = New System.Windows.Forms.Button()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvSocios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -74,7 +74,7 @@ Partial Class FormSocios
         '
         Me.GroupBox2.Controls.Add(Me.BtnEliminar)
         Me.GroupBox2.Controls.Add(Me.BtnModificar)
-        Me.GroupBox2.Controls.Add(Me.dgvClientes)
+        Me.GroupBox2.Controls.Add(Me.dgvSocios)
         Me.GroupBox2.Location = New System.Drawing.Point(373, 20)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(626, 318)
@@ -87,7 +87,7 @@ Partial Class FormSocios
         Me.BtnEliminar.Location = New System.Drawing.Point(118, 276)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(102, 23)
-        Me.BtnEliminar.TabIndex = 6
+        Me.BtnEliminar.TabIndex = 60
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
@@ -96,23 +96,23 @@ Partial Class FormSocios
         Me.BtnModificar.Location = New System.Drawing.Point(10, 276)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(102, 23)
-        Me.BtnModificar.TabIndex = 5
+        Me.BtnModificar.TabIndex = 50
         Me.BtnModificar.Text = "Modificar"
         Me.BtnModificar.UseVisualStyleBackColor = True
         '
-        'dgvClientes
+        'dgvSocios
         '
-        Me.dgvClientes.AllowUserToAddRows = False
-        Me.dgvClientes.AllowUserToDeleteRows = False
-        Me.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvClientes.Location = New System.Drawing.Point(7, 19)
-        Me.dgvClientes.MultiSelect = False
-        Me.dgvClientes.Name = "dgvClientes"
-        Me.dgvClientes.ReadOnly = True
-        Me.dgvClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        Me.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvClientes.Size = New System.Drawing.Size(613, 251)
-        Me.dgvClientes.TabIndex = 0
+        Me.dgvSocios.AllowUserToAddRows = False
+        Me.dgvSocios.AllowUserToDeleteRows = False
+        Me.dgvSocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvSocios.Location = New System.Drawing.Point(7, 19)
+        Me.dgvSocios.MultiSelect = False
+        Me.dgvSocios.Name = "dgvSocios"
+        Me.dgvSocios.ReadOnly = True
+        Me.dgvSocios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        Me.dgvSocios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvSocios.Size = New System.Drawing.Size(613, 251)
+        Me.dgvSocios.TabIndex = 0
         '
         'GroupBox1
         '
@@ -127,113 +127,14 @@ Partial Class FormSocios
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Socio"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(9, 32)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(44, 13)
-        Me.Label6.TabIndex = 58
-        Me.Label6.Text = "Número"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(118, 29)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(203, 20)
-        Me.TextBox1.TabIndex = 57
-        '
         'BtnLimpiar
         '
         Me.BtnLimpiar.Location = New System.Drawing.Point(256, 276)
         Me.BtnLimpiar.Name = "BtnLimpiar"
         Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnLimpiar.TabIndex = 56
+        Me.BtnLimpiar.TabIndex = 40
         Me.BtnLimpiar.Text = "Limpiar"
         Me.BtnLimpiar.UseVisualStyleBackColor = True
-        '
-        'TxtEmail
-        '
-        Me.TxtEmail.Location = New System.Drawing.Point(118, 158)
-        Me.TxtEmail.Name = "TxtEmail"
-        Me.TxtEmail.Size = New System.Drawing.Size(203, 20)
-        Me.TxtEmail.TabIndex = 55
-        '
-        'TxtTelefono
-        '
-        Me.TxtTelefono.Location = New System.Drawing.Point(118, 132)
-        Me.TxtTelefono.Name = "TxtTelefono"
-        Me.TxtTelefono.Size = New System.Drawing.Size(203, 20)
-        Me.TxtTelefono.TabIndex = 54
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(9, 161)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(36, 13)
-        Me.Label5.TabIndex = 52
-        Me.Label5.Text = "E-Mail"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(9, 135)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
-        Me.Label4.TabIndex = 51
-        Me.Label4.Text = "Teléfono"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(9, 85)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(44, 13)
-        Me.Label2.TabIndex = 49
-        Me.Label2.Text = "Apellido"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 58)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 13)
-        Me.Label1.TabIndex = 48
-        Me.Label1.Text = "Nombre"
-        '
-        'TxtApellido
-        '
-        Me.TxtApellido.Location = New System.Drawing.Point(118, 82)
-        Me.TxtApellido.Name = "TxtApellido"
-        Me.TxtApellido.Size = New System.Drawing.Size(203, 20)
-        Me.TxtApellido.TabIndex = 47
-        '
-        'TxtNombre
-        '
-        Me.TxtNombre.Location = New System.Drawing.Point(118, 55)
-        Me.TxtNombre.Name = "TxtNombre"
-        Me.TxtNombre.Size = New System.Drawing.Size(203, 20)
-        Me.TxtNombre.TabIndex = 46
-        '
-        'BtnCancelar
-        '
-        Me.BtnCancelar.Location = New System.Drawing.Point(142, 276)
-        Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(94, 23)
-        Me.BtnCancelar.TabIndex = 45
-        Me.BtnCancelar.Text = "Cancelar"
-        Me.BtnCancelar.UseVisualStyleBackColor = True
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.Location = New System.Drawing.Point(22, 276)
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(97, 23)
-        Me.BtnGuardar.TabIndex = 44
-        Me.BtnGuardar.Text = "Guardar"
-        Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'TabControl1
         '
@@ -268,6 +169,123 @@ Partial Class FormSocios
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Datos Personales"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(9, 110)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(85, 13)
+        Me.Label7.TabIndex = 62
+        Me.Label7.Text = "Nro. Documento"
+        '
+        'TxtNroDocumento
+        '
+        Me.TxtNroDocumento.Location = New System.Drawing.Point(118, 106)
+        Me.TxtNroDocumento.Name = "TxtNroDocumento"
+        Me.TxtNroDocumento.Size = New System.Drawing.Size(203, 20)
+        Me.TxtNroDocumento.TabIndex = 4
+        '
+        'dtpFechaNacimiento
+        '
+        Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(118, 185)
+        Me.dtpFechaNacimiento.MaxDate = New Date(2018, 7, 12, 0, 0, 0, 0)
+        Me.dtpFechaNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
+        Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
+        Me.dtpFechaNacimiento.Size = New System.Drawing.Size(203, 20)
+        Me.dtpFechaNacimiento.TabIndex = 7
+        Me.dtpFechaNacimiento.Value = New Date(2018, 7, 11, 0, 0, 0, 0)
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(9, 191)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(93, 13)
+        Me.Label3.TabIndex = 60
+        Me.Label3.Text = "Fecha Nacimiento"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(9, 32)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(44, 13)
+        Me.Label6.TabIndex = 58
+        Me.Label6.Text = "Número"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(118, 29)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(203, 20)
+        Me.TextBox1.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(9, 85)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(44, 13)
+        Me.Label2.TabIndex = 49
+        Me.Label2.Text = "Apellido"
+        '
+        'TxtEmail
+        '
+        Me.TxtEmail.Location = New System.Drawing.Point(118, 158)
+        Me.TxtEmail.Name = "TxtEmail"
+        Me.TxtEmail.Size = New System.Drawing.Size(203, 20)
+        Me.TxtEmail.TabIndex = 6
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(9, 135)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.TabIndex = 51
+        Me.Label4.Text = "Teléfono"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(9, 58)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(44, 13)
+        Me.Label1.TabIndex = 48
+        Me.Label1.Text = "Nombre"
+        '
+        'TxtTelefono
+        '
+        Me.TxtTelefono.Location = New System.Drawing.Point(118, 132)
+        Me.TxtTelefono.Name = "TxtTelefono"
+        Me.TxtTelefono.Size = New System.Drawing.Size(203, 20)
+        Me.TxtTelefono.TabIndex = 5
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(9, 161)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(36, 13)
+        Me.Label5.TabIndex = 52
+        Me.Label5.Text = "E-Mail"
+        '
+        'TxtNombre
+        '
+        Me.TxtNombre.Location = New System.Drawing.Point(118, 55)
+        Me.TxtNombre.Name = "TxtNombre"
+        Me.TxtNombre.Size = New System.Drawing.Size(203, 20)
+        Me.TxtNombre.TabIndex = 2
+        '
+        'TxtApellido
+        '
+        Me.TxtApellido.Location = New System.Drawing.Point(118, 82)
+        Me.TxtApellido.Name = "TxtApellido"
+        Me.TxtApellido.Size = New System.Drawing.Size(203, 20)
+        Me.TxtApellido.TabIndex = 3
         '
         'TabPage2
         '
@@ -307,7 +325,7 @@ Partial Class FormSocios
         Me.TxtProvincia.Location = New System.Drawing.Point(125, 159)
         Me.TxtProvincia.Name = "TxtProvincia"
         Me.TxtProvincia.Size = New System.Drawing.Size(196, 20)
-        Me.TxtProvincia.TabIndex = 39
+        Me.TxtProvincia.TabIndex = 7
         '
         'Label15
         '
@@ -323,7 +341,7 @@ Partial Class FormSocios
         Me.TxtLocalidad.Location = New System.Drawing.Point(125, 133)
         Me.TxtLocalidad.Name = "TxtLocalidad"
         Me.TxtLocalidad.Size = New System.Drawing.Size(196, 20)
-        Me.TxtLocalidad.TabIndex = 37
+        Me.TxtLocalidad.TabIndex = 6
         '
         'Label9
         '
@@ -339,14 +357,14 @@ Partial Class FormSocios
         Me.TxtCalle.Location = New System.Drawing.Point(125, 27)
         Me.TxtCalle.Name = "TxtCalle"
         Me.TxtCalle.Size = New System.Drawing.Size(196, 20)
-        Me.TxtCalle.TabIndex = 27
+        Me.TxtCalle.TabIndex = 1
         '
         'TxtNumero
         '
         Me.TxtNumero.Location = New System.Drawing.Point(125, 54)
         Me.TxtNumero.Name = "TxtNumero"
         Me.TxtNumero.Size = New System.Drawing.Size(196, 20)
-        Me.TxtNumero.TabIndex = 28
+        Me.TxtNumero.TabIndex = 2
         '
         'Label10
         '
@@ -389,57 +407,39 @@ Partial Class FormSocios
         Me.TxtCP.Location = New System.Drawing.Point(125, 107)
         Me.TxtCP.Name = "TxtCP"
         Me.TxtCP.Size = New System.Drawing.Size(196, 20)
-        Me.TxtCP.TabIndex = 31
+        Me.TxtCP.TabIndex = 5
         '
         'TxtPiso
         '
         Me.TxtPiso.Location = New System.Drawing.Point(125, 80)
         Me.TxtPiso.Name = "TxtPiso"
         Me.TxtPiso.Size = New System.Drawing.Size(75, 20)
-        Me.TxtPiso.TabIndex = 29
+        Me.TxtPiso.TabIndex = 3
         '
         'TxtDpto
         '
         Me.TxtDpto.Location = New System.Drawing.Point(238, 81)
         Me.TxtDpto.Name = "TxtDpto"
         Me.TxtDpto.Size = New System.Drawing.Size(83, 20)
-        Me.TxtDpto.TabIndex = 30
+        Me.TxtDpto.TabIndex = 4
         '
-        'dtpFechaNacimiento
+        'BtnCancelar
         '
-        Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(118, 185)
-        Me.dtpFechaNacimiento.MaxDate = New Date(2018, 7, 12, 0, 0, 0, 0)
-        Me.dtpFechaNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
-        Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
-        Me.dtpFechaNacimiento.Size = New System.Drawing.Size(203, 20)
-        Me.dtpFechaNacimiento.TabIndex = 59
-        Me.dtpFechaNacimiento.Value = New Date(2018, 7, 11, 0, 0, 0, 0)
+        Me.BtnCancelar.Location = New System.Drawing.Point(142, 276)
+        Me.BtnCancelar.Name = "BtnCancelar"
+        Me.BtnCancelar.Size = New System.Drawing.Size(94, 23)
+        Me.BtnCancelar.TabIndex = 30
+        Me.BtnCancelar.Text = "Cancelar"
+        Me.BtnCancelar.UseVisualStyleBackColor = True
         '
-        'Label3
+        'BtnGuardar
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(9, 191)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 13)
-        Me.Label3.TabIndex = 60
-        Me.Label3.Text = "Fecha Nacimiento"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(9, 110)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(85, 13)
-        Me.Label7.TabIndex = 62
-        Me.Label7.Text = "Nro. Documento"
-        '
-        'TxtNroDocumento
-        '
-        Me.TxtNroDocumento.Location = New System.Drawing.Point(118, 106)
-        Me.TxtNroDocumento.Name = "TxtNroDocumento"
-        Me.TxtNroDocumento.Size = New System.Drawing.Size(203, 20)
-        Me.TxtNroDocumento.TabIndex = 61
+        Me.BtnGuardar.Location = New System.Drawing.Point(22, 276)
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Size = New System.Drawing.Size(97, 23)
+        Me.BtnGuardar.TabIndex = 20
+        Me.BtnGuardar.Text = "Guardar"
+        Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'FormSocios
         '
@@ -455,7 +455,7 @@ Partial Class FormSocios
         Me.Text = "Socios"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox2.ResumeLayout(False)
-        CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvSocios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -467,7 +467,7 @@ Partial Class FormSocios
     End Sub
 
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents dgvClientes As DataGridView
+    Friend WithEvents dgvSocios As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnModificar As Button

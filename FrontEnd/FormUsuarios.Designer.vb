@@ -28,12 +28,12 @@ Partial Class FormUsuarios
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TabPermisos = New System.Windows.Forms.TabPage()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ClbRoles = New System.Windows.Forms.CheckedListBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabDatosPersonales = New System.Windows.Forms.TabPage()
         Me.TxtNroDocumento = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -46,7 +46,7 @@ Partial Class FormUsuarios
         Me.TxtApellido = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabDomicilio = New System.Windows.Forms.TabPage()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtProvincia = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -70,9 +70,9 @@ Partial Class FormUsuarios
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
+        Me.TabPermisos.SuspendLayout()
+        Me.TabDatosPersonales.SuspendLayout()
+        Me.TabDomicilio.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -122,30 +122,30 @@ Partial Class FormUsuarios
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabDatosPersonales)
+        Me.TabControl1.Controls.Add(Me.TabDomicilio)
+        Me.TabControl1.Controls.Add(Me.TabPermisos)
         Me.TabControl1.Location = New System.Drawing.Point(6, 19)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(342, 273)
         Me.TabControl1.TabIndex = 5
         '
-        'TabPage2
+        'TabPermisos
         '
-        Me.TabPage2.Controls.Add(Me.Label6)
-        Me.TabPage2.Controls.Add(Me.BtnBlanqueoPss)
-        Me.TabPage2.Controls.Add(Me.TxtUsuario)
-        Me.TabPage2.Controls.Add(Me.Label7)
-        Me.TabPage2.Controls.Add(Me.ClbRoles)
-        Me.TabPage2.Controls.Add(Me.Label8)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(334, 247)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Usuario"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.TabPermisos.Controls.Add(Me.Label6)
+        Me.TabPermisos.Controls.Add(Me.BtnBlanqueoPss)
+        Me.TabPermisos.Controls.Add(Me.TxtUsuario)
+        Me.TabPermisos.Controls.Add(Me.Label7)
+        Me.TabPermisos.Controls.Add(Me.ClbRoles)
+        Me.TabPermisos.Controls.Add(Me.Label8)
+        Me.TabPermisos.Location = New System.Drawing.Point(4, 22)
+        Me.TabPermisos.Name = "TabPermisos"
+        Me.TabPermisos.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPermisos.Size = New System.Drawing.Size(334, 247)
+        Me.TabPermisos.TabIndex = 1
+        Me.TabPermisos.Text = "Permisos"
+        Me.TabPermisos.UseVisualStyleBackColor = True
         '
         'TxtUsuario
         '
@@ -181,27 +181,27 @@ Partial Class FormUsuarios
         Me.Label8.TabIndex = 36
         Me.Label8.Text = "Roles"
         '
-        'TabPage1
+        'TabDatosPersonales
         '
-        Me.TabPage1.Controls.Add(Me.TxtNroDocumento)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.Label11)
-        Me.TabPage1.Controls.Add(Me.TxtEmail)
-        Me.TabPage1.Controls.Add(Me.dtpFechaNacimiento)
-        Me.TabPage1.Controls.Add(Me.TxtTelefono)
-        Me.TabPage1.Controls.Add(Me.TxtNombre)
-        Me.TabPage1.Controls.Add(Me.Label5)
-        Me.TabPage1.Controls.Add(Me.Label4)
-        Me.TabPage1.Controls.Add(Me.TxtApellido)
-        Me.TabPage1.Controls.Add(Me.Label3)
-        Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(334, 238)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Datos Personales"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.TabDatosPersonales.Controls.Add(Me.TxtNroDocumento)
+        Me.TabDatosPersonales.Controls.Add(Me.Label1)
+        Me.TabDatosPersonales.Controls.Add(Me.Label11)
+        Me.TabDatosPersonales.Controls.Add(Me.TxtEmail)
+        Me.TabDatosPersonales.Controls.Add(Me.dtpFechaNacimiento)
+        Me.TabDatosPersonales.Controls.Add(Me.TxtTelefono)
+        Me.TabDatosPersonales.Controls.Add(Me.TxtNombre)
+        Me.TabDatosPersonales.Controls.Add(Me.Label5)
+        Me.TabDatosPersonales.Controls.Add(Me.Label4)
+        Me.TabDatosPersonales.Controls.Add(Me.TxtApellido)
+        Me.TabDatosPersonales.Controls.Add(Me.Label3)
+        Me.TabDatosPersonales.Controls.Add(Me.Label2)
+        Me.TabDatosPersonales.Location = New System.Drawing.Point(4, 22)
+        Me.TabDatosPersonales.Name = "TabDatosPersonales"
+        Me.TabDatosPersonales.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabDatosPersonales.Size = New System.Drawing.Size(334, 247)
+        Me.TabDatosPersonales.TabIndex = 0
+        Me.TabDatosPersonales.Text = "Datos Personales"
+        Me.TabDatosPersonales.UseVisualStyleBackColor = True
         '
         'TxtNroDocumento
         '
@@ -300,28 +300,28 @@ Partial Class FormUsuarios
         Me.Label2.TabIndex = 25
         Me.Label2.Text = "Apellido"
         '
-        'TabPage3
+        'TabDomicilio
         '
-        Me.TabPage3.Controls.Add(Me.Label16)
-        Me.TabPage3.Controls.Add(Me.TxtProvincia)
-        Me.TabPage3.Controls.Add(Me.Label15)
-        Me.TabPage3.Controls.Add(Me.TxtLocalidad)
-        Me.TabPage3.Controls.Add(Me.Label12)
-        Me.TabPage3.Controls.Add(Me.TxtCalle)
-        Me.TabPage3.Controls.Add(Me.TxtNumero)
-        Me.TabPage3.Controls.Add(Me.Label13)
-        Me.TabPage3.Controls.Add(Me.Label14)
-        Me.TabPage3.Controls.Add(Me.Label17)
-        Me.TabPage3.Controls.Add(Me.Label18)
-        Me.TabPage3.Controls.Add(Me.TxtCP)
-        Me.TabPage3.Controls.Add(Me.TxtPiso)
-        Me.TabPage3.Controls.Add(Me.TxtDpto)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(334, 238)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Domicilio"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.TabDomicilio.Controls.Add(Me.Label16)
+        Me.TabDomicilio.Controls.Add(Me.TxtProvincia)
+        Me.TabDomicilio.Controls.Add(Me.Label15)
+        Me.TabDomicilio.Controls.Add(Me.TxtLocalidad)
+        Me.TabDomicilio.Controls.Add(Me.Label12)
+        Me.TabDomicilio.Controls.Add(Me.TxtCalle)
+        Me.TabDomicilio.Controls.Add(Me.TxtNumero)
+        Me.TabDomicilio.Controls.Add(Me.Label13)
+        Me.TabDomicilio.Controls.Add(Me.Label14)
+        Me.TabDomicilio.Controls.Add(Me.Label17)
+        Me.TabDomicilio.Controls.Add(Me.Label18)
+        Me.TabDomicilio.Controls.Add(Me.TxtCP)
+        Me.TabDomicilio.Controls.Add(Me.TxtPiso)
+        Me.TabDomicilio.Controls.Add(Me.TxtDpto)
+        Me.TabDomicilio.Location = New System.Drawing.Point(4, 22)
+        Me.TabDomicilio.Name = "TabDomicilio"
+        Me.TabDomicilio.Size = New System.Drawing.Size(334, 247)
+        Me.TabDomicilio.TabIndex = 2
+        Me.TabDomicilio.Text = "Domicilio"
+        Me.TabDomicilio.UseVisualStyleBackColor = True
         '
         'Label16
         '
@@ -487,9 +487,10 @@ Partial Class FormUsuarios
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(10, 194)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(12, 199)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(301, 39)
+        Me.Label6.Size = New System.Drawing.Size(255, 36)
         Me.Label6.TabIndex = 39
         Me.Label6.Text = "Nota: El blanqueo de contraseña implica que se establezca el " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "número de document" &
     "o como contraseña, y que en el proximo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ingreso deberá modificarla."
@@ -510,12 +511,12 @@ Partial Class FormUsuarios
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
+        Me.TabPermisos.ResumeLayout(False)
+        Me.TabPermisos.PerformLayout()
+        Me.TabDatosPersonales.ResumeLayout(False)
+        Me.TabDatosPersonales.PerformLayout()
+        Me.TabDomicilio.ResumeLayout(False)
+        Me.TabDomicilio.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -546,9 +547,9 @@ Partial Class FormUsuarios
     Friend WithEvents dtpFechaNacimiento As DateTimePicker
     Friend WithEvents BtnLimpiar As Button
     Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TabDatosPersonales As TabPage
+    Friend WithEvents TabPermisos As TabPage
+    Friend WithEvents TabDomicilio As TabPage
     Friend WithEvents Label16 As Label
     Friend WithEvents TxtProvincia As TextBox
     Friend WithEvents Label15 As Label

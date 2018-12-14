@@ -41,6 +41,14 @@
 
     End Function
 
+    Public Sub BlanquearClave(usuario As EL.Usuario)
+        Dim con As New Conexion
+        Dim parametros As New List(Of SqlClient.SqlParameter)
+        parametros.Add(New SqlClient.SqlParameter("@id_persona", usuario.Id))
+        parametros.Add(New SqlClient.SqlParameter("@usuario", usuario.Usuario))
+        con.EjecutarStoredProcedure("dbo.BlanquearClave", parametros)
+    End Sub
+
     Public Sub Guardar(usuario As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)

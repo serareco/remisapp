@@ -48,9 +48,9 @@ Partial Class FrmLogin
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(163, 61)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 13)
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Constraseña"
+        Me.Label2.Text = "Contraseña"
         '
         'TxtUsuario
         '

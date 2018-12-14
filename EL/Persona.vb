@@ -35,15 +35,6 @@
             _domicilio = value
         End Set
     End Property
-    'Private _domicilio As String
-    'Public Property Domicilio() As String
-    'Get
-    'Return _domicilio
-    'End Get
-    'Set(ByVal value As String)
-    '       _domicilio = value
-    'End Set
-    'End Property
     Private _email As String
     Public Property Email() As String
         Get

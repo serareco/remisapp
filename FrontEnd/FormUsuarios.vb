@@ -18,9 +18,16 @@
         TxtNroDocumento.Clear()
         TxtNombre.Clear()
         TxtApellido.Clear()
-        'TxtDomicilio.Clear()
         TxtEmail.Clear()
         TxtTelefono.Clear()
+
+        TxtCalle.Clear()
+        TxtNumero.Clear()
+        TxtPiso.Clear()
+        TxtDpto.Clear()
+        TxtCP.Clear()
+        TxtLocalidad.Clear()
+        TxtProvincia.Clear()
 
         ClbRoles.DataSource = New BindingSource With {
             .DataSource = datosPermiso.Listar()
@@ -28,21 +35,50 @@
         ClbRoles.DisplayMember = "Descripcion"
         ClbRoles.ValueMember = "Id"
 
+        dgvUsuarios.AutoGenerateColumns = False
+        dgvUsuarios.AutoSize = True
+        dgvUsuarios.Columns.Clear()
         dgvUsuarios.DataSource = Nothing
-        dgvUsuarios.DataSource = New BindingSource With {
-            .DataSource = datosUsuario.Listar()
-        }
+        dgvUsuarios.DataSource = datosUsuario.Listar()
+        dgvUsuarios.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "Id",
+                    .Name = "Id"
+        })
+        dgvUsuarios.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "Usuario",
+                    .Name = "Usuario"
+        })
+        dgvUsuarios.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "Apellido",
+                    .Name = "Apellido"
+        })
+        dgvUsuarios.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "Nombre",
+                    .Name = "Nombre"
+        })
+        dgvUsuarios.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "NroDocumento",
+                    .Name = "Nro. Documento"
+        })
+        dgvUsuarios.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .DataPropertyName = "Email",
+            .Name = "E-Mail"
+        })
+
         usuario = Nothing
+        BtnBlanqueoPss.Enabled = False
         CleanCheckList()
 
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+        Dim erroresValidaciones As Boolean = False
+        Dim msjValidaciones As String = ""
+
         If usuario Is Nothing Then
             usuario = New EL.Usuario()
         End If
-        Dim erroresValidaciones As Boolean = False
-        Dim msjValidaciones As String = ""
+
         If (Not (BLL.Validacion.FormatoEmail(TxtEmail.Text()))) Then
             msjValidaciones += "Formato de e-mail incorrecto" + vbLf
             erroresValidaciones = True
@@ -55,6 +91,7 @@
             msjValidaciones += "El Nro. Teléfono solo admite números" + vbLf
             erroresValidaciones = True
         End If
+
         If erroresValidaciones Then
             MessageBox.Show(msjValidaciones)
         Else
@@ -64,15 +101,20 @@
             usuario.NroDocumento = TxtNroDocumento.Text()
             usuario.Nombre = TxtNombre.Text()
             usuario.Apellido = TxtApellido.Text()
+
             usuario.Domicilio = New EL.Domicilio() With {
                 .Calle = TxtCalle.Text(),
                 .Nro = TxtNumero.Text(),
-                .Dpto = TxtDpto.Text(),
-                .Piso = TxtPiso.Text(),
                 .Localidad = TxtLocalidad.Text(),
                 .Provincia = TxtProvincia.Text(),
                 .CP = TxtCP.Text()
             }
+            If TxtDpto.Text <> "" Then
+                usuario.Domicilio.Dpto = TxtDpto.Text()
+            End If
+            If TxtPiso.Text <> "" Then
+                usuario.Domicilio.Piso = TxtPiso.Text()
+            End If
             usuario.Email = TxtEmail.Text()
             usuario.Telefono = TxtTelefono.Text()
             usuario.Permisos = New List(Of EL.Permiso)
@@ -83,7 +125,12 @@
                 }
                 usuario.Permisos.Add(permiso)
             Next
-            datosUsuario.Guardar(usuario)
+            Try
+                datosUsuario.Guardar(usuario)
+                MessageBox.Show("Los cambios fueron guardados correctamente.")
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
             ActualizarLista()
         End If
     End Sub
@@ -104,7 +151,11 @@
             If usuario.Domicilio IsNot Nothing Then
                 TxtCalle.Text = usuario.Domicilio.Calle
                 TxtNumero.Text = usuario.Domicilio.Nro
-                TxtPiso.Text = usuario.Domicilio.Piso
+
+                If usuario.Domicilio.Piso = 0 Then
+                    TxtPiso.Clear()
+                End If
+
                 TxtDpto.Text = usuario.Domicilio.Dpto
                 TxtLocalidad.Text = usuario.Domicilio.Localidad
                 TxtCP.Text = usuario.Domicilio.CP
@@ -133,6 +184,7 @@
             Next
 
             TxtUsuario.Text = usuario.Usuario
+            BtnBlanqueoPss.Enabled = True
         End If
     End Sub
 
@@ -148,7 +200,7 @@
 
     Private Sub dgvUsuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellClick
         usuario = Nothing
-        usuario = datosUsuario.GetById(dgvUsuarios.Rows(e.RowIndex).Cells(2).Value)
+        usuario = datosUsuario.GetById(dgvUsuarios.Rows(e.RowIndex).Cells(0).Value)
     End Sub
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
@@ -160,6 +212,12 @@
     End Sub
 
     Private Sub BtnBlanqueoPss_Click(sender As Object, e As EventArgs) Handles BtnBlanqueoPss.Click
-
+        If usuario IsNot Nothing Then
+            Dim result As Integer = MessageBox.Show("Estas seguro que deseas blanquear la clave de este usuario?", "caption", MessageBoxButtons.YesNo)
+            If result = DialogResult.Yes Then
+                datosUsuario.BlanquearClave(usuario)
+                ActualizarLista()
+            End If
+        End If
     End Sub
 End Class
