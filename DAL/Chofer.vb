@@ -47,7 +47,7 @@ Public Class Chofer
     Public Sub Quitar(chofer As EL.Chofer)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
-        parametros.Add(New SqlClient.SqlParameter("@id_chofer", chofer.Id))
+        parametros.Add(New SqlClient.SqlParameter("@id_persona", chofer.Id))
         con.EjecutarStoredProcedure("dbo.QuitarChofer", parametros)
     End Sub
 

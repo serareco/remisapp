@@ -45,9 +45,31 @@
         dtpFechaNacimiento.Format = DateTimePickerFormat.Custom
 
         dgvChoferes.DataSource = Nothing
-        dgvChoferes.DataSource = New BindingSource With {
-            .DataSource = datosChofer.Listar()
-        }
+        dgvChoferes.AutoGenerateColumns = False
+        dgvChoferes.AutoSize = True
+        dgvChoferes.Columns.Clear()
+        dgvChoferes.DataSource = datosChofer.Listar()
+
+        dgvChoferes.Columns.Add(New DataGridViewTextBoxColumn() With {
+                .DataPropertyName = "Id",
+                .Name = "Id"
+        })
+        dgvChoferes.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "Apellido",
+                    .Name = "Apellido"
+        })
+        dgvChoferes.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "Nombre",
+                    .Name = "Nombre"
+        })
+        dgvChoferes.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "NroDocumento",
+                    .Name = "Nro. Documento"
+        })
+        dgvChoferes.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "Auto",
+                    .Name = "Auto"
+        })
         chofer = Nothing
     End Sub
 
@@ -150,8 +172,9 @@
                 TxtCodArea.Clear()
                 TxtCodPais.Clear()
             End If
-            dtpFechaVencimientoRegistro.Value() = chofer.Registro.FechaVencimiento
-            cbbAutos.SelectedValue() = chofer.Auto.Id
+            cbbCategorias.SelectedItem = chofer.Registro.Categoria
+            dtpFechaVencimientoRegistro.Value = chofer.Registro.FechaVencimiento
+            cbbAutos.SelectedValue = chofer.Auto.Id
         End If
     End Sub
 

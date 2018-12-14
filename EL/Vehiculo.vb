@@ -53,5 +53,7 @@
             _motor = value
         End Set
     End Property
-
+    Public Overrides Function ToString() As String
+        Return Patente + " - " + Modelo.Descripcion + " " + Modelo.Marca.Descripcion
+    End Function
 End Class
