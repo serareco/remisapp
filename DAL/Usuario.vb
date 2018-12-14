@@ -29,10 +29,8 @@
         Dim con As New Conexion
         Dim datatable As New DataTable
         Dim usuario As EL.Usuario
-        con.EjecutarConsulta("select * from dbo.Usuario u
-            where u.id_persona = " & pId)
+        con.EjecutarConsulta("select * from dbo.Usuario u where u.id_persona = " & pId)
         con.adp.Fill(datatable)
-
         usuario = New EL.Usuario(New Persona().GetById(datatable.Rows(0).ItemArray(0).ToString())) With {
             .Usuario = datatable.Rows(0).ItemArray(1).ToString(),
             .Password = datatable.Rows(0).ItemArray(2).ToString()

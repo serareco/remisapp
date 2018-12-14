@@ -64,6 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Registro.vb" />
+    <Compile Include="Telefono.vb" />
+    <Compile Include="TipoTelefono.vb" />
     <Compile Include="Vehiculo.vb" />
     <Compile Include="Chofer.vb" />
     <Compile Include="Comision.vb" />

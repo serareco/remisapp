@@ -1,7 +1,4 @@
-﻿Public Class Modelo
-    Public Sub New()
-        Me.Marca = New Marca()
-    End Sub
+﻿Public Class TipoTelefono
     Private _id As Int16
     Public Property Id() As Int16
         Get
@@ -11,6 +8,7 @@
             _id = value
         End Set
     End Property
+
     Private _descripcion As String
     Public Property Descripcion() As String
         Get
@@ -20,17 +18,4 @@
             _descripcion = value
         End Set
     End Property
-    Private _marca As Marca
-    Public Property Marca() As Marca
-        Get
-            Return _marca
-        End Get
-        Set(ByVal value As Marca)
-            _marca = value
-        End Set
-    End Property
-
-    Public Overrides Function ToString() As String
-        Return Marca.Descripcion + " - " + Descripcion
-    End Function
 End Class

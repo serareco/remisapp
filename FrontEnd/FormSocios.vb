@@ -1,12 +1,30 @@
 ﻿Public Class FormSocios
     Dim socio As EL.Socio
     Dim datosSocio As New BLL.Socio()
+    Dim datosTipoTelefono As New BLL.TipoTelefono()
+
     Public Sub actualizarlista()
+        TxtNroDocumento.Clear()
         TxtNombre.Clear()
         TxtApellido.Clear()
-        TxtNroDocumento.Clear()
         TxtEmail.Clear()
-        TxtTelefono.Clear()
+        TxtNumeroTel.Clear()
+        TxtCodArea.Clear()
+        TxtCodPais.Clear()
+        TxtCalle.Clear()
+        TxtNumero.Clear()
+        TxtPiso.Clear()
+        TxtDpto.Clear()
+        TxtCP.Clear()
+        TxtLocalidad.Clear()
+        TxtProvincia.Clear()
+
+        CbbTiposTelefono.DataSource = New BindingSource With {
+            .DataSource = datosTipoTelefono.Listar()
+        }
+        CbbTiposTelefono.DisplayMember = "Descripcion"
+        CbbTiposTelefono.ValueMember = "Id"
+
         dgvSocios.AutoGenerateColumns = False
         dgvSocios.AutoSize = True
         dgvSocios.Columns.Clear()
@@ -63,10 +81,20 @@
         If TxtDpto.Text() <> "" Then
             socio.Domicilio.Dpto = TxtDpto.Text()
         End If
+        socio.Telefono = New EL.Telefono() With {
+                .Numero = TxtNumeroTel.Text(),
+                .CodigoArea = TxtCodArea.Text(),
+                .CodigoPais = TxtCodPais.Text()
+            }
+        socio.Telefono.TipoTelefono.Id = CbbTiposTelefono.SelectedValue
         socio.Email = TxtEmail.Text()
-        socio.Telefono = TxtTelefono.Text()
         socio.FechaNacimiento = dtpFechaNacimiento.Value()
-        datosSocio.Guardar(socio)
+        Try
+            datosSocio.Guardar(socio)
+            MessageBox.Show("Los cambios fueron guardados correctamente.")
+        Catch ex As Exception
+            MessageBox.Show("Se ha producido un error al guardar los cambios. Error: " + ex.Message)
+        End Try
         actualizarlista()
     End Sub
 
@@ -83,15 +111,37 @@
             TxtNombre.Text = socio.Nombre
             TxtApellido.Text = socio.Apellido
             TxtNroDocumento.Text = socio.NroDocumento
-            TxtCalle.Text = socio.Domicilio.Calle
-            TxtLocalidad.Text = socio.Domicilio.Localidad
-            TxtNumero.Text = socio.Domicilio.Nro
-            TxtPiso.Text = socio.Domicilio.Piso
-            TxtProvincia.Text = socio.Domicilio.Provincia
-            TxtCP.Text = socio.Domicilio.CP
             TxtEmail.Text = socio.Email
-            TxtTelefono.Text = socio.Telefono
             dtpFechaNacimiento.Value = socio.FechaNacimiento
+            If socio.Domicilio IsNot Nothing Then
+                TxtCalle.Text = socio.Domicilio.Calle
+                TxtNumero.Text = socio.Domicilio.Nro
+                If socio.Domicilio.Piso = 0 Then
+                    TxtPiso.Clear()
+                End If
+                TxtDpto.Text = socio.Domicilio.Dpto
+                TxtLocalidad.Text = socio.Domicilio.Localidad
+                TxtCP.Text = socio.Domicilio.CP
+                TxtProvincia.Text = socio.Domicilio.Provincia
+            Else
+                TxtCalle.Clear()
+                TxtNumero.Clear()
+                TxtPiso.Clear()
+                TxtDpto.Clear()
+                TxtCP.Clear()
+                TxtLocalidad.Clear()
+                TxtProvincia.Clear()
+            End If
+            If socio.Telefono IsNot Nothing Then
+                TxtNumeroTel.Text = socio.Telefono.Numero
+                TxtCodArea.Text = socio.Telefono.CodigoArea
+                TxtCodPais.Text = socio.Telefono.CodigoPais
+                CbbTiposTelefono.SelectedValue = socio.Telefono.TipoTelefono.Id
+            Else
+                TxtNumeroTel.Clear()
+                TxtCodArea.Clear()
+                TxtCodPais.Clear()
+            End If
         End If
     End Sub
 

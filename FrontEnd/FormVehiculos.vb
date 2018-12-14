@@ -113,12 +113,12 @@
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If auto IsNot Nothing Then
-            txtAnioFabricacion.Text() = auto.AnioFabricacion
-            txtChasis.Text() = auto.Chasis
-            txtMotor.Text() = auto.Motor
-            txtPatente.Text() = auto.Patente
-            cbbMarca.SelectedValue() = auto.Modelo.Marca.Id
-            cbbModelo.SelectedValue() = auto.Modelo.Id
+            txtAnioFabricacion.Text = auto.AnioFabricacion
+            txtChasis.Text = auto.Chasis
+            txtMotor.Text = auto.Motor
+            txtPatente.Text = auto.Patente
+            cbbMarca.SelectedValue = auto.Modelo.Marca.Id
+            cbbModelo.SelectedValue = auto.Modelo.Id
         End If
     End Sub
 

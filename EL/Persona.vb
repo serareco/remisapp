@@ -44,12 +44,12 @@
             _email = value
         End Set
     End Property
-    Private _telefono As String
-    Public Property Telefono() As String
+    Private _telefono As Telefono
+    Public Property Telefono() As Telefono
         Get
             Return _telefono
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Telefono)
             _telefono = value
         End Set
     End Property

@@ -3,6 +3,7 @@
     Dim datosChofer As New BLL.Chofer()
     Dim datosAuto As New BLL.Vehiculo()
     Dim datosComision As New BLL.Comision()
+    Dim datosTipoTelefono As New BLL.TipoTelefono()
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
@@ -16,12 +17,19 @@
         cbbAutos.DisplayMember = "Patente"
         cbbAutos.ValueMember = "Id"
 
+        CbbTiposTelefono.DataSource = New BindingSource With {
+            .DataSource = datosTipoTelefono.Listar()
+        }
+        CbbTiposTelefono.DisplayMember = "Descripcion"
+        CbbTiposTelefono.ValueMember = "Id"
+
+        TxtNroDocumento.Clear()
         TxtNombre.Clear()
         TxtApellido.Clear()
-        TxtNroDocumento.Clear()
         TxtEmail.Clear()
-        TxtTelefono.Clear()
-
+        TxtNumeroTel.Clear()
+        TxtCodArea.Clear()
+        TxtCodPais.Clear()
         TxtCalle.Clear()
         TxtNumero.Clear()
         TxtPiso.Clear()
@@ -62,18 +70,25 @@
         If TxtDpto.Text() <> "" Then
             chofer.Domicilio.Dpto = TxtDpto.Text()
         End If
-
+        chofer.Telefono = New EL.Telefono() With {
+                .Numero = TxtNumeroTel.Text(),
+                .CodigoArea = TxtCodArea.Text(),
+                .CodigoPais = TxtCodPais.Text()
+            }
+        chofer.Telefono.TipoTelefono.Id = CbbTiposTelefono.SelectedValue
         chofer.NroDocumento = TxtNroDocumento.Text()
         chofer.Email = TxtEmail.Text()
         chofer.FechaNacimiento = dtpFechaNacimiento.Value()
-        chofer.Registro = New EL.Registro() With {
-        .Categoria = cbbCategorias.SelectedItem,
-        .FechaVencimiento = dtpFechaVencimientoRegistro.Value()
-        }
-        chofer.Telefono = TxtTelefono.Text()
+        chofer.Registro.Categoria = cbbCategorias.SelectedItem
+        chofer.Registro.FechaVencimiento = dtpFechaVencimientoRegistro.Value()
         chofer.Auto = datosAuto.GetById(cbbAutos.SelectedValue)
         chofer.Comision = datosComision.GetDefault()
-        datosChofer.Guardar(chofer)
+        Try
+            datosChofer.Guardar(chofer)
+            MessageBox.Show("Los cambios fueron guardados correctamente.")
+        Catch ex As Exception
+            MessageBox.Show("Se ha producido un error al guardar los cambios. Error: " + ex.Message)
+        End Try
         ActualizarLista()
     End Sub
 
@@ -103,17 +118,39 @@
         If chofer IsNot Nothing Then
             TxtNombre.Text() = chofer.Nombre
             TxtApellido.Text() = chofer.Apellido
-            TxtCalle.Text() = chofer.Domicilio.Calle
-            TxtLocalidad.Text() = chofer.Domicilio.Localidad
-            TxtNumero.Text() = chofer.Domicilio.Nro
-            TxtPiso.Text() = chofer.Domicilio.Piso
-            TxtProvincia.Text() = chofer.Domicilio.Provincia
-            TxtCP.Text() = chofer.Domicilio.CP
             TxtNroDocumento.Text() = chofer.NroDocumento
             TxtEmail.Text() = chofer.Email
             dtpFechaNacimiento.Value() = chofer.FechaNacimiento
+            If chofer.Domicilio IsNot Nothing Then
+                TxtCalle.Text = chofer.Domicilio.Calle
+                TxtNumero.Text = chofer.Domicilio.Nro
+                If chofer.Domicilio.Piso = 0 Then
+                    TxtPiso.Clear()
+                End If
+                TxtDpto.Text = chofer.Domicilio.Dpto
+                TxtLocalidad.Text = chofer.Domicilio.Localidad
+                TxtCP.Text = chofer.Domicilio.CP
+                TxtProvincia.Text = chofer.Domicilio.Provincia
+            Else
+                TxtCalle.Clear()
+                TxtNumero.Clear()
+                TxtPiso.Clear()
+                TxtDpto.Clear()
+                TxtCP.Clear()
+                TxtLocalidad.Clear()
+                TxtProvincia.Clear()
+            End If
+            If chofer.Telefono IsNot Nothing Then
+                TxtNumeroTel.Text = chofer.Telefono.Numero
+                TxtCodArea.Text = chofer.Telefono.CodigoArea
+                TxtCodPais.Text = chofer.Telefono.CodigoPais
+                CbbTiposTelefono.SelectedValue = chofer.Telefono.TipoTelefono.Id
+            Else
+                TxtNumeroTel.Clear()
+                TxtCodArea.Clear()
+                TxtCodPais.Clear()
+            End If
             dtpFechaVencimientoRegistro.Value() = chofer.Registro.FechaVencimiento
-            TxtTelefono.Text() = chofer.Telefono
             cbbAutos.SelectedValue() = chofer.Auto.Id
         End If
     End Sub

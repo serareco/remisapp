@@ -1,5 +1,22 @@
 ﻿Public Class Chofer
     Inherits Usuario
+    Public Sub New()
+        Me.Registro = New Registro()
+    End Sub
+    Public Sub New(usuarioBase As Usuario)
+        Me.Registro = New Registro()
+        Id = usuarioBase.Id
+        Usuario = usuarioBase.Usuario
+        Password = usuarioBase.Password
+        Permisos = usuarioBase.Permisos
+        Nombre = usuarioBase.Nombre
+        NroDocumento = usuarioBase.NroDocumento
+        FechaNacimiento = usuarioBase.FechaNacimiento
+        Apellido = usuarioBase.Apellido
+        Email = usuarioBase.Email
+        Telefono = usuarioBase.Telefono
+        Domicilio = usuarioBase.Domicilio
+    End Sub
     Private _comision As Comision
     Public Property Comision() As Comision
         Get

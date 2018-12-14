@@ -28,21 +28,14 @@ Partial Class FormUsuarios
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPermisos = New System.Windows.Forms.TabPage()
-        Me.TxtUsuario = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.ClbRoles = New System.Windows.Forms.CheckedListBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.TabDatosPersonales = New System.Windows.Forms.TabPage()
         Me.TxtNroDocumento = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
-        Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtApellido = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -61,19 +54,34 @@ Partial Class FormUsuarios
         Me.TxtCP = New System.Windows.Forms.TextBox()
         Me.TxtPiso = New System.Windows.Forms.TextBox()
         Me.TxtDpto = New System.Windows.Forms.TextBox()
+        Me.TabPermisos = New System.Windows.Forms.TabPage()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.BtnBlanqueoPss = New System.Windows.Forms.Button()
+        Me.TxtUsuario = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.ClbRoles = New System.Windows.Forms.CheckedListBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.BtnBlanqueoPss = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TabTelefono = New System.Windows.Forms.TabPage()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.CbbTiposTelefono = New System.Windows.Forms.ComboBox()
+        Me.TxtCodPais = New System.Windows.Forms.TextBox()
+        Me.TxtCodArea = New System.Windows.Forms.TextBox()
+        Me.TxtNumeroTel = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
-        Me.TabPermisos.SuspendLayout()
         Me.TabDatosPersonales.SuspendLayout()
         Me.TabDomicilio.SuspendLayout()
+        Me.TabPermisos.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.TabTelefono.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox2
@@ -123,6 +131,7 @@ Partial Class FormUsuarios
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabDatosPersonales)
+        Me.TabControl1.Controls.Add(Me.TabTelefono)
         Me.TabControl1.Controls.Add(Me.TabDomicilio)
         Me.TabControl1.Controls.Add(Me.TabPermisos)
         Me.TabControl1.Location = New System.Drawing.Point(6, 19)
@@ -131,56 +140,6 @@ Partial Class FormUsuarios
         Me.TabControl1.Size = New System.Drawing.Size(342, 273)
         Me.TabControl1.TabIndex = 5
         '
-        'TabPermisos
-        '
-        Me.TabPermisos.Controls.Add(Me.Label6)
-        Me.TabPermisos.Controls.Add(Me.BtnBlanqueoPss)
-        Me.TabPermisos.Controls.Add(Me.TxtUsuario)
-        Me.TabPermisos.Controls.Add(Me.Label7)
-        Me.TabPermisos.Controls.Add(Me.ClbRoles)
-        Me.TabPermisos.Controls.Add(Me.Label8)
-        Me.TabPermisos.Location = New System.Drawing.Point(4, 22)
-        Me.TabPermisos.Name = "TabPermisos"
-        Me.TabPermisos.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPermisos.Size = New System.Drawing.Size(334, 247)
-        Me.TabPermisos.TabIndex = 1
-        Me.TabPermisos.Text = "Permisos"
-        Me.TabPermisos.UseVisualStyleBackColor = True
-        '
-        'TxtUsuario
-        '
-        Me.TxtUsuario.Enabled = False
-        Me.TxtUsuario.Location = New System.Drawing.Point(116, 12)
-        Me.TxtUsuario.Name = "TxtUsuario"
-        Me.TxtUsuario.Size = New System.Drawing.Size(204, 20)
-        Me.TxtUsuario.TabIndex = 6
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(10, 16)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(43, 13)
-        Me.Label7.TabIndex = 37
-        Me.Label7.Text = "Usuario"
-        '
-        'ClbRoles
-        '
-        Me.ClbRoles.FormattingEnabled = True
-        Me.ClbRoles.Location = New System.Drawing.Point(116, 38)
-        Me.ClbRoles.Name = "ClbRoles"
-        Me.ClbRoles.Size = New System.Drawing.Size(204, 124)
-        Me.ClbRoles.TabIndex = 10
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(10, 39)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(34, 13)
-        Me.Label8.TabIndex = 36
-        Me.Label8.Text = "Roles"
-        '
         'TabDatosPersonales
         '
         Me.TabDatosPersonales.Controls.Add(Me.TxtNroDocumento)
@@ -188,10 +147,8 @@ Partial Class FormUsuarios
         Me.TabDatosPersonales.Controls.Add(Me.Label11)
         Me.TabDatosPersonales.Controls.Add(Me.TxtEmail)
         Me.TabDatosPersonales.Controls.Add(Me.dtpFechaNacimiento)
-        Me.TabDatosPersonales.Controls.Add(Me.TxtTelefono)
         Me.TabDatosPersonales.Controls.Add(Me.TxtNombre)
         Me.TabDatosPersonales.Controls.Add(Me.Label5)
-        Me.TabDatosPersonales.Controls.Add(Me.Label4)
         Me.TabDatosPersonales.Controls.Add(Me.TxtApellido)
         Me.TabDatosPersonales.Controls.Add(Me.Label3)
         Me.TabDatosPersonales.Controls.Add(Me.Label2)
@@ -205,7 +162,7 @@ Partial Class FormUsuarios
         '
         'TxtNroDocumento
         '
-        Me.TxtNroDocumento.Location = New System.Drawing.Point(121, 84)
+        Me.TxtNroDocumento.Location = New System.Drawing.Point(121, 94)
         Me.TxtNroDocumento.Name = "TxtNroDocumento"
         Me.TxtNroDocumento.Size = New System.Drawing.Size(199, 20)
         Me.TxtNroDocumento.TabIndex = 2
@@ -213,7 +170,7 @@ Partial Class FormUsuarios
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 36)
+        Me.Label1.Location = New System.Drawing.Point(20, 36)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)
         Me.Label1.TabIndex = 24
@@ -222,7 +179,7 @@ Partial Class FormUsuarios
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(11, 171)
+        Me.Label11.Location = New System.Drawing.Point(20, 161)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(93, 13)
         Me.Label11.TabIndex = 47
@@ -230,7 +187,7 @@ Partial Class FormUsuarios
         '
         'TxtEmail
         '
-        Me.TxtEmail.Location = New System.Drawing.Point(121, 139)
+        Me.TxtEmail.Location = New System.Drawing.Point(121, 125)
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(199, 20)
         Me.TxtEmail.TabIndex = 5
@@ -238,17 +195,10 @@ Partial Class FormUsuarios
         'dtpFechaNacimiento
         '
         Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(121, 165)
+        Me.dtpFechaNacimiento.Location = New System.Drawing.Point(121, 155)
         Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
         Me.dtpFechaNacimiento.Size = New System.Drawing.Size(199, 20)
         Me.dtpFechaNacimiento.TabIndex = 9
-        '
-        'TxtTelefono
-        '
-        Me.TxtTelefono.Location = New System.Drawing.Point(121, 112)
-        Me.TxtTelefono.Name = "TxtTelefono"
-        Me.TxtTelefono.Size = New System.Drawing.Size(199, 20)
-        Me.TxtTelefono.TabIndex = 4
         '
         'TxtNombre
         '
@@ -260,24 +210,15 @@ Partial Class FormUsuarios
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 144)
+        Me.Label5.Location = New System.Drawing.Point(20, 128)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(36, 13)
         Me.Label5.TabIndex = 28
         Me.Label5.Text = "E-Mail"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 117)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
-        Me.Label4.TabIndex = 27
-        Me.Label4.Text = "Teléfono"
-        '
         'TxtApellido
         '
-        Me.TxtApellido.Location = New System.Drawing.Point(121, 58)
+        Me.TxtApellido.Location = New System.Drawing.Point(121, 63)
         Me.TxtApellido.Name = "TxtApellido"
         Me.TxtApellido.Size = New System.Drawing.Size(199, 20)
         Me.TxtApellido.TabIndex = 1
@@ -285,7 +226,7 @@ Partial Class FormUsuarios
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 90)
+        Me.Label3.Location = New System.Drawing.Point(20, 101)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 13)
         Me.Label3.TabIndex = 26
@@ -294,7 +235,7 @@ Partial Class FormUsuarios
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 62)
+        Me.Label2.Location = New System.Drawing.Point(20, 66)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 25
@@ -435,6 +376,76 @@ Partial Class FormUsuarios
         Me.TxtDpto.Size = New System.Drawing.Size(83, 20)
         Me.TxtDpto.TabIndex = 30
         '
+        'TabPermisos
+        '
+        Me.TabPermisos.Controls.Add(Me.Label6)
+        Me.TabPermisos.Controls.Add(Me.BtnBlanqueoPss)
+        Me.TabPermisos.Controls.Add(Me.TxtUsuario)
+        Me.TabPermisos.Controls.Add(Me.Label7)
+        Me.TabPermisos.Controls.Add(Me.ClbRoles)
+        Me.TabPermisos.Controls.Add(Me.Label8)
+        Me.TabPermisos.Location = New System.Drawing.Point(4, 22)
+        Me.TabPermisos.Name = "TabPermisos"
+        Me.TabPermisos.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPermisos.Size = New System.Drawing.Size(334, 247)
+        Me.TabPermisos.TabIndex = 1
+        Me.TabPermisos.Text = "Permisos"
+        Me.TabPermisos.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(12, 199)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(255, 36)
+        Me.Label6.TabIndex = 39
+        Me.Label6.Text = "Nota: El blanqueo de contraseña implica que se establezca el " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "número de document" &
+    "o como contraseña, y que en el proximo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ingreso deberá modificarla."
+        '
+        'BtnBlanqueoPss
+        '
+        Me.BtnBlanqueoPss.Location = New System.Drawing.Point(13, 168)
+        Me.BtnBlanqueoPss.Name = "BtnBlanqueoPss"
+        Me.BtnBlanqueoPss.Size = New System.Drawing.Size(307, 23)
+        Me.BtnBlanqueoPss.TabIndex = 38
+        Me.BtnBlanqueoPss.Text = "Blanquear Contraseña"
+        Me.BtnBlanqueoPss.UseVisualStyleBackColor = True
+        '
+        'TxtUsuario
+        '
+        Me.TxtUsuario.Enabled = False
+        Me.TxtUsuario.Location = New System.Drawing.Point(116, 12)
+        Me.TxtUsuario.Name = "TxtUsuario"
+        Me.TxtUsuario.Size = New System.Drawing.Size(204, 20)
+        Me.TxtUsuario.TabIndex = 6
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(10, 16)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(43, 13)
+        Me.Label7.TabIndex = 37
+        Me.Label7.Text = "Usuario"
+        '
+        'ClbRoles
+        '
+        Me.ClbRoles.FormattingEnabled = True
+        Me.ClbRoles.Location = New System.Drawing.Point(116, 38)
+        Me.ClbRoles.Name = "ClbRoles"
+        Me.ClbRoles.Size = New System.Drawing.Size(204, 124)
+        Me.ClbRoles.TabIndex = 10
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(10, 39)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(34, 13)
+        Me.Label8.TabIndex = 36
+        Me.Label8.Text = "Roles"
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.TabControl1)
@@ -475,25 +486,87 @@ Partial Class FormUsuarios
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
-        'BtnBlanqueoPss
+        'TabTelefono
         '
-        Me.BtnBlanqueoPss.Location = New System.Drawing.Point(13, 168)
-        Me.BtnBlanqueoPss.Name = "BtnBlanqueoPss"
-        Me.BtnBlanqueoPss.Size = New System.Drawing.Size(307, 23)
-        Me.BtnBlanqueoPss.TabIndex = 38
-        Me.BtnBlanqueoPss.Text = "Blanquear Contraseña"
-        Me.BtnBlanqueoPss.UseVisualStyleBackColor = True
+        Me.TabTelefono.Controls.Add(Me.Label19)
+        Me.TabTelefono.Controls.Add(Me.Label10)
+        Me.TabTelefono.Controls.Add(Me.Label9)
+        Me.TabTelefono.Controls.Add(Me.TxtNumeroTel)
+        Me.TabTelefono.Controls.Add(Me.TxtCodArea)
+        Me.TabTelefono.Controls.Add(Me.TxtCodPais)
+        Me.TabTelefono.Controls.Add(Me.CbbTiposTelefono)
+        Me.TabTelefono.Controls.Add(Me.Label4)
+        Me.TabTelefono.Location = New System.Drawing.Point(4, 22)
+        Me.TabTelefono.Name = "TabTelefono"
+        Me.TabTelefono.Size = New System.Drawing.Size(334, 247)
+        Me.TabTelefono.TabIndex = 3
+        Me.TabTelefono.Text = "Telefono"
+        Me.TabTelefono.UseVisualStyleBackColor = True
         '
-        'Label6
+        'Label4
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(12, 199)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(255, 36)
-        Me.Label6.TabIndex = 39
-        Me.Label6.Text = "Nota: El blanqueo de contraseña implica que se establezca el " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "número de document" &
-    "o como contraseña, y que en el proximo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ingreso deberá modificarla."
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(20, 36)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(73, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Tipo Teléfono"
+        '
+        'CbbTiposTelefono
+        '
+        Me.CbbTiposTelefono.FormattingEnabled = True
+        Me.CbbTiposTelefono.Location = New System.Drawing.Point(121, 33)
+        Me.CbbTiposTelefono.Name = "CbbTiposTelefono"
+        Me.CbbTiposTelefono.Size = New System.Drawing.Size(199, 21)
+        Me.CbbTiposTelefono.TabIndex = 1
+        '
+        'TxtCodPais
+        '
+        Me.TxtCodPais.Location = New System.Drawing.Point(121, 63)
+        Me.TxtCodPais.Name = "TxtCodPais"
+        Me.TxtCodPais.Size = New System.Drawing.Size(199, 20)
+        Me.TxtCodPais.TabIndex = 2
+        '
+        'TxtCodArea
+        '
+        Me.TxtCodArea.Location = New System.Drawing.Point(121, 93)
+        Me.TxtCodArea.Name = "TxtCodArea"
+        Me.TxtCodArea.Size = New System.Drawing.Size(199, 20)
+        Me.TxtCodArea.TabIndex = 3
+        '
+        'TxtNumeroTel
+        '
+        Me.TxtNumeroTel.Location = New System.Drawing.Point(121, 121)
+        Me.TxtNumeroTel.Name = "TxtNumeroTel"
+        Me.TxtNumeroTel.Size = New System.Drawing.Size(199, 20)
+        Me.TxtNumeroTel.TabIndex = 4
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(20, 66)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(52, 13)
+        Me.Label9.TabIndex = 5
+        Me.Label9.Text = "Cód. Pais"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(20, 96)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(54, 13)
+        Me.Label10.TabIndex = 6
+        Me.Label10.Text = "Cód. Área"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(20, 124)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(44, 13)
+        Me.Label19.TabIndex = 7
+        Me.Label19.Text = "Número"
         '
         'FormUsuarios
         '
@@ -511,13 +584,15 @@ Partial Class FormUsuarios
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPermisos.ResumeLayout(False)
-        Me.TabPermisos.PerformLayout()
         Me.TabDatosPersonales.ResumeLayout(False)
         Me.TabDatosPersonales.PerformLayout()
         Me.TabDomicilio.ResumeLayout(False)
         Me.TabDomicilio.PerformLayout()
+        Me.TabPermisos.ResumeLayout(False)
+        Me.TabPermisos.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
+        Me.TabTelefono.ResumeLayout(False)
+        Me.TabTelefono.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -532,10 +607,8 @@ Partial Class FormUsuarios
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents TxtEmail As TextBox
-    Friend WithEvents TxtTelefono As TextBox
     Friend WithEvents TxtNroDocumento As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
@@ -566,4 +639,13 @@ Partial Class FormUsuarios
     Friend WithEvents TxtDpto As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents BtnBlanqueoPss As Button
+    Friend WithEvents TabTelefono As TabPage
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TxtNumeroTel As TextBox
+    Friend WithEvents TxtCodArea As TextBox
+    Friend WithEvents TxtCodPais As TextBox
+    Friend WithEvents CbbTiposTelefono As ComboBox
+    Friend WithEvents Label4 As Label
 End Class

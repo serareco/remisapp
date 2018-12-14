@@ -1,4 +1,8 @@
 ﻿Public Class Telefono
+    Public Sub New()
+        TipoTelefono = New TipoTelefono()
+    End Sub
+
     Private _id As Int16
     Public Property Id() As Int16
         Get
@@ -35,12 +39,12 @@
             _numero = value
         End Set
     End Property
-    Private _tipoTelefono As Int16
-    Public Property TipoTelefono() As Int16
+    Private _tipoTelefono As TipoTelefono
+    Public Property TipoTelefono() As TipoTelefono
         Get
             Return _tipoTelefono
         End Get
-        Set(ByVal value As Int16)
+        Set(ByVal value As TipoTelefono)
             _tipoTelefono = value
         End Set
     End Property
