@@ -34,9 +34,9 @@
         request.Dest = viaje.Destino
 
         Dim response As MapService.MapServiceResponse = request.SendRequest()
-
-        viaje.KmRecorridos = response.Distance
-
+        viaje.DuracionEstimada = response.Time
+        viaje.KmARecorrer = response.Distance
+        viaje.PrecioEstimado = viaje.KmARecorrer * 26 'Deberia salir de los parámetros el valor
     End Sub
 
 End Class

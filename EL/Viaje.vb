@@ -79,6 +79,16 @@
         End Set
     End Property
 
+    Private _choferAsignado As Chofer
+    Public Property ChoferAsignado() As Chofer
+        Get
+            Return _choferAsignado
+        End Get
+        Set(ByVal value As Chofer)
+            _choferAsignado = value
+        End Set
+    End Property
+
     Private _chofer As Chofer
     Public Property Chofer() As Chofer
         Get
@@ -146,6 +156,16 @@
         End Get
         Set(ByVal value As Decimal)
             _precio = value
+        End Set
+    End Property
+
+    Private _duracionEstimada As Integer
+    Public Property DuracionEstimada() As Integer
+        Get
+            Return _duracionEstimada
+        End Get
+        Set(ByVal value As Integer)
+            _duracionEstimada = value
         End Set
     End Property
 
