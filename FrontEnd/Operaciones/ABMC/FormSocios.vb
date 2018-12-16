@@ -3,7 +3,7 @@
     Dim datosSocio As New BLL.Socio()
     Dim datosTipoTelefono As New BLL.TipoTelefono()
 
-    Public Sub actualizarlista()
+    Public Sub ActualizarLista()
         TxtNroDocumento.Clear()
         TxtNombre.Clear()
         TxtApellido.Clear()
@@ -95,7 +95,7 @@
         Catch ex As Exception
             MessageBox.Show("Se ha producido un error al guardar los cambios. Error: " + ex.Message)
         End Try
-        actualizarlista()
+        ActualizarLista()
     End Sub
 
     Private Sub btncancelar_click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
@@ -103,7 +103,7 @@
     End Sub
 
     Private Sub formclientes_load(sender As Object, e As EventArgs) Handles MyBase.Load
-        actualizarlista()
+        ActualizarLista()
     End Sub
 
     Private Sub btnmodificar_click(sender As Object, e As EventArgs) Handles BtnModificar.Click
@@ -153,7 +153,6 @@
             }
             socio = datosSocio.GetById(socio.Id)
         End If
-
     End Sub
 
     Private Sub btneliminar_click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
@@ -161,12 +160,12 @@
             Dim result As Integer = MessageBox.Show("estas seguro que deseas dar de baja este socio?", "caption", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
                 datosSocio.Quitar(socio)
-                actualizarlista()
+                ActualizarLista()
             End If
         End If
     End Sub
 
     Private Sub btnlimpiar_click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
-        actualizarlista()
+        ActualizarLista()
     End Sub
 End Class

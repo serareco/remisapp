@@ -1,7 +1,6 @@
 ﻿Public Class FormViajes
     Dim viaje As EL.Viaje
     Dim datosViaje As New BLL.Viaje()
-    Dim datosChofer As New BLL.Chofer()
     Dim datosEstadoViaje As New BLL.EstadoViaje()
     Dim datosSocio As New BLL.Socio()
     Dim datosPromocion As New BLL.Beneficio()
@@ -12,11 +11,6 @@
     ' VER LA FORMA DE SUGERIR EL VALOR DEL PRECIO, EL TIEMPO DE DEMORA, ETC.
     Public Sub ActualizarLista()
         dtpFechaSalida.Enabled = Not ChbSalidaInmediata.Checked
-
-        cbbChofer.DataSource = Nothing
-        'cbbChofer.DataSource = datosChofer.MostrarDisponibles()
-        cbbChofer.DisplayMember = "descripcion"
-        cbbChofer.ValueMember = "id_chofer"
 
         cbbCliente.DataSource = Nothing
         cbbCliente.DataSource = New BindingSource With {
@@ -45,12 +39,13 @@
         viaje.Origen = txtOrigen.Text()
         viaje.Destino = txtDestino.Text()
         If ChbSalidaInmediata.Checked Then
-            viaje.FechaSalida = Now
+            viaje.FechaSalidaEstimada = Now
+            viaje.Estado.Id = 3
         Else
-            viaje.FechaSalida = dtpFechaSalida.Value
+            viaje.FechaSalidaEstimada = dtpFechaSalida.Value
+            viaje.Estado.Id = 2
         End If
         viaje.IdaYVuelta = ChbIdayVuelta.Checked
-        'viaje.Chofer = datosChofer.GetById(cbbChofer.SelectedValue)
         viaje.Socio = datosSocio.GetById(cbbCliente.SelectedValue)
         FormConfirmarViaje.viaje = viaje
         FormConfirmarViaje.Show()
@@ -71,5 +66,9 @@
 
     Private Sub ChbSalidaInmediata_CheckedChanged(sender As Object, e As EventArgs) Handles ChbSalidaInmediata.CheckedChanged
         dtpFechaSalida.Enabled = Not ChbSalidaInmediata.Checked
+    End Sub
+
+    Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
+        ActualizarLista()
     End Sub
 End Class

@@ -157,6 +157,7 @@
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If usuario IsNot Nothing Then
+            TxtUsuario.Text = usuario.Usuario
             CleanCheckList()
             ClbRoles.ClearSelected()
             If usuario.Domicilio IsNot Nothing Then
@@ -193,6 +194,7 @@
             End If
             TxtEmail.Text = usuario.Email
             dtpFechaNacimiento.Value = usuario.FechaNacimiento
+            dtpFechaNacimiento.CustomFormat = "dd/MM/yyyy"
             Dim index As Int16 = 0
             Dim listIndexs = New List(Of Int16)
             For Each item As Object In ClbRoles.Items
@@ -206,7 +208,6 @@
             For Each i As Int16 In listIndexs
                 ClbRoles.SetItemChecked(i, True)
             Next
-            TxtUsuario.Text = usuario.Usuario
             BtnBlanqueoPss.Enabled = True
         End If
     End Sub
@@ -222,8 +223,12 @@
     End Sub
 
     Private Sub dgvUsuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellClick
-        usuario = Nothing
-        usuario = datosUsuario.GetById(dgvUsuarios.Rows(e.RowIndex).Cells(0).Value)
+        If (e.RowIndex >= 0) Then
+            usuario = New EL.Usuario With {
+                .Id = dgvUsuarios.Rows(e.RowIndex).Cells(0).Value
+            }
+            usuario = datosUsuario.GetById(usuario.Id)
+        End If
     End Sub
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click

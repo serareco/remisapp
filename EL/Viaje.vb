@@ -1,4 +1,7 @@
 ﻿Public Class Viaje
+    Public Sub New()
+        Estado = New EstadoViaje()
+    End Sub
     Private _id As Int16
     Public Property Id() As Int16
         Get
@@ -39,6 +42,16 @@
         End Set
     End Property
 
+    Private _fechaSalidaEstimada As DateTime
+    Public Property FechaSalidaEstimada() As DateTime
+        Get
+            Return _fechaSalidaEstimada
+        End Get
+        Set(ByVal value As DateTime)
+            _fechaSalidaEstimada = value
+        End Set
+    End Property
+
     Private _fechaArribo As DateTime
     Public Property FechaArribo() As DateTime
         Get
@@ -46,6 +59,16 @@
         End Get
         Set(ByVal value As DateTime)
             _fechaArribo = value
+        End Set
+    End Property
+
+    Private _fechaArriboEstimada As DateTime
+    Public Property FechaArriboEstimada() As DateTime
+        Get
+            Return _fechaArriboEstimada
+        End Get
+        Set(ByVal value As DateTime)
+            _fechaArriboEstimada = value
         End Set
     End Property
 
@@ -125,8 +148,8 @@
             Return _promociones
         End Get
         Set(ByVal value As List(Of Beneficio))
-           _promociones = value
-    End Set
+            _promociones = value
+        End Set
     End Property
 
     Private _estado As EstadoViaje

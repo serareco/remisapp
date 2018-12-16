@@ -3,6 +3,7 @@
     Dim datosChofer As New BLL.Chofer()
     Dim datosAuto As New BLL.Vehiculo()
     Dim datosComision As New BLL.Comision()
+    Dim datosTurno As New BLL.Turno()
     Dim datosTipoTelefono As New BLL.TipoTelefono()
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
@@ -16,6 +17,13 @@
         }
         cbbAutos.DisplayMember = "Patente"
         cbbAutos.ValueMember = "Id"
+
+        CbbTurnos.DataSource = Nothing
+        CbbTurnos.DataSource = New BindingSource With {
+            .DataSource = datosTurno.Listar()
+        }
+        CbbTurnos.DisplayMember = "Descripcion"
+        CbbTurnos.ValueMember = "Id"
 
         CbbTiposTelefono.DataSource = New BindingSource With {
             .DataSource = datosTipoTelefono.Listar()
@@ -105,6 +113,8 @@
         chofer.Registro.FechaVencimiento = dtpFechaVencimientoRegistro.Value()
         chofer.Auto = datosAuto.GetById(cbbAutos.SelectedValue)
         chofer.Comision = datosComision.GetDefault()
+        chofer.Turnos.Add(datosTurno.GetById(CbbTurnos.SelectedValue))
+
         Try
             datosChofer.Guardar(chofer)
             MessageBox.Show("Los cambios fueron guardados correctamente.")
@@ -185,4 +195,5 @@
     Private Sub dtpFechaVencimientoRegistro_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaVencimientoRegistro.ValueChanged
         dtpFechaVencimientoRegistro.CustomFormat = "dd/MM/yyyy"
     End Sub
+
 End Class

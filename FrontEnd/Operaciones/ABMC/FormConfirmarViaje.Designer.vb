@@ -24,45 +24,35 @@ Partial Class FormConfirmarViaje
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormConfirmarViaje))
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtDestino = New System.Windows.Forms.TextBox()
         Me.TxtOrigen = New System.Windows.Forms.TextBox()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnCerrar = New System.Windows.Forms.Button()
-        Me.TxtChofer = New System.Windows.Forms.TextBox()
         Me.TxtHoraSalida = New System.Windows.Forms.TextBox()
         Me.TxtKilometrosRecorrer = New System.Windows.Forms.TextBox()
-        Me.TxtVehiculo = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtValor = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cbbChofer = New System.Windows.Forms.ComboBox()
+        Me.LblAvisoDemora = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(40, 68)
+        Me.Label5.Location = New System.Drawing.Point(40, 75)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(95, 13)
         Me.Label5.TabIndex = 27
         Me.Label5.Text = "Fecha Hora Salida"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(40, 93)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(38, 13)
-        Me.Label3.TabIndex = 25
-        Me.Label3.Text = "Chofer"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(40, 41)
+        Me.Label2.Location = New System.Drawing.Point(40, 48)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 24
@@ -71,7 +61,7 @@ Partial Class FormConfirmarViaje
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(40, 14)
+        Me.Label1.Location = New System.Drawing.Point(40, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(38, 13)
         Me.Label1.TabIndex = 23
@@ -80,7 +70,7 @@ Partial Class FormConfirmarViaje
         'TxtDestino
         '
         Me.TxtDestino.Enabled = False
-        Me.TxtDestino.Location = New System.Drawing.Point(137, 38)
+        Me.TxtDestino.Location = New System.Drawing.Point(137, 45)
         Me.TxtDestino.Name = "TxtDestino"
         Me.TxtDestino.Size = New System.Drawing.Size(210, 20)
         Me.TxtDestino.TabIndex = 20
@@ -88,7 +78,7 @@ Partial Class FormConfirmarViaje
         'TxtOrigen
         '
         Me.TxtOrigen.Enabled = False
-        Me.TxtOrigen.Location = New System.Drawing.Point(137, 6)
+        Me.TxtOrigen.Location = New System.Drawing.Point(137, 18)
         Me.TxtOrigen.Name = "TxtOrigen"
         Me.TxtOrigen.Size = New System.Drawing.Size(210, 20)
         Me.TxtOrigen.TabIndex = 19
@@ -111,18 +101,10 @@ Partial Class FormConfirmarViaje
         Me.BtnCerrar.Text = "Cerrar"
         Me.BtnCerrar.UseVisualStyleBackColor = True
         '
-        'TxtChofer
-        '
-        Me.TxtChofer.Enabled = False
-        Me.TxtChofer.Location = New System.Drawing.Point(137, 92)
-        Me.TxtChofer.Name = "TxtChofer"
-        Me.TxtChofer.Size = New System.Drawing.Size(210, 20)
-        Me.TxtChofer.TabIndex = 34
-        '
         'TxtHoraSalida
         '
         Me.TxtHoraSalida.Enabled = False
-        Me.TxtHoraSalida.Location = New System.Drawing.Point(137, 65)
+        Me.TxtHoraSalida.Location = New System.Drawing.Point(137, 72)
         Me.TxtHoraSalida.Name = "TxtHoraSalida"
         Me.TxtHoraSalida.Size = New System.Drawing.Size(210, 20)
         Me.TxtHoraSalida.TabIndex = 33
@@ -130,32 +112,15 @@ Partial Class FormConfirmarViaje
         'TxtKilometrosRecorrer
         '
         Me.TxtKilometrosRecorrer.Enabled = False
-        Me.TxtKilometrosRecorrer.Location = New System.Drawing.Point(137, 145)
+        Me.TxtKilometrosRecorrer.Location = New System.Drawing.Point(137, 98)
         Me.TxtKilometrosRecorrer.Name = "TxtKilometrosRecorrer"
         Me.TxtKilometrosRecorrer.Size = New System.Drawing.Size(210, 20)
         Me.TxtKilometrosRecorrer.TabIndex = 38
         '
-        'TxtVehiculo
-        '
-        Me.TxtVehiculo.Enabled = False
-        Me.TxtVehiculo.Location = New System.Drawing.Point(137, 118)
-        Me.TxtVehiculo.Name = "TxtVehiculo"
-        Me.TxtVehiculo.Size = New System.Drawing.Size(210, 20)
-        Me.TxtVehiculo.TabIndex = 37
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(40, 121)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(29, 13)
-        Me.Label4.TabIndex = 36
-        Me.Label4.Text = "Auto"
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(40, 146)
+        Me.Label6.Location = New System.Drawing.Point(40, 99)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(55, 13)
         Me.Label6.TabIndex = 35
@@ -164,7 +129,7 @@ Partial Class FormConfirmarViaje
         'TxtValor
         '
         Me.TxtValor.Enabled = False
-        Me.TxtValor.Location = New System.Drawing.Point(137, 171)
+        Me.TxtValor.Location = New System.Drawing.Point(137, 124)
         Me.TxtValor.Name = "TxtValor"
         Me.TxtValor.Size = New System.Drawing.Size(210, 20)
         Me.TxtValor.TabIndex = 40
@@ -172,11 +137,36 @@ Partial Class FormConfirmarViaje
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(40, 172)
+        Me.Label7.Location = New System.Drawing.Point(40, 125)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(31, 13)
         Me.Label7.TabIndex = 39
         Me.Label7.Text = "Valor"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(40, 153)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(38, 13)
+        Me.Label3.TabIndex = 42
+        Me.Label3.Text = "Chofer"
+        '
+        'cbbChofer
+        '
+        Me.cbbChofer.FormattingEnabled = True
+        Me.cbbChofer.Location = New System.Drawing.Point(137, 150)
+        Me.cbbChofer.Name = "cbbChofer"
+        Me.cbbChofer.Size = New System.Drawing.Size(210, 21)
+        Me.cbbChofer.TabIndex = 41
+        '
+        'LblAvisoDemora
+        '
+        Me.LblAvisoDemora.AutoSize = True
+        Me.LblAvisoDemora.Location = New System.Drawing.Point(40, 179)
+        Me.LblAvisoDemora.Name = "LblAvisoDemora"
+        Me.LblAvisoDemora.Size = New System.Drawing.Size(0, 13)
+        Me.LblAvisoDemora.TabIndex = 43
         '
         'FormConfirmarViaje
         '
@@ -184,18 +174,17 @@ Partial Class FormConfirmarViaje
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(405, 250)
+        Me.Controls.Add(Me.LblAvisoDemora)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.cbbChofer)
         Me.Controls.Add(Me.TxtValor)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.TxtKilometrosRecorrer)
-        Me.Controls.Add(Me.TxtVehiculo)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TxtChofer)
         Me.Controls.Add(Me.TxtHoraSalida)
         Me.Controls.Add(Me.BtnCerrar)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtDestino)
@@ -210,19 +199,18 @@ Partial Class FormConfirmarViaje
     End Sub
 
     Friend WithEvents Label5 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtDestino As TextBox
     Friend WithEvents TxtOrigen As TextBox
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnCerrar As Button
-    Friend WithEvents TxtChofer As TextBox
     Friend WithEvents TxtHoraSalida As TextBox
     Friend WithEvents TxtKilometrosRecorrer As TextBox
-    Friend WithEvents TxtVehiculo As TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents TxtValor As TextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cbbChofer As ComboBox
+    Friend WithEvents LblAvisoDemora As Label
 End Class

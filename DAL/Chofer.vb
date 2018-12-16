@@ -41,6 +41,7 @@ Public Class Chofer
         parametros.Add(New SqlClient.SqlParameter("@fecha_vencimiento_registro", chofer.Registro.FechaVencimiento))
         parametros.Add(New SqlClient.SqlParameter("@categoria_registro", chofer.Registro.Categoria))
         parametros.Add(New SqlClient.SqlParameter("@id_vehiculo", chofer.Auto.Id))
+        parametros.Add(New SqlClient.SqlParameter("@id_turno", chofer.Turnos(0).Id))
         con.EjecutarStoredProcedure("dbo.GuardarChofer", parametros)
     End Sub
 

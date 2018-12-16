@@ -2,9 +2,11 @@
     Inherits Usuario
     Public Sub New()
         Me.Registro = New Registro()
+        Me.Turnos = New List(Of Turno)()
     End Sub
     Public Sub New(usuarioBase As Usuario)
         Me.Registro = New Registro()
+        Me.Turnos = New List(Of Turno)()
         Id = usuarioBase.Id
         Usuario = usuarioBase.Usuario
         Password = usuarioBase.Password

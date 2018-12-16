@@ -1,18 +1,34 @@
 ﻿Public Class FormConfirmarViaje
     Public viaje As EL.Viaje
+    Dim datosChofer As New BLL.Chofer()
     Dim datosViaje As New BLL.Viaje()
     Private Sub FormConfirmarViaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         datosViaje.ConsultarAPI(viaje)
+        LblAvisoDemora.Text = ""
+        Dim listaChoferesDisponible As New List(Of EL.Chofer)()
+        listaChoferesDisponible = datosChofer.Listar()
+        If listaChoferesDisponible.Count > 0 Then
+            cbbChofer.DataSource = Nothing
+            cbbChofer.DataSource = listaChoferesDisponible
+            cbbChofer.DisplayMember = "Nombre"
+            cbbChofer.ValueMember = "Id"
+        Else
+            LblAvisoDemora.Text = "No hay choferes disponibles. Próximo en volver en " + " minutos."
+        End If
         TxtOrigen.Text = viaje.Origen
         TxtDestino.Text = viaje.Destino
         TxtHoraSalida.Text = viaje.FechaSalida.ToShortDateString + " " + viaje.FechaSalida.ToShortTimeString
         TxtKilometrosRecorrer.Text = viaje.KmARecorrer
         TxtValor.Text = viaje.PrecioEstimado
-        TxtChofer.Text = viaje.ChoferAsignado.Apellido + ", " + viaje.ChoferAsignado.Nombre
-        TxtVehiculo.Text = viaje.ChoferAsignado.Auto.Modelo.Marca.Descripcion + " - " + viaje.ChoferAsignado.Auto.Modelo.Descripcion
     End Sub
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
         Me.Close()
+    End Sub
+
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+        viaje.ChoferAsignado = datosChofer.GetById(cbbChofer.SelectedValue)
+        viaje.FechaArriboEstimada = viaje.FechaSalidaEstimada.AddMinutes(viaje.DuracionEstimada)
+        'datosViaje.Guardar(viaje)
     End Sub
 End Class

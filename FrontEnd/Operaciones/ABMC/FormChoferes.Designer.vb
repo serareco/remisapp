@@ -74,6 +74,8 @@ Partial Class FormChoferes
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.CbbTurnos = New System.Windows.Forms.ComboBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvChoferes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -476,6 +478,8 @@ Partial Class FormChoferes
         '
         'TabRegistro
         '
+        Me.TabRegistro.Controls.Add(Me.CbbTurnos)
+        Me.TabRegistro.Controls.Add(Me.Label4)
         Me.TabRegistro.Controls.Add(Me.cbbCategorias)
         Me.TabRegistro.Controls.Add(Me.Label7)
         Me.TabRegistro.Controls.Add(Me.Label11)
@@ -494,7 +498,7 @@ Partial Class FormChoferes
         '
         Me.cbbCategorias.FormattingEnabled = True
         Me.cbbCategorias.Items.AddRange(New Object() {"A", "B", "C"})
-        Me.cbbCategorias.Location = New System.Drawing.Point(116, 91)
+        Me.cbbCategorias.Location = New System.Drawing.Point(116, 66)
         Me.cbbCategorias.Name = "cbbCategorias"
         Me.cbbCategorias.Size = New System.Drawing.Size(196, 21)
         Me.cbbCategorias.TabIndex = 51
@@ -502,7 +506,7 @@ Partial Class FormChoferes
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(7, 67)
+        Me.Label7.Location = New System.Drawing.Point(7, 42)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(107, 13)
         Me.Label7.TabIndex = 18
@@ -511,7 +515,7 @@ Partial Class FormChoferes
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(6, 94)
+        Me.Label11.Location = New System.Drawing.Point(6, 69)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(94, 13)
         Me.Label11.TabIndex = 50
@@ -520,7 +524,7 @@ Partial Class FormChoferes
         'dtpFechaVencimientoRegistro
         '
         Me.dtpFechaVencimientoRegistro.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaVencimientoRegistro.Location = New System.Drawing.Point(116, 61)
+        Me.dtpFechaVencimientoRegistro.Location = New System.Drawing.Point(116, 36)
         Me.dtpFechaVencimientoRegistro.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.dtpFechaVencimientoRegistro.Name = "dtpFechaVencimientoRegistro"
         Me.dtpFechaVencimientoRegistro.Size = New System.Drawing.Size(196, 20)
@@ -530,7 +534,7 @@ Partial Class FormChoferes
         'cbbAutos
         '
         Me.cbbAutos.FormattingEnabled = True
-        Me.cbbAutos.Location = New System.Drawing.Point(116, 122)
+        Me.cbbAutos.Location = New System.Drawing.Point(116, 97)
         Me.cbbAutos.Name = "cbbAutos"
         Me.cbbAutos.Size = New System.Drawing.Size(196, 21)
         Me.cbbAutos.TabIndex = 8
@@ -538,7 +542,7 @@ Partial Class FormChoferes
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(7, 125)
+        Me.Label8.Location = New System.Drawing.Point(7, 100)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(29, 13)
         Me.Label8.TabIndex = 20
@@ -570,6 +574,23 @@ Partial Class FormChoferes
         Me.BtnGuardar.TabIndex = 9
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(7, 132)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(35, 13)
+        Me.Label4.TabIndex = 52
+        Me.Label4.Text = "Turno"
+        '
+        'CbbTurnos
+        '
+        Me.CbbTurnos.FormattingEnabled = True
+        Me.CbbTurnos.Location = New System.Drawing.Point(116, 129)
+        Me.CbbTurnos.Name = "CbbTurnos"
+        Me.CbbTurnos.Size = New System.Drawing.Size(196, 21)
+        Me.CbbTurnos.TabIndex = 53
         '
         'FormChoferes
         '
@@ -651,4 +672,6 @@ Partial Class FormChoferes
     Friend WithEvents TxtCodPais As TextBox
     Friend WithEvents CbbTiposTelefono As ComboBox
     Friend WithEvents Label20 As Label
+    Friend WithEvents CbbTurnos As ComboBox
+    Friend WithEvents Label4 As Label
 End Class
