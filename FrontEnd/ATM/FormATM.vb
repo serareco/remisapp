@@ -3,11 +3,6 @@
     Dim viajeSeleccionado As New EL.Viaje()
     Dim viaje As New EL.Viaje()
     Private Sub ActualizarDataGridviews()
-        DgvServiciosEnCurso.DataSource = Nothing
-        DgvServiciosEnCurso.DataSource = New BindingSource With {
-            .DataSource = servicios.ListarEnCurso()
-        }
-
         DgvServiciosPendientes.AutoGenerateColumns = False
         DgvServiciosPendientes.AutoSize = True
         DgvServiciosPendientes.Columns.Clear()
@@ -38,6 +33,39 @@
         })
         DgvServiciosPendientes.Columns.Add(New DataGridViewTextBoxColumn() With {
             .DataPropertyName = "ChoferEstimado",
+            .Name = "Chofer Asignado"
+        })
+
+        DgvServiciosEnCurso.AutoGenerateColumns = False
+        DgvServiciosEnCurso.AutoSize = True
+        DgvServiciosEnCurso.Columns.Clear()
+        DgvServiciosEnCurso.DataSource = servicios.ListarEnCurso()
+        DgvServiciosEnCurso.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "Id",
+                    .Name = "ID"
+        })
+        DgvServiciosEnCurso.Columns.Add(New DataGridViewTextBoxColumn() With {
+                    .DataPropertyName = "Origen",
+                    .Name = "Origen"
+        })
+        DgvServiciosEnCurso.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .DataPropertyName = "Destino",
+            .Name = "Destino"
+        })
+        DgvServiciosEnCurso.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .DataPropertyName = "FechaSalida",
+            .Name = "Fecha Salida"
+        })
+        DgvServiciosEnCurso.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .DataPropertyName = "FechaArriboEstimado",
+            .Name = "Fecha Arribo"
+        })
+        DgvServiciosEnCurso.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .DataPropertyName = "Estado",
+            .Name = "Estado"
+        })
+        DgvServiciosEnCurso.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .DataPropertyName = "Chofer",
             .Name = "Chofer Asignado"
         })
 
@@ -78,6 +106,14 @@
     Private Sub DgvServiciosPendientes_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvServiciosPendientes.CellDoubleClick
         viaje = Nothing
         FormSalida.viaje = servicios.GetById(DgvServiciosPendientes.Rows(e.RowIndex).Cells(0).Value)
-        FormSalida.Show()
+        FrmLogin.MostrarSalida = True
+        FrmLogin.Show()
+    End Sub
+
+    Private Sub DgvServiciosEnCurso_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvServiciosEnCurso.CellDoubleClick
+        viaje = Nothing
+        FormArribo.viaje = servicios.GetById(DgvServiciosEnCurso.Rows(e.RowIndex).Cells(0).Value)
+        FrmLogin.MostrarArribo = True
+        FrmLogin.Show()
     End Sub
 End Class

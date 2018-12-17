@@ -19,4 +19,7 @@
         End Set
     End Property
 
+    Public Overrides Function ToString() As String
+        Return Id.ToString() + " - " + Descripcion
+    End Function
 End Class

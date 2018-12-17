@@ -1,10 +1,10 @@
 ﻿Public Class Viaje
-    Public Function Listar(Optional pTipoConsulta As Char = "") As List(Of EL.Viaje)
+    Public Function Listar(Optional pTipoConsulta As Char = "D") As List(Of EL.Viaje)
         Dim con As New Conexion
         Dim datatable As New DataTable
         Dim viajes As New List(Of EL.Viaje)
-        If pTipoConsulta = "" Then
-            con.EjecutarConsulta("select v.id_viaje  from dbo.Viaje v")
+        If pTipoConsulta = "D" Then
+            con.EjecutarConsulta("select v.id_viaje from dbo.Viaje v Order By fecha_salida_estimada Desc")
         ElseIf pTipoConsulta = "H" Then
             con.EjecutarConsulta("select v.id_viaje from dbo.Viaje v Where id_estado in (4,5) Order by fecha_salida Desc")
         ElseIf pTipoConsulta = "C" Then
@@ -102,16 +102,16 @@
         parametros.Add(New SqlClient.SqlParameter("@origen", viaje.Origen))
         parametros.Add(New SqlClient.SqlParameter("@destino", viaje.Destino))
         If (viaje.FechaSalida <> DateTime.MinValue) Then
-            parametros.Add(New SqlClient.SqlParameter("@fecha_salida", viaje.FechaSalida))
+            parametros.Add(New SqlClient.SqlParameter() With {.ParameterName = "@fecha_salida", .SqlDbType = SqlDbType.DateTimeOffset, .Value = viaje.FechaSalida})
         End If
         If (viaje.FechaSalidaEstimada <> DateTime.MinValue) Then
-            parametros.Add(New SqlClient.SqlParameter("@fecha_salida_estimada", viaje.FechaSalidaEstimada))
+            parametros.Add(New SqlClient.SqlParameter() With {.ParameterName = "@fecha_salida_estimada", .SqlDbType = SqlDbType.DateTimeOffset, .Value = viaje.FechaSalidaEstimada})
         End If
         If (viaje.FechaArribo <> DateTime.MinValue) Then
-            parametros.Add(New SqlClient.SqlParameter("@fecha_arribo", viaje.FechaArribo))
+            parametros.Add(New SqlClient.SqlParameter() With {.ParameterName = "@fecha_arribo", .SqlDbType = SqlDbType.DateTimeOffset, .Value = viaje.FechaArribo})
         End If
         If (viaje.FechaArriboEstimado <> DateTime.MinValue) Then
-            parametros.Add(New SqlClient.SqlParameter("@fecha_arribo_estimado", viaje.FechaArriboEstimado))
+            parametros.Add(New SqlClient.SqlParameter() With {.ParameterName = "@fecha_arribo_estimado", .SqlDbType = SqlDbType.DateTimeOffset, .Value = viaje.FechaArriboEstimado})
         End If
         If viaje.KmRecorridos > 0 Then
             parametros.Add(New SqlClient.SqlParameter("@km_recorridos", viaje.KmRecorridos))

@@ -23,7 +23,7 @@
         txtDestino.Clear()
 
         dgvViajes.DataSource = Nothing
-        dgvViajes.DataSource = datosViaje.ListarEnCurso()
+        dgvViajes.DataSource = datosViaje.Listar()
         viaje = Nothing
         BtnCancelarViaje.Enabled = False
     End Sub

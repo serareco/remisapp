@@ -17,7 +17,7 @@
         End If
         TxtOrigen.Text = viaje.Origen
         TxtDestino.Text = viaje.Destino
-        TxtHoraSalida.Text = viaje.FechaSalida.ToShortDateString + " " + viaje.FechaSalida.ToShortTimeString
+        TxtHoraSalida.Text = viaje.FechaSalidaEstimada.ToShortDateString + " " + viaje.FechaSalidaEstimada.ToShortTimeString
         TxtKilometrosRecorrer.Text = viaje.KmEstimados
         TxtValor.Text = viaje.PrecioEstimado
     End Sub

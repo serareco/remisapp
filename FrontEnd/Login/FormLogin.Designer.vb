@@ -80,7 +80,7 @@ Partial Class FrmLogin
         '
         Me.LblMsjValidacion.AutoSize = True
         Me.LblMsjValidacion.ForeColor = System.Drawing.Color.IndianRed
-        Me.LblMsjValidacion.Location = New System.Drawing.Point(163, 114)
+        Me.LblMsjValidacion.Location = New System.Drawing.Point(155, 104)
         Me.LblMsjValidacion.Name = "LblMsjValidacion"
         Me.LblMsjValidacion.Size = New System.Drawing.Size(0, 13)
         Me.LblMsjValidacion.TabIndex = 6
@@ -88,7 +88,7 @@ Partial Class FrmLogin
         'ChkChangePss
         '
         Me.ChkChangePss.AutoSize = True
-        Me.ChkChangePss.Location = New System.Drawing.Point(166, 91)
+        Me.ChkChangePss.Location = New System.Drawing.Point(166, 84)
         Me.ChkChangePss.Name = "ChkChangePss"
         Me.ChkChangePss.Size = New System.Drawing.Size(120, 17)
         Me.ChkChangePss.TabIndex = 7

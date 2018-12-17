@@ -1,25 +1,31 @@
 ﻿Public Class FrmLogin
+    Public MostrarSalida As Boolean
+    Public MostrarArribo As Boolean
     Private Sub Ingresar()
         Dim datosLogin As New EL.Login()
-        '
-        'PARA LAS PRUEBAS:
-        'Usuario: serareco
-        'Contraseña: test123
-        '
         datosLogin.Usuario = New EL.Usuario() With {.Usuario = TxtUsuario.Text(), .Password = TxtPassword.Text()}
-
         If (BLL.Login.Login(datosLogin.Usuario)) Then
             LblMsjValidacion.Text() = ""
-            If ChkChangePss.Checked Then
+            If (MostrarSalida Or MostrarArribo) And Not BLL.Login.EsChofer() Then
+                LblMsjValidacion.Text() = "No puede informar la salida del servicio." + vbCrLf + "El usuario no es Chofer."
+                TxtUsuario.Text() = ""
+                TxtPassword.Text() = ""
+            ElseIf MostrarSalida And BLL.Login.EsChofer() Then
+                FormSalida.Show()
+                Me.Close()
+            ElseIf MostrarArribo And BLL.Login.EsChofer() Then
+                FormArribo.Show()
+                Me.Close()
+            ElseIf ChkChangePss.Checked Then
                 FormCambiarPassword.Show()
+                Me.Close()
             ElseIf BLL.Login.EsChofer() Then
-                ' TODO: Mostrar el menu para el chofer
                 FormPrincipalChoferes.Show()
-            Else
+                Me.Close()
+            ElseIf Not (MostrarSalida Or MostrarArribo) Then
                 FormPrincipal.Show()
+                Me.Close()
             End If
-            ' Mostrar menu para personal de oficina
-            Me.Close()
         Else
             LblMsjValidacion.Text() = "Usuario/Password incorrecto."
             TxtUsuario.Text() = ""
@@ -42,4 +48,9 @@
         End If
     End Sub
 
+    Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If (MostrarSalida Or MostrarArribo) Then
+            ChkChangePss.Enabled = False
+        End If
+    End Sub
 End Class

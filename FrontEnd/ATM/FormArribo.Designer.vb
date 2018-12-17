@@ -170,6 +170,7 @@ Partial Class FormArribo
         Me.Controls.Add(Me.gbxViajes)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormArribo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormArribo"
         Me.gbxViajes.ResumeLayout(False)
         Me.gbxViajes.PerformLayout()
