@@ -240,19 +240,29 @@ Partial Class FormATM
         '
         'DgvServiciosPendientes
         '
+        Me.DgvServiciosPendientes.AllowUserToAddRows = False
+        Me.DgvServiciosPendientes.AllowUserToDeleteRows = False
         Me.DgvServiciosPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvServiciosPendientes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvServiciosPendientes.Location = New System.Drawing.Point(3, 32)
+        Me.DgvServiciosPendientes.MultiSelect = False
         Me.DgvServiciosPendientes.Name = "DgvServiciosPendientes"
+        Me.DgvServiciosPendientes.ReadOnly = True
+        Me.DgvServiciosPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvServiciosPendientes.Size = New System.Drawing.Size(648, 213)
         Me.DgvServiciosPendientes.TabIndex = 4
         '
         'DgvServiciosEnCurso
         '
+        Me.DgvServiciosEnCurso.AllowUserToAddRows = False
+        Me.DgvServiciosEnCurso.AllowUserToDeleteRows = False
         Me.DgvServiciosEnCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvServiciosEnCurso.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvServiciosEnCurso.Location = New System.Drawing.Point(3, 280)
+        Me.DgvServiciosEnCurso.MultiSelect = False
         Me.DgvServiciosEnCurso.Name = "DgvServiciosEnCurso"
+        Me.DgvServiciosEnCurso.ReadOnly = True
+        Me.DgvServiciosEnCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvServiciosEnCurso.Size = New System.Drawing.Size(648, 206)
         Me.DgvServiciosEnCurso.TabIndex = 5
         '

@@ -1,7 +1,11 @@
 ﻿Public Class Viaje
     Public Sub New()
         Estado = New EstadoViaje()
+        ChoferEstimado = New Chofer()
+        Chofer = New Chofer()
+        Socio = New Socio()
     End Sub
+
     Private _id As Int16
     Public Property Id() As Int16
         Get
@@ -62,13 +66,13 @@
         End Set
     End Property
 
-    Private _fechaArriboEstimada As DateTime
-    Public Property FechaArriboEstimada() As DateTime
+    Private _fechaArriboEstimado As DateTime
+    Public Property FechaArriboEstimado() As DateTime
         Get
-            Return _fechaArriboEstimada
+            Return _fechaArriboEstimado
         End Get
         Set(ByVal value As DateTime)
-            _fechaArriboEstimada = value
+            _fechaArriboEstimado = value
         End Set
     End Property
 
@@ -82,13 +86,13 @@
         End Set
     End Property
 
-    Private _kmARecorrer As Decimal
-    Public Property KmARecorrer() As Decimal
+    Private _kmEstimados As Decimal
+    Public Property KmEstimados() As Decimal
         Get
-            Return _kmARecorrer
+            Return _kmEstimados
         End Get
         Set(ByVal value As Decimal)
-            _kmARecorrer = value
+            _kmEstimados = value
         End Set
     End Property
 
@@ -102,13 +106,13 @@
         End Set
     End Property
 
-    Private _choferAsignado As Chofer
-    Public Property ChoferAsignado() As Chofer
+    Private _choferEstimado As Chofer
+    Public Property ChoferEstimado() As Chofer
         Get
-            Return _choferAsignado
+            Return _choferEstimado
         End Get
         Set(ByVal value As Chofer)
-            _choferAsignado = value
+            _choferEstimado = value
         End Set
     End Property
 
@@ -142,13 +146,13 @@
         End Set
     End Property
 
-    Private _promociones As List(Of Beneficio)
-    Public Property Promociones() As List(Of Beneficio)
+    Private _beneficios As List(Of Beneficio)
+    Public Property Beneficios() As List(Of Beneficio)
         Get
-            Return _promociones
+            Return _beneficios
         End Get
         Set(ByVal value As List(Of Beneficio))
-            _promociones = value
+            _beneficios = value
         End Set
     End Property
 
@@ -192,4 +196,13 @@
         End Set
     End Property
 
+    Private _duracion As Integer
+    Public Property Duracion() As Integer
+        Get
+            Return _duracion
+        End Get
+        Set(ByVal value As Integer)
+            _duracion = value
+        End Set
+    End Property
 End Class

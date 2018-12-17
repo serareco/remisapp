@@ -18,7 +18,7 @@
         TxtOrigen.Text = viaje.Origen
         TxtDestino.Text = viaje.Destino
         TxtHoraSalida.Text = viaje.FechaSalida.ToShortDateString + " " + viaje.FechaSalida.ToShortTimeString
-        TxtKilometrosRecorrer.Text = viaje.KmARecorrer
+        TxtKilometrosRecorrer.Text = viaje.KmEstimados
         TxtValor.Text = viaje.PrecioEstimado
     End Sub
 
@@ -27,8 +27,11 @@
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        viaje.ChoferAsignado = datosChofer.GetById(cbbChofer.SelectedValue)
-        viaje.FechaArriboEstimada = viaje.FechaSalidaEstimada.AddMinutes(viaje.DuracionEstimada)
-        'datosViaje.Guardar(viaje)
+        viaje.ChoferEstimado = datosChofer.GetById(cbbChofer.SelectedValue)
+        viaje.FechaArriboEstimado = viaje.FechaSalidaEstimada.AddMinutes(viaje.DuracionEstimada)
+        datosViaje.Guardar(viaje)
+        MessageBox.Show("El nuevo viaje fue cargado correctamente.")
+        FormViajes.ActualizarLista()
+        Me.Close()
     End Sub
 End Class

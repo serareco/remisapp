@@ -7,6 +7,6 @@
 
     Private Sub FormViajesHistorico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dgvViajes.DataSource = Nothing
-        dgvViajes.DataSource = datosViaje.MostrarHistorico()
+        dgvViajes.DataSource = datosViaje.ListarHistorico()
     End Sub
 End Class

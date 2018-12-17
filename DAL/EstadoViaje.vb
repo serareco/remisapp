@@ -19,12 +19,15 @@
         Return datatable
     End Function
 
-    Public Function GetById(pId As Int16) As DataTable
+    Public Function GetById(pId As Int16) As EL.EstadoViaje
         Dim con As New Conexion
         Dim datatable As New DataTable
-        con.EjecutarConsulta("select * from tipos_estado_viaje where id_estado = " & pId)
+        Dim estadoViaje As New EL.EstadoViaje()
+        con.EjecutarConsulta("select * from dbo.Tipo_estado_viaje where id_estado = " & pId)
         con.adp.Fill(datatable)
-        Return datatable
+        estadoViaje.Id = datatable.Rows(0).ItemArray(0).ToString()
+        estadoViaje.Descripcion = datatable.Rows(0).ItemArray(1).ToString()
+        Return estadoViaje
     End Function
 
 End Class

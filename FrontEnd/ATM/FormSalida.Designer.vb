@@ -103,7 +103,7 @@ Partial Class FormSalida
         '
         'BtnCerrar
         '
-        Me.BtnCerrar.Location = New System.Drawing.Point(193, 187)
+        Me.BtnCerrar.Location = New System.Drawing.Point(193, 165)
         Me.BtnCerrar.Name = "BtnCerrar"
         Me.BtnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.BtnCerrar.TabIndex = 1
@@ -112,7 +112,7 @@ Partial Class FormSalida
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(88, 187)
+        Me.BtnGuardar.Location = New System.Drawing.Point(88, 165)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.BtnGuardar.TabIndex = 0
@@ -128,7 +128,8 @@ Partial Class FormSalida
         Me.Controls.Add(Me.gbxViajes)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormSalida"
-        Me.Text = "FormSalida"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Regitrar Salida del Vehículo"
         Me.gbxViajes.ResumeLayout(False)
         Me.gbxViajes.PerformLayout()
         Me.ResumeLayout(False)

@@ -1,14 +1,22 @@
 ﻿Public Class Viaje
-    Public Function MostrarEnCurso()
-        Return New DAL.Viaje().MostrarEnCurso()
-    End Function
-
     Public Function GetProximoViajePendiente() As EL.Viaje
-        Return New EL.Viaje()
+        Return New DAL.Viaje().GetProximoViajePendiente()
     End Function
 
     Public Function GetProximoViajeVuelta() As EL.Viaje
-        Return New EL.Viaje()
+        Return New DAL.Viaje().GetProximoViajeVuelta
+    End Function
+
+    Public Function ListarEnCurso() As List(Of EL.Viaje)
+        Return New DAL.Viaje().Listar("C")
+    End Function
+
+    Public Function ListarPendientes() As List(Of EL.Viaje)
+        Return New DAL.Viaje().Listar("P")
+    End Function
+
+    Public Function ListarHistorico() As List(Of EL.Viaje)
+        Return New DAL.Viaje().Listar("H")
     End Function
 
     Public Function Listar() As List(Of EL.Viaje)
@@ -17,10 +25,6 @@
 
     Public Function GetById(pId As Int16) As EL.Viaje
         Return New DAL.Viaje().GetById(pId)
-    End Function
-
-    Public Function MostrarHistorico()
-        Return New DAL.Viaje().MostrarHistorico()
     End Function
 
     Public Sub Guardar(viaje As EL.Viaje)
@@ -35,8 +39,8 @@
 
         Dim response As MapService.MapServiceResponse = request.SendRequest()
         viaje.DuracionEstimada = response.Time
-        viaje.KmARecorrer = response.Distance
-        viaje.PrecioEstimado = viaje.KmARecorrer * 26 'Deberia salir de los parámetros el valor
+        viaje.KmEstimados = response.Distance
+        viaje.PrecioEstimado = viaje.KmEstimados * 26 'Deberia salir de los parámetros el valor
     End Sub
 
 End Class

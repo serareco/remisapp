@@ -11,7 +11,7 @@
     ' VER LA FORMA DE SUGERIR EL VALOR DEL PRECIO, EL TIEMPO DE DEMORA, ETC.
     Public Sub ActualizarLista()
         dtpFechaSalida.Enabled = Not ChbSalidaInmediata.Checked
-
+        ChbSalidaInmediata.Checked = True
         cbbCliente.DataSource = Nothing
         cbbCliente.DataSource = New BindingSource With {
             .DataSource = datosSocio.Listar()
@@ -23,7 +23,7 @@
         txtDestino.Clear()
 
         dgvViajes.DataSource = Nothing
-        dgvViajes.DataSource = datosViaje.MostrarEnCurso()
+        dgvViajes.DataSource = datosViaje.ListarEnCurso()
         viaje = Nothing
         BtnCancelarViaje.Enabled = False
     End Sub

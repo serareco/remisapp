@@ -24,6 +24,7 @@ Partial Class FormViajes
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormViajes))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.ChbSalidaInmediata = New System.Windows.Forms.CheckBox()
         Me.ChbIdayVuelta = New System.Windows.Forms.CheckBox()
         Me.dtpFechaSalida = New System.Windows.Forms.DateTimePicker()
@@ -39,7 +40,6 @@ Partial Class FormViajes
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnCancelarViaje = New System.Windows.Forms.Button()
         Me.dgvViajes = New System.Windows.Forms.DataGridView()
-        Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvViajes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +66,15 @@ Partial Class FormViajes
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Viaje"
+        '
+        'BtnLimpiar
+        '
+        Me.BtnLimpiar.Location = New System.Drawing.Point(256, 284)
+        Me.BtnLimpiar.Name = "BtnLimpiar"
+        Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLimpiar.TabIndex = 41
+        Me.BtnLimpiar.Text = "Limpiar"
+        Me.BtnLimpiar.UseVisualStyleBackColor = True
         '
         'ChbSalidaInmediata
         '
@@ -109,9 +118,9 @@ Partial Class FormViajes
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(24, 102)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.Size = New System.Drawing.Size(34, 13)
         Me.Label4.TabIndex = 11
-        Me.Label4.Text = "Cliente"
+        Me.Label4.Text = "Socio"
         '
         'Label2
         '
@@ -204,15 +213,6 @@ Partial Class FormViajes
         Me.dgvViajes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvViajes.Size = New System.Drawing.Size(614, 254)
         Me.dgvViajes.TabIndex = 0
-        '
-        'BtnLimpiar
-        '
-        Me.BtnLimpiar.Location = New System.Drawing.Point(256, 284)
-        Me.BtnLimpiar.Name = "BtnLimpiar"
-        Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnLimpiar.TabIndex = 41
-        Me.BtnLimpiar.Text = "Limpiar"
-        Me.BtnLimpiar.UseVisualStyleBackColor = True
         '
         'FormViajes
         '
