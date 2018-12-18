@@ -113,6 +113,7 @@ Public Class FormPrincipal
         Me.OpcionViajesCurso.Visible = False
         Me.OpcionSocios.Visible = False
         Me.OpcionReportesViajes.Visible = False
+        Me.OpcionChoferComision.Visible = False
 
         If BLL.Login.EsAdministrador() Then
             Me.MenuABMC.Visible = True
@@ -137,8 +138,8 @@ Public Class FormPrincipal
         If BLL.Login.EsGerente() Then
             Me.MenuViajes.Visible = True
             Me.MenuABMC.Visible = True
+            Me.OpcionChoferComision.Visible = True
             Me.OpcionComisiones.Visible = True
-            Me.OpcionViajesCurso.Visible = True
             Me.OpcionConsultaHistorico.Visible = True
         End If
         LogInformation.Text() = BLL.Login.GetInforamcionUsuario()
@@ -148,5 +149,10 @@ Public Class FormPrincipal
         BLL.Login.Disconnect()
         FrmLogin.Show()
         Me.Close()
+    End Sub
+
+    Private Sub OpcionChoferComision_Click(sender As Object, e As EventArgs) Handles OpcionChoferComision.Click
+        FormChoferComision.MdiParent = Me
+        FormChoferComision.Show()
     End Sub
 End Class

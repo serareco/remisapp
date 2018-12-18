@@ -1,10 +1,10 @@
 ﻿Public Class Comision
     Public Function Listar() As List(Of EL.Comision)
-        Return New DAL.Comision().Listar()
+        Return New DAL.Comision().Listar("D")
     End Function
 
-    Public Function MostrarVigentes() As DataTable
-        Return New DAL.Comision().MostrarVigentes()
+    Public Function ListarVigentes() As List(Of EL.Comision)
+        Return New DAL.Comision().Listar("V")
     End Function
 
     Public Function GetById(pId As Int16) As EL.Comision

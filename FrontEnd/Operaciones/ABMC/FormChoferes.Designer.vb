@@ -65,6 +65,8 @@ Partial Class FormChoferes
         Me.TxtPiso = New System.Windows.Forms.TextBox()
         Me.TxtDpto = New System.Windows.Forms.TextBox()
         Me.TabRegistro = New System.Windows.Forms.TabPage()
+        Me.CbbTurnos = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.cbbCategorias = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -74,8 +76,6 @@ Partial Class FormChoferes
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.CbbTurnos = New System.Windows.Forms.ComboBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvChoferes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -202,7 +202,7 @@ Partial Class FormChoferes
         '
         Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaNacimiento.Location = New System.Drawing.Point(116, 146)
-        Me.dtpFechaNacimiento.MaxDate = New Date(2018, 7, 12, 0, 0, 0, 0)
+        Me.dtpFechaNacimiento.MaxDate = New Date(2018, 12, 18, 0, 0, 0, 0)
         Me.dtpFechaNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
         Me.dtpFechaNacimiento.Size = New System.Drawing.Size(196, 20)
@@ -494,6 +494,23 @@ Partial Class FormChoferes
         Me.TabRegistro.Text = "Licencia - Vehiculo"
         Me.TabRegistro.UseVisualStyleBackColor = True
         '
+        'CbbTurnos
+        '
+        Me.CbbTurnos.FormattingEnabled = True
+        Me.CbbTurnos.Location = New System.Drawing.Point(116, 129)
+        Me.CbbTurnos.Name = "CbbTurnos"
+        Me.CbbTurnos.Size = New System.Drawing.Size(196, 21)
+        Me.CbbTurnos.TabIndex = 53
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(7, 132)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(35, 13)
+        Me.Label4.TabIndex = 52
+        Me.Label4.Text = "Turno"
+        '
         'cbbCategorias
         '
         Me.cbbCategorias.FormattingEnabled = True
@@ -574,23 +591,6 @@ Partial Class FormChoferes
         Me.BtnGuardar.TabIndex = 9
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(7, 132)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(35, 13)
-        Me.Label4.TabIndex = 52
-        Me.Label4.Text = "Turno"
-        '
-        'CbbTurnos
-        '
-        Me.CbbTurnos.FormattingEnabled = True
-        Me.CbbTurnos.Location = New System.Drawing.Point(116, 129)
-        Me.CbbTurnos.Name = "CbbTurnos"
-        Me.CbbTurnos.Size = New System.Drawing.Size(196, 21)
-        Me.CbbTurnos.TabIndex = 53
         '
         'FormChoferes
         '

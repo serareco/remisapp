@@ -9,7 +9,8 @@
         txtPatente.Clear()
         txtChasis.Clear()
         txtMotor.Clear()
-
+        dtpFechaVTV.MinDate = Now
+        dtpFechaVTV.MaxDate = Now.AddYears(5)
         cbbMarca.DataSource = Nothing
         cbbModelo.DataSource = Nothing
         dgvAutos.DataSource = Nothing

@@ -12,6 +12,7 @@
     End Sub
 
     Private Sub ActualizarLista()
+        dtpFechaNacimiento.MaxDate = Now.AddYears(-18)
         dtpFechaNacimiento.CustomFormat = " "
         dtpFechaNacimiento.Format = DateTimePickerFormat.Custom
 
@@ -21,8 +22,8 @@
         TxtApellido.Clear()
         TxtEmail.Clear()
         TxtNumeroTel.Clear()
-        TxtCodArea.Clear()
-        TxtCodPais.Clear()
+        TxtCodArea.Text = 11
+        TxtCodPais.Text = 54
         TxtCalle.Clear()
         TxtNumero.Clear()
         TxtPiso.Clear()
@@ -44,7 +45,6 @@
         ClbRoles.ValueMember = "Id"
 
         dgvUsuarios.AutoGenerateColumns = False
-        dgvUsuarios.AutoSize = True
         dgvUsuarios.Columns.Clear()
         dgvUsuarios.DataSource = Nothing
         dgvUsuarios.DataSource = datosUsuario.Listar()

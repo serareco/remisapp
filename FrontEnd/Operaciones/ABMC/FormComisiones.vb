@@ -6,7 +6,10 @@
         txtDescripcion.Text() = ""
         txtPorcentaje.Text() = ""
         dtpVigenciaDesde.Value() = DateTime.Now
-        'dtpVigenciaHasta.Value() = Nothing
+
+        dtpVigenciaHasta.CustomFormat = " "
+        dtpVigenciaHasta.Format = DateTimePickerFormat.Custom
+
         dgvComisiones.DataSource = Nothing
         dgvComisiones.DataSource = New BindingSource With {
             .DataSource = datosComision.Listar()
@@ -39,7 +42,9 @@
             comision.Porcentaje = txtPorcentaje.Text
             comision.Descripcion = txtDescripcion.Text
             comision.VigenciaDesde = dtpVigenciaDesde.Value
-            comision.VigenciaHasta = dtpVigenciaHasta.Value
+            If dtpVigenciaHasta.CustomFormat <> " " Then
+                comision.VigenciaHasta = dtpVigenciaHasta.Value
+            End If
             datosComision.Guardar(comision)
             ActualizarLista()
         End If
@@ -78,6 +83,10 @@
             .Id = dgvComisiones.Rows(e.RowIndex).Cells(0).Value
         }
         comision = datosComision.GetById(comision.Id)
+    End Sub
+
+    Private Sub dtpVigenciaHasta_ValueChanged(sender As Object, e As EventArgs) Handles dtpVigenciaHasta.ValueChanged
+        dtpVigenciaHasta.CustomFormat = "dd/MM/yyyy"
     End Sub
 
 End Class

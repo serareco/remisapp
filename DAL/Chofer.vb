@@ -20,9 +20,10 @@ Public Class Chofer
         Dim registro As New Registro()
         Dim datatable As New DataTable
         con.EjecutarConsulta("
-         select c.id_comision, c.id_vehiculo
+         select c.id_comision, c.id_vehiculo, ct.id_turno
            from dbo.Chofer c inner join dbo.Persona p on c.id_persona = p.id_persona
             inner join dbo.Usuario u on u.id_persona = p.id_persona
+            inner join dbo.chofer_turno ct on c.id_persona = ct.id_persona
           where c.id_persona = " & pId)
         con.adp.Fill(datatable)
 
@@ -30,6 +31,7 @@ Public Class Chofer
         chofer.Comision = New Comision().GetById(datatable.Rows(0).ItemArray(0).ToString())
         chofer.Auto = New Vehiculo().GetById(datatable.Rows(0).ItemArray(1).ToString())
         registro.GetById(chofer.Id, chofer.Registro)
+        chofer.Turnos.Add(New Turno().GetById(datatable.Rows(0).ItemArray(2).ToString()))
         Return chofer
     End Function
 

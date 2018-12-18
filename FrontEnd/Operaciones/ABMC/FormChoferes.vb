@@ -36,8 +36,8 @@
         TxtApellido.Clear()
         TxtEmail.Clear()
         TxtNumeroTel.Clear()
-        TxtCodArea.Clear()
-        TxtCodPais.Clear()
+        TxtCodArea.Text = 11
+        TxtCodPais.Text = 54
         TxtCalle.Clear()
         TxtNumero.Clear()
         TxtPiso.Clear()
@@ -48,13 +48,15 @@
 
         dtpFechaVencimientoRegistro.CustomFormat = " "
         dtpFechaVencimientoRegistro.Format = DateTimePickerFormat.Custom
+        dtpFechaVencimientoRegistro.MinDate = Now
 
         dtpFechaNacimiento.CustomFormat = "dd/MM/yyyy"
         dtpFechaNacimiento.Format = DateTimePickerFormat.Custom
 
+        dtpFechaNacimiento.MaxDate = Now.AddYears(-18)
+
         dgvChoferes.DataSource = Nothing
         dgvChoferes.AutoGenerateColumns = False
-        dgvChoferes.AutoSize = True
         dgvChoferes.Columns.Clear()
         dgvChoferes.DataSource = datosChofer.Listar()
 
