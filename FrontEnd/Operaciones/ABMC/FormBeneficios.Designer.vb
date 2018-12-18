@@ -67,7 +67,7 @@ Partial Class FormBeneficios
         Me.BtnEliminar.Location = New System.Drawing.Point(115, 275)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(102, 23)
-        Me.BtnEliminar.TabIndex = 11
+        Me.BtnEliminar.TabIndex = 12
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
@@ -76,7 +76,7 @@ Partial Class FormBeneficios
         Me.BtnModificar.Location = New System.Drawing.Point(7, 275)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(102, 23)
-        Me.BtnModificar.TabIndex = 10
+        Me.BtnModificar.TabIndex = 11
         Me.BtnModificar.Text = "Modificar"
         Me.BtnModificar.UseVisualStyleBackColor = True
         '
@@ -142,7 +142,7 @@ Partial Class FormBeneficios
         Me.TxtViajesSemanal.Location = New System.Drawing.Point(136, 59)
         Me.TxtViajesSemanal.Name = "TxtViajesSemanal"
         Me.TxtViajesSemanal.Size = New System.Drawing.Size(153, 20)
-        Me.TxtViajesSemanal.TabIndex = 22
+        Me.TxtViajesSemanal.TabIndex = 7
         '
         'Label5
         '
@@ -158,7 +158,7 @@ Partial Class FormBeneficios
         Me.TxtTotalSemanal.Location = New System.Drawing.Point(136, 33)
         Me.TxtTotalSemanal.Name = "TxtTotalSemanal"
         Me.TxtTotalSemanal.Size = New System.Drawing.Size(153, 20)
-        Me.TxtTotalSemanal.TabIndex = 20
+        Me.TxtTotalSemanal.TabIndex = 6
         '
         'dtpVigenciaHasta
         '
@@ -166,7 +166,7 @@ Partial Class FormBeneficios
         Me.dtpVigenciaHasta.Location = New System.Drawing.Point(116, 106)
         Me.dtpVigenciaHasta.Name = "dtpVigenciaHasta"
         Me.dtpVigenciaHasta.Size = New System.Drawing.Size(217, 20)
-        Me.dtpVigenciaHasta.TabIndex = 18
+        Me.dtpVigenciaHasta.TabIndex = 5
         '
         'dtpVigenciaDesde
         '
@@ -174,14 +174,14 @@ Partial Class FormBeneficios
         Me.dtpVigenciaDesde.Location = New System.Drawing.Point(116, 79)
         Me.dtpVigenciaDesde.Name = "dtpVigenciaDesde"
         Me.dtpVigenciaDesde.Size = New System.Drawing.Size(217, 20)
-        Me.dtpVigenciaDesde.TabIndex = 17
+        Me.dtpVigenciaDesde.TabIndex = 4
         '
         'BtnLimpiar
         '
         Me.BtnLimpiar.Location = New System.Drawing.Point(258, 275)
         Me.BtnLimpiar.Name = "BtnLimpiar"
         Me.BtnLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.BtnLimpiar.TabIndex = 16
+        Me.BtnLimpiar.TabIndex = 10
         Me.BtnLimpiar.Text = "Limpiar"
         Me.BtnLimpiar.UseVisualStyleBackColor = True
         '
@@ -226,7 +226,7 @@ Partial Class FormBeneficios
         Me.BtnCancelar.Location = New System.Drawing.Point(143, 275)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(94, 23)
-        Me.BtnCancelar.TabIndex = 7
+        Me.BtnCancelar.TabIndex = 9
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = True
         '
@@ -235,7 +235,7 @@ Partial Class FormBeneficios
         Me.BtnGuardar.Location = New System.Drawing.Point(22, 275)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(97, 23)
-        Me.BtnGuardar.TabIndex = 6
+        Me.BtnGuardar.TabIndex = 8
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '

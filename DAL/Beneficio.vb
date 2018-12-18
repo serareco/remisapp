@@ -26,6 +26,8 @@
             beneficio.VigenciaHasta = Nothing
         End Try
         beneficio.Descripcion = datatable.Rows(0).ItemArray(4).ToString()
+        beneficio.TotalAcumulado = datatable.Rows(0).ItemArray(6).ToString()
+        beneficio.CantidadViajes = datatable.Rows(0).ItemArray(7).ToString()
         Return beneficio
     End Function
 
@@ -67,13 +69,13 @@
         parametros.Add(New SqlClient.SqlParameter("@descuento", promocion.Descuento))
         parametros.Add(New SqlClient.SqlParameter("@descripcion", promocion.Descripcion))
         parametros.Add(New SqlClient.SqlParameter("@vigencia_desde", promocion.VigenciaDesde))
-
         If promocion.VigenciaHasta = Nothing Then
             parametros.Add(New SqlClient.SqlParameter("@vigencia_hasta", System.Data.SqlTypes.SqlDateTime.Null))
         Else
             parametros.Add(New SqlClient.SqlParameter("@vigencia_hasta", promocion.VigenciaHasta))
         End If
-
+        parametros.Add(New SqlClient.SqlParameter("@cantidadViajes", promocion.CantidadViajes))
+        parametros.Add(New SqlClient.SqlParameter("@totalAcumulado", promocion.TotalAcumulado))
         con.EjecutarStoredProcedure("dbo.GuardarBeneficio", parametros)
 
     End Sub

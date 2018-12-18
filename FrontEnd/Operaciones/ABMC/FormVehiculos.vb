@@ -84,6 +84,7 @@
             auto.Patente = txtPatente.Text
             auto.Chasis = txtChasis.Text
             auto.Motor = txtMotor.Text
+            auto.FechaVencimientoVTV = dtpFechaVTV.Value
             datosVehiculos.Guardar(auto)
             ActualizarLista()
         End If

@@ -11,9 +11,9 @@
         Return New DAL.Beneficio().GetById(pId)
     End Function
 
-    Public Sub Guardar(promocion As EL.Beneficio)
+    Public Sub Guardar(beneficio As EL.Beneficio)
         Dim e As New DAL.Beneficio()
-        e.Guardar(promocion)
+        e.Guardar(beneficio)
     End Sub
 
     Public Sub Quitar(promocion As EL.Beneficio)
