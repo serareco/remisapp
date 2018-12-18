@@ -21,11 +21,11 @@
         })
         DgvServiciosPendientes.Columns.Add(New DataGridViewTextBoxColumn() With {
             .DataPropertyName = "FechaSalidaEstimada",
-            .Name = "Fecha Salida"
+            .Name = "Fecha Salida Estimada"
         })
         DgvServiciosPendientes.Columns.Add(New DataGridViewTextBoxColumn() With {
             .DataPropertyName = "FechaArriboEstimado",
-            .Name = "Fecha Arribo"
+            .Name = "Fecha Arribo Estimada"
         })
         DgvServiciosPendientes.Columns.Add(New DataGridViewTextBoxColumn() With {
             .DataPropertyName = "Estado",
@@ -34,6 +34,10 @@
         DgvServiciosPendientes.Columns.Add(New DataGridViewTextBoxColumn() With {
             .DataPropertyName = "ChoferEstimado",
             .Name = "Chofer Asignado"
+        })
+        DgvServiciosPendientes.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .DataPropertyName = "DuracionEstimada",
+            .Name = "Duracion"
         })
 
         DgvServiciosEnCurso.AutoGenerateColumns = False
@@ -66,7 +70,7 @@
         })
         DgvServiciosEnCurso.Columns.Add(New DataGridViewTextBoxColumn() With {
             .DataPropertyName = "Chofer",
-            .Name = "Chofer Asignado"
+            .Name = "Chofer"
         })
 
     End Sub
@@ -93,7 +97,7 @@
             LblDestinoLlegar.Text = proximoViajePorLlegar.Destino
             LblOrigenLlegar.Text = proximoViajePorLlegar.Origen
             proximoViajePorLlegar.FechaSalidaEstimada = proximoViajePorLlegar.FechaSalida.AddMinutes(proximoViajePorLlegar.DuracionEstimada)
-            LblHorarioLlegar.Text = proximoViajePorLlegar.FechaSalidaEstimada.ToShortDateString + " " + proximoViajePorLlegar.FechaSalidaEstimada.ToShortTimeString
+            LblHorarioLlegar.Text = proximoViajePorLlegar.FechaArriboEstimado.ToShortDateString + " " + proximoViajePorLlegar.FechaArriboEstimado.ToShortTimeString
         Else
             LblChoferLlegar.Text = ""
             LblDestinoLlegar.Text = ""

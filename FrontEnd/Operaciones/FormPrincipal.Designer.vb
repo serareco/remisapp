@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormPrincipal
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,7 +21,7 @@ Partial Class FormPrincipal
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPrincipal))
@@ -45,6 +45,8 @@ Partial Class FormPrincipal
         Me.CloseAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.LogInformation = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -148,7 +150,7 @@ Partial Class FormPrincipal
         '
         'StatusStrip
         '
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogInformation})
+        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogInformation, Me.ToolStripDropDownButton1})
         resources.ApplyResources(Me.StatusStrip, "StatusStrip")
         Me.StatusStrip.Name = "StatusStrip"
         '
@@ -156,6 +158,19 @@ Partial Class FormPrincipal
         '
         Me.LogInformation.Name = "LogInformation"
         resources.ApplyResources(Me.LogInformation, "LogInformation")
+        '
+        'ToolStripDropDownButton1
+        '
+        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesionToolStripMenuItem})
+        resources.ApplyResources(Me.ToolStripDropDownButton1, "ToolStripDropDownButton1")
+        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
+        '
+        'CerrarSesionToolStripMenuItem
+        '
+        Me.CerrarSesionToolStripMenuItem.BackColor = System.Drawing.Color.White
+        Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
+        resources.ApplyResources(Me.CerrarSesionToolStripMenuItem, "CerrarSesionToolStripMenuItem")
         '
         'FormPrincipal
         '
@@ -197,4 +212,6 @@ Partial Class FormPrincipal
     Friend WithEvents OpcionBeneficios As ToolStripMenuItem
     Friend WithEvents MenuReportes As ToolStripMenuItem
     Friend WithEvents OpcionReportesViajes As ToolStripMenuItem
+    Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
+    Friend WithEvents CerrarSesionToolStripMenuItem As ToolStripMenuItem
 End Class

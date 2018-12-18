@@ -9,6 +9,10 @@
         End Set
     End Property
 
+    Public Sub Disconnect()
+        UsuarioConectado = Nothing
+    End Sub
+
     Public Function GetInforamcionUsuario() As String
         Return "Usuario: " + UsuarioConectado.Usuario + " - " + UsuarioConectado.Apellido + ", " + UsuarioConectado.Nombre
     End Function

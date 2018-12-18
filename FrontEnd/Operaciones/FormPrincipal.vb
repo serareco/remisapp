@@ -144,4 +144,9 @@ Public Class FormPrincipal
         LogInformation.Text() = BLL.Login.GetInforamcionUsuario()
     End Sub
 
+    Private Sub CerrarSesionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesionToolStripMenuItem.Click
+        BLL.Login.Disconnect()
+        FrmLogin.Show()
+        Me.Close()
+    End Sub
 End Class

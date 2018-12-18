@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="MenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>118, 17</value>
+    <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="MenuViajes.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -135,12 +135,6 @@
   </data>
   <data name="MenuABMC.Text" xml:space="preserve">
     <value>ABMC</value>
-  </data>
-  <data name="OpcionReportesViajes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="OpcionReportesViajes.Text" xml:space="preserve">
-    <value>Viajes</value>
   </data>
   <data name="MenuReportes.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 20</value>
@@ -180,13 +174,13 @@
     <value>0</value>
   </data>
   <data name="OpcionViajesCurso.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="OpcionViajesCurso.Text" xml:space="preserve">
     <value>En curso</value>
   </data>
   <data name="OpcionConsultaHistorico.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="OpcionConsultaHistorico.Text" xml:space="preserve">
     <value>Consulta histórico</value>
@@ -227,6 +221,12 @@
   <data name="OpcionBeneficios.Text" xml:space="preserve">
     <value>Beneficios</value>
   </data>
+  <data name="OpcionReportesViajes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 22</value>
+  </data>
+  <data name="OpcionReportesViajes.Text" xml:space="preserve">
+    <value>Viajes</value>
+  </data>
   <data name="CascadeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 22</value>
   </data>
@@ -252,8 +252,42 @@
     <value>Cerrar Todo</value>
   </data>
   <metadata name="StatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>226, 17</value>
+    <value>125, 17</value>
   </metadata>
+  <data name="LogInformation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 17</value>
+  </data>
+  <data name="LogInformation.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ToolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMFSURBVGhD1dpLqE1RHMfx4/0YCKEIUeSVEhkhJANKjI28
+        JspEEXciSUlCYSxzpYgZI48h5oiQRxlIKW++v1OrltV/37PWOnvtfc+vPt3OuXfvvX7n3H3OXuuczoBm
+        Hh7iF65hFEZMxmE5NmMj5sCKSrzAX896tJrx2IO7+AF/cPIeF7AEilXiD1agtWzDM/iDqvIdFxGWkCNo
+        Jfp/PgE9kuGgUh1D0UzALizr3vo/Z2ANKlXxEjppn0IH+wmdAy4nEQ4oxy0Uz0r4B/2NvTjt3devb1iA
+        opkI65XFv12HyygenRsfYA2gLh8xBsXTRBn9GzeS0mV2o7GULHMQjeYqrIH06wAay3lYg6iDLi4bSckS
+        usiciuKxSjzBBtRxztxG8VSVmAGljheArSiaXiVc+ilzE0VzCuFBrRIuOWU0h5mJ6IyG3jknd2/1ziTo
+        atc/6HAlXFTmM/ztqryD/j46GvxjaOOXiNlYxf1HN6aEoje1mIvKt3BT3ujsgL8TDTCmzFrcwBVM1x09
+        ElviNRYhOUsRLgbElomNVUKPunXODCE7mgxpUuTvsK4yVSUWQ/sPy7jJWXa0sb9D6bfMcCVcqspsQlbO
+        wt+Zk1smpoSLVeYckqIlm17XSalldGkSW8JF+9cinf5Wz8gWREclLsE/YJWUMsfhb9urhMss7MPq7q2E
+        WO/Ow4kto7/5Am3zCjElsrMT4dMfI7bMbGipdEr3VqFoGUfv4tZAY6SeM8WyH9YAU4yIMvdgDS5Vq2V0
+        wfcV1sBytFZmIawB9aOVMuHCc10aL6PXdGsgdWi0zFhoqd4aSB0aLfMA1iDq0liZQ7AGUCddAOraqWim
+        4ROsAeTQVYJmduHkrK8JUmz0AaN/0Fz6xGo+FH+mqZ9rUDT6MP45wkGleoO58KOZnSZFSfOJnFjfKMih
+        xTMtXLSSqhL3kXJJfx06z1rLI4SDch/Gr8MdhCuIjr5aoXXY7EWBOhOuX1nfKNBa63Ychn6vn1oNb/UZ
+        COPm5/ru01HdMchZBV0BD2g6nX97EYmcmjb6AwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ToolStripDropDownButton1.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>White</value>
+  </data>
+  <data name="ToolStripDropDownButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 20</value>
+  </data>
+  <data name="ToolStripDropDownButton1.Text" xml:space="preserve">
+    <value>ToolStripDropDownButton1</value>
+  </data>
   <data name="StatusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 385</value>
   </data>
@@ -278,14 +312,14 @@
   <data name="&gt;&gt;StatusStrip.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="LogInformation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 17</value>
+  <data name="CerrarSesionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
-  <data name="LogInformation.Text" xml:space="preserve">
-    <value>Status</value>
+  <data name="CerrarSesionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cerrar Sesión</value>
   </data>
   <metadata name="ToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>336, 17</value>
+    <value>235, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3256,6 +3290,18 @@
   </data>
   <data name="&gt;&gt;LogInformation.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStripDropDownButton1.Name" xml:space="preserve">
+    <value>ToolStripDropDownButton1</value>
+  </data>
+  <data name="&gt;&gt;ToolStripDropDownButton1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripDropDownButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CerrarSesionToolStripMenuItem.Name" xml:space="preserve">
+    <value>CerrarSesionToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;CerrarSesionToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ToolTip.Name" xml:space="preserve">
     <value>ToolTip</value>

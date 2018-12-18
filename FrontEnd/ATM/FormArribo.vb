@@ -25,6 +25,7 @@
             viaje.Precio = TxtPrecio.Text()
             viaje.Comentarios = TxtComentarios.Text()
             viaje.FechaArribo = dtpFechaArribo.Value()
+            viaje.Duracion = (viaje.FechaArribo.Subtract(viaje.FechaSalida)).TotalMinutes
             viaje.Estado = cbbTipoEstadoViaje.SelectedValue
             datosViaje.Guardar(viaje)
             MessageBox.Show("Datos guardado correctamente", "Viajes")

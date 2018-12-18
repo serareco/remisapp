@@ -5,6 +5,7 @@
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         viaje.Chofer = datosChofer.GetById(BLL.Login.UsuarioConectado.Id)
         viaje.FechaSalida = Now
+        viaje.FechaArriboEstimado = viaje.FechaSalida.AddMinutes(viaje.DuracionEstimada)
         viaje.Estado.Id = 1
         datosViaje.Guardar(viaje)
         MessageBox.Show("Se ha registrado la salida del vehículo.")

@@ -90,6 +90,14 @@
             viaje.Chofer = Nothing
         End Try
         viaje.PrecioEstimado = datatable.Rows(0).ItemArray(16).ToString()
+        If datatable.Rows(0).ItemArray(17).ToString() > 0 Then
+            viaje.DuracionEstimada = datatable.Rows(0).ItemArray(17).ToString()
+        End If
+        Try
+            viaje.Duracion = datatable.Rows(0).ItemArray(18).ToString()
+        Catch ex As Exception
+            viaje.Duracion = 0
+        End Try
         Return viaje
     End Function
 
