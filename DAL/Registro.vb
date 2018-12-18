@@ -1,5 +1,5 @@
 ﻿Public Class Registro
-    Public Function GetById(pId As String) As EL.Registro
+    Public Function GetByChoferId(pId As String) As EL.Registro
         Dim registro As New EL.Registro()
         GetById(pId, registro)
         Return registro

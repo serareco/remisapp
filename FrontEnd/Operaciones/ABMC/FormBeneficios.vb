@@ -52,7 +52,13 @@
             End If
             beneficio.TotalAcumulado = TxtTotalSemanal.Text
             beneficio.CantidadViajes = TxtViajesSemanal.Text
-            datosBeneficio.Guardar(beneficio)
+            Try
+                datosBeneficio.Guardar(beneficio)
+                MessageBox.Show("Beneficio guardado correctamente.")
+            Catch ex As Exception
+                MessageBox.Show("Error al guardar el beneficio. Error: " + ex.Message)
+            End Try
+
             ActualizarLista()
         End If
     End Sub
@@ -67,10 +73,14 @@
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If beneficio IsNot Nothing Then
-            txtDescripcion.Text() = beneficio.Descripcion
-            txtDescuento.Text() = beneficio.Descuento
-            dtpVigenciaDesde.Text() = beneficio.VigenciaDesde
-            dtpVigenciaHasta.Text() = beneficio.VigenciaHasta
+            txtDescripcion.Text = beneficio.Descripcion
+            txtDescuento.Text = beneficio.Descuento
+            dtpVigenciaDesde.Text = beneficio.VigenciaDesde
+            If beneficio.VigenciaHasta <> Date.MinValue Then
+                dtpVigenciaHasta.Text = beneficio.VigenciaHasta
+            End If
+            TxtTotalSemanal.Text = beneficio.TotalAcumulado
+            TxtViajesSemanal.Text = beneficio.CantidadViajes
         End If
     End Sub
 

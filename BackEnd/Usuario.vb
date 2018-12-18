@@ -21,7 +21,6 @@
         e.BlanquearClave(usuario)
     End Sub
 
-
     Public Sub Quitar(usuario As EL.Usuario)
         Dim e As New DAL.Usuario()
         e.Quitar(usuario)

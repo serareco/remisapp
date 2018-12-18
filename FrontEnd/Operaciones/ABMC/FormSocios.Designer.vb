@@ -197,12 +197,11 @@ Partial Class FormSocios
         '
         Me.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFechaNacimiento.Location = New System.Drawing.Point(118, 165)
-        Me.dtpFechaNacimiento.MaxDate = New Date(2018, 7, 12, 0, 0, 0, 0)
         Me.dtpFechaNacimiento.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.dtpFechaNacimiento.Name = "dtpFechaNacimiento"
         Me.dtpFechaNacimiento.Size = New System.Drawing.Size(203, 20)
         Me.dtpFechaNacimiento.TabIndex = 7
-        Me.dtpFechaNacimiento.Value = New Date(2018, 7, 11, 0, 0, 0, 0)
+        Me.dtpFechaNacimiento.Value = New Date(2018, 12, 18, 15, 29, 11, 0)
         '
         'Label3
         '

@@ -5,9 +5,9 @@
         Dim usuarios As New List(Of EL.Usuario)
         con.EjecutarConsulta("
         select u.id_persona
-         from dbo.Usuario u
-         where u.estado = 'A'
-           and u.usuario <> 'admin'")
+         from dbo.Usuario u inner join dbo.Usuario_Permiso up ON u.usuario = up.usuario
+         where up.id_permiso not in ('A','C')
+		 and u.estado = 'A'")
         con.adp.Fill(datatable)
 
         For index = 0 To datatable.Rows.Count - 1

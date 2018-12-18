@@ -12,7 +12,6 @@
         Next
         Return autos
     End Function
-
     Public Function GetById(pId As Int16) As EL.Vehiculo
         Dim con As New Conexion
         Dim auto As New EL.Vehiculo()
@@ -28,7 +27,6 @@
         auto.Chasis = datatable.Rows(0).ItemArray(5).ToString()
         Return auto
     End Function
-
     Public Sub Guardar(auto As EL.Vehiculo)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
@@ -39,15 +37,12 @@
         parametros.Add(New SqlClient.SqlParameter("@Chasis", auto.Chasis))
         parametros.Add(New SqlClient.SqlParameter("@Motor", auto.Motor))
         parametros.Add(New SqlClient.SqlParameter("@Fecha_Vencimiento_VTV", auto.Motor))
-
         con.EjecutarStoredProcedure("dbo.GuardarVehiculo", parametros)
     End Sub
-
     Public Sub Quitar(auto As EL.Vehiculo)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_vehiculo", auto.Id))
         con.EjecutarStoredProcedure("dbo.QuitarVehiculo", parametros)
-        'TODO: TIENE CHOFER ASOCIADO!
     End Sub
 End Class
