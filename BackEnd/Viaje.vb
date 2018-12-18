@@ -7,6 +7,10 @@
         Return New DAL.Viaje().GetProximoViajeVuelta
     End Function
 
+    Public Function ListarMensual() As List(Of EL.Viaje)
+        Return New DAL.Viaje().Listar("M")
+    End Function
+
     Public Function ListarEnCurso() As List(Of EL.Viaje)
         Return New DAL.Viaje().Listar("C")
     End Function

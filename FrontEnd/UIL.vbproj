@@ -104,6 +104,12 @@
     <Compile Include="Login\FormSeleccionSistema.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Operaciones\ABMC\FormCancelarViaje.Designer.vb">
+      <DependentUpon>FormCancelarViaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\ABMC\FormCancelarViaje.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Operaciones\ABMC\FormChoferComision.Designer.vb">
       <DependentUpon>FormChoferComision.vb</DependentUpon>
     </Compile>
@@ -189,6 +195,18 @@
     <Compile Include="Operaciones\ABMC\FormViajes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Operaciones\Reportes\FormReporteComisiones.Designer.vb">
+      <DependentUpon>FormReporteComisiones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\Reportes\FormReporteComisiones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\Reportes\FormReporteViajesMensuales.Designer.vb">
+      <DependentUpon>FormReporteViajesMensuales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\Reportes\FormReporteViajesMensuales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Operaciones\Reportes\FormViajesHistorico.Designer.vb">
       <DependentUpon>FormViajesHistorico.vb</DependentUpon>
     </Compile>
@@ -220,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\FormSeleccionSistema.resx">
       <DependentUpon>FormSeleccionSistema.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\ABMC\FormCancelarViaje.resx">
+      <DependentUpon>FormCancelarViaje.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\ABMC\FormChoferComision.resx">
       <DependentUpon>FormChoferComision.vb</DependentUpon>
@@ -265,6 +286,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\ABMC\FormViajes.resx">
       <DependentUpon>FormViajes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Reportes\FormReporteComisiones.resx">
+      <DependentUpon>FormReporteComisiones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Reportes\FormReporteViajesMensuales.resx">
+      <DependentUpon>FormReporteViajesMensuales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\Reportes\FormViajesHistorico.resx">
       <DependentUpon>FormViajesHistorico.vb</DependentUpon>

@@ -9,8 +9,8 @@
         TxtApellido.Clear()
         TxtEmail.Clear()
         TxtNumeroTel.Clear()
-        TxtCodArea.Clear()
-        TxtCodPais.Clear()
+        TxtCodArea.Text = 11
+        TxtCodPais.Text = 54
         TxtCalle.Clear()
         TxtNumero.Clear()
         TxtPiso.Clear()

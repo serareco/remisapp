@@ -40,6 +40,7 @@ Partial Class FormViajes
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnCancelarViaje = New System.Windows.Forms.Button()
         Me.dgvViajes = New System.Windows.Forms.DataGridView()
+        Me.LblAvisoViaje = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvViajes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,6 +183,7 @@ Partial Class FormViajes
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.LblAvisoViaje)
         Me.GroupBox2.Controls.Add(Me.BtnCancelarViaje)
         Me.GroupBox2.Controls.Add(Me.dgvViajes)
         Me.GroupBox2.Location = New System.Drawing.Point(373, 20)
@@ -214,6 +216,14 @@ Partial Class FormViajes
         Me.dgvViajes.Size = New System.Drawing.Size(614, 254)
         Me.dgvViajes.TabIndex = 0
         '
+        'LblAvisoViaje
+        '
+        Me.LblAvisoViaje.AutoSize = True
+        Me.LblAvisoViaje.Location = New System.Drawing.Point(156, 290)
+        Me.LblAvisoViaje.Name = "LblAvisoViaje"
+        Me.LblAvisoViaje.Size = New System.Drawing.Size(0, 13)
+        Me.LblAvisoViaje.TabIndex = 3
+        '
         'FormViajes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -230,6 +240,7 @@ Partial Class FormViajes
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         CType(Me.dgvViajes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -252,4 +263,5 @@ Partial Class FormViajes
     Friend WithEvents ChbSalidaInmediata As CheckBox
     Friend WithEvents ChbIdayVuelta As CheckBox
     Friend WithEvents BtnLimpiar As Button
+    Friend WithEvents LblAvisoViaje As Label
 End Class

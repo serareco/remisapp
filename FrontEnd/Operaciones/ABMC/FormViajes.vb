@@ -50,25 +50,34 @@
         FormConfirmarViaje.viaje = viaje
         FormConfirmarViaje.Show()
     End Sub
-
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
     End Sub
-
     Private Sub dgvViajes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvViajes.CellClick
         viaje = Nothing
         viaje = New EL.Viaje With {
             .Id = dgvViajes.Rows(e.RowIndex).Cells(0).Value
         }
         viaje = datosViaje.GetById(viaje.Id)
-        BtnCancelarViaje.Enabled = True
-    End Sub
+        If viaje.Estado.Id <> 4 And viaje.Estado.Id <> 5 Then
+            BtnCancelarViaje.Enabled = True
+            LblAvisoViaje.Text = ""
+        Else
+            BtnCancelarViaje.Enabled = False
+            LblAvisoViaje.Text = "Viaje finalizado. No se puede cancelar."
+        End If
 
+    End Sub
     Private Sub ChbSalidaInmediata_CheckedChanged(sender As Object, e As EventArgs) Handles ChbSalidaInmediata.CheckedChanged
         dtpFechaSalida.Enabled = Not ChbSalidaInmediata.Checked
     End Sub
-
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
         ActualizarLista()
+    End Sub
+    Private Sub BtnCancelarViaje_Click(sender As Object, e As EventArgs) Handles BtnCancelarViaje.Click
+        If viaje IsNot Nothing Then
+            FormCancelarViaje.viaje = viaje
+            FormCancelarViaje.Show()
+        End If
     End Sub
 End Class

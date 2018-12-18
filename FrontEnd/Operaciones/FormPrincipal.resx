@@ -121,6 +121,18 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="OpcionViajesCurso.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="OpcionViajesCurso.Text" xml:space="preserve">
+    <value>Cargar Nuevo</value>
+  </data>
+  <data name="OpcionConsultaHistorico.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="OpcionConsultaHistorico.Text" xml:space="preserve">
+    <value>Consulta Histórico</value>
+  </data>
   <data name="MenuViajes.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>ActiveBorder</value>
   </data>
@@ -131,43 +143,43 @@
     <value>Viajes</value>
   </data>
   <data name="OpcionAutos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="OpcionAutos.Text" xml:space="preserve">
     <value>Autos</value>
   </data>
   <data name="OpcionChoferes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="OpcionChoferes.Text" xml:space="preserve">
     <value>Choferes</value>
   </data>
   <data name="OpcionSocios.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="OpcionSocios.Text" xml:space="preserve">
     <value>Socios</value>
   </data>
   <data name="OpcionUsuarios.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="OpcionUsuarios.Text" xml:space="preserve">
     <value>Usuarios</value>
   </data>
   <data name="OpcionComisiones.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="OpcionComisiones.Text" xml:space="preserve">
     <value>Comisiones</value>
   </data>
   <data name="OpcionBeneficios.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="OpcionBeneficios.Text" xml:space="preserve">
     <value>Beneficios</value>
   </data>
   <data name="OpcionChoferComision.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="OpcionChoferComision.Text" xml:space="preserve">
     <value>Chofer - Comisión</value>
@@ -178,11 +190,47 @@
   <data name="MenuABMC.Text" xml:space="preserve">
     <value>ABMC</value>
   </data>
+  <data name="OpcionReportesViajes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="OpcionReportesViajes.Text" xml:space="preserve">
+    <value>Viajes Mensuales</value>
+  </data>
+  <data name="OpcionReporteComisionChoferes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="OpcionReporteComisionChoferes.Text" xml:space="preserve">
+    <value>Comision Choferes</value>
+  </data>
   <data name="MenuReportes.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 20</value>
   </data>
   <data name="MenuReportes.Text" xml:space="preserve">
     <value>Reportes</value>
+  </data>
+  <data name="CascadeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="CascadeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cascada</value>
+  </data>
+  <data name="TileVerticalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="TileVerticalToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mosaico Vertical</value>
+  </data>
+  <data name="TileHorizontalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="TileHorizontalToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mosaico Horizontal</value>
+  </data>
+  <data name="CloseAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 22</value>
+  </data>
+  <data name="CloseAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cerrar Todo</value>
   </data>
   <data name="MenuVentana.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 20</value>
@@ -215,80 +263,20 @@
   <data name="&gt;&gt;MenuStrip.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="OpcionViajesCurso.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
-  </data>
-  <data name="OpcionViajesCurso.Text" xml:space="preserve">
-    <value>En curso</value>
-  </data>
-  <data name="OpcionConsultaHistorico.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 22</value>
-  </data>
-  <data name="OpcionConsultaHistorico.Text" xml:space="preserve">
-    <value>Consulta histórico</value>
-  </data>
-  <data name="OpcionReportesViajes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 22</value>
-  </data>
-  <data name="OpcionReportesViajes.Text" xml:space="preserve">
-    <value>Viajes</value>
-  </data>
-  <data name="CascadeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="CascadeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cascada</value>
-  </data>
-  <data name="TileVerticalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="TileVerticalToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mosaico Vertical</value>
-  </data>
-  <data name="TileHorizontalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="TileHorizontalToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mosaico Horizontal</value>
-  </data>
-  <data name="CloseAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 22</value>
-  </data>
-  <data name="CloseAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cerrar Todo</value>
-  </data>
   <metadata name="StatusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>125, 17</value>
   </metadata>
-  <data name="StatusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 385</value>
-  </data>
-  <data name="StatusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1014, 22</value>
-  </data>
-  <data name="StatusStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="StatusStrip.Text" xml:space="preserve">
-    <value>StatusStrip</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip.Name" xml:space="preserve">
-    <value>StatusStrip</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;StatusStrip.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="LogInformation.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 17</value>
   </data>
   <data name="LogInformation.Text" xml:space="preserve">
     <value>Status</value>
+  </data>
+  <data name="CerrarSesionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 22</value>
+  </data>
+  <data name="CerrarSesionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cerrar Sesión</value>
   </data>
   <data name="ToolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -318,11 +306,29 @@
   <data name="ToolStripDropDownButton1.Text" xml:space="preserve">
     <value>ToolStripDropDownButton1</value>
   </data>
-  <data name="CerrarSesionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 22</value>
+  <data name="StatusStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 385</value>
   </data>
-  <data name="CerrarSesionToolStripMenuItem.Text" xml:space="preserve">
-    <value>Cerrar Sesión</value>
+  <data name="StatusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1014, 22</value>
+  </data>
+  <data name="StatusStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="StatusStrip.Text" xml:space="preserve">
+    <value>StatusStrip</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip.Name" xml:space="preserve">
+    <value>StatusStrip</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;StatusStrip.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="ToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>235, 17</value>
@@ -3249,6 +3255,12 @@
   <data name="&gt;&gt;OpcionBeneficios.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;OpcionChoferComision.Name" xml:space="preserve">
+    <value>OpcionChoferComision</value>
+  </data>
+  <data name="&gt;&gt;OpcionChoferComision.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;MenuReportes.Name" xml:space="preserve">
     <value>MenuReportes</value>
   </data>
@@ -3315,10 +3327,10 @@
   <data name="&gt;&gt;ToolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;OpcionChoferComision.Name" xml:space="preserve">
-    <value>OpcionChoferComision</value>
+  <data name="&gt;&gt;OpcionReporteComisionChoferes.Name" xml:space="preserve">
+    <value>OpcionReporteComisionChoferes</value>
   </data>
-  <data name="&gt;&gt;OpcionChoferComision.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpcionReporteComisionChoferes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

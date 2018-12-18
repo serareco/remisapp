@@ -11,6 +11,10 @@
             con.EjecutarConsulta("select v.id_viaje from dbo.Viaje v where id_estado in (1)  Order by fecha_salida Desc")
         ElseIf pTipoConsulta = "P" Then
             con.EjecutarConsulta("select v.id_viaje from dbo.Viaje v where id_estado in (2,3)  Order by fecha_salida_estimada Desc")
+        ElseIf pTipoConsulta = "M" Then
+            con.EjecutarConsulta("select  v.id_viaje from dbo.Viaje v
+                                   where concat(year(isnull(fecha_salida,fecha_salida_estimada)),MONTH (isnull(fecha_salida,fecha_salida_estimada))) = concat(year(getdate()),MONTH(getdate()))
+                                order by fecha_salida_estimada Desc")
         End If
         con.adp.Fill(datatable)
         For index = 0 To datatable.Rows.Count - 1
@@ -135,7 +139,7 @@
         End If
         parametros.Add(New SqlClient.SqlParameter("@comentarios", viaje.Comentarios))
         parametros.Add(New SqlClient.SqlParameter("@id_socio", viaje.Socio.Id))
-        If (viaje.Chofer.Id > 0) Then
+        If (viaje.Chofer IsNot Nothing) Then
             parametros.Add(New SqlClient.SqlParameter("@id_chofer", viaje.Chofer.Id))
         End If
         parametros.Add(New SqlClient.SqlParameter("@id_chofer_estimado", viaje.ChoferEstimado.Id))

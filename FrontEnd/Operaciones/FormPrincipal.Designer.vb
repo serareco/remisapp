@@ -36,6 +36,7 @@ Partial Class FormPrincipal
         Me.OpcionUsuarios = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionComisiones = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionBeneficios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionChoferComision = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuReportes = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionReportesViajes = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuVentana = New System.Windows.Forms.ToolStripMenuItem()
@@ -48,7 +49,7 @@ Partial Class FormPrincipal
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.OpcionChoferComision = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionReporteComisionChoferes = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -112,9 +113,14 @@ Partial Class FormPrincipal
         Me.OpcionBeneficios.Name = "OpcionBeneficios"
         resources.ApplyResources(Me.OpcionBeneficios, "OpcionBeneficios")
         '
+        'OpcionChoferComision
+        '
+        Me.OpcionChoferComision.Name = "OpcionChoferComision"
+        resources.ApplyResources(Me.OpcionChoferComision, "OpcionChoferComision")
+        '
         'MenuReportes
         '
-        Me.MenuReportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionReportesViajes})
+        Me.MenuReportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionReportesViajes, Me.OpcionReporteComisionChoferes})
         Me.MenuReportes.Name = "MenuReportes"
         resources.ApplyResources(Me.MenuReportes, "MenuReportes")
         '
@@ -173,10 +179,10 @@ Partial Class FormPrincipal
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
         resources.ApplyResources(Me.CerrarSesionToolStripMenuItem, "CerrarSesionToolStripMenuItem")
         '
-        'OpcionChoferComision
+        'OpcionReporteComisionChoferes
         '
-        Me.OpcionChoferComision.Name = "OpcionChoferComision"
-        resources.ApplyResources(Me.OpcionChoferComision, "OpcionChoferComision")
+        Me.OpcionReporteComisionChoferes.Name = "OpcionReporteComisionChoferes"
+        resources.ApplyResources(Me.OpcionReporteComisionChoferes, "OpcionReporteComisionChoferes")
         '
         'FormPrincipal
         '
@@ -221,4 +227,5 @@ Partial Class FormPrincipal
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
     Friend WithEvents CerrarSesionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpcionChoferComision As ToolStripMenuItem
+    Friend WithEvents OpcionReporteComisionChoferes As ToolStripMenuItem
 End Class
