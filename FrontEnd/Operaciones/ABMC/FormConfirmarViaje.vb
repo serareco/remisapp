@@ -4,6 +4,8 @@
     Dim datosViaje As New BLL.Viaje()
     Private Sub FormConfirmarViaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         datosViaje.ConsultarAPI(viaje)
+        datosViaje.SetBeneficios(viaje)
+        viaje.PrecioEstimado = viaje.PrecioEstimado - viaje.PrecioEstimado * datosViaje.PorcDescBeneficios(viaje)
         LblAvisoDemora.Text = ""
         Dim listaChoferesDisponible As New List(Of EL.Chofer)()
         listaChoferesDisponible = datosChofer.Listar()

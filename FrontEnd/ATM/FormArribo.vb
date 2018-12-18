@@ -28,7 +28,7 @@
             viaje.Estado = cbbTipoEstadoViaje.SelectedValue
             datosViaje.Guardar(viaje)
             MessageBox.Show("Datos guardado correctamente", "Viajes")
-            FormViajes.ActualizarLista()
+            FormATM.ActualizarInformacion()
             Me.Close()
         End If
 

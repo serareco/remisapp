@@ -1,4 +1,16 @@
 ﻿Public Class Beneficio
+    Public Function Verificar(pIdSocio As Int16) As List(Of EL.Beneficio)
+        Dim con As New Conexion
+        Dim datatable As New DataTable
+        Dim beneficios As New List(Of EL.Beneficio)
+        con.EjecutarConsulta("EXEC GetBeneficiosSocio @id_socio = " & pIdSocio)
+        con.adp.Fill(datatable)
+        For index = 0 To datatable.Rows.Count - 1
+            beneficios.Add(New Beneficio().GetById(datatable.Rows(index).ItemArray(0).ToString()))
+        Next
+        Return beneficios
+    End Function
+
     Public Function GetById(pId As Int16) As EL.Beneficio
         Dim con As New Conexion
         Dim beneficio As New EL.Beneficio()

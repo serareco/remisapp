@@ -73,19 +73,33 @@
 
     Public Sub ActualizarProximosSalir()
         Dim proximoViajeASalir = servicios.GetProximoViajePendiente()
-        LblChoferSalir.Text = proximoViajeASalir.ChoferEstimado.Apellido + ", " + proximoViajeASalir.ChoferEstimado.Nombre
-        LblDestinoSalir.Text = proximoViajeASalir.Destino
-        LblOrigenSalir.Text = proximoViajeASalir.Origen
-        LblHorarioSalir.Text = proximoViajeASalir.FechaSalidaEstimada.ToShortDateString + " " + proximoViajeASalir.FechaSalidaEstimada.ToShortTimeString
+        If proximoViajeASalir.FechaSalidaEstimada <> Date.MinValue Then
+            LblChoferSalir.Text = proximoViajeASalir.ChoferEstimado.Apellido + ", " + proximoViajeASalir.ChoferEstimado.Nombre
+            LblDestinoSalir.Text = proximoViajeASalir.Destino
+            LblOrigenSalir.Text = proximoViajeASalir.Origen
+            LblHorarioSalir.Text = proximoViajeASalir.FechaSalidaEstimada.ToShortDateString + " " + proximoViajeASalir.FechaSalidaEstimada.ToShortTimeString
+        Else
+            LblChoferSalir.Text = ""
+            LblDestinoSalir.Text = ""
+            LblOrigenSalir.Text = ""
+            LblHorarioSalir.Text = ""
+        End If
     End Sub
 
     Public Sub ActualizarProximosLlegar()
         Dim proximoViajePorLlegar = servicios.GetProximoViajeVuelta()
-        LblChoferLlegar.Text = proximoViajePorLlegar.Chofer.Apellido + ", " + proximoViajePorLlegar.Chofer.Nombre
-        LblDestinoLlegar.Text = proximoViajePorLlegar.Destino
-        LblOrigenLlegar.Text = proximoViajePorLlegar.Origen
-        proximoViajePorLlegar.FechaSalidaEstimada = proximoViajePorLlegar.FechaSalida.AddMinutes(proximoViajePorLlegar.DuracionEstimada)
-        LblHorarioLlegar.Text = proximoViajePorLlegar.FechaSalidaEstimada.ToShortDateString + " " + proximoViajePorLlegar.FechaSalidaEstimada.ToShortTimeString
+        If proximoViajePorLlegar.FechaSalida <> Date.MinValue Then
+            LblChoferLlegar.Text = proximoViajePorLlegar.Chofer.Apellido + ", " + proximoViajePorLlegar.Chofer.Nombre
+            LblDestinoLlegar.Text = proximoViajePorLlegar.Destino
+            LblOrigenLlegar.Text = proximoViajePorLlegar.Origen
+            proximoViajePorLlegar.FechaSalidaEstimada = proximoViajePorLlegar.FechaSalida.AddMinutes(proximoViajePorLlegar.DuracionEstimada)
+            LblHorarioLlegar.Text = proximoViajePorLlegar.FechaSalidaEstimada.ToShortDateString + " " + proximoViajePorLlegar.FechaSalidaEstimada.ToShortTimeString
+        Else
+            LblChoferLlegar.Text = ""
+            LblDestinoLlegar.Text = ""
+            LblOrigenLlegar.Text = ""
+            LblHorarioLlegar.Text = ""
+        End If
     End Sub
 
     Public Sub ActualizarInformacion()
@@ -100,7 +114,7 @@
     End Sub
 
     Private Sub ActualizarInformacion_Tick(sender As Object, e As EventArgs) Handles TimerActualizarInformacion.Tick
-        ActualizarDataGridviews()
+        ActualizarInformacion()
     End Sub
 
     Private Sub DgvServiciosPendientes_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvServiciosPendientes.CellDoubleClick

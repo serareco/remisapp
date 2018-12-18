@@ -31,7 +31,16 @@
         Dim e As New DAL.Viaje()
         e.Guardar(viaje)
     End Sub
-
+    Public Sub SetBeneficios(ByRef pViaje As EL.Viaje)
+        pViaje.Beneficios = New Beneficio().Verificar(pViaje.Socio.Id)
+    End Sub
+    Public Function PorcDescBeneficios(pViaje As EL.Viaje) As Decimal
+        Dim totalDescuentos As Decimal = 0
+        For Each beneficio As EL.Beneficio In pViaje.Beneficios
+            totalDescuentos += beneficio.Descuento
+        Next
+        Return totalDescuentos / 100
+    End Function
     Public Sub ConsultarAPI(ByRef viaje As EL.Viaje)
         Dim request As New MapService.MapServiceRequest()
         request.From = viaje.Origen
