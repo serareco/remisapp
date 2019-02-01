@@ -9,6 +9,10 @@
         End Set
     End Property
 
+    Public Sub Disconnect()
+        UsuarioConectado = Nothing
+    End Sub
+
     Public Function GetInforamcionUsuario() As String
         Return "Usuario: " + UsuarioConectado.Usuario + " - " + UsuarioConectado.Apellido + ", " + UsuarioConectado.Nombre
     End Function
@@ -36,6 +40,15 @@
             UsuarioConectado.Permisos.Add(New BLL.Permiso().GetById(item.ItemArray(0).ToString()))
         Next
     End Sub
+
+    Public Function EsAdministrador() As Boolean
+        For Each permiso As EL.Permiso In UsuarioConectado.Permisos
+            If permiso.Id = "A" Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
 
     Public Function EsOperador() As Boolean
         For Each permiso As EL.Permiso In UsuarioConectado.Permisos

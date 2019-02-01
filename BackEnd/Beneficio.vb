@@ -1,10 +1,6 @@
 ﻿Public Class Beneficio
-    Public Function Mostrar() As DataTable
-        Return New DAL.Beneficio().Mostrar()
-    End Function
-
-    Public Function MostrarVigentes() As DataTable
-        Return New DAL.Beneficio().MostrarVigentes()
+    Public Function Verificar(pIdSocio As Int16) As List(Of EL.Beneficio)
+        Return New DAL.Beneficio().Verificar(pIdSocio)
     End Function
 
     Public Function Listar() As List(Of EL.Beneficio)
@@ -15,9 +11,9 @@
         Return New DAL.Beneficio().GetById(pId)
     End Function
 
-    Public Sub Guardar(promocion As EL.Beneficio)
+    Public Sub Guardar(beneficio As EL.Beneficio)
         Dim e As New DAL.Beneficio()
-        e.Guardar(promocion)
+        e.Guardar(beneficio)
     End Sub
 
     Public Sub Quitar(promocion As EL.Beneficio)

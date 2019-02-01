@@ -3,12 +3,18 @@
         Dim con As New Conexion
         Dim marca As New EL.Marca()
         Dim datatable As New DataTable()
-        con.EjecutarConsulta("select * from dbo.Marca where id_marca = " & pId)
-        con.adp.Fill(datatable)
-        marca.Id = datatable.Rows(0).ItemArray(0).ToString()
-        marca.Descripcion = datatable.Rows(0).ItemArray(1).ToString()
+        GetById(pId, marca)
         Return marca
     End Function
+
+    Public Sub GetById(pId As Int16, ByRef pMarca As EL.Marca)
+        Dim con As New Conexion
+        Dim datatable As New DataTable()
+        con.EjecutarConsulta("select * from dbo.Marca where id_marca = " & pId)
+        con.adp.Fill(datatable)
+        pMarca.Id = datatable.Rows(0).ItemArray(0).ToString()
+        pMarca.Descripcion = datatable.Rows(0).ItemArray(1).ToString()
+    End Sub
 
     Public Function Listar() As List(Of EL.Marca)
         Dim con As New Conexion

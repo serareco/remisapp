@@ -86,101 +86,131 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormArribo.Designer.vb">
+    <Compile Include="ATM\FormArribo.Designer.vb">
       <DependentUpon>FormArribo.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormArribo.vb">
+    <Compile Include="ATM\FormArribo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormATM.Designer.vb">
+    <Compile Include="ATM\FormATM.Designer.vb">
       <DependentUpon>FormATM.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormATM.vb">
+    <Compile Include="ATM\FormATM.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSeleccionSistema.Designer.vb">
+    <Compile Include="Login\FormSeleccionSistema.Designer.vb">
       <DependentUpon>FormSeleccionSistema.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSeleccionSistema.vb">
+    <Compile Include="Login\FormSeleccionSistema.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormVehiculos.Designer.vb">
+    <Compile Include="Operaciones\ABMC\FormCancelarViaje.Designer.vb">
+      <DependentUpon>FormCancelarViaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\ABMC\FormCancelarViaje.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\ABMC\FormChoferComision.Designer.vb">
+      <DependentUpon>FormChoferComision.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\ABMC\FormChoferComision.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\ABMC\FormConfirmarViaje.Designer.vb">
+      <DependentUpon>FormConfirmarViaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\ABMC\FormConfirmarViaje.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\ABMC\FormVehiculos.Designer.vb">
       <DependentUpon>FormVehiculos.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormVehiculos.vb">
+    <Compile Include="Operaciones\ABMC\FormVehiculos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCambiarPassword.Designer.vb">
+    <Compile Include="Login\FormCambiarPassword.Designer.vb">
       <DependentUpon>FormCambiarPassword.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormCambiarPassword.vb">
+    <Compile Include="Login\FormCambiarPassword.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormChoferes.Designer.vb">
+    <Compile Include="Operaciones\ABMC\FormChoferes.Designer.vb">
       <DependentUpon>FormChoferes.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormChoferes.vb">
+    <Compile Include="Operaciones\ABMC\FormChoferes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSocios.Designer.vb">
+    <Compile Include="Operaciones\ABMC\FormSocios.Designer.vb">
       <DependentUpon>FormSocios.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSocios.vb">
+    <Compile Include="Operaciones\ABMC\FormSocios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormComisiones.Designer.vb">
+    <Compile Include="Operaciones\ABMC\FormComisiones.Designer.vb">
       <DependentUpon>FormComisiones.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormComisiones.vb">
+    <Compile Include="Operaciones\ABMC\FormComisiones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.vb">
+    <Compile Include="Login\FormLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.vb">
+    <Compile Include="Login\FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipal.Designer.vb">
+    <Compile Include="Operaciones\FormPrincipal.Designer.vb">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipal.vb">
+    <Compile Include="Operaciones\FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipalChoferes.Designer.vb">
+    <Compile Include="Operaciones\FormPrincipalChoferes.Designer.vb">
       <DependentUpon>FormPrincipalChoferes.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipalChoferes.vb">
+    <Compile Include="Operaciones\FormPrincipalChoferes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBeneficios.Designer.vb">
+    <Compile Include="Operaciones\ABMC\FormBeneficios.Designer.vb">
       <DependentUpon>FormBeneficios.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormBeneficios.vb">
+    <Compile Include="Operaciones\ABMC\FormBeneficios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSalida.Designer.vb">
+    <Compile Include="ATM\FormSalida.Designer.vb">
       <DependentUpon>FormSalida.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSalida.vb">
+    <Compile Include="ATM\FormSalida.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUsuarios.Designer.vb">
+    <Compile Include="Operaciones\ABMC\FormUsuarios.Designer.vb">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormUsuarios.vb">
+    <Compile Include="Operaciones\ABMC\FormUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormViajes.Designer.vb">
+    <Compile Include="Operaciones\ABMC\FormViajes.Designer.vb">
       <DependentUpon>FormViajes.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormViajes.vb">
+    <Compile Include="Operaciones\ABMC\FormViajes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormViajesHistorico.Designer.vb">
+    <Compile Include="Operaciones\Reportes\FormReporteComisiones.Designer.vb">
+      <DependentUpon>FormReporteComisiones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\Reportes\FormReporteComisiones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\Reportes\FormReporteViajesMensuales.Designer.vb">
+      <DependentUpon>FormReporteViajesMensuales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\Reportes\FormReporteViajesMensuales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\Reportes\FormViajesHistorico.Designer.vb">
       <DependentUpon>FormViajesHistorico.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormViajesHistorico.vb">
+    <Compile Include="Operaciones\Reportes\FormViajesHistorico.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -200,55 +230,70 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormArribo.resx">
+    <EmbeddedResource Include="ATM\FormArribo.resx">
       <DependentUpon>FormArribo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormATM.resx">
+    <EmbeddedResource Include="ATM\FormATM.resx">
       <DependentUpon>FormATM.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSeleccionSistema.resx">
+    <EmbeddedResource Include="Login\FormSeleccionSistema.resx">
       <DependentUpon>FormSeleccionSistema.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormVehiculos.resx">
+    <EmbeddedResource Include="Operaciones\ABMC\FormCancelarViaje.resx">
+      <DependentUpon>FormCancelarViaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\ABMC\FormChoferComision.resx">
+      <DependentUpon>FormChoferComision.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\ABMC\FormConfirmarViaje.resx">
+      <DependentUpon>FormConfirmarViaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\ABMC\FormVehiculos.resx">
       <DependentUpon>FormVehiculos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCambiarPassword.resx">
+    <EmbeddedResource Include="Login\FormCambiarPassword.resx">
       <DependentUpon>FormCambiarPassword.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChoferes.resx">
+    <EmbeddedResource Include="Operaciones\ABMC\FormChoferes.resx">
       <DependentUpon>FormChoferes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSocios.resx">
+    <EmbeddedResource Include="Operaciones\ABMC\FormSocios.resx">
       <DependentUpon>FormSocios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormComisiones.resx">
+    <EmbeddedResource Include="Operaciones\ABMC\FormComisiones.resx">
       <DependentUpon>FormComisiones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="Login\FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipal.es-AR.resx">
+    <EmbeddedResource Include="Operaciones\FormPrincipal.es-AR.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipal.resx">
+    <EmbeddedResource Include="Operaciones\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipalChoferes.resx">
+    <EmbeddedResource Include="Operaciones\FormPrincipalChoferes.resx">
       <DependentUpon>FormPrincipalChoferes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBeneficios.resx">
+    <EmbeddedResource Include="Operaciones\ABMC\FormBeneficios.resx">
       <DependentUpon>FormBeneficios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSalida.resx">
+    <EmbeddedResource Include="ATM\FormSalida.resx">
       <DependentUpon>FormSalida.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUsuarios.resx">
+    <EmbeddedResource Include="Operaciones\ABMC\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormViajes.resx">
+    <EmbeddedResource Include="Operaciones\ABMC\FormViajes.resx">
       <DependentUpon>FormViajes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormViajesHistorico.resx">
+    <EmbeddedResource Include="Operaciones\Reportes\FormReporteComisiones.resx">
+      <DependentUpon>FormReporteComisiones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Reportes\FormReporteViajesMensuales.resx">
+      <DependentUpon>FormReporteViajesMensuales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Reportes\FormViajesHistorico.resx">
       <DependentUpon>FormViajesHistorico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -287,5 +332,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

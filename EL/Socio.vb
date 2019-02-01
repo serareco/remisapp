@@ -1,5 +1,20 @@
-﻿Public Class Socio
+﻿Imports EL
+
+Public Class Socio
     Inherits Persona
+    Public Sub New()
+    End Sub
+
+    Public Sub New(pPersona As Persona)
+        Id = pPersona.Id
+        Nombre = pPersona.Nombre
+        Apellido = pPersona.Apellido
+        Domicilio = pPersona.Domicilio
+        Email = pPersona.Email
+        Telefono = pPersona.Telefono
+        NroDocumento = pPersona.NroDocumento
+        FechaNacimiento = pPersona.FechaNacimiento
+    End Sub
     Private _nroSocio As String
     Public Property NroSocio() As String
         Get

@@ -35,15 +35,6 @@
             _domicilio = value
         End Set
     End Property
-    'Private _domicilio As String
-    'Public Property Domicilio() As String
-    'Get
-    'Return _domicilio
-    'End Get
-    'Set(ByVal value As String)
-    '       _domicilio = value
-    'End Set
-    'End Property
     Private _email As String
     Public Property Email() As String
         Get
@@ -53,12 +44,12 @@
             _email = value
         End Set
     End Property
-    Private _telefono As String
-    Public Property Telefono() As String
+    Private _telefono As Telefono
+    Public Property Telefono() As Telefono
         Get
             Return _telefono
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Telefono)
             _telefono = value
         End Set
     End Property
@@ -80,4 +71,8 @@
             _fechaNacimiento = value
         End Set
     End Property
+
+    Public Overrides Function ToString() As String
+        Return Apellido + ", " + Nombre
+    End Function
 End Class

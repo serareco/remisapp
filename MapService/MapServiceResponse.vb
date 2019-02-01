@@ -51,7 +51,7 @@
 
     Public Function GetResponse() As MapServiceResponse
         Me.Distance = Math.Ceiling(Rnd() * 150)
-        Me.Time = Math.Ceiling(Rnd() * 120)
+        Me.Time = (Me.Distance / 40) * 60
         Return Me
     End Function
 

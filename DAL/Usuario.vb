@@ -1,22 +1,13 @@
 ﻿Public Class Usuario
-    Public Function MostrarLista() As DataTable
-        Dim con As New Conexion
-        Dim datatable As New DataTable
-        con.EjecutarConsulta("     
-        select u.id_usuario, p.apellido, p.nombre, u.nro_documento, p.telefono, p.domicilio
-        from dbo.Usuario u inner join dbo.Persona p on u.id_persona = p.id_persona where u.estado = 'A'")
-        con.adp.Fill(datatable)
-        Return datatable
-    End Function
-
     Public Function Listar() As List(Of EL.Usuario)
         Dim con As New Conexion
         Dim datatable As New DataTable
         Dim usuarios As New List(Of EL.Usuario)
         con.EjecutarConsulta("
         select u.id_persona
-         from dbo.Usuario u
-         where u.estado = 'A'")
+         from dbo.Usuario u inner join dbo.Usuario_Permiso up ON u.usuario = up.usuario
+         where up.id_permiso not in ('A','C')
+		 and u.estado = 'A'")
         con.adp.Fill(datatable)
 
         For index = 0 To datatable.Rows.Count - 1
@@ -29,10 +20,8 @@
         Dim con As New Conexion
         Dim datatable As New DataTable
         Dim usuario As EL.Usuario
-        con.EjecutarConsulta("select * from dbo.Usuario u
-            where u.id_persona = " & pId)
+        con.EjecutarConsulta("select * from dbo.Usuario u where u.id_persona = " & pId)
         con.adp.Fill(datatable)
-
         usuario = New EL.Usuario(New Persona().GetById(datatable.Rows(0).ItemArray(0).ToString())) With {
             .Usuario = datatable.Rows(0).ItemArray(1).ToString(),
             .Password = datatable.Rows(0).ItemArray(2).ToString()
@@ -40,6 +29,14 @@
         Return usuario
 
     End Function
+
+    Public Sub BlanquearClave(usuario As EL.Usuario)
+        Dim con As New Conexion
+        Dim parametros As New List(Of SqlClient.SqlParameter)
+        parametros.Add(New SqlClient.SqlParameter("@id_persona", usuario.Id))
+        parametros.Add(New SqlClient.SqlParameter("@usuario", usuario.Usuario))
+        con.EjecutarStoredProcedure("dbo.BlanquearClave", parametros)
+    End Sub
 
     Public Sub Guardar(usuario As EL.Usuario)
         Dim con As New Conexion

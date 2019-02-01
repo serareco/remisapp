@@ -10,8 +10,15 @@
     End Function
 
     Public Sub Guardar(usuario As EL.Usuario)
+        Dim p As New Persona()
+        p.Guardar(usuario)
         Dim e As New DAL.Usuario()
         e.Guardar(usuario)
+    End Sub
+
+    Public Sub BlanquearClave(usuario As EL.Usuario)
+        Dim e As New DAL.Usuario()
+        e.BlanquearClave(usuario)
     End Sub
 
     Public Sub Quitar(usuario As EL.Usuario)

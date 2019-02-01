@@ -1,4 +1,16 @@
 ﻿Public Class Beneficio
+    Public Function Verificar(pIdSocio As Int16) As List(Of EL.Beneficio)
+        Dim con As New Conexion
+        Dim datatable As New DataTable
+        Dim beneficios As New List(Of EL.Beneficio)
+        con.EjecutarConsulta("EXEC GetBeneficiosSocio @id_socio = " & pIdSocio)
+        con.adp.Fill(datatable)
+        For index = 0 To datatable.Rows.Count - 1
+            beneficios.Add(New Beneficio().GetById(datatable.Rows(index).ItemArray(0).ToString()))
+        Next
+        Return beneficios
+    End Function
+
     Public Function GetById(pId As Int16) As EL.Beneficio
         Dim con As New Conexion
         Dim beneficio As New EL.Beneficio()
@@ -14,6 +26,8 @@
             beneficio.VigenciaHasta = Nothing
         End Try
         beneficio.Descripcion = datatable.Rows(0).ItemArray(4).ToString()
+        beneficio.TotalAcumulado = datatable.Rows(0).ItemArray(6).ToString()
+        beneficio.CantidadViajes = datatable.Rows(0).ItemArray(7).ToString()
         Return beneficio
     End Function
 
@@ -55,13 +69,13 @@
         parametros.Add(New SqlClient.SqlParameter("@descuento", promocion.Descuento))
         parametros.Add(New SqlClient.SqlParameter("@descripcion", promocion.Descripcion))
         parametros.Add(New SqlClient.SqlParameter("@vigencia_desde", promocion.VigenciaDesde))
-
         If promocion.VigenciaHasta = Nothing Then
             parametros.Add(New SqlClient.SqlParameter("@vigencia_hasta", System.Data.SqlTypes.SqlDateTime.Null))
         Else
             parametros.Add(New SqlClient.SqlParameter("@vigencia_hasta", promocion.VigenciaHasta))
         End If
-
+        parametros.Add(New SqlClient.SqlParameter("@cantidadViajes", promocion.CantidadViajes))
+        parametros.Add(New SqlClient.SqlParameter("@totalAcumulado", promocion.TotalAcumulado))
         con.EjecutarStoredProcedure("dbo.GuardarBeneficio", parametros)
 
     End Sub

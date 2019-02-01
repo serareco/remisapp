@@ -53,5 +53,16 @@
             _motor = value
         End Set
     End Property
-
+    Private _fechaVencimientoVTV As Date
+    Public Property FechaVencimientoVTV() As Date
+        Get
+            Return _fechaVencimientoVTV
+        End Get
+        Set(ByVal value As Date)
+            _fechaVencimientoVTV = value
+        End Set
+    End Property
+    Public Overrides Function ToString() As String
+        Return Patente + " - " + Modelo.Descripcion + " " + Modelo.Marca.Descripcion
+    End Function
 End Class

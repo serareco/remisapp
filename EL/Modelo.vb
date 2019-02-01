@@ -1,4 +1,7 @@
 ﻿Public Class Modelo
+    Public Sub New()
+        Me.Marca = New Marca()
+    End Sub
     Private _id As Int16
     Public Property Id() As Int16
         Get

@@ -1,12 +1,16 @@
 ﻿Public Class Registro
-    Public Function GetById(pId As Int16) As EL.Registro
+    Public Function GetByChoferId(pId As String) As EL.Registro
+        Dim registro As New EL.Registro()
+        GetById(pId, registro)
+        Return registro
+    End Function
+
+    Public Sub GetById(pId As Int16, ByRef pRegistro As EL.Registro)
         Dim con As New Conexion
         Dim datatable As New DataTable()
         con.EjecutarConsulta("select fecha_vencimiento,categoria from dbo.Registro where id_persona = " & pId)
         con.adp.Fill(datatable)
-        Dim registro As New EL.Registro()
-        registro.FechaVencimiento = datatable.Rows(0).ItemArray(0).ToString()
-        registro.Categoria = datatable.Rows(0).ItemArray(1).ToString()
-        Return registro
-    End Function
+        pRegistro.FechaVencimiento = datatable.Rows(0).ItemArray(0).ToString()
+        pRegistro.Categoria = datatable.Rows(0).ItemArray(1).ToString()
+    End Sub
 End Class
