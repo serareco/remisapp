@@ -48,5 +48,8 @@
             _vigenciaHasta = value
         End Set
     End Property
+    Public Overrides Function ToString() As String
+        Return Porcentaje.ToString() + "% - " + Descripcion
+    End Function
 
 End Class

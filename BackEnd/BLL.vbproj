@@ -63,13 +63,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auto.vb" />
+    <Compile Include="Registro.vb" />
+    <Compile Include="Telefono.vb" />
+    <Compile Include="TipoTelefono.vb" />
+    <Compile Include="Turno.vb" />
+    <Compile Include="Vehiculo.vb" />
     <Compile Include="Chofer.vb" />
-    <Compile Include="Cliente.vb" />
     <Compile Include="Comision.vb" />
     <Compile Include="Domicilio.vb" />
     <Compile Include="EstadoViaje.vb" />
     <Compile Include="Login.vb" />
+    <Compile Include="Marca.vb" />
+    <Compile Include="Modelo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -85,10 +90,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Permiso.vb" />
     <Compile Include="Persona.vb" />
-    <Compile Include="Rol.vb" />
+    <Compile Include="Socio.vb" />
     <Compile Include="Usuario.vb" />
-    <Compile Include="Promocion.vb" />
+    <Compile Include="Beneficio.vb" />
     <Compile Include="Validacion.vb" />
     <Compile Include="Viaje.vb" />
   </ItemGroup>
@@ -119,6 +125,10 @@
     <ProjectReference Include="..\EL\EL.vbproj">
       <Project>{e64ff015-e149-4c7c-a718-e5023ef9437f}</Project>
       <Name>EL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MapService\MapService.vbproj">
+      <Project>{8e9ad52e-796a-482b-b57c-c8861f04372f}</Project>
+      <Name>MapService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

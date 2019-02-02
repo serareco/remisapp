@@ -1,5 +1,5 @@
 ﻿Public Class Login
-    Public Function Login(pDatosLogin As EL.Login) As Boolean
+    Public Function Login(pDatosLogin As EL.Usuario) As Boolean
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@Usuario", pDatosLogin.Usuario))
@@ -18,10 +18,10 @@
 
     End Function
 
-    Public Function GetRoles(pUsuario As String) As DataTable
+    Public Function GetPermisos(pUsuario As String) As DataTable
         Dim con As New Conexion
         Dim datatable As New DataTable
-        con.EjecutarConsulta("select id_rol from usuarios_roles where id_usuario = '" + pUsuario + "'")
+        con.EjecutarConsulta("select id_permiso from usuario_permiso where usuario = '" + pUsuario + "'")
         con.adp.Fill(datatable)
         Return datatable
     End Function

@@ -5,7 +5,7 @@ Public Module Validacion
         Return emailExpression.IsMatch(pTexto)
     End Function
     Public Function FormatoNumeros(pTexto As String) As Boolean
-        Static numbersExpression As New Regex("^\d+$")
+        Static numbersExpression As New Regex("[^\\d,\\d]")
         Return numbersExpression.IsMatch(pTexto)
     End Function
     Public Function RangoNumeros(pValor As String, pRangoInferior As Decimal, pRangoSuperior As Decimal) As Boolean

@@ -1,11 +1,24 @@
 ﻿Public Class Usuario
-    Public Function MostrarLista() As DataTable
-        Return New DAL.Usuario().MostrarLista()
+    Public Function Listar() As List(Of EL.Usuario)
+        Return New DAL.Usuario().Listar()
+    End Function
+
+    Public Function GetById(pId As Int16) As EL.Usuario
+        Dim usuario As EL.Usuario = New DAL.Usuario().GetById(pId)
+        usuario.Permisos = Login.GetPermisos(usuario.Usuario)
+        Return usuario
     End Function
 
     Public Sub Guardar(usuario As EL.Usuario)
+        Dim p As New Persona()
+        p.Guardar(usuario)
         Dim e As New DAL.Usuario()
         e.Guardar(usuario)
+    End Sub
+
+    Public Sub BlanquearClave(usuario As EL.Usuario)
+        Dim e As New DAL.Usuario()
+        e.BlanquearClave(usuario)
     End Sub
 
     Public Sub Quitar(usuario As EL.Usuario)
@@ -14,25 +27,8 @@
     End Sub
 
     Public Function GetByUsuario(pUsuario As String) As EL.Usuario
-        Dim usuario As New EL.Usuario
-        Dim datatable As DataTable = New DAL.Usuario().GetByUsuario(pUsuario)
-        If (DataTable.Rows.Count > 0) Then
-            usuario.Usuario = DataTable.Rows(0).ItemArray(0).ToString()
-            usuario.Nombre = DataTable.Rows(0).ItemArray(1).ToString()
-            usuario.Apellido = DataTable.Rows(0).ItemArray(2).ToString()
-            usuario.Domicilio = DataTable.Rows(0).ItemArray(3).ToString()
-            usuario.Email = DataTable.Rows(0).ItemArray(4).ToString()
-            usuario.Telefono = DataTable.Rows(0).ItemArray(5).ToString()
-            usuario.NroDocumento = DataTable.Rows(0).ItemArray(6).ToString()
-            usuario.FechaNacimiento = DataTable.Rows(0).ItemArray(7).ToString()
-        End If
-        Dim datatableRoles As DataTable = New DAL.Usuario().GetRolesByUsuario(pUsuario)
-        If (datatableRoles.Rows.Count > 0) Then
-            usuario.Roles = New List(Of EL.Rol)
-            For Each row As DataRow In datatableRoles.Rows
-                usuario.Roles.Add(New Rol().GetById(row.ItemArray(1)))
-            Next
-        End If
+        Dim usuario As EL.Usuario = New DAL.Usuario().GetByUsuario(pUsuario)
+        usuario.Permisos = Login.GetPermisos(usuario.Usuario)
         Return usuario
     End Function
 

@@ -1,49 +1,59 @@
 ﻿Public Class Viaje
-    Public Function MostrarEnCurso()
-        Return New DAL.Viaje().MostrarEnCurso()
+    Public Function GetProximoViajePendiente() As EL.Viaje
+        Return New DAL.Viaje().GetProximoViajePendiente()
     End Function
 
-    Public Function MostrarHistorico()
-        Return New DAL.Viaje().MostrarHistorico()
+    Public Function GetProximoViajeVuelta() As EL.Viaje
+        Return New DAL.Viaje().GetProximoViajeVuelta
+    End Function
+
+    Public Function ListarMensual() As List(Of EL.Viaje)
+        Return New DAL.Viaje().Listar("M")
+    End Function
+
+    Public Function ListarEnCurso() As List(Of EL.Viaje)
+        Return New DAL.Viaje().Listar("C")
+    End Function
+
+    Public Function ListarPendientes() As List(Of EL.Viaje)
+        Return New DAL.Viaje().Listar("P")
+    End Function
+
+    Public Function ListarHistorico() As List(Of EL.Viaje)
+        Return New DAL.Viaje().Listar("H")
+    End Function
+
+    Public Function Listar() As List(Of EL.Viaje)
+        Return New DAL.Viaje().Listar()
     End Function
 
     Public Function GetById(pId As Int16) As EL.Viaje
-        Dim viaje As New EL.Viaje()
-        Dim datatable As DataTable = New DAL.Viaje().GetById(pId)
-        If (datatable.Rows.Count > 0) Then
-            viaje.Id = datatable.Rows(0).ItemArray(0).ToString()
-            viaje.Origen = datatable.Rows(0).ItemArray(1).ToString()
-            viaje.Destino = datatable.Rows(0).ItemArray(2).ToString()
-            viaje.FechaSalida = datatable.Rows(0).ItemArray(3).ToString()
-            If (datatable.Rows(0).ItemArray(4).ToString() <> "") Then
-                viaje.FechaArribo = datatable.Rows(0).ItemArray(4).ToString()
-            End If
-            If (datatable.Rows(0).ItemArray(5).ToString() <> "") Then
-                viaje.KmRecorridos = datatable.Rows(0).ItemArray(5).ToString()
-            End If
-            viaje.Comentarios = datatable.Rows(0).ItemArray(6).ToString()
-            If (datatable.Rows(0).ItemArray(7).ToString() <> "") Then
-                viaje.Cliente = New Cliente().GetById(datatable.Rows(0).ItemArray(7).ToString())
-            End If
-            If (datatable.Rows(0).ItemArray(8).ToString() = "S") Then
-                viaje.IdaYVuelta = True
-            Else
-                viaje.IdaYVuelta = False
-            End If
-            If (datatable.Rows(0).ItemArray(9).ToString() <> "") Then
-                viaje.Chofer = New Chofer().GetById(datatable.Rows(0).ItemArray(9).ToString())
-            End If
-            viaje.Estado = New EstadoViaje().GetById(datatable.Rows(0).ItemArray(10).ToString())
-            If (datatable.Rows(0).ItemArray(11).ToString() <> "") Then
-                viaje.Precio = datatable.Rows(0).ItemArray(11).ToString()
-            End If
-        End If
-        Return viaje
+        Return New DAL.Viaje().GetById(pId)
     End Function
 
     Public Sub Guardar(viaje As EL.Viaje)
         Dim e As New DAL.Viaje()
         e.Guardar(viaje)
+    End Sub
+    Public Sub SetBeneficios(ByRef pViaje As EL.Viaje)
+        pViaje.Beneficios = New Beneficio().Verificar(pViaje.Socio.Id)
+    End Sub
+    Public Function PorcDescBeneficios(pViaje As EL.Viaje) As Decimal
+        Dim totalDescuentos As Decimal = 0
+        For Each beneficio As EL.Beneficio In pViaje.Beneficios
+            totalDescuentos += beneficio.Descuento
+        Next
+        Return totalDescuentos / 100
+    End Function
+    Public Sub ConsultarAPI(ByRef viaje As EL.Viaje)
+        Dim request As New MapService.MapServiceRequest()
+        request.From = viaje.Origen
+        request.Dest = viaje.Destino
+
+        Dim response As MapService.MapServiceResponse = request.SendRequest()
+        viaje.DuracionEstimada = response.Time
+        viaje.KmEstimados = response.Distance
+        viaje.PrecioEstimado = viaje.KmEstimados * 26 'Deberia salir de los parámetros el valor
     End Sub
 
 End Class

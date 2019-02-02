@@ -3,5 +3,7 @@ UAI - Analista Programador - Trabajo Final
 
 Para pruebas:
 
-usuario: serareco
+Usuario Responsable:
+---------------------
+usuario: admin
 password: test123
