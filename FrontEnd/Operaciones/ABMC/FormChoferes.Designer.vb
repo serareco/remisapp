@@ -65,7 +65,6 @@ Partial Class FormChoferes
         Me.TxtPiso = New System.Windows.Forms.TextBox()
         Me.TxtDpto = New System.Windows.Forms.TextBox()
         Me.TabRegistro = New System.Windows.Forms.TabPage()
-        Me.CbbTurnos = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbbCategorias = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -76,6 +75,7 @@ Partial Class FormChoferes
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.BtnGuardar = New System.Windows.Forms.Button()
+        Me.ClbTurnos = New System.Windows.Forms.CheckedListBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvChoferes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -478,7 +478,7 @@ Partial Class FormChoferes
         '
         'TabRegistro
         '
-        Me.TabRegistro.Controls.Add(Me.CbbTurnos)
+        Me.TabRegistro.Controls.Add(Me.ClbTurnos)
         Me.TabRegistro.Controls.Add(Me.Label4)
         Me.TabRegistro.Controls.Add(Me.cbbCategorias)
         Me.TabRegistro.Controls.Add(Me.Label7)
@@ -494,22 +494,14 @@ Partial Class FormChoferes
         Me.TabRegistro.Text = "Licencia - Vehiculo"
         Me.TabRegistro.UseVisualStyleBackColor = True
         '
-        'CbbTurnos
-        '
-        Me.CbbTurnos.FormattingEnabled = True
-        Me.CbbTurnos.Location = New System.Drawing.Point(116, 129)
-        Me.CbbTurnos.Name = "CbbTurnos"
-        Me.CbbTurnos.Size = New System.Drawing.Size(196, 21)
-        Me.CbbTurnos.TabIndex = 53
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(7, 132)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(35, 13)
+        Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 52
-        Me.Label4.Text = "Turno"
+        Me.Label4.Text = "Turnos"
         '
         'cbbCategorias
         '
@@ -592,6 +584,14 @@ Partial Class FormChoferes
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
+        'ClbTurnos
+        '
+        Me.ClbTurnos.FormattingEnabled = True
+        Me.ClbTurnos.Location = New System.Drawing.Point(116, 132)
+        Me.ClbTurnos.Name = "ClbTurnos"
+        Me.ClbTurnos.Size = New System.Drawing.Size(196, 79)
+        Me.ClbTurnos.TabIndex = 54
+        '
         'FormChoferes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -672,6 +672,6 @@ Partial Class FormChoferes
     Friend WithEvents TxtCodPais As TextBox
     Friend WithEvents CbbTiposTelefono As ComboBox
     Friend WithEvents Label20 As Label
-    Friend WithEvents CbbTurnos As ComboBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents ClbTurnos As CheckedListBox
 End Class

@@ -1,10 +1,10 @@
 ﻿Public Class FormChoferes
     Dim chofer As EL.Chofer
-    Dim datosChofer As New BLL.Chofer()
-    Dim datosAuto As New BLL.Vehiculo()
-    Dim datosComision As New BLL.Comision()
-    Dim datosTurno As New BLL.Turno()
-    Dim datosTipoTelefono As New BLL.TipoTelefono()
+    Dim choferService As New BLL.Chofer()
+    Dim autoService As New BLL.Vehiculo()
+    Dim comisionService As New BLL.Comision()
+    Dim turnoService As New BLL.Turno()
+    Dim tipoTelefonoService As New BLL.TipoTelefono()
 
     Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
         Me.Close()
@@ -13,20 +13,19 @@
     Public Sub ActualizarLista()
         cbbAutos.DataSource = Nothing
         cbbAutos.DataSource = New BindingSource With {
-            .DataSource = datosAuto.Listar()
+            .DataSource = autoService.Listar()
         }
         cbbAutos.DisplayMember = "Patente"
         cbbAutos.ValueMember = "Id"
 
-        CbbTurnos.DataSource = Nothing
-        CbbTurnos.DataSource = New BindingSource With {
-            .DataSource = datosTurno.Listar()
+        ClbTurnos.DataSource = New BindingSource With {
+            .DataSource = turnoService.Listar()
         }
-        CbbTurnos.DisplayMember = "Descripcion"
-        CbbTurnos.ValueMember = "Id"
+        ClbTurnos.DisplayMember = "Descripcion"
+        ClbTurnos.ValueMember = "Id"
 
         CbbTiposTelefono.DataSource = New BindingSource With {
-            .DataSource = datosTipoTelefono.Listar()
+            .DataSource = tipoTelefonoService.Listar()
         }
         CbbTiposTelefono.DisplayMember = "Descripcion"
         CbbTiposTelefono.ValueMember = "Id"
@@ -58,7 +57,7 @@
         dgvChoferes.DataSource = Nothing
         dgvChoferes.AutoGenerateColumns = False
         dgvChoferes.Columns.Clear()
-        dgvChoferes.DataSource = datosChofer.Listar()
+        dgvChoferes.DataSource = choferService.Listar()
 
         dgvChoferes.Columns.Add(New DataGridViewTextBoxColumn() With {
                 .DataPropertyName = "Id",
@@ -113,12 +112,14 @@
         chofer.FechaNacimiento = dtpFechaNacimiento.Value()
         chofer.Registro.Categoria = cbbCategorias.SelectedItem
         chofer.Registro.FechaVencimiento = dtpFechaVencimientoRegistro.Value()
-        chofer.Auto = datosAuto.GetById(cbbAutos.SelectedValue)
-        chofer.Comision = datosComision.GetDefault()
-        chofer.Turnos.Add(datosTurno.GetById(CbbTurnos.SelectedValue))
-
+        chofer.Auto = autoService.GetById(cbbAutos.SelectedValue)
+        chofer.Comision = comisionService.GetDefault()
+        chofer.Turnos.Clear()
+        For Each itemChecked As Object In ClbTurnos.CheckedItems
+            chofer.Turnos.Add(turnoService.GetById(CType(itemChecked, EL.Turno).Id))
+        Next
         Try
-            datosChofer.Guardar(chofer)
+            choferService.Guardar(chofer)
             MessageBox.Show("Los cambios fueron guardados correctamente.")
         Catch ex As Exception
             MessageBox.Show("Se ha producido un error al guardar los cambios. Error: " + ex.Message)
@@ -134,7 +135,7 @@
         If chofer IsNot Nothing Then
             Dim result As Integer = MessageBox.Show("Estas seguro que deseas eliminar este chofer?", "caption", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                datosChofer.Quitar(chofer)
+                choferService.Quitar(chofer)
                 ActualizarLista()
             End If
         End If
@@ -145,7 +146,7 @@
         chofer = New EL.Chofer With {
             .Id = dgvChoferes.Rows(e.RowIndex).Cells(0).Value
         }
-        chofer = datosChofer.GetById(chofer.Id)
+        chofer = choferService.GetById(chofer.Id)
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
@@ -185,8 +186,21 @@
                 TxtCodPais.Clear()
             End If
             cbbCategorias.SelectedItem = chofer.Registro.Categoria
-            dtpFechaVencimientoRegistro.Value = chofer.Registro.FechaVencimiento
+            '            dtpFechaVencimientoRegistro.Value = chofer.Registro.FechaVencimiento
             cbbAutos.SelectedValue = chofer.Auto.Id
+            Dim index As Int16 = 0
+            Dim listIndexs = New List(Of Int16)
+            For Each item As Object In ClbTurnos.Items
+                For Each turno As EL.Turno In chofer.Turnos
+                    If (item.Id = turno.Id) Then
+                        listIndexs.Add(index)
+                    End If
+                Next
+                index = index + 1
+            Next
+            For Each i As Int16 In listIndexs
+                ClbTurnos.SetItemChecked(i, True)
+            Next
         End If
     End Sub
 
