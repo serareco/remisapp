@@ -42,6 +42,29 @@ Public Class Conexion
         End Try
     End Sub
 
+    Public Sub EjecutarStoredProcedureDa(pNombreStoredProcedure As String, pParametros As List(Of SqlClient.SqlParameter))
+        Try
+            con.Open()
+            cmd = New SqlCommand(pNombreStoredProcedure, con)
+            cmd.CommandType = CommandType.StoredProcedure
+            For Each item As SqlClient.SqlParameter In pParametros
+                cmd.Parameters.Add(item)
+            Next
+            'rdr = cmd.ExecuteReader()
+            adp = New SqlDataAdapter(cmd)
+        Catch ex As Exception
+            SqlError = ex.Message
+            Throw ex
+        Finally
+            If Not (IsNothing(con)) Then
+                con.Close()
+            End If
+            ' If Not (IsNothing(rdr)) Then
+            ' rdr.Close()
+            'End If
+        End Try
+    End Sub
+
     Public Sub EjecutarConsulta(pConsulta As String)
         Try
             con.Open()

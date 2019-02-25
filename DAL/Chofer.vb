@@ -57,4 +57,36 @@ Public Class Chofer
         con.EjecutarStoredProcedure("dbo.QuitarChofer", parametros)
     End Sub
 
+    Public Function ListarEnCondiciones() As List(Of EL.Chofer)
+        Dim con As New Conexion
+        Dim datatable As New DataTable
+        Dim choferes As New List(Of EL.Chofer)
+        con.EjecutarConsulta("
+        select c.id_persona
+        from dbo.Chofer c inner join dbo.Registro r ON c.id_persona = r.id_persona
+		 inner join dbo.Vehiculo v ON c.id_vehiculo = v.id_vehiculo
+         where c.estado = 'A'
+		 and r.fecha_vencimiento >= CONVERT(date, getdate())
+		 and v.fecha_vencimiento_VTV >= CONVERT(date, getdate())")
+        con.adp.Fill(datatable)
+        For index = 0 To datatable.Rows.Count - 1
+            choferes.Add(New Chofer().GetById(datatable.Rows(index).ItemArray(0).ToString()))
+        Next
+        Return choferes
+    End Function
+
+    Public Function ListarDisponibles(pFechaHoraViaje As DateTime) As List(Of EL.Chofer)
+        Dim con As New Conexion
+        Dim datatable As New DataTable
+        Dim choferes As New List(Of EL.Chofer)
+        Dim parametros As New List(Of SqlClient.SqlParameter)
+        parametros.Add(New SqlClient.SqlParameter("@fechaHoraViaje", pFechaHoraViaje))
+        con.EjecutarStoredProcedureDa("dbo.ConsultaChoferesParaViajes", parametros)
+        con.adp.Fill(datatable)
+        For index = 0 To datatable.Rows.Count - 1
+            choferes.Add(New Chofer().GetById(datatable.Rows(index).ItemArray(0).ToString()))
+        Next
+        Return choferes
+    End Function
+
 End Class

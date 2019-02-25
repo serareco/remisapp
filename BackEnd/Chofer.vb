@@ -32,4 +32,13 @@
         e.Quitar(chofer)
     End Sub
 
+    Public Function ListarEnCondiciones() As List(Of EL.Chofer)
+        Return New DAL.Chofer().ListarEnCondiciones()
+    End Function
+
+    Public Function ListarDisponibles(pFechaHora As DateTime) As List(Of EL.Chofer)
+        'TODO: llamada al procedimiento 
+        Return New DAL.Chofer().ListarDisponibles(pFechaHora)
+    End Function
+
 End Class

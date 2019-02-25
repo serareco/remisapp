@@ -8,7 +8,7 @@
         viaje.PrecioEstimado = viaje.PrecioEstimado - viaje.PrecioEstimado * datosViaje.PorcDescBeneficios(viaje)
         LblAvisoDemora.Text = ""
         Dim listaChoferesDisponible As New List(Of EL.Chofer)()
-        listaChoferesDisponible = datosChofer.Listar()
+        listaChoferesDisponible = datosChofer.ListarDisponibles(viaje.FechaSalidaEstimada)
         If listaChoferesDisponible.Count > 0 Then
             cbbChofer.DataSource = Nothing
             cbbChofer.DataSource = listaChoferesDisponible
