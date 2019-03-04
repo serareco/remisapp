@@ -63,6 +63,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accion.vb" />
+    <Compile Include="Parametro.vb" />
     <Compile Include="Telefono.vb" />
     <Compile Include="TipoTelefono.vb" />
     <Compile Include="Vehiculo.vb" />

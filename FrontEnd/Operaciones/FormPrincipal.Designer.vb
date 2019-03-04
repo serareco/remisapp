@@ -37,8 +37,10 @@ Partial Class FormPrincipal
         Me.OpcionComisiones = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionBeneficios = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionChoferComision = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionParametrosSistema = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuReportes = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionReportesViajes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionReporteComisionChoferes = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuVentana = New System.Windows.Forms.ToolStripMenuItem()
         Me.CascadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TileVerticalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,7 +51,6 @@ Partial Class FormPrincipal
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.OpcionReporteComisionChoferes = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -79,7 +80,7 @@ Partial Class FormPrincipal
         '
         'MenuABMC
         '
-        Me.MenuABMC.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionAutos, Me.OpcionChoferes, Me.OpcionSocios, Me.OpcionUsuarios, Me.OpcionComisiones, Me.OpcionBeneficios, Me.OpcionChoferComision})
+        Me.MenuABMC.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionAutos, Me.OpcionChoferes, Me.OpcionSocios, Me.OpcionUsuarios, Me.OpcionComisiones, Me.OpcionBeneficios, Me.OpcionChoferComision, Me.OpcionParametrosSistema})
         Me.MenuABMC.Name = "MenuABMC"
         resources.ApplyResources(Me.MenuABMC, "MenuABMC")
         '
@@ -118,6 +119,11 @@ Partial Class FormPrincipal
         Me.OpcionChoferComision.Name = "OpcionChoferComision"
         resources.ApplyResources(Me.OpcionChoferComision, "OpcionChoferComision")
         '
+        'OpcionParametrosSistema
+        '
+        Me.OpcionParametrosSistema.Name = "OpcionParametrosSistema"
+        resources.ApplyResources(Me.OpcionParametrosSistema, "OpcionParametrosSistema")
+        '
         'MenuReportes
         '
         Me.MenuReportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionReportesViajes, Me.OpcionReporteComisionChoferes})
@@ -128,6 +134,11 @@ Partial Class FormPrincipal
         '
         Me.OpcionReportesViajes.Name = "OpcionReportesViajes"
         resources.ApplyResources(Me.OpcionReportesViajes, "OpcionReportesViajes")
+        '
+        'OpcionReporteComisionChoferes
+        '
+        Me.OpcionReporteComisionChoferes.Name = "OpcionReporteComisionChoferes"
+        resources.ApplyResources(Me.OpcionReporteComisionChoferes, "OpcionReporteComisionChoferes")
         '
         'MenuVentana
         '
@@ -179,11 +190,6 @@ Partial Class FormPrincipal
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
         resources.ApplyResources(Me.CerrarSesionToolStripMenuItem, "CerrarSesionToolStripMenuItem")
         '
-        'OpcionReporteComisionChoferes
-        '
-        Me.OpcionReporteComisionChoferes.Name = "OpcionReporteComisionChoferes"
-        resources.ApplyResources(Me.OpcionReporteComisionChoferes, "OpcionReporteComisionChoferes")
-        '
         'FormPrincipal
         '
         resources.ApplyResources(Me, "$this")
@@ -228,4 +234,5 @@ Partial Class FormPrincipal
     Friend WithEvents CerrarSesionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpcionChoferComision As ToolStripMenuItem
     Friend WithEvents OpcionReporteComisionChoferes As ToolStripMenuItem
+    Friend WithEvents OpcionParametrosSistema As ToolStripMenuItem
 End Class

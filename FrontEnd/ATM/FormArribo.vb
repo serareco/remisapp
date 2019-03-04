@@ -27,7 +27,7 @@
             viaje.FechaArribo = dtpFechaArribo.Value()
             viaje.Duracion = (viaje.FechaArribo.Subtract(viaje.FechaSalida)).TotalMinutes
             viaje.Estado = cbbTipoEstadoViaje.SelectedValue
-            datosViaje.Guardar(viaje)
+            datosViaje.RegistrarArribo(viaje)
             MessageBox.Show("Datos guardado correctamente", "Viajes")
             FormATM.ActualizarInformacion()
             Me.Close()

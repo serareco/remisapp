@@ -122,6 +122,12 @@
     <Compile Include="Operaciones\ABMC\FormConfirmarViaje.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Operaciones\ABMC\FormParametrosSistema.Designer.vb">
+      <DependentUpon>FormParametrosSistema.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\ABMC\FormParametrosSistema.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Operaciones\ABMC\FormVehiculos.Designer.vb">
       <DependentUpon>FormVehiculos.vb</DependentUpon>
     </Compile>
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\ABMC\FormConfirmarViaje.resx">
       <DependentUpon>FormConfirmarViaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\ABMC\FormParametrosSistema.resx">
+      <DependentUpon>FormParametrosSistema.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\ABMC\FormVehiculos.resx">
       <DependentUpon>FormVehiculos.vb</DependentUpon>

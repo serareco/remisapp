@@ -3,11 +3,8 @@
     Dim datosChofer As New BLL.Chofer()
     Dim datosViaje As New BLL.Viaje()
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        viaje.Chofer = datosChofer.GetById(BLL.Login.UsuarioConectado.Id)
-        viaje.FechaSalida = Now
-        viaje.FechaArriboEstimado = viaje.FechaSalida.AddMinutes(viaje.DuracionEstimada)
-        viaje.Estado.Id = 1
-        datosViaje.Guardar(viaje)
+        Dim chofer As EL.Chofer = datosChofer.GetById(BLL.Login.UsuarioConectado.Id)
+        datosViaje.RegistrarSalida(viaje, chofer) 'Guardar(viaje)
         MessageBox.Show("Se ha registrado la salida del vehículo.")
         FormATM.ActualizarInformacion()
         Me.Close()
