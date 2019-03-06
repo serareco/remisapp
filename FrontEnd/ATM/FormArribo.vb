@@ -1,7 +1,8 @@
 ﻿Public Class FormArribo
     Public viaje As EL.Viaje
-    Dim datosViaje As New BLL.Viaje()
-    Dim datosEstadoViaje As New BLL.EstadoViaje()
+
+    Dim viajeService As New BLL.Viaje()
+    Dim estadosViajeService As New BLL.EstadoViaje()
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
         Me.Close()
@@ -18,6 +19,10 @@
             msjValidaciones += "El Precio solo admite números" + vbLf
             erroresValidaciones = True
         End If
+        If (Not (BLL.Validacion.DatoObligatorioVacio(cbbTipoEstadoViaje.SelectedValue, "0"))) Then
+            msjValidaciones += "Debe elegir un estado final del viaje" + vbLf
+            erroresValidaciones = True
+        End If
         If erroresValidaciones Then
             MessageBox.Show(msjValidaciones)
         Else
@@ -26,8 +31,8 @@
             viaje.Comentarios = TxtComentarios.Text()
             viaje.FechaArribo = dtpFechaArribo.Value()
             viaje.Duracion = (viaje.FechaArribo.Subtract(viaje.FechaSalida)).TotalMinutes
-            viaje.Estado = cbbTipoEstadoViaje.SelectedValue
-            datosViaje.RegistrarArribo(viaje)
+            viaje.Estado = estadosViajeService.GetById(cbbTipoEstadoViaje.SelectedValue)
+            viajeService.RegistrarArribo(viaje)
             MessageBox.Show("Datos guardado correctamente", "Viajes")
             FormATM.ActualizarInformacion()
             Me.Close()
@@ -37,9 +42,12 @@
 
     Private Sub FormArribo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbbTipoEstadoViaje.DataSource = Nothing
-        cbbTipoEstadoViaje.DataSource = datosEstadoViaje.MostrarFin()
+        cbbTipoEstadoViaje.DataSource = estadosViajeService.MostrarFin()
         cbbTipoEstadoViaje.DisplayMember = "descripcion"
-        cbbTipoEstadoViaje.ValueMember = "id_estado"
+        cbbTipoEstadoViaje.ValueMember = "id"
+        TxtKilometrosRecorridos.Text = viaje.KmEstimados
+        TxtPrecio.Text = viaje.PrecioEstimado
+        dtpFechaArribo.Value = Now
     End Sub
 
 End Class

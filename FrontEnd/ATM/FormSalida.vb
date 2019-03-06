@@ -1,10 +1,10 @@
 ﻿Public Class FormSalida
     Public viaje As EL.Viaje
-    Dim datosChofer As New BLL.Chofer()
-    Dim datosViaje As New BLL.Viaje()
+    Dim choferService As New BLL.Chofer()
+    Dim viajeService As New BLL.Viaje()
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        Dim chofer As EL.Chofer = datosChofer.GetById(BLL.Login.UsuarioConectado.Id)
-        datosViaje.RegistrarSalida(viaje, chofer) 'Guardar(viaje)
+        Dim chofer As EL.Chofer = choferService.GetById(BLL.Login.UsuarioConectado.Id)
+        choferService.TomarViaje(viaje, chofer)
         MessageBox.Show("Se ha registrado la salida del vehículo.")
         FormATM.ActualizarInformacion()
         Me.Close()

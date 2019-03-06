@@ -16,14 +16,12 @@ Public Class Viaje
     End Function
 
     Public Sub RegistrarSalida(viaje As EL.Viaje, chofer As EL.Chofer)
-        viaje.Chofer = chofer
-        viaje.FechaSalida = Now
         viaje.FechaArriboEstimado = viaje.FechaSalida.AddMinutes(viaje.DuracionEstimada)
         viaje.Estado.Id = 1
         If viaje.Chofer.Id <> viaje.ChoferEstimado.Id Then
             ' TODO: ENUMERATOR - Tomar viaje de otro
             accionService.Guardar(chofer, accionService.GetById(2))
-        ElseIf viaje.FechaSalida > viaje.FechaSalidaEstimada Then
+        ElseIf viaje.FechaSalida > viaje.FechaSalidaEstimada.AddMinutes(10) Then 'TODO: Parametros
             ' TODO: ENUMERATOR - Salir tarde
             accionService.Guardar(chofer, accionService.GetById(6))
         ElseIf viaje.FechaSalida <= viaje.FechaSalidaEstimada Then
@@ -34,7 +32,7 @@ Public Class Viaje
     End Sub
 
     Public Sub RegistrarArribo(viaje As EL.Viaje)
-        If viaje.FechaArribo < viaje.FechaArriboEstimado Then
+        If viaje.FechaArribo > viaje.FechaArriboEstimado Then
             ' TODO: ENUMERATOR - Llegar tarde
             accionService.Guardar(viaje.Chofer, accionService.GetById(5))
         ElseIf viaje.FechaArribo <= viaje.FechaArriboEstimado Then

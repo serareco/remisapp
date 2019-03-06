@@ -46,6 +46,10 @@ Partial Class FormPrincipal
         Me.TileVerticalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TileHorizontalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuConsultas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionViajesRealizados = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionViajesPendientes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionComisionesChofer = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.LogInformation = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
@@ -57,7 +61,7 @@ Partial Class FormPrincipal
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuViajes, Me.MenuABMC, Me.MenuReportes, Me.MenuVentana})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuViajes, Me.MenuABMC, Me.MenuReportes, Me.MenuConsultas, Me.MenuVentana})
         resources.ApplyResources(Me.MenuStrip, "MenuStrip")
         Me.MenuStrip.MdiWindowListItem = Me.MenuVentana
         Me.MenuStrip.Name = "MenuStrip"
@@ -166,6 +170,27 @@ Partial Class FormPrincipal
         Me.CloseAllToolStripMenuItem.Name = "CloseAllToolStripMenuItem"
         resources.ApplyResources(Me.CloseAllToolStripMenuItem, "CloseAllToolStripMenuItem")
         '
+        'MenuConsultas
+        '
+        Me.MenuConsultas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionViajesRealizados, Me.OpcionViajesPendientes, Me.OpcionComisionesChofer})
+        Me.MenuConsultas.Name = "MenuConsultas"
+        resources.ApplyResources(Me.MenuConsultas, "MenuConsultas")
+        '
+        'OpcionViajesRealizados
+        '
+        Me.OpcionViajesRealizados.Name = "OpcionViajesRealizados"
+        resources.ApplyResources(Me.OpcionViajesRealizados, "OpcionViajesRealizados")
+        '
+        'OpcionViajesPendientes
+        '
+        Me.OpcionViajesPendientes.Name = "OpcionViajesPendientes"
+        resources.ApplyResources(Me.OpcionViajesPendientes, "OpcionViajesPendientes")
+        '
+        'OpcionComisionesChofer
+        '
+        Me.OpcionComisionesChofer.Name = "OpcionComisionesChofer"
+        resources.ApplyResources(Me.OpcionComisionesChofer, "OpcionComisionesChofer")
+        '
         'StatusStrip
         '
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogInformation, Me.ToolStripDropDownButton1})
@@ -235,4 +260,8 @@ Partial Class FormPrincipal
     Friend WithEvents OpcionChoferComision As ToolStripMenuItem
     Friend WithEvents OpcionReporteComisionChoferes As ToolStripMenuItem
     Friend WithEvents OpcionParametrosSistema As ToolStripMenuItem
+    Friend WithEvents MenuConsultas As ToolStripMenuItem
+    Friend WithEvents OpcionViajesRealizados As ToolStripMenuItem
+    Friend WithEvents OpcionViajesPendientes As ToolStripMenuItem
+    Friend WithEvents OpcionComisionesChofer As ToolStripMenuItem
 End Class

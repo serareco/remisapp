@@ -104,6 +104,7 @@ Public Class FormPrincipal
         Me.MenuABMC.Visible = False
         Me.MenuViajes.Visible = False
         Me.MenuReportes.Visible = False
+        Me.MenuConsultas.Visible = False
 
         Me.OpcionChoferes.Visible = False
         Me.OpcionComisiones.Visible = False
@@ -116,6 +117,9 @@ Public Class FormPrincipal
         Me.OpcionChoferComision.Visible = False
         Me.OpcionReporteComisionChoferes.Visible = False
         Me.OpcionParametrosSistema.Visible = False
+        Me.OpcionViajesPendientes.Visible = False
+        Me.OpcionViajesRealizados.Visible = False
+        Me.OpcionComisionesChofer.Visible = False
 
         If BLL.Login.EsAdministrador() Then
             Me.MenuABMC.Visible = True
@@ -148,6 +152,14 @@ Public Class FormPrincipal
             Me.OpcionReportesViajes.Visible = True
             Me.OpcionParametrosSistema.Visible = True
         End If
+
+        If BLL.Login.EsChofer() Then
+            Me.MenuConsultas.Visible = True
+            Me.OpcionViajesPendientes.Visible = True
+            Me.OpcionViajesRealizados.Visible = True
+            Me.OpcionComisionesChofer.Visible = True
+        End If
+
         LogInformation.Text() = BLL.Login.GetInforamcionUsuario()
     End Sub
 
@@ -176,4 +188,5 @@ Public Class FormPrincipal
         FormParametrosSistema.MdiParent = Me
         FormParametrosSistema.Show()
     End Sub
+
 End Class

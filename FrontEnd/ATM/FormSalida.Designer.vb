@@ -64,6 +64,7 @@ Partial Class FormSalida
         '
         'TxtPrecio
         '
+        Me.TxtPrecio.Enabled = False
         Me.TxtPrecio.Location = New System.Drawing.Point(125, 76)
         Me.TxtPrecio.Name = "TxtPrecio"
         Me.TxtPrecio.Size = New System.Drawing.Size(209, 20)
@@ -71,6 +72,7 @@ Partial Class FormSalida
         '
         'TxtKilometrosRecorridos
         '
+        Me.TxtKilometrosRecorridos.Enabled = False
         Me.TxtKilometrosRecorridos.Location = New System.Drawing.Point(125, 51)
         Me.TxtKilometrosRecorridos.Name = "TxtKilometrosRecorridos"
         Me.TxtKilometrosRecorridos.Size = New System.Drawing.Size(209, 20)
@@ -95,6 +97,7 @@ Partial Class FormSalida
         '
         'dtpFechaArribo
         '
+        Me.dtpFechaArribo.Enabled = False
         Me.dtpFechaArribo.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.dtpFechaArribo.Location = New System.Drawing.Point(125, 101)
         Me.dtpFechaArribo.Name = "dtpFechaArribo"

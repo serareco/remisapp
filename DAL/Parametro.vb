@@ -15,6 +15,17 @@
         Return parametro
     End Function
 
+    Public Function GetValueByKey(pclave As String) As String
+        Dim con As New Conexion
+        Dim datatable As New DataTable()
+        con.EjecutarConsulta("select value from dbo.Parametro where clave = '" & pclave + "' and estado = 'A'")
+        con.adp.Fill(datatable)
+        'If datatable.Rows(0).ItemArray.Count = 0 Then
+        '
+        'End If
+        Return datatable.Rows(0).ItemArray(0).ToString()
+    End Function
+
     Public Function Listar(Optional pTipoConsulta As Char = "D") As List(Of EL.Parametro)
         Dim con As New Conexion
         Dim datatable As New DataTable()

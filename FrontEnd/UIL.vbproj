@@ -171,12 +171,6 @@
     <Compile Include="Operaciones\FormPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Operaciones\FormPrincipalChoferes.Designer.vb">
-      <DependentUpon>FormPrincipalChoferes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Operaciones\FormPrincipalChoferes.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Operaciones\ABMC\FormBeneficios.Designer.vb">
       <DependentUpon>FormBeneficios.vb</DependentUpon>
     </Compile>
@@ -280,9 +274,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Operaciones\FormPrincipalChoferes.resx">
-      <DependentUpon>FormPrincipalChoferes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\ABMC\FormBeneficios.resx">
       <DependentUpon>FormBeneficios.vb</DependentUpon>

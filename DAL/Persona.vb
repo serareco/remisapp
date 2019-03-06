@@ -23,8 +23,15 @@
         End If
         persona.Email = datatable.Rows(0).ItemArray(3).ToString()
         persona.NroDocumento = datatable.Rows(0).ItemArray(5).ToString()
-        persona.FechaNacimiento = datatable.Rows(0).ItemArray(6).ToString()
         Try
+            persona.FechaNacimiento = datatable.Rows(0).ItemArray(6).ToString()
+        Catch ex As Exception
+            persona.FechaNacimiento = Nothing
+        End Try
+        Try
+
+
+
             domicilio = domicilioService.GetByPersonaId(persona.Id)(0)
         Catch ex As Exception
             domicilio = Nothing

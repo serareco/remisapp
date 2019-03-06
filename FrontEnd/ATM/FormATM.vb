@@ -1,12 +1,12 @@
 ﻿Public Class FormATM
-    Dim servicios As New BLL.Viaje()
+    Dim viajeService As New BLL.Viaje()
     Dim viajeSeleccionado As New EL.Viaje()
     Dim viaje As New EL.Viaje()
     Private Sub ActualizarDataGridviews()
         DgvServiciosPendientes.AutoGenerateColumns = False
         DgvServiciosPendientes.AutoSize = True
         DgvServiciosPendientes.Columns.Clear()
-        DgvServiciosPendientes.DataSource = servicios.ListarPendientes()
+        DgvServiciosPendientes.DataSource = viajeService.ListarPendientes()
         DgvServiciosPendientes.Columns.Add(New DataGridViewTextBoxColumn() With {
                     .DataPropertyName = "Id",
                     .Name = "ID"
@@ -43,7 +43,7 @@
         DgvServiciosEnCurso.AutoGenerateColumns = False
         DgvServiciosEnCurso.AutoSize = True
         DgvServiciosEnCurso.Columns.Clear()
-        DgvServiciosEnCurso.DataSource = servicios.ListarEnCurso()
+        DgvServiciosEnCurso.DataSource = viajeService.ListarEnCurso()
         DgvServiciosEnCurso.Columns.Add(New DataGridViewTextBoxColumn() With {
                     .DataPropertyName = "Id",
                     .Name = "ID"
@@ -76,7 +76,7 @@
     End Sub
 
     Public Sub ActualizarProximosSalir()
-        Dim proximoViajeASalir = servicios.GetProximoViajePendiente()
+        Dim proximoViajeASalir = viajeService.GetProximoViajePendiente()
         If proximoViajeASalir.FechaSalidaEstimada <> Date.MinValue Then
             LblChoferSalir.Text = proximoViajeASalir.ChoferEstimado.Apellido + ", " + proximoViajeASalir.ChoferEstimado.Nombre
             LblDestinoSalir.Text = proximoViajeASalir.Destino
@@ -91,7 +91,7 @@
     End Sub
 
     Public Sub ActualizarProximosLlegar()
-        Dim proximoViajePorLlegar = servicios.GetProximoViajeVuelta()
+        Dim proximoViajePorLlegar = viajeService.GetProximoViajeVuelta()
         If proximoViajePorLlegar.FechaSalida <> Date.MinValue Then
             LblChoferLlegar.Text = proximoViajePorLlegar.Chofer.Apellido + ", " + proximoViajePorLlegar.Chofer.Nombre
             LblDestinoLlegar.Text = proximoViajePorLlegar.Destino
@@ -118,19 +118,19 @@
     End Sub
 
     Private Sub ActualizarInformacion_Tick(sender As Object, e As EventArgs) Handles TimerActualizarInformacion.Tick
-        ActualizarInformacion()
+        'ActualizarInformacion()
     End Sub
 
     Private Sub DgvServiciosPendientes_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvServiciosPendientes.CellDoubleClick
         viaje = Nothing
-        FormSalida.viaje = servicios.GetById(DgvServiciosPendientes.Rows(e.RowIndex).Cells(0).Value)
+        FormSalida.viaje = viajeService.GetById(DgvServiciosPendientes.Rows(e.RowIndex).Cells(0).Value)
         FrmLogin.MostrarSalida = True
         FrmLogin.Show()
     End Sub
 
     Private Sub DgvServiciosEnCurso_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvServiciosEnCurso.CellDoubleClick
         viaje = Nothing
-        FormArribo.viaje = servicios.GetById(DgvServiciosEnCurso.Rows(e.RowIndex).Cells(0).Value)
+        FormArribo.viaje = viajeService.GetById(DgvServiciosEnCurso.Rows(e.RowIndex).Cells(0).Value)
         FrmLogin.MostrarArribo = True
         FrmLogin.Show()
     End Sub

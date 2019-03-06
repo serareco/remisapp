@@ -1,19 +1,20 @@
 ﻿Public Class FormConfirmarViaje
     Public viaje As EL.Viaje
-    Dim datosChofer As New BLL.Chofer()
-    Dim datosViaje As New BLL.Viaje()
+    Dim choferService As New BLL.Chofer()
+    Dim viajeService As New BLL.Viaje()
     Private Sub FormConfirmarViaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        datosViaje.ConsultarAPI(viaje)
-        datosViaje.SetBeneficios(viaje)
-        viaje.PrecioEstimado = viaje.PrecioEstimado - viaje.PrecioEstimado * datosViaje.PorcDescBeneficios(viaje)
+        viajeService.ConsultarAPI(viaje)
+        viajeService.SetBeneficios(viaje)
+        viaje.PrecioEstimado = viaje.PrecioEstimado - viaje.PrecioEstimado * viajeService.PorcDescBeneficios(viaje)
         LblAvisoDemora.Text = ""
         Dim listaChoferesDisponible As New List(Of EL.Chofer)()
-        listaChoferesDisponible = datosChofer.ListarDisponibles(viaje.FechaSalidaEstimada)
+        listaChoferesDisponible = choferService.ListarDisponibles(viaje.FechaSalidaEstimada)
         If listaChoferesDisponible.Count > 0 Then
             cbbChofer.DataSource = Nothing
             cbbChofer.DataSource = listaChoferesDisponible
             cbbChofer.DisplayMember = "Nombre"
             cbbChofer.ValueMember = "Id"
+            LblAvisoDemora.Text = "El chofer: '" + listaChoferesDisponible(0).Apellido + ", " + listaChoferesDisponible(0).Nombre + "'es el que tiene mejor puntaje."
         Else
             LblAvisoDemora.Text = "No hay choferes disponibles. Próximo en volver en " + " minutos."
         End If
@@ -29,9 +30,9 @@
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        viaje.ChoferEstimado = datosChofer.GetById(cbbChofer.SelectedValue)
+        viaje.ChoferEstimado = choferService.GetById(cbbChofer.SelectedValue)
         viaje.FechaArriboEstimado = viaje.FechaSalidaEstimada.AddMinutes(viaje.DuracionEstimada)
-        datosViaje.Guardar(viaje)
+        viajeService.Guardar(viaje)
         MessageBox.Show("El nuevo viaje fue cargado correctamente.")
         FormViajes.ActualizarLista()
         Me.Close()

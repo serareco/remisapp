@@ -36,7 +36,7 @@
         parametros.Add(New SqlClient.SqlParameter("@Patente", auto.Patente))
         parametros.Add(New SqlClient.SqlParameter("@Chasis", auto.Chasis))
         parametros.Add(New SqlClient.SqlParameter("@Motor", auto.Motor))
-        parametros.Add(New SqlClient.SqlParameter("@Fecha_Vencimiento_VTV", auto.Motor))
+        parametros.Add(New SqlClient.SqlParameter("@Fecha_Vencimiento_VTV", auto.FechaVencimientoVTV))
         con.EjecutarStoredProcedure("dbo.GuardarVehiculo", parametros)
     End Sub
     Public Sub Quitar(auto As EL.Vehiculo)

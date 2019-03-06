@@ -19,9 +19,6 @@
             ElseIf ChkChangePss.Checked Then
                 FormCambiarPassword.Show()
                 Me.Close()
-            ElseIf BLL.Login.EsChofer() Then
-                FormPrincipalChoferes.Show()
-                Me.Close()
             ElseIf Not (MostrarSalida Or MostrarArribo) Then
                 FormPrincipal.Show()
                 Me.Close()

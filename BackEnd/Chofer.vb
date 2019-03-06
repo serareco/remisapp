@@ -1,44 +1,46 @@
 ﻿Public Class Chofer
+    Dim choferDAL As New DAL.Chofer()
+
     Public Function Listar() As List(Of EL.Chofer)
-        Return New DAL.Chofer().Listar()
+        Return choferDAL.Listar()
     End Function
 
     Public Function GetById(pId As Int16) As EL.Chofer
-        Return New DAL.Chofer().GetById(pId)
+        Return choferDAL.GetById(pId)
     End Function
 
     Public Sub Guardar(chofer As EL.Chofer)
         Dim registrarUsuario As Boolean = (chofer.Id <= 0)
-
         Dim p As New Persona()
         p.Guardar(chofer)
-
-        Dim e As New DAL.Chofer()
-        e.Guardar(chofer)
-
+        choferDAL.Guardar(chofer)
         If registrarUsuario Then
-            Dim u As New DAL.Usuario()
+            Dim usuarioService As New Usuario()
             chofer.Usuario = chofer.NroDocumento
             chofer.Password = chofer.NroDocumento
             chofer.Permisos = New List(Of EL.Permiso)
             chofer.Permisos.Add(New Permiso().GetById("C"))
-            u.Guardar(chofer)
+            usuarioService.Guardar(chofer)
         End If
-
     End Sub
 
     Public Sub Quitar(chofer As EL.Chofer)
-        Dim e As New DAL.Chofer()
-        e.Quitar(chofer)
+        choferDAL.Quitar(chofer)
     End Sub
 
     Public Function ListarEnCondiciones() As List(Of EL.Chofer)
-        Return New DAL.Chofer().ListarEnCondiciones()
+        Return choferDAL.ListarEnCondiciones()
     End Function
 
     Public Function ListarDisponibles(pFechaHora As DateTime) As List(Of EL.Chofer)
-        'TODO: llamada al procedimiento 
-        Return New DAL.Chofer().ListarDisponibles(pFechaHora)
+        Return choferDAL.ListarDisponibles(pFechaHora)
     End Function
+
+    Public Sub TomarViaje(pViaje As EL.Viaje, pChofer As EL.Chofer)
+        Dim viajeService As New Viaje()
+        pViaje.Chofer = pChofer
+        pViaje.FechaSalida = Now
+        viajeService.RegistrarSalida(pViaje, pChofer)
+    End Sub
 
 End Class
