@@ -72,4 +72,25 @@
             _provincia = value
         End Set
     End Property
+
+    Public Overrides Function ToString() As String
+
+        Dim domicilio As String = Calle + " " + Nro
+        If Dpto <> "" Then
+            domicilio += ". Dpto: " + Dpto
+        End If
+        If Piso > 0 Then
+            domicilio += ". Piso: " + Piso.ToString()
+        End If
+        If CP <> "" Then
+            domicilio += ". Cp.: " + CP
+        End If
+        If Localidad <> "" Then
+            domicilio += ". Loc: " + Localidad
+        End If
+        If Provincia <> "" Then
+            domicilio += ". Prov: " + Provincia
+        End If
+        Return domicilio
+    End Function
 End Class

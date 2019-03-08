@@ -48,10 +48,8 @@ Public Class Viaje
         ticketComprobante.FechaEmision = Now
         ticketComprobante.Viaje = viaje
         ticketComprobanteService.Guardar(ticketComprobante)
-
-        'genero pdf
-        'enviar correo con el comprobante al viaje.Socio.Email --> Elimina pdf
-
+        GestorPDF.ImprimirTicketComprobante(ticketComprobante)
+        GestorCorreo.enviarTicketComprobante(ticketComprobante)
     End Sub
 
     Public Function ListarEnCurso() As List(Of EL.Viaje)

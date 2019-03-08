@@ -19,7 +19,7 @@
             msjValidaciones += "El Precio solo admite números" + vbLf
             erroresValidaciones = True
         End If
-        If (Not (BLL.Validacion.DatoObligatorioVacio(cbbTipoEstadoViaje.SelectedValue, "0"))) Then
+        If ((BLL.Validacion.DatoObligatorioVacio(cbbTipoEstadoViaje.SelectedValue, "0"))) Then
             msjValidaciones += "Debe elegir un estado final del viaje" + vbLf
             erroresValidaciones = True
         End If
