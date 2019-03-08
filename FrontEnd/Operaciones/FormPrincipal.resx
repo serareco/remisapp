@@ -197,16 +197,22 @@
     <value>ABMC</value>
   </data>
   <data name="OpcionReportesViajes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="OpcionReportesViajes.Text" xml:space="preserve">
     <value>Viajes Mensuales</value>
   </data>
   <data name="OpcionReporteComisionChoferes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="OpcionReporteComisionChoferes.Text" xml:space="preserve">
     <value>Comision Choferes</value>
+  </data>
+  <data name="OpcionPuntajeChoferes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="OpcionPuntajeChoferes.Text" xml:space="preserve">
+    <value>Puntaje Choferes</value>
   </data>
   <data name="MenuReportes.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 20</value>
@@ -215,19 +221,19 @@
     <value>Reportes</value>
   </data>
   <data name="OpcionViajesRealizados.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="OpcionViajesRealizados.Text" xml:space="preserve">
     <value>Viajes Realizados</value>
   </data>
   <data name="OpcionViajesPendientes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="OpcionViajesPendientes.Text" xml:space="preserve">
     <value>Viajes Pendientes</value>
   </data>
   <data name="OpcionComisionesChofer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>165, 22</value>
   </data>
   <data name="OpcionComisionesChofer.Text" xml:space="preserve">
     <value>Comisiones</value>
@@ -239,25 +245,25 @@
     <value>Consultas</value>
   </data>
   <data name="CascadeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>177, 22</value>
   </data>
   <data name="CascadeToolStripMenuItem.Text" xml:space="preserve">
     <value>Cascada</value>
   </data>
   <data name="TileVerticalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>177, 22</value>
   </data>
   <data name="TileVerticalToolStripMenuItem.Text" xml:space="preserve">
     <value>Mosaico Vertical</value>
   </data>
   <data name="TileHorizontalToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>177, 22</value>
   </data>
   <data name="TileHorizontalToolStripMenuItem.Text" xml:space="preserve">
     <value>Mosaico Horizontal</value>
   </data>
   <data name="CloseAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>177, 22</value>
   </data>
   <data name="CloseAllToolStripMenuItem.Text" xml:space="preserve">
     <value>Cerrar Todo</value>
@@ -3315,6 +3321,30 @@
   <data name="&gt;&gt;OpcionReporteComisionChoferes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;MenuConsultas.Name" xml:space="preserve">
+    <value>MenuConsultas</value>
+  </data>
+  <data name="&gt;&gt;MenuConsultas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpcionViajesRealizados.Name" xml:space="preserve">
+    <value>OpcionViajesRealizados</value>
+  </data>
+  <data name="&gt;&gt;OpcionViajesRealizados.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpcionViajesPendientes.Name" xml:space="preserve">
+    <value>OpcionViajesPendientes</value>
+  </data>
+  <data name="&gt;&gt;OpcionViajesPendientes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpcionComisionesChofer.Name" xml:space="preserve">
+    <value>OpcionComisionesChofer</value>
+  </data>
+  <data name="&gt;&gt;OpcionComisionesChofer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;MenuVentana.Name" xml:space="preserve">
     <value>MenuVentana</value>
   </data>
@@ -3345,30 +3375,6 @@
   <data name="&gt;&gt;CloseAllToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MenuConsultas.Name" xml:space="preserve">
-    <value>MenuConsultas</value>
-  </data>
-  <data name="&gt;&gt;MenuConsultas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OpcionViajesRealizados.Name" xml:space="preserve">
-    <value>OpcionViajesRealizados</value>
-  </data>
-  <data name="&gt;&gt;OpcionViajesRealizados.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OpcionViajesPendientes.Name" xml:space="preserve">
-    <value>OpcionViajesPendientes</value>
-  </data>
-  <data name="&gt;&gt;OpcionViajesPendientes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OpcionComisionesChofer.Name" xml:space="preserve">
-    <value>OpcionComisionesChofer</value>
-  </data>
-  <data name="&gt;&gt;OpcionComisionesChofer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;LogInformation.Name" xml:space="preserve">
     <value>LogInformation</value>
   </data>
@@ -3392,6 +3398,12 @@
   </data>
   <data name="&gt;&gt;ToolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OpcionPuntajeChoferes.Name" xml:space="preserve">
+    <value>OpcionPuntajeChoferes</value>
+  </data>
+  <data name="&gt;&gt;OpcionPuntajeChoferes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormPrincipal</value>

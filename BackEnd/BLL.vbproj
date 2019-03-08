@@ -67,6 +67,7 @@
     <Compile Include="Parametro.vb" />
     <Compile Include="Registro.vb" />
     <Compile Include="Telefono.vb" />
+    <Compile Include="TicketComprobante.vb" />
     <Compile Include="TipoTelefono.vb" />
     <Compile Include="Turno.vb" />
     <Compile Include="Vehiculo.vb" />

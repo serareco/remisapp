@@ -43,6 +43,15 @@ Public Class Viaje
             accionService.Guardar(viaje.Chofer, accionService.GetById(7))
         End If
         viajeDAL.Guardar(viaje)
+        Dim ticketComprobanteService As New TicketComprobante()
+        Dim ticketComprobante As New EL.TicketComprobante()
+        ticketComprobante.FechaEmision = Now
+        ticketComprobante.Viaje = viaje
+        ticketComprobanteService.Guardar(ticketComprobante)
+
+        'genero pdf
+        'enviar correo con el comprobante al viaje.Socio.Email --> Elimina pdf
+
     End Sub
 
     Public Function ListarEnCurso() As List(Of EL.Viaje)

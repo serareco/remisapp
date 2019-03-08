@@ -120,6 +120,7 @@ Public Class FormPrincipal
         Me.OpcionViajesPendientes.Visible = False
         Me.OpcionViajesRealizados.Visible = False
         Me.OpcionComisionesChofer.Visible = False
+        Me.OpcionPuntajeChoferes.Visible = False
 
         If BLL.Login.EsAdministrador() Then
             Me.MenuABMC.Visible = True
@@ -151,6 +152,7 @@ Public Class FormPrincipal
             Me.OpcionReporteComisionChoferes.Visible = True
             Me.OpcionReportesViajes.Visible = True
             Me.OpcionParametrosSistema.Visible = True
+            Me.OpcionPuntajeChoferes.Visible = True
         End If
 
         If BLL.Login.EsChofer() Then

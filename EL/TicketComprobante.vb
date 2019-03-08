@@ -1,4 +1,6 @@
-﻿Public Class TicketComprobante
+﻿Imports EL
+
+Public Class TicketComprobante
     Private _id As Int16
     Public Property Id() As Int16
         Get
@@ -17,15 +19,6 @@
             _fechaEmision = value
         End Set
     End Property
-    Private _total As Double
-    Public Property Total() As Double
-        Get
-            Return _total
-        End Get
-        Set(ByVal value As Double)
-            _total = value
-        End Set
-    End Property
     Private _viaje As Viaje
     Public Property Viaje() As Viaje
         Get
@@ -35,4 +28,5 @@
             _viaje = value
         End Set
     End Property
+
 End Class
