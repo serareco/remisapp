@@ -293,6 +293,9 @@
     <EmbeddedResource Include="Operaciones\ABMC\FormViajes.resx">
       <DependentUpon>FormViajes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Reportes\FormConsultaPuntosChofer.resx">
+      <DependentUpon>FormConsultaPuntosChofer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\Reportes\FormReporteComisiones.resx">
       <DependentUpon>FormReporteComisiones.vb</DependentUpon>
     </EmbeddedResource>

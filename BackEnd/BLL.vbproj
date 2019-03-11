@@ -78,6 +78,7 @@
     <Compile Include="GestorPDF.vb" />
     <Compile Include="Parametro.vb" />
     <Compile Include="Registro.vb" />
+    <Compile Include="Reporte.vb" />
     <Compile Include="Telefono.vb" />
     <Compile Include="TicketComprobante.vb" />
     <Compile Include="TipoTelefono.vb" />

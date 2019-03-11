@@ -41,6 +41,7 @@ Partial Class FormPrincipal
         Me.MenuReportes = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionReportesViajes = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionReporteComisionChoferes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionPuntajeChoferes = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuConsultas = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionViajesRealizados = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpcionViajesPendientes = New System.Windows.Forms.ToolStripMenuItem()
@@ -55,7 +56,6 @@ Partial Class FormPrincipal
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.OpcionPuntajeChoferes = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -145,6 +145,11 @@ Partial Class FormPrincipal
         Me.OpcionReporteComisionChoferes.Name = "OpcionReporteComisionChoferes"
         resources.ApplyResources(Me.OpcionReporteComisionChoferes, "OpcionReporteComisionChoferes")
         '
+        'OpcionPuntajeChoferes
+        '
+        Me.OpcionPuntajeChoferes.Name = "OpcionPuntajeChoferes"
+        resources.ApplyResources(Me.OpcionPuntajeChoferes, "OpcionPuntajeChoferes")
+        '
         'MenuConsultas
         '
         Me.MenuConsultas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionViajesRealizados, Me.OpcionViajesPendientes, Me.OpcionComisionesChofer})
@@ -215,11 +220,6 @@ Partial Class FormPrincipal
         Me.CerrarSesionToolStripMenuItem.BackColor = System.Drawing.Color.White
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
         resources.ApplyResources(Me.CerrarSesionToolStripMenuItem, "CerrarSesionToolStripMenuItem")
-        '
-        'OpcionPuntajeChoferes
-        '
-        Me.OpcionPuntajeChoferes.Name = "OpcionPuntajeChoferes"
-        resources.ApplyResources(Me.OpcionPuntajeChoferes, "OpcionPuntajeChoferes")
         '
         'FormPrincipal
         '

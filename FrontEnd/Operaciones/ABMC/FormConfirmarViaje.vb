@@ -2,10 +2,13 @@
     Public viaje As EL.Viaje
     Dim choferService As New BLL.Chofer()
     Dim viajeService As New BLL.Viaje()
+    Dim beneficioService As New BLL.Beneficio()
+
     Private Sub FormConfirmarViaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viajeService.ConsultarAPI(viaje)
         viajeService.SetBeneficios(viaje)
-        viaje.PrecioEstimado = viaje.PrecioEstimado - viaje.PrecioEstimado * viajeService.PorcDescBeneficios(viaje)
+        Dim valorDescuento As Decimal = viaje.PrecioEstimado * viajeService.PorcDescBeneficios(viaje)
+        viaje.PrecioEstimado = viaje.PrecioEstimado - valorDescuento
         LblAvisoDemora.Text = ""
         Dim listaChoferesDisponible As New List(Of EL.Chofer)()
         listaChoferesDisponible = choferService.ListarDisponibles(viaje.FechaSalidaEstimada)
@@ -23,6 +26,13 @@
         TxtHoraSalida.Text = viaje.FechaSalidaEstimada.ToShortDateString + " " + viaje.FechaSalidaEstimada.ToShortTimeString
         TxtKilometrosRecorrer.Text = viaje.KmEstimados
         TxtValor.Text = viaje.PrecioEstimado
+
+        viaje.Beneficios = beneficioService.Verificar(viaje.Socio.Id)
+
+        If valorDescuento > 0 Then
+            LblBeneficios.Text = "El usuario tiene beneficios! Si confirma, está ahorrando " + valorDescuento.ToString()
+        End If
+
     End Sub
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click

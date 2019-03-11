@@ -3321,6 +3321,12 @@
   <data name="&gt;&gt;OpcionReporteComisionChoferes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;OpcionPuntajeChoferes.Name" xml:space="preserve">
+    <value>OpcionPuntajeChoferes</value>
+  </data>
+  <data name="&gt;&gt;OpcionPuntajeChoferes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;MenuConsultas.Name" xml:space="preserve">
     <value>MenuConsultas</value>
   </data>
@@ -3398,12 +3404,6 @@
   </data>
   <data name="&gt;&gt;ToolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OpcionPuntajeChoferes.Name" xml:space="preserve">
-    <value>OpcionPuntajeChoferes</value>
-  </data>
-  <data name="&gt;&gt;OpcionPuntajeChoferes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormPrincipal</value>

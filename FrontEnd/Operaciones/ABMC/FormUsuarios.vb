@@ -1,8 +1,8 @@
 ﻿Public Class FormUsuarios
     Dim usuario As EL.Usuario
-    Dim datosUsuario As New BLL.Usuario()
-    Dim datosPermiso As New BLL.Permiso()
-    Dim datosTipoTelefono As New BLL.TipoTelefono()
+    Dim usuarioService As New BLL.Usuario()
+    Dim permisoService As New BLL.Permiso()
+    Dim tipoTelefonoService As New BLL.TipoTelefono()
 
     Private Sub CleanCheckList()
         ClbRoles.ClearSelected()
@@ -33,13 +33,13 @@
         TxtProvincia.Clear()
 
         CbbTiposTelefono.DataSource = New BindingSource With {
-            .DataSource = datosTipoTelefono.Listar()
+            .DataSource = tipoTelefonoService.Listar()
         }
         CbbTiposTelefono.DisplayMember = "Descripcion"
         CbbTiposTelefono.ValueMember = "Id"
 
         ClbRoles.DataSource = New BindingSource With {
-            .DataSource = datosPermiso.Listar()
+            .DataSource = permisoService.Listar()
         }
         ClbRoles.DisplayMember = "Descripcion"
         ClbRoles.ValueMember = "Id"
@@ -47,7 +47,7 @@
         dgvUsuarios.AutoGenerateColumns = False
         dgvUsuarios.Columns.Clear()
         dgvUsuarios.DataSource = Nothing
-        dgvUsuarios.DataSource = datosUsuario.Listar()
+        dgvUsuarios.DataSource = usuarioService.Listar()
         dgvUsuarios.Columns.Add(New DataGridViewTextBoxColumn() With {
                     .DataPropertyName = "Id",
                     .Name = "Id"
@@ -138,7 +138,7 @@
                 usuario.Permisos.Add(permiso)
             Next
             Try
-                datosUsuario.Guardar(usuario)
+                usuarioService.Guardar(usuario)
                 MessageBox.Show("Los cambios fueron guardados correctamente.")
             Catch ex As Exception
                 MessageBox.Show("Se ha producido un error al guardar los cambios. Error: " + ex.Message)
@@ -216,7 +216,7 @@
         If usuario IsNot Nothing Then
             Dim result As Integer = MessageBox.Show("Estas seguro que deseas eliminar este usuario?", "caption", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                datosUsuario.Quitar(usuario)
+                usuarioService.Quitar(usuario)
                 ActualizarLista()
             End If
         End If
@@ -227,7 +227,7 @@
             usuario = New EL.Usuario With {
                 .Id = dgvUsuarios.Rows(e.RowIndex).Cells(0).Value
             }
-            usuario = datosUsuario.GetById(usuario.Id)
+            usuario = usuarioService.GetById(usuario.Id)
         End If
     End Sub
 
@@ -243,7 +243,7 @@
         If usuario IsNot Nothing Then
             Dim result As Integer = MessageBox.Show("Estas seguro que deseas blanquear la clave de este usuario?", "caption", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                datosUsuario.BlanquearClave(usuario)
+                usuarioService.BlanquearClave(usuario)
                 ActualizarLista()
             End If
         End If

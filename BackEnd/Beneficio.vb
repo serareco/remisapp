@@ -1,6 +1,7 @@
 ﻿Public Class Beneficio
+    Dim beneficioDAL As New DAL.Beneficio()
     Public Function Verificar(pIdSocio As Int16) As List(Of EL.Beneficio)
-        Return New DAL.Beneficio().Verificar(pIdSocio)
+        Return beneficioDAL.Verificar(pIdSocio)
     End Function
 
     Public Function Listar() As List(Of EL.Beneficio)
@@ -8,16 +9,14 @@
     End Function
 
     Public Function GetById(pId As Int16) As EL.Beneficio
-        Return New DAL.Beneficio().GetById(pId)
+        Return beneficioDAL.GetById(pId)
     End Function
 
     Public Sub Guardar(beneficio As EL.Beneficio)
-        Dim e As New DAL.Beneficio()
-        e.Guardar(beneficio)
+        beneficioDAL.Guardar(beneficio)
     End Sub
 
     Public Sub Quitar(promocion As EL.Beneficio)
-        Dim e As New DAL.Beneficio()
-        e.Quitar(promocion)
+        beneficioDAL.Quitar(promocion)
     End Sub
 End Class

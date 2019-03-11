@@ -191,4 +191,8 @@ Public Class FormPrincipal
         FormParametrosSistema.Show()
     End Sub
 
+    Private Sub OpcionPuntajeChoferes_Click(sender As Object, e As EventArgs) Handles OpcionPuntajeChoferes.Click
+        FormConsultaPuntosChofer.MdiParent = Me
+        FormConsultaPuntosChofer.Show()
+    End Sub
 End Class

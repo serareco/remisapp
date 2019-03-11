@@ -38,6 +38,7 @@ Partial Class FormConfirmarViaje
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cbbChofer = New System.Windows.Forms.ComboBox()
         Me.LblAvisoDemora = New System.Windows.Forms.Label()
+        Me.LblBeneficios = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label5
@@ -85,7 +86,7 @@ Partial Class FormConfirmarViaje
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(43, 209)
+        Me.BtnGuardar.Location = New System.Drawing.Point(43, 220)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(123, 23)
         Me.BtnGuardar.TabIndex = 31
@@ -94,7 +95,7 @@ Partial Class FormConfirmarViaje
         '
         'BtnCerrar
         '
-        Me.BtnCerrar.Location = New System.Drawing.Point(235, 209)
+        Me.BtnCerrar.Location = New System.Drawing.Point(235, 220)
         Me.BtnCerrar.Name = "BtnCerrar"
         Me.BtnCerrar.Size = New System.Drawing.Size(112, 23)
         Me.BtnCerrar.TabIndex = 32
@@ -163,10 +164,18 @@ Partial Class FormConfirmarViaje
         'LblAvisoDemora
         '
         Me.LblAvisoDemora.AutoSize = True
-        Me.LblAvisoDemora.Location = New System.Drawing.Point(40, 179)
+        Me.LblAvisoDemora.Location = New System.Drawing.Point(40, 177)
         Me.LblAvisoDemora.Name = "LblAvisoDemora"
         Me.LblAvisoDemora.Size = New System.Drawing.Size(0, 13)
         Me.LblAvisoDemora.TabIndex = 43
+        '
+        'LblBeneficios
+        '
+        Me.LblBeneficios.AutoSize = True
+        Me.LblBeneficios.Location = New System.Drawing.Point(40, 199)
+        Me.LblBeneficios.Name = "LblBeneficios"
+        Me.LblBeneficios.Size = New System.Drawing.Size(0, 13)
+        Me.LblBeneficios.TabIndex = 44
         '
         'FormConfirmarViaje
         '
@@ -174,6 +183,7 @@ Partial Class FormConfirmarViaje
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(405, 250)
+        Me.Controls.Add(Me.LblBeneficios)
         Me.Controls.Add(Me.LblAvisoDemora)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cbbChofer)
@@ -213,4 +223,5 @@ Partial Class FormConfirmarViaje
     Friend WithEvents Label3 As Label
     Friend WithEvents cbbChofer As ComboBox
     Friend WithEvents LblAvisoDemora As Label
+    Friend WithEvents LblBeneficios As Label
 End Class
