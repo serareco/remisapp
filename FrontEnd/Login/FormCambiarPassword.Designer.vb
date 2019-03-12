@@ -24,9 +24,9 @@ Partial Class FormCambiarPassword
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCambiarPassword))
         Me.BtnIngresar = New System.Windows.Forms.Button()
-        Me.TxtPassword = New System.Windows.Forms.TextBox()
+        Me.TxtConfirmaPassword = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtPassword = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -40,13 +40,13 @@ Partial Class FormCambiarPassword
         Me.BtnIngresar.Text = "Modificar"
         Me.BtnIngresar.UseVisualStyleBackColor = True
         '
-        'TxtPassword
+        'TxtConfirmaPassword
         '
-        Me.TxtPassword.Location = New System.Drawing.Point(124, 90)
-        Me.TxtPassword.Name = "TxtPassword"
-        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtPassword.Size = New System.Drawing.Size(100, 20)
-        Me.TxtPassword.TabIndex = 2
+        Me.TxtConfirmaPassword.Location = New System.Drawing.Point(124, 90)
+        Me.TxtConfirmaPassword.Name = "TxtConfirmaPassword"
+        Me.TxtConfirmaPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtConfirmaPassword.Size = New System.Drawing.Size(100, 20)
+        Me.TxtConfirmaPassword.TabIndex = 2
         '
         'Label3
         '
@@ -57,13 +57,13 @@ Partial Class FormCambiarPassword
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Modifica tu Contraseña"
         '
-        'TextBox1
+        'TxtPassword
         '
-        Me.TextBox1.Location = New System.Drawing.Point(124, 60)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.TxtPassword.Location = New System.Drawing.Point(124, 60)
+        Me.TxtPassword.Name = "TxtPassword"
+        Me.TxtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtPassword.Size = New System.Drawing.Size(100, 20)
+        Me.TxtPassword.TabIndex = 1
         '
         'Label2
         '
@@ -91,9 +91,9 @@ Partial Class FormCambiarPassword
         Me.ClientSize = New System.Drawing.Size(288, 189)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.BtnIngresar)
         Me.Controls.Add(Me.TxtPassword)
+        Me.Controls.Add(Me.BtnIngresar)
+        Me.Controls.Add(Me.TxtConfirmaPassword)
         Me.Controls.Add(Me.Label3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -106,9 +106,9 @@ Partial Class FormCambiarPassword
     End Sub
 
     Friend WithEvents BtnIngresar As Button
-    Friend WithEvents TxtPassword As TextBox
+    Friend WithEvents TxtConfirmaPassword As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtPassword As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
 End Class

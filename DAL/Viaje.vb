@@ -105,7 +105,7 @@
         Return viaje
     End Function
 
-    Public Sub Guardar(viaje As EL.Viaje)
+    Public Sub Guardar(viaje As EL.Viaje, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         If (viaje.Id > 0) Then
@@ -166,6 +166,7 @@
                 parametros.Add(New SqlClient.SqlParameter("@beneficios", beneficios))
             End If
         End If
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.GuardarViaje", parametros)
     End Sub
 

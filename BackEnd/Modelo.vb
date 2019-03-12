@@ -1,11 +1,12 @@
 ﻿Public Class Modelo
+    Dim modeloDAL As New DAL.Modelo()
     Public Function GetById(pId As Int16) As EL.Modelo
-        Return New DAL.Modelo().GetById(pId)
+        Return modeloDAL.GetById(pId)
     End Function
     Public Function Listar() As List(Of EL.Modelo)
-        Return New DAL.Modelo().Listar()
+        Return modeloDAL.Listar()
     End Function
     Public Function Listar(pIdMarca As Int16)
-        Return New DAL.Modelo().Listar(pIdMarca)
+        Return modeloDAL.Listar(pIdMarca)
     End Function
 End Class

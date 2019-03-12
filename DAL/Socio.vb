@@ -27,17 +27,19 @@
         Return socios
     End Function
 
-    Public Sub Guardar(socio As EL.Socio)
+    Public Sub Guardar(socio As EL.Socio, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_persona", socio.Id))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.GuardarSocio", parametros)
     End Sub
 
-    Public Sub Quitar(socio As EL.Socio)
+    Public Sub Quitar(socio As EL.Socio, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_persona", socio.Id))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.QuitarSocio", parametros)
     End Sub
 

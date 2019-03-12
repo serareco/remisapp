@@ -28,7 +28,7 @@ Public Class Viaje
             ' TODO: ENUMERATOR - Salir temprano
             accionService.Guardar(chofer, accionService.GetById(3))
         End If
-        viajeDAL.Guardar(viaje)
+        viajeDAL.Guardar(viaje, Login.UsuarioConectado)
     End Sub
 
     Public Sub RegistrarArribo(viaje As EL.Viaje)
@@ -42,7 +42,7 @@ Public Class Viaje
             ' TODO: ENUMERATOR - Llegar temprano
             accionService.Guardar(viaje.Chofer, accionService.GetById(7))
         End If
-        viajeDAL.Guardar(viaje)
+        viajeDAL.Guardar(viaje, Login.UsuarioConectado)
         Dim ticketComprobanteService As New TicketComprobante()
         Dim ticketComprobante As New EL.TicketComprobante()
         ticketComprobante.FechaEmision = Now
@@ -69,12 +69,11 @@ Public Class Viaje
     End Function
 
     Public Function GetById(pId As Int16) As EL.Viaje
-        Return New DAL.Viaje().GetById(pId)
+        Return viajeDAL.GetById(pId)
     End Function
 
     Public Sub Guardar(viaje As EL.Viaje)
-        Dim e As New DAL.Viaje()
-        e.Guardar(viaje)
+        viajeDAL.Guardar(viaje, Login.UsuarioConectado)
     End Sub
     Public Sub SetBeneficios(ByRef pViaje As EL.Viaje)
         pViaje.Beneficios = New Beneficio().Verificar(pViaje.Socio.Id)

@@ -33,7 +33,7 @@ Public Class Chofer
         Return chofer
     End Function
 
-    Public Sub Guardar(chofer As EL.Chofer)
+    Public Sub Guardar(chofer As EL.Chofer, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_persona", chofer.Id))
@@ -47,13 +47,15 @@ Public Class Chofer
         Next
         turnos = turnos.Substring(0, turnos.Length() - 1)
         parametros.Add(New SqlClient.SqlParameter("@turnos", turnos))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.GuardarChofer", parametros)
     End Sub
 
-    Public Sub Quitar(chofer As EL.Chofer)
+    Public Sub Quitar(chofer As EL.Chofer, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_persona", chofer.Id))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.QuitarChofer", parametros)
     End Sub
 

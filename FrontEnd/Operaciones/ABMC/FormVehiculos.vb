@@ -1,8 +1,8 @@
 ﻿Public Class FormVehiculos
     Dim auto As EL.Vehiculo
-    Dim datosVehiculos As New BLL.Vehiculo()
-    Dim datosMarcas As New BLL.Marca()
-    Dim datosModelos As New BLL.Modelo()
+    Dim vehiculoService As New BLL.Vehiculo()
+    Dim marcaService As New BLL.Marca()
+    Dim modeloService As New BLL.Modelo()
 
     Public Sub ActualizarLista()
         txtAnioFabricacion.Clear()
@@ -18,7 +18,7 @@
         auto = Nothing
 
         cbbMarca.DataSource = New BindingSource With {
-            .DataSource = datosMarcas.Listar()
+            .DataSource = marcaService.Listar()
         }
         cbbMarca.DisplayMember = "Descripcion"
         cbbMarca.ValueMember = "Id"
@@ -26,7 +26,7 @@
         dgvAutos.AutoGenerateColumns = False
         dgvAutos.AutoSize = True
         dgvAutos.Columns.Clear()
-        dgvAutos.DataSource = datosVehiculos.Listar()
+        dgvAutos.DataSource = vehiculoService.Listar()
         dgvAutos.Columns.Add(New DataGridViewTextBoxColumn() With {
                     .DataPropertyName = "Id",
                     .Name = "ID"
@@ -79,13 +79,18 @@
         If erroresValidaciones Then
             MessageBox.Show(msjValidaciones)
         Else
-            auto.Modelo = datosModelos.GetById(cbbModelo.SelectedValue)
+            auto.Modelo = modeloService.GetById(cbbModelo.SelectedValue)
             auto.AnioFabricacion = txtAnioFabricacion.Text
             auto.Patente = txtPatente.Text
             auto.Chasis = txtChasis.Text
             auto.Motor = txtMotor.Text
             auto.FechaVencimientoVTV = dtpFechaVTV.Value
-            datosVehiculos.Guardar(auto)
+            Try
+                vehiculoService.Guardar(auto)
+                MessageBox.Show("Los cambios fueron guardados correctamente.")
+            Catch ex As Exception
+                MessageBox.Show("Se ha producido un error al guardar los cambios. Error: " + ex.Message)
+            End Try
             ActualizarLista()
         End If
     End Sub
@@ -99,7 +104,7 @@
             valueIdSelected = cbbMarca.SelectedValue
         End If
         cbbModelo.DataSource = New BindingSource With {
-                .DataSource = datosModelos.Listar(valueIdSelected)
+                .DataSource = modeloService.Listar(valueIdSelected)
             }
         cbbModelo.DisplayMember = "Descripcion"
         cbbModelo.ValueMember = "Id"
@@ -128,7 +133,7 @@
         If auto IsNot Nothing Then
             Dim result As Integer = MessageBox.Show("Estas seguro que deseas eliminar este auto?", "caption", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                datosVehiculos.Quitar(auto)
+                vehiculoService.Quitar(auto)
                 ActualizarLista()
             End If
         End If
@@ -143,6 +148,6 @@
         auto = New EL.Vehiculo With {
             .Id = dgvAutos.Rows(e.RowIndex).Cells(0).Value
         }
-        auto = datosVehiculos.GetById(auto.Id)
+        auto = vehiculoService.GetById(auto.Id)
     End Sub
 End Class

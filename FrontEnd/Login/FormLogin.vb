@@ -4,7 +4,7 @@
     Private Sub Ingresar()
         Dim datosLogin As New EL.Login()
         datosLogin.Usuario = New EL.Usuario() With {.Usuario = TxtUsuario.Text(), .Password = TxtPassword.Text()}
-        If (BLL.Login.Login(datosLogin.Usuario)) Then
+        If (BLL.Login.Login(datosLogin)) Then
             LblMsjValidacion.Text() = ""
             If (MostrarSalida Or MostrarArribo) And Not BLL.Login.EsChofer() Then
                 LblMsjValidacion.Text() = "No puede informar la salida del servicio." + vbCrLf + "El usuario no es Chofer."
@@ -16,7 +16,7 @@
             ElseIf MostrarArribo And BLL.Login.EsChofer() Then
                 FormArribo.Show()
                 Me.Close()
-            ElseIf ChkChangePss.Checked Then
+            ElseIf (ChkChangePss.Checked Or datosLogin.PrimerIngreso) Then
                 FormCambiarPassword.Show()
                 Me.Close()
             ElseIf Not (MostrarSalida Or MostrarArribo) Then
@@ -48,6 +48,10 @@
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If (MostrarSalida Or MostrarArribo) Then
             ChkChangePss.Enabled = False
+            If MostrarArribo Then
+                TxtUsuario.Enabled = False
+                TxtUsuario.Text = FormArribo.viaje.Chofer.Usuario
+            End If
         End If
     End Sub
 End Class

@@ -65,7 +65,6 @@
   <ItemGroup>
     <Compile Include="Accion.vb" />
     <Compile Include="Parametro.vb" />
-    <Compile Include="Reporte.vb" />
     <Compile Include="Telefono.vb" />
     <Compile Include="TipoTelefono.vb" />
     <Compile Include="Vehiculo.vb" />
@@ -110,6 +109,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DiagramaEL.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

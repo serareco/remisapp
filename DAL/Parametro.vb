@@ -43,7 +43,7 @@
         Return parametros
     End Function
 
-    Public Sub Guardar(parametro As EL.Parametro)
+    Public Sub Guardar(parametro As EL.Parametro, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametrosSQL As New List(Of SqlClient.SqlParameter)
         parametrosSQL.Add(New SqlClient.SqlParameter("@id_parametro", parametro.Id))
@@ -53,13 +53,15 @@
         If parametro.VigenciaHasta <> DateTime.MinValue Then
             parametrosSQL.Add(New SqlClient.SqlParameter("@vigencia_hasta", parametro.VigenciaHasta))
         End If
+        parametrosSQL.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.GuardarParametro", parametrosSQL)
     End Sub
 
-    Public Sub Quitar(parametro As EL.Parametro)
+    Public Sub Quitar(parametro As EL.Parametro, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametrosSQL As New List(Of SqlClient.SqlParameter)
         parametrosSQL.Add(New SqlClient.SqlParameter("@id_parametro", parametro.Id))
+        parametrosSQL.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.QuitarParametro", parametrosSQL)
     End Sub
 End Class

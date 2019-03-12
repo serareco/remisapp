@@ -27,7 +27,7 @@
         auto.Chasis = datatable.Rows(0).ItemArray(5).ToString()
         Return auto
     End Function
-    Public Sub Guardar(auto As EL.Vehiculo)
+    Public Sub Guardar(auto As EL.Vehiculo, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_vehiculo", auto.Id))
@@ -37,12 +37,14 @@
         parametros.Add(New SqlClient.SqlParameter("@Chasis", auto.Chasis))
         parametros.Add(New SqlClient.SqlParameter("@Motor", auto.Motor))
         parametros.Add(New SqlClient.SqlParameter("@Fecha_Vencimiento_VTV", auto.FechaVencimientoVTV))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.GuardarVehiculo", parametros)
     End Sub
-    Public Sub Quitar(auto As EL.Vehiculo)
+    Public Sub Quitar(auto As EL.Vehiculo, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_vehiculo", auto.Id))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.QuitarVehiculo", parametros)
     End Sub
 End Class

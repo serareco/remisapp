@@ -1,5 +1,5 @@
 ﻿Public Class TicketComprobante
-    Public Sub Guardar(ByRef pticketComprobante As EL.TicketComprobante)
+    Public Sub Guardar(pticketComprobante As EL.TicketComprobante)
         Dim con As New Conexion
         Dim pRespuesta As New SqlClient.SqlParameter("@id_ticket_comprobante", SqlDbType.Decimal)
         Dim parametros As New List(Of SqlClient.SqlParameter)

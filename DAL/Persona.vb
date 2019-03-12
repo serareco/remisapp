@@ -29,9 +29,6 @@
             persona.FechaNacimiento = Nothing
         End Try
         Try
-
-
-
             domicilio = domicilioService.GetByPersonaId(persona.Id)(0)
         Catch ex As Exception
             domicilio = Nothing
@@ -42,7 +39,7 @@
         Return persona
     End Function
 
-    Public Sub Guardar(ByRef persona As EL.Persona)
+    Public Sub Guardar(ByRef persona As EL.Persona, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         Dim pRespuesta As New SqlClient.SqlParameter("@id_persona", SqlDbType.Int)
@@ -68,6 +65,7 @@
             pRespuesta.Value = persona.Id
         End If
         parametros.Add(pRespuesta)
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.GuardarPersona", parametros)
         If persona.Id = 0 Then
             persona.Id = pRespuesta.Value

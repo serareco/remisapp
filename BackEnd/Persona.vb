@@ -1,11 +1,11 @@
 ﻿Public Class Persona
+    Dim personaDAL As New DAL.Persona()
     Public Sub Guardar(persona As EL.Persona)
-        Dim e As New DAL.Persona()
-        e.Guardar(persona)
+        personaDAL.Guardar(persona, Login.UsuarioConectado)
     End Sub
 
     Public Function GetById(pId As Int16) As EL.Persona
-        Return New DAL.Persona().GetById(pId)
+        Return personaDAL.GetById(pId)
     End Function
 
 End Class

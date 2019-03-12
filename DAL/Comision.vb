@@ -48,7 +48,7 @@
         Return comisiones
     End Function
 
-    Public Sub Guardar(comision As EL.Comision)
+    Public Sub Guardar(comision As EL.Comision, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_comision", comision.Id))
@@ -58,13 +58,15 @@
         If comision.VigenciaHasta <> DateTime.MinValue Then
             parametros.Add(New SqlClient.SqlParameter("@vigencia_hasta", comision.VigenciaHasta))
         End If
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.GuardarComision", parametros)
     End Sub
 
-    Public Sub Quitar(comision As EL.Comision)
+    Public Sub Quitar(comision As EL.Comision, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_comision", comision.Id))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.QuitarComision", parametros)
     End Sub
 

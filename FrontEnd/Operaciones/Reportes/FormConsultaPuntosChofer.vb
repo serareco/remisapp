@@ -1,7 +1,6 @@
 ﻿Public Class FormConsultaPuntosChofer
     Dim choferService As New BLL.Chofer()
     Dim accionService As New BLL.Accion()
-    Dim reporteService As New BLL.Reporte()
 
     Private Sub CleanCheckList()
         ClbAccion.ClearSelected()
@@ -31,13 +30,6 @@
     End Sub
 
     Private Sub BtnConsultar_Click(sender As Object, e As EventArgs) Handles BtnConsultar.Click
-        reporteService.Parametros = New List(Of Object)
-        reporteService.Parametros.Add(cbbChofer.SelectedValue)
-        reporteService.Parametros.Add(dtpFechaDesde.Value)
-        reporteService.Parametros.Add(dtpFechaHasta.Value)
-        reporteService.Parametros.Add(ChkActivo.Checked)
-        reporteService.Parametros.Add(ChkVigente.Checked)
-
 
     End Sub
 End Class

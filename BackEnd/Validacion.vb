@@ -14,9 +14,11 @@ Public Module Validacion
         Else
             Return False
         End If
-
     End Function
     Public Function DatoObligatorioVacio(pValor As String, pValorNull As Object) As Boolean
         Return pValor = pValorNull
+    End Function
+    Public Function ValoresIguales(pTexto As String, pTexto2 As String) As Boolean
+        Return pTexto = pTexto2
     End Function
 End Module

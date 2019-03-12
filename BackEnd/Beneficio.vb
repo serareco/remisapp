@@ -5,7 +5,7 @@
     End Function
 
     Public Function Listar() As List(Of EL.Beneficio)
-        Return New DAL.Beneficio().Listar()
+        Return beneficioDAL.Listar()
     End Function
 
     Public Function GetById(pId As Int16) As EL.Beneficio
@@ -13,10 +13,10 @@
     End Function
 
     Public Sub Guardar(beneficio As EL.Beneficio)
-        beneficioDAL.Guardar(beneficio)
+        beneficioDAL.Guardar(beneficio, Login.UsuarioConectado)
     End Sub
 
     Public Sub Quitar(promocion As EL.Beneficio)
-        beneficioDAL.Quitar(promocion)
+        beneficioDAL.Quitar(promocion, Login.UsuarioConectado)
     End Sub
 End Class

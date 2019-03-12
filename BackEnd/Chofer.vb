@@ -1,6 +1,6 @@
 ﻿Public Class Chofer
     Dim choferDAL As New DAL.Chofer()
-
+    Dim personaService As New Persona()
     Public Function Listar() As List(Of EL.Chofer)
         Return choferDAL.Listar()
     End Function
@@ -11,9 +11,8 @@
 
     Public Sub Guardar(chofer As EL.Chofer)
         Dim registrarUsuario As Boolean = (chofer.Id <= 0)
-        Dim p As New Persona()
-        p.Guardar(chofer)
-        choferDAL.Guardar(chofer)
+        personaService.Guardar(chofer)
+        choferDAL.Guardar(chofer, Login.UsuarioConectado)
         If registrarUsuario Then
             Dim usuarioService As New Usuario()
             chofer.Usuario = chofer.NroDocumento
@@ -25,7 +24,7 @@
     End Sub
 
     Public Sub Quitar(chofer As EL.Chofer)
-        choferDAL.Quitar(chofer)
+        choferDAL.Quitar(chofer, Login.UsuarioConectado)
     End Sub
 
     Public Function ListarEnCondiciones() As List(Of EL.Chofer)

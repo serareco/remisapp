@@ -13,11 +13,11 @@
     End Function
 
     Public Sub Guardar(parametro As EL.Parametro)
-        parametroDAL.Guardar(parametro)
+        parametroDAL.Guardar(parametro, Login.UsuarioConectado)
     End Sub
 
     Public Sub Quitar(parametro As EL.Parametro)
-        parametroDAL.Quitar(parametro)
+        parametroDAL.Quitar(parametro, Login.UsuarioConectado)
     End Sub
 
     Public Function GetValueByKey(pclave As String) As String

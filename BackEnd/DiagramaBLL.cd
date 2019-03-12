@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="BLL.Accion">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAoA=</HashCode>
+      <FileName>Accion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Beneficio">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAgAAAAAAAAAAAAAAAAgFAAAAIA=</HashCode>
+      <FileName>Beneficio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Chofer">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAEAAAAAAAAACAAAAAAAAAABAgAAgBAAAAIA=</HashCode>
+      <FileName>Chofer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Comision">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAEAAAAAAAAAAAAAAAAAAAAAgAAAgBAAAAIA=</HashCode>
+      <FileName>Comision.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Domicilio">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Domicilio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.EstadoViaje">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAAAAAAAAAIA=</HashCode>
+      <FileName>EstadoViaje.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Marca">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Marca.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Modelo">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Modelo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Parametro">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAEAAAAAEABAAAAAAAAAAAAAAAAAgBAAAAIA=</HashCode>
+      <FileName>Parametro.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Permiso">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Permiso.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Persona">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAIA=</HashCode>
+      <FileName>Persona.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Registro">
+    <Position X="4" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Registro.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Socio">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAIA=</HashCode>
+      <FileName>Socio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Telefono">
+    <Position X="7.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Telefono.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.TicketComprobante">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>TicketComprobante.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.TipoTelefono">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>TipoTelefono.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Turno">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Turno.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Usuario">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAAAAAAIAAAAAAAAAAAAAAAAgBAAAAIA=</HashCode>
+      <FileName>Usuario.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Vehiculo">
+    <Position X="7.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAIA=</HashCode>
+      <FileName>Vehiculo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BLL.Viaje">
+    <Position X="7.5" Y="8.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgEAQAAAACAAAAAAAAAAAAAECQKGABAFAAIQ=</HashCode>
+      <FileName>Viaje.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Module Name="BLL.GestorCorreo">
+    <Position X="4" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAABAAA=</HashCode>
+      <FileName>Correo.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="BLL.GestorPDF">
+    <Position X="5.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GestorPDF.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="BLL.Login">
+    <Position X="2.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAIAAAAAAEAAAAAAABAAggAAAAIAAQEAAEAAA=</HashCode>
+      <FileName>Login.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="BLL.Validacion">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAEAAAAAAAAAAAAADAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validacion.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

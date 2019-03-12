@@ -1,17 +1,16 @@
 ﻿Imports DAL
 Public Class Vehiculo
+    Dim vehiculoDAL As New DAL.Vehiculo()
     Public Function Listar() As List(Of EL.Vehiculo)
-        Return New DAL.Vehiculo().Listar()
+        Return vehiculoDAL.Listar()
     End Function
     Public Function GetById(pId As Int16) As EL.Vehiculo
-        Return New DAL.Vehiculo().GetById(pId)
+        Return vehiculoDAL.GetById(pId)
     End Function
     Public Sub Guardar(auto As EL.Vehiculo)
-        Dim e As New DAL.Vehiculo()
-        e.Guardar(auto)
+        vehiculoDAL.Guardar(auto, Login.UsuarioConectado)
     End Sub
     Public Sub Quitar(auto As EL.Vehiculo)
-        Dim e As New DAL.Vehiculo()
-        e.Quitar(auto)
+        vehiculoDAL.Quitar(auto, Login.UsuarioConectado)
     End Sub
 End Class

@@ -9,7 +9,7 @@
     End Function
 
     Public Sub Guardar(pAccion As EL.Accion)
-        accionDAL.Guardar(pAccion)
+        accionDAL.Guardar(pAccion, Login.UsuarioConectado)
     End Sub
 
     Public Sub Guardar(pChofer As EL.Chofer, pAccion As EL.Accion)

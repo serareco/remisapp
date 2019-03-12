@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
+  <Class Name="EL.Accion">
+    <Position X="14.75" Y="4.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIACAAAAABAAAAAkAABAAICBAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Accion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Beneficio">
+    <Position X="2.25" Y="11" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAQAAkAABAAICBAAAAAACAAAAKAIAAAAQ=</HashCode>
+      <FileName>Beneficio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Chofer">
+    <Position X="7.5" Y="7.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAUAAAAACAAgAAAAAAAAAAQAAAAgAAAAAAAABCAAAAA=</HashCode>
+      <FileName>Chofer.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Comision" />
+      <Property Name="Auto" />
+      <Property Name="Registro" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Turnos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="EL.Comision">
+    <Position X="7.5" Y="13.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAgAAAAAkAABAAIChAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Comision.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Domicilio">
+    <Position X="5.75" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAFAADgAACAGQQAEABAAAAAAAABAgA=</HashCode>
+      <FileName>Domicilio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.EstadoViaje">
+    <Position X="8.25" Y="10.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAABAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EstadoViaje.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Login">
+    <Position X="3.5" Y="2.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAwBAAAAABAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Login.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Usuario" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EL.Marca">
+    <Position X="16.5" Y="8.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAABAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Marca.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Modelo">
+    <Position X="13.5" Y="8" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAACAAAEAABAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modelo.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Marca" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EL.Parametro" Collapsed="true">
+    <Position X="11.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIgCAAAAAAAAAABkAABAAICEAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Parametro.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Permiso">
+    <Position X="3.25" Y="5.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAABAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Permiso.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Persona">
+    <Position X="8.75" Y="1.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAACAAAAACAAAAQEEABAgAAAAAgAAAACAAAAAgMAAIE=</HashCode>
+      <FileName>Persona.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Domicilio" />
+      <Property Name="Telefono" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EL.Registro">
+    <Position X="12.5" Y="5.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAgAAIAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Registro.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Socio">
+    <Position X="9.75" Y="5" Width="2" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIgAAAAAAQAAAAAAAAAAAAACAgAAAAQAAAAAA=</HashCode>
+      <FileName>Socio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Telefono">
+    <Position X="11.75" Y="2" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABCQAAAAAAAAAAAAABAgAAAAAAQABABAAAAAAADAAA=</HashCode>
+      <FileName>Telefono.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TipoTelefono" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EL.TicketComprobante">
+    <Position X="2.25" Y="8.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAABAAAABAAQAQAAAAAAAAAAAEAA=</HashCode>
+      <FileName>TicketComprobante.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Viaje" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EL.TipoTelefono">
+    <Position X="14.75" Y="2.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAABAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoTelefono.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Turno">
+    <Position X="10.5" Y="11.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEOAAAAAAAAAAAEAABAAAABAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Turno.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EL.Usuario">
+    <Position X="7.5" Y="5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAABAABAAAAAAAAAAAAAAAAAAAAACAAAEAAAAAAI=</HashCode>
+      <FileName>Usuario.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Permisos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="EL.Vehiculo">
+    <Position X="10.5" Y="8.25" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACIAIAAggAQBAkAAJAAACAAAAAAAAAAAgAAgABAAA=</HashCode>
+      <FileName>Vehiculo.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Modelo" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EL.Viaje">
+    <Position X="5.25" Y="7.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAiBQUAAgIoAUAAgBLAAWARIAABEAwAAAAgA4AAlEw=</HashCode>
+      <FileName>Viaje.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ChoferEstimado" />
+      <Property Name="Chofer" />
+      <Property Name="Socio" />
+      <Property Name="Estado" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Beneficios" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

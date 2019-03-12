@@ -1,33 +1,32 @@
 ﻿Public Class Usuario
+    Dim personaDAL As New DAL.Persona()
+    Dim usuarioDAL As New DAL.Usuario()
+
     Public Function Listar() As List(Of EL.Usuario)
         Return New DAL.Usuario().Listar()
     End Function
 
     Public Function GetById(pId As Int16) As EL.Usuario
-        Dim usuario As EL.Usuario = New DAL.Usuario().GetById(pId)
+        Dim usuario As EL.Usuario = usuarioDAL.GetById(pId)
         usuario.Permisos = Login.GetPermisos(usuario.Usuario)
         Return usuario
     End Function
 
     Public Sub Guardar(usuario As EL.Usuario)
-        Dim p As New Persona()
-        p.Guardar(usuario)
-        Dim e As New DAL.Usuario()
-        e.Guardar(usuario)
+        personaDAL.Guardar(usuario, Login.UsuarioConectado)
+        usuarioDAL.Guardar(usuario, Login.UsuarioConectado)
     End Sub
 
     Public Sub BlanquearClave(usuario As EL.Usuario)
-        Dim e As New DAL.Usuario()
-        e.BlanquearClave(usuario)
+        usuarioDAL.BlanquearClave(usuario)
     End Sub
 
     Public Sub Quitar(usuario As EL.Usuario)
-        Dim e As New DAL.Usuario()
-        e.Quitar(usuario)
+        usuarioDAL.Quitar(usuario, Login.UsuarioConectado)
     End Sub
 
     Public Function GetByUsuario(pUsuario As String) As EL.Usuario
-        Dim usuario As EL.Usuario = New DAL.Usuario().GetByUsuario(pUsuario)
+        Dim usuario As EL.Usuario = usuarioDAL.GetByUsuario(pUsuario)
         usuario.Permisos = Login.GetPermisos(usuario.Usuario)
         Return usuario
     End Function

@@ -62,7 +62,7 @@
         Return datatable
     End Function
 
-    Public Sub Guardar(promocion As EL.Beneficio)
+    Public Sub Guardar(promocion As EL.Beneficio, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_beneficio", promocion.Id))
@@ -76,14 +76,16 @@
         End If
         parametros.Add(New SqlClient.SqlParameter("@cantidadViajes", promocion.CantidadViajes))
         parametros.Add(New SqlClient.SqlParameter("@totalAcumulado", promocion.TotalAcumulado))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.GuardarBeneficio", parametros)
 
     End Sub
 
-    Public Sub Quitar(promocion As EL.Beneficio)
+    Public Sub Quitar(promocion As EL.Beneficio, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_beneficio", promocion.Id))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.QuitarBeneficio", parametros)
     End Sub
 

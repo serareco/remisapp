@@ -1,4 +1,5 @@
 ﻿Public Module Login
+    Dim loginDAL As New DAL.Login()
     Private _usuarioConectado As EL.Usuario
     Public Property UsuarioConectado() As EL.Usuario
         Get
@@ -17,13 +18,13 @@
         Return "Usuario: " + UsuarioConectado.Usuario + " - " + UsuarioConectado.Apellido + ", " + UsuarioConectado.Nombre
     End Function
 
-    Public Function Login(pUsuarioLogin As EL.Usuario) As Boolean
-        Dim resultLogin As Boolean = New DAL.Login().Login(pUsuarioLogin)
-        If resultLogin Then
-            UsuarioConectado = New Usuario().GetByUsuario(pUsuarioLogin.Usuario)
+    Public Function Login(ByRef pLogin As EL.Login) As Boolean
+        If loginDAL.Login(pLogin) Then
+            UsuarioConectado = New Usuario().GetByUsuario(pLogin.Usuario.Usuario)
+            Return True
+        Else
+            Return False
         End If
-        Return resultLogin
-
     End Function
 
     Public Function GetPermisos(pUsuario As String) As List(Of EL.Permiso)
@@ -85,5 +86,10 @@
         Next
         Return False
     End Function
+
+    Public Sub ActualizarPassword(pTxtPassword As String)
+        UsuarioConectado.Password = pTxtPassword
+        loginDAL.ActualizarPassword(UsuarioConectado)
+    End Sub
 
 End Module

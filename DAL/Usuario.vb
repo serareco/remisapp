@@ -38,12 +38,13 @@
         con.EjecutarStoredProcedure("dbo.BlanquearClave", parametros)
     End Sub
 
-    Public Sub Guardar(usuario As EL.Usuario)
+    Public Sub Guardar(usuario As EL.Usuario, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_persona", usuario.Id))
         parametros.Add(New SqlClient.SqlParameter("@usuario", usuario.Usuario))
         parametros.Add(New SqlClient.SqlParameter("@password", usuario.Password))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.GuardarUsuario", parametros)
 
         parametros = Nothing
@@ -58,10 +59,11 @@
         con.EjecutarStoredProcedure("dbo.GuardarPermisosUsuario", parametros)
     End Sub
 
-    Public Sub Quitar(usuario As EL.Usuario)
+    Public Sub Quitar(usuario As EL.Usuario, usuarioConectado As EL.Usuario)
         Dim con As New Conexion()
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@usuario", usuario.Usuario))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.QuitarUsuario", parametros)
     End Sub
 

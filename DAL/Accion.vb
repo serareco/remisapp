@@ -30,7 +30,7 @@ Public Class Accion
         Return accion
     End Function
 
-    Public Sub Guardar(pAccion As EL.Accion)
+    Public Sub Guardar(pAccion As EL.Accion, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_accion", pAccion.Id))
@@ -40,6 +40,7 @@ Public Class Accion
         If pAccion.VigenciaHasta <> DateTime.MinValue Then
             parametros.Add(New SqlClient.SqlParameter("@vigencia_hasta", pAccion.VigenciaHasta))
         End If
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.GuardarAccion", parametros)
     End Sub
 
@@ -51,10 +52,11 @@ Public Class Accion
         con.EjecutarStoredProcedure("dbo.GuardarChoferAccion", parametros)
     End Sub
 
-    Public Sub Quitar(pAccion As EL.Accion)
+    Public Sub Quitar(pAccion As EL.Accion, usuarioConectado As EL.Usuario)
         Dim con As New Conexion
         Dim parametros As New List(Of SqlClient.SqlParameter)
         parametros.Add(New SqlClient.SqlParameter("@id_accion", pAccion.Id))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
         con.EjecutarStoredProcedure("dbo.QuitarAccion", parametros)
     End Sub
 
