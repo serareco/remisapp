@@ -43,13 +43,15 @@ Public Class Viaje
             accionService.Guardar(viaje.Chofer, accionService.GetById(7))
         End If
         viajeDAL.Guardar(viaje, Login.UsuarioConectado)
-        Dim ticketComprobanteService As New TicketComprobante()
-        Dim ticketComprobante As New EL.TicketComprobante()
-        ticketComprobante.FechaEmision = Now
-        ticketComprobante.Viaje = viaje
-        ticketComprobanteService.Guardar(ticketComprobante)
-        GestorPDF.ImprimirTicketComprobante(ticketComprobante)
-        GestorCorreo.enviarTicketComprobante(ticketComprobante)
+        If viaje.Estado.Id = 5 Then
+            Dim ticketComprobanteService As New TicketComprobante()
+            Dim ticketComprobante As New EL.TicketComprobante()
+            ticketComprobante.FechaEmision = Now
+            ticketComprobante.Viaje = viaje
+            ticketComprobanteService.Guardar(ticketComprobante)
+            GestorPDF.ImprimirTicketComprobante(ticketComprobante)
+            GestorCorreo.enviarTicketComprobante(ticketComprobante)
+        End If
     End Sub
 
     Public Function ListarEnCurso() As List(Of EL.Viaje)

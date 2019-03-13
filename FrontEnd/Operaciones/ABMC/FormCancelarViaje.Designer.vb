@@ -26,19 +26,20 @@ Partial Class FormCancelarViaje
         Me.BtnConfirmarCancelar = New System.Windows.Forms.Button()
         Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'TxtComentarios
         '
-        Me.TxtComentarios.Location = New System.Drawing.Point(20, 57)
+        Me.TxtComentarios.Location = New System.Drawing.Point(12, 64)
         Me.TxtComentarios.Multiline = True
         Me.TxtComentarios.Name = "TxtComentarios"
-        Me.TxtComentarios.Size = New System.Drawing.Size(298, 65)
+        Me.TxtComentarios.Size = New System.Drawing.Size(313, 65)
         Me.TxtComentarios.TabIndex = 0
         '
         'BtnConfirmarCancelar
         '
-        Me.BtnConfirmarCancelar.Location = New System.Drawing.Point(20, 152)
+        Me.BtnConfirmarCancelar.Location = New System.Drawing.Point(12, 152)
         Me.BtnConfirmarCancelar.Name = "BtnConfirmarCancelar"
         Me.BtnConfirmarCancelar.Size = New System.Drawing.Size(136, 23)
         Me.BtnConfirmarCancelar.TabIndex = 1
@@ -47,7 +48,7 @@ Partial Class FormCancelarViaje
         '
         'BtnCerrar
         '
-        Me.BtnCerrar.Location = New System.Drawing.Point(215, 152)
+        Me.BtnCerrar.Location = New System.Drawing.Point(222, 152)
         Me.BtnCerrar.Name = "BtnCerrar"
         Me.BtnCerrar.Size = New System.Drawing.Size(103, 23)
         Me.BtnCerrar.TabIndex = 2
@@ -57,18 +58,28 @@ Partial Class FormCancelarViaje
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(17, 35)
+        Me.Label1.Location = New System.Drawing.Point(9, 11)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(131, 13)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Motivos de cancelamiento"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(9, 31)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(316, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Recuerde que cancelar un viaje modifica los beneficios del socio."
         '
         'FormCancelarViaje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(335, 212)
+        Me.ClientSize = New System.Drawing.Size(335, 191)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnCerrar)
         Me.Controls.Add(Me.BtnConfirmarCancelar)
@@ -85,4 +96,5 @@ Partial Class FormCancelarViaje
     Friend WithEvents BtnConfirmarCancelar As Button
     Friend WithEvents BtnCerrar As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class

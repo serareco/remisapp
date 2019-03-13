@@ -33,9 +33,7 @@
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        If viaje Is Nothing Then
-            viaje = New EL.Viaje()
-        End If
+        viaje = New EL.Viaje()
         viaje.Origen = txtOrigen.Text()
         viaje.Destino = txtDestino.Text()
         If ChbSalidaInmediata.Checked Then
@@ -77,6 +75,7 @@
     Private Sub BtnCancelarViaje_Click(sender As Object, e As EventArgs) Handles BtnCancelarViaje.Click
         If viaje IsNot Nothing Then
             FormCancelarViaje.viaje = viaje
+            FormCancelarViaje.formOrigen = Me
             FormCancelarViaje.Show()
         End If
     End Sub

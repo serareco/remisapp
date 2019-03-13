@@ -28,7 +28,7 @@ Partial Class FormArribo
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtComentarios = New System.Windows.Forms.TextBox()
+        Me.TxtEspera = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.gbxViajes = New System.Windows.Forms.GroupBox()
         Me.dtpFechaArribo = New System.Windows.Forms.DateTimePicker()
@@ -41,22 +41,22 @@ Partial Class FormArribo
         '
         'TxtKilometrosRecorridos
         '
-        Me.TxtKilometrosRecorridos.Location = New System.Drawing.Point(141, 30)
+        Me.TxtKilometrosRecorridos.Location = New System.Drawing.Point(152, 37)
         Me.TxtKilometrosRecorridos.Name = "TxtKilometrosRecorridos"
-        Me.TxtKilometrosRecorridos.Size = New System.Drawing.Size(209, 20)
+        Me.TxtKilometrosRecorridos.Size = New System.Drawing.Size(188, 20)
         Me.TxtKilometrosRecorridos.TabIndex = 0
         '
         'TxtPrecio
         '
-        Me.TxtPrecio.Location = New System.Drawing.Point(141, 55)
+        Me.TxtPrecio.Location = New System.Drawing.Point(152, 62)
         Me.TxtPrecio.Name = "TxtPrecio"
-        Me.TxtPrecio.Size = New System.Drawing.Size(209, 20)
+        Me.TxtPrecio.Size = New System.Drawing.Size(188, 20)
         Me.TxtPrecio.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(29, 36)
+        Me.Label1.Location = New System.Drawing.Point(29, 43)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(109, 13)
         Me.Label1.TabIndex = 3
@@ -65,7 +65,7 @@ Partial Class FormArribo
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(29, 62)
+        Me.Label2.Location = New System.Drawing.Point(17, 53)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(37, 13)
         Me.Label2.TabIndex = 4
@@ -74,24 +74,23 @@ Partial Class FormArribo
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(29, 84)
+        Me.Label3.Location = New System.Drawing.Point(17, 79)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 13)
+        Me.Label3.Size = New System.Drawing.Size(79, 13)
         Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Comentarios"
+        Me.Label3.Text = "TIempo Espera"
         '
-        'TxtComentarios
+        'TxtEspera
         '
-        Me.TxtComentarios.Location = New System.Drawing.Point(141, 81)
-        Me.TxtComentarios.Multiline = True
-        Me.TxtComentarios.Name = "TxtComentarios"
-        Me.TxtComentarios.Size = New System.Drawing.Size(209, 46)
-        Me.TxtComentarios.TabIndex = 6
+        Me.TxtEspera.Location = New System.Drawing.Point(152, 88)
+        Me.TxtEspera.Name = "TxtEspera"
+        Me.TxtEspera.Size = New System.Drawing.Size(188, 20)
+        Me.TxtEspera.TabIndex = 6
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(29, 139)
+        Me.Label4.Location = New System.Drawing.Point(17, 107)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(67, 13)
         Me.Label4.TabIndex = 7
@@ -99,6 +98,9 @@ Partial Class FormArribo
         '
         'gbxViajes
         '
+        Me.gbxViajes.Controls.Add(Me.Label4)
+        Me.gbxViajes.Controls.Add(Me.Label2)
+        Me.gbxViajes.Controls.Add(Me.Label3)
         Me.gbxViajes.Controls.Add(Me.dtpFechaArribo)
         Me.gbxViajes.Controls.Add(Me.Label5)
         Me.gbxViajes.Controls.Add(Me.cbbTipoEstadoViaje)
@@ -113,16 +115,17 @@ Partial Class FormArribo
         '
         'dtpFechaArribo
         '
+        Me.dtpFechaArribo.Enabled = False
         Me.dtpFechaArribo.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpFechaArribo.Location = New System.Drawing.Point(129, 121)
+        Me.dtpFechaArribo.Location = New System.Drawing.Point(140, 101)
         Me.dtpFechaArribo.Name = "dtpFechaArribo"
-        Me.dtpFechaArribo.Size = New System.Drawing.Size(209, 20)
+        Me.dtpFechaArribo.Size = New System.Drawing.Size(188, 20)
         Me.dtpFechaArribo.TabIndex = 10
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(17, 151)
+        Me.Label5.Location = New System.Drawing.Point(17, 131)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 13)
         Me.Label5.TabIndex = 9
@@ -131,9 +134,9 @@ Partial Class FormArribo
         'cbbTipoEstadoViaje
         '
         Me.cbbTipoEstadoViaje.FormattingEnabled = True
-        Me.cbbTipoEstadoViaje.Location = New System.Drawing.Point(129, 148)
+        Me.cbbTipoEstadoViaje.Location = New System.Drawing.Point(140, 128)
         Me.cbbTipoEstadoViaje.Name = "cbbTipoEstadoViaje"
-        Me.cbbTipoEstadoViaje.Size = New System.Drawing.Size(209, 21)
+        Me.cbbTipoEstadoViaje.Size = New System.Drawing.Size(188, 21)
         Me.cbbTipoEstadoViaje.TabIndex = 2
         '
         'BtnCerrar
@@ -160,10 +163,7 @@ Partial Class FormArribo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(382, 244)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TxtComentarios)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TxtEspera)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtPrecio)
         Me.Controls.Add(Me.TxtKilometrosRecorridos)
@@ -171,7 +171,7 @@ Partial Class FormArribo
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormArribo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormArribo"
+        Me.Text = "Informar Arribo"
         Me.gbxViajes.ResumeLayout(False)
         Me.gbxViajes.PerformLayout()
         Me.ResumeLayout(False)
@@ -184,7 +184,7 @@ Partial Class FormArribo
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TxtComentarios As TextBox
+    Friend WithEvents TxtEspera As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents gbxViajes As GroupBox
     Friend WithEvents BtnCerrar As Button

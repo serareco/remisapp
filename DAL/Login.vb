@@ -15,9 +15,8 @@
 
         con.EjecutarStoredProcedure("dbo.Login", parametros)
 
-        pDatosLogin.PrimerIngreso = primerIngreso.Value = "S"
-
         If pRespuesta.Value = 1 Then
+            pDatosLogin.PrimerIngreso = primerIngreso.Value = "S"
             Return True
         Else
             Return False

@@ -28,12 +28,19 @@
         Else
             viaje.KmRecorridos = TxtKilometrosRecorridos.Text()
             viaje.Precio = TxtPrecio.Text()
-            viaje.Comentarios = TxtComentarios.Text()
+            If TxtEspera.Text() <> "" Then
+                viaje.Precio += TxtEspera.Text() * 4  'valor minuto. parametro
+            End If
             viaje.FechaArribo = dtpFechaArribo.Value()
             viaje.Duracion = (viaje.FechaArribo.Subtract(viaje.FechaSalida)).TotalMinutes
             viaje.Estado = estadosViajeService.GetById(cbbTipoEstadoViaje.SelectedValue)
             viajeService.RegistrarArribo(viaje)
-            MessageBox.Show("Datos guardado correctamente", "Viajes")
+            If viaje.Estado.Id = 4 Then
+                FormCancelarViaje.viaje = viaje
+                FormCancelarViaje.Show()
+            Else
+                MessageBox.Show("Datos guardado correctamente", "Viajes")
+            End If
             FormATM.ActualizarInformacion()
             Me.Close()
         End If

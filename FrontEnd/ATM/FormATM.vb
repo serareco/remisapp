@@ -118,7 +118,7 @@
     End Sub
 
     Private Sub ActualizarInformacion_Tick(sender As Object, e As EventArgs) Handles TimerActualizarInformacion.Tick
-        'ActualizarInformacion()
+        ActualizarInformacion()
     End Sub
 
     Private Sub DgvServiciosPendientes_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvServiciosPendientes.CellDoubleClick
