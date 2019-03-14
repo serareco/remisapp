@@ -104,6 +104,11 @@
         Catch ex As Exception
             viaje.Duracion = 0
         End Try
+        Try
+            viaje.Ahorro = datatable.Rows(0).ItemArray(19).ToString()
+        Catch ex As Exception
+            viaje.Ahorro = 0
+        End Try
         Return viaje
     End Function
 

@@ -13,6 +13,9 @@
         MessageBox.Show("Los datos se modificaron correctamente")
         If formOrigen.GetType = FormViajes.GetType Then
             FormViajes.ActualizarLista()
+        ElseIf formOrigen.GetType = FormArribo.GetType Then
+            FormATM.ActualizarInformacion()
+            formOrigen.Close()
         End If
         Me.Close()
     End Sub

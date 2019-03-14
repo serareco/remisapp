@@ -55,7 +55,8 @@ Module GestorPDF
         graphics.DrawString("  >> Origen: " + pTicketComprobante.Viaje.Origen, New PdfStandardFont(PdfFontFamily.Helvetica, 12), PdfBrushes.Black, New PointF(5, 225))
         graphics.DrawString("  >> Destino: " + pTicketComprobante.Viaje.Destino, New PdfStandardFont(PdfFontFamily.Helvetica, 12), PdfBrushes.Black, New PointF(5, 245))
         graphics.DrawString("  >> Duración: " + pTicketComprobante.Viaje.Duracion.ToString(), New PdfStandardFont(PdfFontFamily.Helvetica, 12), PdfBrushes.Black, New PointF(5, 265))
-        If pTicketComprobante.Viaje.Beneficios.Count > 0 Then
+
+        If Not (pTicketComprobante.Viaje.Beneficios Is Nothing) Then
             Dim descuentosTotales As Decimal
             For Each beneficio As EL.Beneficio In pTicketComprobante.Viaje.Beneficios
                 descuentosTotales += beneficio.Descuento

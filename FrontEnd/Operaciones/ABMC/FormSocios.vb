@@ -4,6 +4,7 @@
     Dim datosTipoTelefono As New BLL.TipoTelefono()
 
     Public Sub ActualizarLista()
+        TxtNroSocio.Clear()
         TxtNroDocumento.Clear()
         TxtNombre.Clear()
         TxtApellido.Clear()
@@ -108,6 +109,7 @@
 
     Private Sub btnmodificar_click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If (socio IsNot Nothing) Then
+            TxtNroSocio.Text = socio.NroSocio
             TxtNombre.Text = socio.Nombre
             TxtApellido.Text = socio.Apellido
             TxtNroDocumento.Text = socio.NroDocumento

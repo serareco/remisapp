@@ -36,7 +36,7 @@ Partial Class FormSocios
         Me.dtpFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtNroSocio = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -162,7 +162,7 @@ Partial Class FormSocios
         Me.TabDatosPersonales.Controls.Add(Me.dtpFechaNacimiento)
         Me.TabDatosPersonales.Controls.Add(Me.Label3)
         Me.TabDatosPersonales.Controls.Add(Me.Label6)
-        Me.TabDatosPersonales.Controls.Add(Me.TextBox1)
+        Me.TabDatosPersonales.Controls.Add(Me.TxtNroSocio)
         Me.TabDatosPersonales.Controls.Add(Me.Label2)
         Me.TabDatosPersonales.Controls.Add(Me.TxtEmail)
         Me.TabDatosPersonales.Controls.Add(Me.Label1)
@@ -221,13 +221,13 @@ Partial Class FormSocios
         Me.Label6.TabIndex = 58
         Me.Label6.Text = "Número"
         '
-        'TextBox1
+        'TxtNroSocio
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(118, 33)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(203, 20)
-        Me.TextBox1.TabIndex = 1
+        Me.TxtNroSocio.Enabled = False
+        Me.TxtNroSocio.Location = New System.Drawing.Point(118, 33)
+        Me.TxtNroSocio.Name = "TxtNroSocio"
+        Me.TxtNroSocio.Size = New System.Drawing.Size(203, 20)
+        Me.TxtNroSocio.TabIndex = 1
         '
         'Label2
         '
@@ -555,7 +555,7 @@ Partial Class FormSocios
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnLimpiar As Button
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtNroSocio As TextBox
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabDatosPersonales As TabPage
     Friend WithEvents TabDomicilio As TabPage

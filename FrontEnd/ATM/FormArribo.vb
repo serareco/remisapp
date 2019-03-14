@@ -36,13 +36,14 @@
             viaje.Estado = estadosViajeService.GetById(cbbTipoEstadoViaje.SelectedValue)
             viajeService.RegistrarArribo(viaje)
             If viaje.Estado.Id = 4 Then
+                FormCancelarViaje.formOrigen = Me
                 FormCancelarViaje.viaje = viaje
                 FormCancelarViaje.Show()
             Else
                 MessageBox.Show("Datos guardado correctamente", "Viajes")
+                FormATM.ActualizarInformacion()
+                Me.Close()
             End If
-            FormATM.ActualizarInformacion()
-            Me.Close()
         End If
 
     End Sub

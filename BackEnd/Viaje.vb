@@ -34,13 +34,10 @@ Public Class Viaje
 
     Public Sub RegistrarArribo(viaje As EL.Viaje)
         If viaje.FechaArribo > viaje.FechaArriboEstimado Then
-            ' TODO: ENUMERATOR - Llegar tarde
             accionService.Guardar(viaje.Chofer, accionService.GetById(5))
         ElseIf viaje.FechaArribo <= viaje.FechaArriboEstimado Then
-            ' TODO: ENUMERATOR - Llegar temprano
             accionService.Guardar(viaje.Chofer, accionService.GetById(4))
         ElseIf viaje.Estado.Id = 4 Then
-            ' TODO: ENUMERATOR - Llegar temprano
             accionService.Guardar(viaje.Chofer, accionService.GetById(7))
         End If
         viajeDAL.Guardar(viaje, Login.UsuarioConectado)
@@ -48,10 +45,10 @@ Public Class Viaje
             Dim ticketComprobanteService As New TicketComprobante()
             Dim ticketComprobante As New EL.TicketComprobante()
             ticketComprobante.FechaEmision = Now
-            ticketComprobante.Viaje = viaje
+            ticketComprobante.Viaje = New Viaje().GetById(viaje.Id)
             ticketComprobanteService.Guardar(ticketComprobante)
             GestorPDF.ImprimirTicketComprobante(ticketComprobante)
-            If parametroService.GetValueByKey("TOLERANCIA_SALIDA") = "S" Then
+            If parametroService.GetValueByKey("CORREO_HABILITADO") = "S" Then
                 GestorCorreo.enviarTicketComprobante(ticketComprobante)
             End If
         End If
