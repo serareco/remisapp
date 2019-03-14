@@ -50,8 +50,12 @@
     End Property
 
     Public Function GetResponse() As MapServiceResponse
-        Me.Distance = Math.Ceiling(Rnd() * 150)
-        Me.Time = (Me.Distance / 40) * 60
+        If From <> "Exception" And Dest <> "Exception" Then
+            Me.Distance = Math.Ceiling(Rnd() * 150)
+            Me.Time = (Me.Distance / 40) * 60
+        Else
+            Throw New Exceptions("El Origen o Destino no existen en la matriz.")
+        End If
         Return Me
     End Function
 

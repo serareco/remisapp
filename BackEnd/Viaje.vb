@@ -3,6 +3,7 @@
 Public Class Viaje
     Dim viajeDAL As New DAL.Viaje()
     Dim accionService As New Accion()
+    Dim parametroService As New Parametro()
     Public Function GetProximoViajePendiente() As EL.Viaje
         Return viajeDAL.GetProximoViajePendiente()
     End Function
@@ -21,7 +22,7 @@ Public Class Viaje
         If viaje.Chofer.Id <> viaje.ChoferEstimado.Id Then
             ' TODO: ENUMERATOR - Tomar viaje de otro
             accionService.Guardar(chofer, accionService.GetById(2))
-        ElseIf viaje.FechaSalida > viaje.FechaSalidaEstimada.AddMinutes(10) Then 'TODO: Parametros
+        ElseIf viaje.FechaSalida > viaje.FechaSalidaEstimada.AddMinutes(parametroService.GetValueByKey("TOLERANCIA_SALIDA")) Then
             ' TODO: ENUMERATOR - Salir tarde
             accionService.Guardar(chofer, accionService.GetById(6))
         ElseIf viaje.FechaSalida <= viaje.FechaSalidaEstimada Then
@@ -50,7 +51,9 @@ Public Class Viaje
             ticketComprobante.Viaje = viaje
             ticketComprobanteService.Guardar(ticketComprobante)
             GestorPDF.ImprimirTicketComprobante(ticketComprobante)
-            GestorCorreo.enviarTicketComprobante(ticketComprobante)
+            If parametroService.GetValueByKey("TOLERANCIA_SALIDA") = "S" Then
+                GestorCorreo.enviarTicketComprobante(ticketComprobante)
+            End If
         End If
     End Sub
 
@@ -64,6 +67,10 @@ Public Class Viaje
 
     Public Function ListarHistorico() As List(Of EL.Viaje)
         Return viajeDAL.Listar("H")
+    End Function
+
+    Public Function ListarVigentes() As List(Of EL.Viaje)
+        Return viajeDAL.Listar("V")
     End Function
 
     Public Function Listar() As List(Of EL.Viaje)
@@ -88,14 +95,21 @@ Public Class Viaje
         Return totalDescuentos / 100
     End Function
     Public Sub ConsultarAPI(ByRef viaje As EL.Viaje)
-        Dim request As New MapService.MapServiceRequest()
-        request.From = viaje.Origen
-        request.Dest = viaje.Destino
-
+        Dim request As New MapService.MapServiceRequest With {
+            .From = viaje.Origen,
+            .Dest = viaje.Destino
+        }
         Dim response As MapService.MapServiceResponse = request.SendRequest()
-        viaje.DuracionEstimada = response.Time
-        viaje.KmEstimados = response.Distance
-        viaje.PrecioEstimado = viaje.KmEstimados * 26 'Deberia salir de los parámetros el valor
+        If Not IsNothing(response) Then
+            viaje.DuracionEstimada = response.Time
+            Dim km_min As Int16 = parametroService.GetValueByKey("KM_DIST_MIN")
+            If response.Distance < km_min Then
+                viaje.KmEstimados = km_min
+            Else
+                viaje.KmEstimados = response.Distance
+            End If
+            viaje.PrecioEstimado = viaje.KmEstimados * parametroService.GetValueByKey("KM_VALOR")
+        End If
     End Sub
 
 End Class

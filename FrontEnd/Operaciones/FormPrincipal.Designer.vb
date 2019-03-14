@@ -56,6 +56,7 @@ Partial Class FormPrincipal
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.CerrarSesionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.OpcionTurnos = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -85,7 +86,7 @@ Partial Class FormPrincipal
         '
         'MenuABMC
         '
-        Me.MenuABMC.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionAutos, Me.OpcionChoferes, Me.OpcionSocios, Me.OpcionUsuarios, Me.OpcionComisiones, Me.OpcionBeneficios, Me.OpcionChoferComision, Me.OpcionParametrosSistema})
+        Me.MenuABMC.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpcionAutos, Me.OpcionChoferes, Me.OpcionSocios, Me.OpcionUsuarios, Me.OpcionComisiones, Me.OpcionBeneficios, Me.OpcionChoferComision, Me.OpcionParametrosSistema, Me.OpcionTurnos})
         Me.MenuABMC.Name = "MenuABMC"
         resources.ApplyResources(Me.MenuABMC, "MenuABMC")
         '
@@ -221,6 +222,11 @@ Partial Class FormPrincipal
         Me.CerrarSesionToolStripMenuItem.Name = "CerrarSesionToolStripMenuItem"
         resources.ApplyResources(Me.CerrarSesionToolStripMenuItem, "CerrarSesionToolStripMenuItem")
         '
+        'OpcionTurnos
+        '
+        Me.OpcionTurnos.Name = "OpcionTurnos"
+        resources.ApplyResources(Me.OpcionTurnos, "OpcionTurnos")
+        '
         'FormPrincipal
         '
         resources.ApplyResources(Me, "$this")
@@ -271,4 +277,5 @@ Partial Class FormPrincipal
     Friend WithEvents OpcionViajesPendientes As ToolStripMenuItem
     Friend WithEvents OpcionComisionesChofer As ToolStripMenuItem
     Friend WithEvents OpcionPuntajeChoferes As ToolStripMenuItem
+    Friend WithEvents OpcionTurnos As ToolStripMenuItem
 End Class

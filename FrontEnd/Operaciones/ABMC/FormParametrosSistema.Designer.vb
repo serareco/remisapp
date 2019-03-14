@@ -215,7 +215,7 @@ Partial Class FormParametrosSistema
         Me.MinimizeBox = False
         Me.Name = "FormParametrosSistema"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "FormParametrosSistema"
+        Me.Text = "Parámetros del Sistema"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dgvParametros, System.ComponentModel.ISupportInitialize).EndInit()

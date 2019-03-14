@@ -54,7 +54,12 @@
             If dtpVigenciaHasta.CustomFormat <> " " Then
                 parametro.VigenciaHasta = dtpVigenciaHasta.Value
             End If
-            parametrosService.Guardar(parametro)
+            Try
+                parametrosService.Guardar(parametro)
+                MessageBox.Show("Los cambios fueron guardados correctamente.")
+            Catch ex As Exception
+                MessageBox.Show("Se ha producido un error al guardar los cambios. Error: " + ex.Message)
+            End Try
             ActualizarLista()
         End If
     End Sub
@@ -63,9 +68,12 @@
         If parametro IsNot Nothing Then
             txtNombreParametro.Text() = parametro.Clave
             txtValorParametro.Text() = parametro.Valor
-            dtpVigenciaDesde.Text() = parametro.VigenciaDesde
-            dtpVigenciaHasta.Text() = parametro.VigenciaHasta
+            dtpVigenciaDesde.Value() = parametro.VigenciaDesde
+            If parametro.VigenciaHasta <> DateTime.MinValue Then
+                dtpVigenciaHasta.Value() = parametro.VigenciaHasta
+            End If
         End If
+
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click

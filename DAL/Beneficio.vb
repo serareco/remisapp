@@ -3,7 +3,7 @@
         Dim con As New Conexion
         Dim datatable As New DataTable
         Dim beneficios As New List(Of EL.Beneficio)
-        con.EjecutarConsulta("EXEC GetBeneficiosSocio @id_socio = " & pIdSocio)
+        con.EjecutarConsulta("EXEC GetBeneficiosSocio @id_socio = " & pIdSocio.ToString)
         con.adp.Fill(datatable)
         For index = 0 To datatable.Rows.Count - 1
             beneficios.Add(New Beneficio().GetById(datatable.Rows(index).ItemArray(0).ToString()))

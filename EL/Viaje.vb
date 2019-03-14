@@ -186,6 +186,16 @@
         End Set
     End Property
 
+    Private _ahorro As Decimal
+    Public Property Ahorro() As Decimal
+        Get
+            Return _ahorro
+        End Get
+        Set(ByVal value As Decimal)
+            _ahorro = value
+        End Set
+    End Property
+
     Private _duracionEstimada As Integer
     Public Property DuracionEstimada() As Integer
         Get

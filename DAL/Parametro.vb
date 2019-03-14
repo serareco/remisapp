@@ -18,11 +18,8 @@
     Public Function GetValueByKey(pclave As String) As String
         Dim con As New Conexion
         Dim datatable As New DataTable()
-        con.EjecutarConsulta("select value from dbo.Parametro where clave = '" & pclave + "' and estado = 'A'")
+        con.EjecutarConsulta("Select valor From dbo.Parametro Where clave = '" & pclave + "' and estado = 'A' and GETDATE() >= vigencia_desde  and  (GETDATE() <= vigencia_hasta or vigencia_hasta IS NULL)")
         con.adp.Fill(datatable)
-        'If datatable.Rows(0).ItemArray.Count = 0 Then
-        '
-        'End If
         Return datatable.Rows(0).ItemArray(0).ToString()
     End Function
 

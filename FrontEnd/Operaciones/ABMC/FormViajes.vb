@@ -1,9 +1,10 @@
 ﻿Public Class FormViajes
     Dim viaje As EL.Viaje
-    Dim datosViaje As New BLL.Viaje()
-    Dim datosEstadoViaje As New BLL.EstadoViaje()
-    Dim datosSocio As New BLL.Socio()
-    Dim datosPromocion As New BLL.Beneficio()
+    Dim viajeService As New BLL.Viaje()
+    Dim estadoViajeService As New BLL.EstadoViaje()
+    Dim socioService As New BLL.Socio()
+    Dim beneficioService As New BLL.Beneficio()
+
     ' Cuando se ingresa a esta opción del menú, el sistema debe sugerir chofer (seleccionar automaticamente, pero sin confirmar)
     ' Tener en cuenta que tiene que estar disponible:
     ' Es decir q no esté con un viaje en curso.
@@ -14,7 +15,7 @@
         ChbSalidaInmediata.Checked = True
         cbbCliente.DataSource = Nothing
         cbbCliente.DataSource = New BindingSource With {
-            .DataSource = datosSocio.Listar()
+            .DataSource = socioService.Listar()
         }
         cbbCliente.DisplayMember = "Nombre"
         cbbCliente.ValueMember = "Id"
@@ -23,7 +24,7 @@
         txtDestino.Clear()
 
         dgvViajes.DataSource = Nothing
-        dgvViajes.DataSource = datosViaje.Listar()
+        dgvViajes.DataSource = viajeService.ListarVigentes()
         viaje = Nothing
         BtnCancelarViaje.Enabled = False
     End Sub
@@ -44,7 +45,7 @@
             viaje.Estado.Id = 2
         End If
         viaje.IdaYVuelta = ChbIdayVuelta.Checked
-        viaje.Socio = datosSocio.GetById(cbbCliente.SelectedValue)
+        viaje.Socio = socioService.GetById(cbbCliente.SelectedValue)
         FormConfirmarViaje.viaje = viaje
         FormConfirmarViaje.Show()
     End Sub
@@ -56,7 +57,7 @@
         viaje = New EL.Viaje With {
             .Id = dgvViajes.Rows(e.RowIndex).Cells(0).Value
         }
-        viaje = datosViaje.GetById(viaje.Id)
+        viaje = viajeService.GetById(viaje.Id)
         If viaje.Estado.Id <> 4 And viaje.Estado.Id <> 5 Then
             BtnCancelarViaje.Enabled = True
             LblAvisoViaje.Text = ""

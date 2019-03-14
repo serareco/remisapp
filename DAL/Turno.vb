@@ -36,4 +36,24 @@
         Next
         Return turnos
     End Function
+
+    Public Sub Guardar(turno As EL.Turno, usuarioConectado As EL.Usuario)
+        Dim con As New Conexion
+        Dim parametros As New List(Of SqlClient.SqlParameter)
+        parametros.Add(New SqlClient.SqlParameter("@id_turno", turno.Id))
+        parametros.Add(New SqlClient.SqlParameter("@descripcion", turno.Descripcion))
+        parametros.Add(New SqlClient.SqlParameter("@horario_entrada", turno.HoraEntrada))
+        parametros.Add(New SqlClient.SqlParameter("@horario_salida", turno.HoraSalida))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
+        con.EjecutarStoredProcedure("dbo.GuardarTurno", parametros)
+    End Sub
+
+    Public Sub Quitar(turno As EL.Turno, usuarioConectado As EL.Usuario)
+        Dim con As New Conexion
+        Dim parametros As New List(Of SqlClient.SqlParameter)
+        parametros.Add(New SqlClient.SqlParameter("@id_turno", turno.Id))
+        parametros.Add(New SqlClient.SqlParameter("@usuario_operacion", usuarioConectado.Usuario))
+        con.EjecutarStoredProcedure("dbo.QuitarTurno", parametros)
+    End Sub
+
 End Class

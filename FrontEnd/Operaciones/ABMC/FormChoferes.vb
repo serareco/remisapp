@@ -10,6 +10,13 @@
         Me.Close()
     End Sub
 
+    Private Sub CleanCheckList()
+        ClbTurnos.ClearSelected()
+        For index = 0 To ClbTurnos.Items.Count - 1
+            ClbTurnos.SetItemChecked(index, False)
+        Next
+    End Sub
+
     Public Sub ActualizarLista()
         cbbAutos.DataSource = Nothing
         cbbAutos.DataSource = New BindingSource With {
@@ -80,6 +87,7 @@
                     .Name = "Auto"
         })
         chofer = Nothing
+        CleanCheckList()
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -151,6 +159,7 @@
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If chofer IsNot Nothing Then
+            CleanCheckList()
             TxtNombre.Text() = chofer.Nombre
             TxtApellido.Text() = chofer.Apellido
             TxtNroDocumento.Text() = chofer.NroDocumento
@@ -186,7 +195,7 @@
                 TxtCodPais.Clear()
             End If
             cbbCategorias.SelectedItem = chofer.Registro.Categoria
-            '            dtpFechaVencimientoRegistro.Value = chofer.Registro.FechaVencimiento
+            dtpFechaVencimientoRegistro.Value = chofer.Registro.FechaVencimiento
             cbbAutos.SelectedValue = chofer.Auto.Id
             Dim index As Int16 = 0
             Dim listIndexs = New List(Of Int16)

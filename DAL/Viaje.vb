@@ -15,6 +15,8 @@
             con.EjecutarConsulta("select  v.id_viaje from dbo.Viaje v
                                    where concat(year(isnull(fecha_salida,fecha_salida_estimada)),MONTH (isnull(fecha_salida,fecha_salida_estimada))) = concat(year(getdate()),MONTH(getdate()))
                                 order by fecha_salida_estimada Desc")
+        ElseIf pTipoConsulta = "V" Then
+            con.EjecutarConsulta("select v.id_viaje from dbo.Viaje v Where id_estado in (3) OR CONVERT (date, ISNULL(v.fecha_salida,fecha_salida_estimada)) = CONVERT (date, GETDATE()) Order by fecha_salida Desc")
         End If
         con.adp.Fill(datatable)
         For index = 0 To datatable.Rows.Count - 1
@@ -136,6 +138,9 @@
         End If
         If viaje.PrecioEstimado > 0 Then
             parametros.Add(New SqlClient.SqlParameter("@precio_estimado", viaje.PrecioEstimado))
+        End If
+        If viaje.Ahorro > 0 Then
+            parametros.Add(New SqlClient.SqlParameter("@ahorro", viaje.Ahorro))
         End If
         parametros.Add(New SqlClient.SqlParameter("@comentarios", viaje.Comentarios))
         parametros.Add(New SqlClient.SqlParameter("@id_socio", viaje.Socio.Id))

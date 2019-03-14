@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -36,7 +36,9 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>UIL.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,7 +48,9 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>UIL.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -126,6 +130,12 @@
       <DependentUpon>FormParametrosSistema.vb</DependentUpon>
     </Compile>
     <Compile Include="Operaciones\ABMC\FormParametrosSistema.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\ABMC\FormTurnos.Designer.vb">
+      <DependentUpon>FormTurnos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\ABMC\FormTurnos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Operaciones\ABMC\FormVehiculos.Designer.vb">
@@ -256,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\ABMC\FormParametrosSistema.resx">
       <DependentUpon>FormParametrosSistema.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\ABMC\FormTurnos.resx">
+      <DependentUpon>FormTurnos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Operaciones\ABMC\FormVehiculos.resx">
       <DependentUpon>FormVehiculos.vb</DependentUpon>

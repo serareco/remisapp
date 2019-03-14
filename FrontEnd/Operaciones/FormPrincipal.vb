@@ -121,6 +121,7 @@ Public Class FormPrincipal
         Me.OpcionViajesRealizados.Visible = False
         Me.OpcionComisionesChofer.Visible = False
         Me.OpcionPuntajeChoferes.Visible = False
+        Me.OpcionTurnos.Visible = False
 
         If BLL.Login.EsAdministrador() Then
             Me.MenuABMC.Visible = True
@@ -153,6 +154,7 @@ Public Class FormPrincipal
             Me.OpcionReportesViajes.Visible = True
             Me.OpcionParametrosSistema.Visible = True
             Me.OpcionPuntajeChoferes.Visible = True
+            Me.OpcionTurnos.Visible = True
         End If
 
         If BLL.Login.EsChofer() Then
@@ -194,5 +196,10 @@ Public Class FormPrincipal
     Private Sub OpcionPuntajeChoferes_Click(sender As Object, e As EventArgs) Handles OpcionPuntajeChoferes.Click
         FormConsultaPuntosChofer.MdiParent = Me
         FormConsultaPuntosChofer.Show()
+    End Sub
+
+    Private Sub OpcionTurnos_Click(sender As Object, e As EventArgs) Handles OpcionTurnos.Click
+        FormTurnos.MdiParent = Me
+        FormTurnos.Show()
     End Sub
 End Class

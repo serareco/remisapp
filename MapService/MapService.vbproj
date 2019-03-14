@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions.vb" />
     <Compile Include="MapServiceRequest.vb" />
     <Compile Include="MapServiceResponse.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
