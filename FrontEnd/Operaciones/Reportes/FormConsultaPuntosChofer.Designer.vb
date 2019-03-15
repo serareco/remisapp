@@ -224,7 +224,9 @@ Partial Class FormConsultaPuntosChofer
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.gbxFiltro)
         Me.Name = "FormConsultaPuntosChofer"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Consulta de puntaje de choferes"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dgvPuntajeChoferes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.gbxFiltro.ResumeLayout(False)

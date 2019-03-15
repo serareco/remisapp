@@ -19,16 +19,6 @@
         End Set
     End Property
 
-    Private _fechaAccion As Date
-    Public Property FechaAccion() As Date
-        Get
-            Return _fechaAccion
-        End Get
-        Set(ByVal value As Date)
-            _fechaAccion = value
-        End Set
-    End Property
-
     Private _accion As String
     Public Property Accion() As String
         Get
@@ -55,17 +45,16 @@
         Dim resultado As New List(Of ChoferPuntos)
 
         chofer = choferService.GetAcciones(pIdChofer, pFechaDesde, pFechaHasta, pActivo, pVigente, pAcciones)
-
-        For Each accion As EL.Accion In chofer.Acciones
-            Dim pRegistro As New ChoferPuntos()
-            pRegistro.ApellidoNombreChofer = chofer.Apellido + ", " + chofer.Nombre
-            pRegistro.NroDocumento = chofer.NroDocumento
-            pRegistro.Accion = accion.Descripcion
-            pRegistro.Puntos = accion.Puntos
-            'TODO FECHA DE LA ACCION
-            resultado.Add(pRegistro)
-        Next
-
+        If Not chofer.Acciones Is Nothing Then
+            For Each accion As EL.Accion In chofer.Acciones
+                Dim pRegistro As New ChoferPuntos()
+                pRegistro.ApellidoNombreChofer = chofer.Apellido + ", " + chofer.Nombre
+                pRegistro.NroDocumento = chofer.NroDocumento
+                pRegistro.Accion = accion.Descripcion
+                pRegistro.Puntos = accion.Puntos
+                resultado.Add(pRegistro)
+            Next
+        End If
         Return resultado
     End Function
 

@@ -1,4 +1,8 @@
 ﻿Public Class Persona
+    Public Sub New()
+        Domicilio = New Domicilio()
+        Telefono = New Telefono()
+    End Sub
     Private _id As Int16
     Public Property Id() As Int16
         Get

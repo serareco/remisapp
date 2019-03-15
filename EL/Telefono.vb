@@ -1,8 +1,4 @@
 ﻿Public Class Telefono
-    Public Sub New()
-        TipoTelefono = New TipoTelefono()
-    End Sub
-
     Private _id As Int16
     Public Property Id() As Int16
         Get

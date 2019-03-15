@@ -122,16 +122,20 @@
     End Sub
 
     Private Sub DgvServiciosPendientes_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvServiciosPendientes.CellDoubleClick
-        viaje = Nothing
-        FormSalida.viaje = viajeService.GetById(DgvServiciosPendientes.Rows(e.RowIndex).Cells(0).Value)
-        FrmLogin.MostrarSalida = True
-        FrmLogin.Show()
+        If e.RowIndex >= 0 Then
+            viaje = Nothing
+            FormSalida.viaje = viajeService.GetById(DgvServiciosPendientes.Rows(e.RowIndex).Cells(0).Value)
+            FrmLogin.MostrarSalida = True
+            FrmLogin.Show()
+        End If
     End Sub
 
     Private Sub DgvServiciosEnCurso_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvServiciosEnCurso.CellDoubleClick
-        viaje = Nothing
-        FormArribo.viaje = viajeService.GetById(DgvServiciosEnCurso.Rows(e.RowIndex).Cells(0).Value)
-        FrmLogin.MostrarArribo = True
-        FrmLogin.Show()
+        If e.RowIndex >= 0 Then
+            viaje = Nothing
+            FormArribo.viaje = viajeService.GetById(DgvServiciosEnCurso.Rows(e.RowIndex).Cells(0).Value)
+            FrmLogin.MostrarArribo = True
+            FrmLogin.Show()
+        End If
     End Sub
 End Class

@@ -129,6 +129,10 @@ Public Class Chofer
         Else
             parametros.Add(New SqlClient.SqlParameter("@vigente", "N"))
         End If
+        If pAcciones <> "" Then
+            parametros.Add(New SqlClient.SqlParameter("@acciones", pAcciones))
+        End If
+
         con.EjecutarStoredProcedureDa("dbo.ConsultaPuntosChoferes", parametros)
         con.adp.Fill(datatable)
         For index = 0 To datatable.Rows.Count - 1

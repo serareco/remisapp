@@ -31,6 +31,12 @@
 
     Private Sub BtnConsultar_Click(sender As Object, e As EventArgs) Handles BtnConsultar.Click
         Dim acciones As String = ""
+        For Each itemChecked As EL.Accion In ClbAccion.CheckedItems
+            acciones += itemChecked.Id.ToString + ";"
+        Next
+        If acciones <> "" Then
+            acciones = acciones.Substring(0, acciones.Length - 1)
+        End If
         dgvPuntajeChoferes.DataSource = New ChoferPuntos().Consultar(cbbChofer.SelectedValue, dtpFechaDesde.Value, dtpFechaHasta.Value, ChkActivo.Checked, ChkVigente.Checked, acciones)
     End Sub
 

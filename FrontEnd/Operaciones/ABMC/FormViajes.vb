@@ -39,10 +39,10 @@
         viaje.Destino = txtDestino.Text()
         If ChbSalidaInmediata.Checked Then
             viaje.FechaSalidaEstimada = Now
-            viaje.Estado.Id = 3
+            viaje.Estado = estadoViajeService.GetById(3)
         Else
             viaje.FechaSalidaEstimada = dtpFechaSalida.Value
-            viaje.Estado.Id = 2
+            viaje.Estado = estadoViajeService.GetById(2)
         End If
         viaje.IdaYVuelta = ChbIdayVuelta.Checked
         viaje.Socio = socioService.GetById(cbbCliente.SelectedValue)
@@ -53,19 +53,20 @@
         Me.Close()
     End Sub
     Private Sub dgvViajes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvViajes.CellClick
-        viaje = Nothing
-        viaje = New EL.Viaje With {
-            .Id = dgvViajes.Rows(e.RowIndex).Cells(0).Value
-        }
-        viaje = viajeService.GetById(viaje.Id)
-        If viaje.Estado.Id <> 4 And viaje.Estado.Id <> 5 Then
-            BtnCancelarViaje.Enabled = True
-            LblAvisoViaje.Text = ""
-        Else
-            BtnCancelarViaje.Enabled = False
-            LblAvisoViaje.Text = "Viaje finalizado. No se puede cancelar."
+        If e.RowIndex >= 0 Then
+            viaje = Nothing
+            viaje = New EL.Viaje With {
+                    .Id = dgvViajes.Rows(e.RowIndex).Cells(0).Value
+                }
+            viaje = viajeService.GetById(viaje.Id)
+            If viaje.Estado.Id <> 4 And viaje.Estado.Id <> 5 Then
+                BtnCancelarViaje.Enabled = True
+                LblAvisoViaje.Text = ""
+            Else
+                BtnCancelarViaje.Enabled = False
+                LblAvisoViaje.Text = "Viaje finalizado. No se puede cancelar."
+            End If
         End If
-
     End Sub
     Private Sub ChbSalidaInmediata_CheckedChanged(sender As Object, e As EventArgs) Handles ChbSalidaInmediata.CheckedChanged
         dtpFechaSalida.Enabled = Not ChbSalidaInmediata.Checked

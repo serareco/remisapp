@@ -1,7 +1,7 @@
 ﻿Public Class FormSocios
     Dim socio As EL.Socio
-    Dim datosSocio As New BLL.Socio()
-    Dim datosTipoTelefono As New BLL.TipoTelefono()
+    Dim socioService As New BLL.Socio()
+    Dim tipoTelefonoService As New BLL.TipoTelefono()
 
     Public Sub ActualizarLista()
         TxtNroSocio.Clear()
@@ -21,7 +21,7 @@
         TxtProvincia.Clear()
 
         CbbTiposTelefono.DataSource = New BindingSource With {
-            .DataSource = datosTipoTelefono.Listar()
+            .DataSource = tipoTelefonoService.Listar()
         }
         CbbTiposTelefono.DisplayMember = "Descripcion"
         CbbTiposTelefono.ValueMember = "Id"
@@ -30,7 +30,7 @@
         dgvSocios.AutoSize = True
         dgvSocios.Columns.Clear()
         dgvSocios.DataSource = Nothing
-        dgvSocios.DataSource = datosSocio.Listar()
+        dgvSocios.DataSource = socioService.Listar()
         dgvSocios.Columns.Add(New DataGridViewTextBoxColumn() With {
                     .DataPropertyName = "Id",
                     .Name = "Id"
@@ -87,11 +87,11 @@
                 .CodigoArea = TxtCodArea.Text(),
                 .CodigoPais = TxtCodPais.Text()
             }
-        socio.Telefono.TipoTelefono.Id = CbbTiposTelefono.SelectedValue
+        socio.Telefono.TipoTelefono = tipoTelefonoService.GetById(CbbTiposTelefono.SelectedValue)
         socio.Email = TxtEmail.Text()
         socio.FechaNacimiento = dtpFechaNacimiento.Value()
         Try
-            datosSocio.Guardar(socio)
+            socioService.Guardar(socio)
             MessageBox.Show("Los cambios fueron guardados correctamente.")
         Catch ex As Exception
             MessageBox.Show("Se ha producido un error al guardar los cambios. Error: " + ex.Message)
@@ -153,7 +153,7 @@
             socio = New EL.Socio With {
                 .Id = dgvSocios.Rows(e.RowIndex).Cells(0).Value
             }
-            socio = datosSocio.GetById(socio.Id)
+            socio = socioService.GetById(socio.Id)
         End If
     End Sub
 
@@ -161,7 +161,7 @@
         If socio IsNot Nothing Then
             Dim result As Integer = MessageBox.Show("estas seguro que deseas dar de baja este socio?", "caption", MessageBoxButtons.YesNo)
             If result = DialogResult.Yes Then
-                datosSocio.Quitar(socio)
+                socioService.Quitar(socio)
                 ActualizarLista()
             End If
         End If

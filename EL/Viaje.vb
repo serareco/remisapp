@@ -1,10 +1,4 @@
 ﻿Public Class Viaje
-    Public Sub New()
-        Estado = New EstadoViaje()
-        ChoferEstimado = New Chofer()
-        Socio = New Socio()
-    End Sub
-
     Private _id As Int16
     Public Property Id() As Int16
         Get

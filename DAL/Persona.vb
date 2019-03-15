@@ -5,22 +5,17 @@
         Dim persona As New EL.Persona()
         Dim domicilioService As New Domicilio()
         Dim telefonoService As New Telefono()
-        Dim domicilio As New EL.Domicilio()
-        Dim telefono As New EL.Telefono()
         con.EjecutarConsulta("select * from dbo.Persona p where p.id_persona = " & pId)
         con.adp.Fill(datatable)
         persona.Id = datatable.Rows(0).ItemArray(0).ToString()
         persona.Nombre = datatable.Rows(0).ItemArray(1).ToString()
         persona.Apellido = datatable.Rows(0).ItemArray(2).ToString()
         Try
-            telefono = telefonoService.GetByPersonaId(persona.Id)(0)
+            telefonoService.GetByPersonaId(persona.Id, persona.Telefono)
         Catch ex As Exception
-            telefono = Nothing
+            persona.Telefono = Nothing
         End Try
 
-        If telefono IsNot Nothing Then
-            persona.Telefono = telefono
-        End If
         persona.Email = datatable.Rows(0).ItemArray(3).ToString()
         persona.NroDocumento = datatable.Rows(0).ItemArray(5).ToString()
         Try
@@ -29,13 +24,12 @@
             persona.FechaNacimiento = Nothing
         End Try
         Try
-            domicilio = domicilioService.GetByPersonaId(persona.Id)(0)
+            persona.Domicilio = domicilioService.GetByPersonaId(persona.Id)(0)
+            domicilioService.GetByPersonaId(persona.Id, persona.Domicilio)
         Catch ex As Exception
-            domicilio = Nothing
+            persona.Domicilio = Nothing
         End Try
-        If domicilio IsNot Nothing Then
-            persona.Domicilio = domicilio
-        End If
+
         Return persona
     End Function
 
