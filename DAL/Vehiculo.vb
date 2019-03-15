@@ -16,11 +16,11 @@
         Dim con As New Conexion
         Dim auto As New EL.Vehiculo()
         Dim datatable As New DataTable()
+        Dim modeloDAL As New Modelo()
         con.EjecutarConsulta("select * from dbo.Vehiculo a where id_vehiculo = " & pId)
         con.adp.Fill(datatable)
-
         auto.Id = datatable.Rows(0).ItemArray(0).ToString()
-        auto.Modelo = New Modelo().GetById(datatable.Rows(0).ItemArray(1).ToString())
+        modeloDAL.GetById(datatable.Rows(0).ItemArray(1).ToString(), auto.Modelo)
         auto.AnioFabricacion = datatable.Rows(0).ItemArray(2).ToString()
         auto.Patente = datatable.Rows(0).ItemArray(3).ToString()
         auto.Motor = datatable.Rows(0).ItemArray(4).ToString()

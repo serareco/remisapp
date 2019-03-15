@@ -30,6 +30,11 @@
     End Sub
 
     Private Sub BtnConsultar_Click(sender As Object, e As EventArgs) Handles BtnConsultar.Click
+        Dim acciones As String = ""
+        dgvPuntajeChoferes.DataSource = New ChoferPuntos().Consultar(cbbChofer.SelectedValue, dtpFechaDesde.Value, dtpFechaHasta.Value, ChkActivo.Checked, ChkVigente.Checked, acciones)
+    End Sub
 
+    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
+        Me.Close()
     End Sub
 End Class

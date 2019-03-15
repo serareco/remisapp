@@ -205,6 +205,7 @@
     <Compile Include="Operaciones\ABMC\FormViajes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Operaciones\Reportes\ChoferPuntos.vb" />
     <Compile Include="Operaciones\Reportes\FormConsultaPuntosChofer.Designer.vb">
       <DependentUpon>FormConsultaPuntosChofer.vb</DependentUpon>
     </Compile>

@@ -55,4 +55,14 @@
             _registro = value
         End Set
     End Property
+    Private _acciones As List(Of EL.Accion)
+    Public Property Acciones() As List(Of EL.Accion)
+        Get
+            Return _acciones
+        End Get
+        Set(ByVal value As List(Of EL.Accion))
+            _acciones = value
+        End Set
+    End Property
+
 End Class

@@ -16,7 +16,7 @@
         beneficioDAL.Guardar(beneficio, Login.UsuarioConectado)
     End Sub
 
-    Public Sub Quitar(promocion As EL.Beneficio)
-        beneficioDAL.Quitar(promocion, Login.UsuarioConectado)
+    Public Sub Quitar(pBeneficio As EL.Beneficio)
+        beneficioDAL.Quitar(pBeneficio, Login.UsuarioConectado)
     End Sub
 End Class

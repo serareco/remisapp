@@ -1,5 +1,7 @@
 ﻿Public Module Login
     Dim loginDAL As New DAL.Login()
+    Dim usuarioService As New Usuario()
+    Dim permisoService As New Permiso()
     Private _usuarioConectado As EL.Usuario
     Public Property UsuarioConectado() As EL.Usuario
         Get
@@ -20,7 +22,7 @@
 
     Public Function Login(ByRef pLogin As EL.Login) As Boolean
         If loginDAL.Login(pLogin) Then
-            UsuarioConectado = New Usuario().GetByUsuario(pLogin.Usuario.Usuario)
+            UsuarioConectado = usuarioService.GetByUsuario(pLogin.Usuario.Usuario)
             Return True
         Else
             Return False
@@ -29,7 +31,7 @@
 
     Public Function GetPermisos(pUsuario As String) As List(Of EL.Permiso)
         Dim permisos As New List(Of EL.Permiso)
-        For Each item As DataRow In New DAL.Login().GetPermisos(pUsuario).Rows
+        For Each item As DataRow In loginDAL.GetPermisos(pUsuario).Rows
             permisos.Add(New BLL.Permiso().GetById(item.ItemArray(0).ToString()))
         Next
         Return permisos
@@ -37,8 +39,8 @@
 
     Private Sub GetPermisos()
         UsuarioConectado.Permisos = New List(Of EL.Permiso)
-        For Each item As DataRow In New DAL.Login().GetPermisos(UsuarioConectado.Usuario).Rows
-            UsuarioConectado.Permisos.Add(New BLL.Permiso().GetById(item.ItemArray(0).ToString()))
+        For Each item As DataRow In loginDAL.GetPermisos(UsuarioConectado.Usuario).Rows
+            UsuarioConectado.Permisos.Add(permisoService.GetById(item.ItemArray(0).ToString()))
         Next
     End Sub
 

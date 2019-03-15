@@ -144,10 +144,12 @@
     End Sub
 
     Private Sub dgvAutos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAutos.CellClick
-        auto = Nothing
-        auto = New EL.Vehiculo With {
-            .Id = dgvAutos.Rows(e.RowIndex).Cells(0).Value
-        }
-        auto = vehiculoService.GetById(auto.Id)
+        If e.RowIndex >= 0 Then
+            auto = Nothing
+            auto = New EL.Vehiculo With {
+                .Id = dgvAutos.Rows(e.RowIndex).Cells(0).Value
+            }
+            auto = vehiculoService.GetById(auto.Id)
+        End If
     End Sub
 End Class

@@ -1,4 +1,8 @@
 ﻿Public Class Vehiculo
+    Public Sub New()
+        Modelo = New Modelo()
+    End Sub
+
     Private _id As Int16
     Public Property Id() As Int16
         Get

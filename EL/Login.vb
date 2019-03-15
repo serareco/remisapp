@@ -1,4 +1,8 @@
 ﻿Public Class Login
+    Public Sub New()
+        Usuario = New Usuario()
+    End Sub
+
     Private _usuario As Usuario
     Public Property Usuario() As Usuario
         Get
@@ -17,8 +21,8 @@
             _primerIngreso = value
         End Set
     End Property
-    Private _ultimoIngreso As Date
-    Public Property UltimoIngreso() As Date
+    Private _ultimoIngreso As DateTime
+    Public Property UltimoIngreso() As DateTime
         Get
             Return _ultimoIngreso
         End Get

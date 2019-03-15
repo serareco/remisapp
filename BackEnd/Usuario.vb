@@ -1,7 +1,6 @@
 ﻿Public Class Usuario
-    Dim personaDAL As New DAL.Persona()
+    Dim personaService As New Persona()
     Dim usuarioDAL As New DAL.Usuario()
-
     Public Function Listar() As List(Of EL.Usuario)
         Return New DAL.Usuario().Listar()
     End Function
@@ -13,7 +12,7 @@
     End Function
 
     Public Sub Guardar(usuario As EL.Usuario)
-        personaDAL.Guardar(usuario, Login.UsuarioConectado)
+        personaService.Guardar(usuario)
         usuarioDAL.Guardar(usuario, Login.UsuarioConectado)
     End Sub
 

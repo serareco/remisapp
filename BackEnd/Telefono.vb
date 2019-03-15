@@ -1,9 +1,10 @@
 ﻿Public Class Telefono
+    Dim telefonoDAL As New DAL.Telefono()
     Public Function GetById(pId As Int16) As EL.Telefono
-        Return New DAL.Telefono().GetById(pId)
+        Return telefonoDAL.GetById(pId)
     End Function
 
     Public Function GetByPersonaId(pId As Int16) As List(Of EL.Telefono)
-        Return New DAL.Telefono().GetByPersonaId(pId)
+        Return telefonoDAL.GetByPersonaId(pId)
     End Function
 End Class

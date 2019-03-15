@@ -3,7 +3,8 @@
     Public MostrarArribo As Boolean
     Private Sub Ingresar()
         Dim datosLogin As New EL.Login()
-        datosLogin.Usuario = New EL.Usuario() With {.Usuario = TxtUsuario.Text(), .Password = TxtPassword.Text()}
+        datosLogin.Usuario.Usuario = TxtUsuario.Text()
+        datosLogin.Usuario.Password = TxtPassword.Text()
         If (BLL.Login.Login(datosLogin)) Then
             LblMsjValidacion.Text() = ""
             If (MostrarSalida Or MostrarArribo) And Not BLL.Login.EsChofer() Then

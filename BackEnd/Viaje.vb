@@ -1,6 +1,4 @@
-﻿Imports EL
-
-Public Class Viaje
+﻿Public Class Viaje
     Dim viajeDAL As New DAL.Viaje()
     Dim accionService As New Accion()
     Dim parametroService As New Parametro()

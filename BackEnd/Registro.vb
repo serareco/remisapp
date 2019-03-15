@@ -1,5 +1,6 @@
 ﻿Public Class Registro
+    Dim registroDAL As New DAL.Registro()
     Public Function GetByChoferId(pId As Int16) As EL.Registro
-        Return New DAL.Registro().GetByChoferId(pId)
+        Return registroDAL.GetByChoferId(pId)
     End Function
 End Class

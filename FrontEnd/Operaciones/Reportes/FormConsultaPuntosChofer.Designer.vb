@@ -25,6 +25,11 @@ Partial Class FormConsultaPuntosChofer
         Me.dgvPuntajeChoferes = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.gbxFiltro = New System.Windows.Forms.GroupBox()
+        Me.ChkVigente = New System.Windows.Forms.CheckBox()
+        Me.ChkActivo = New System.Windows.Forms.CheckBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.cbbChofer = New System.Windows.Forms.ComboBox()
+        Me.ClbAccion = New System.Windows.Forms.CheckedListBox()
         Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
         Me.dtpFechaDesde = New System.Windows.Forms.DateTimePicker()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
@@ -34,11 +39,6 @@ Partial Class FormConsultaPuntosChofer
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.BtnConsultar = New System.Windows.Forms.Button()
-        Me.ClbAccion = New System.Windows.Forms.CheckedListBox()
-        Me.cbbChofer = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.ChkActivo = New System.Windows.Forms.CheckBox()
-        Me.ChkVigente = New System.Windows.Forms.CheckBox()
         CType(Me.dgvPuntajeChoferes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.gbxFiltro.SuspendLayout()
@@ -90,6 +90,51 @@ Partial Class FormConsultaPuntosChofer
         Me.gbxFiltro.TabIndex = 13
         Me.gbxFiltro.TabStop = False
         Me.gbxFiltro.Text = "Filtros"
+        '
+        'ChkVigente
+        '
+        Me.ChkVigente.AutoSize = True
+        Me.ChkVigente.Location = New System.Drawing.Point(271, 99)
+        Me.ChkVigente.Name = "ChkVigente"
+        Me.ChkVigente.Size = New System.Drawing.Size(62, 17)
+        Me.ChkVigente.TabIndex = 45
+        Me.ChkVigente.Text = "Vigente"
+        Me.ChkVigente.UseVisualStyleBackColor = True
+        '
+        'ChkActivo
+        '
+        Me.ChkActivo.AutoSize = True
+        Me.ChkActivo.Location = New System.Drawing.Point(123, 99)
+        Me.ChkActivo.Name = "ChkActivo"
+        Me.ChkActivo.Size = New System.Drawing.Size(56, 17)
+        Me.ChkActivo.TabIndex = 44
+        Me.ChkActivo.Text = "Activo"
+        Me.ChkActivo.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(26, 99)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(40, 13)
+        Me.Label5.TabIndex = 43
+        Me.Label5.Text = "Estado"
+        '
+        'cbbChofer
+        '
+        Me.cbbChofer.FormattingEnabled = True
+        Me.cbbChofer.Location = New System.Drawing.Point(123, 19)
+        Me.cbbChofer.Name = "cbbChofer"
+        Me.cbbChofer.Size = New System.Drawing.Size(210, 21)
+        Me.cbbChofer.TabIndex = 42
+        '
+        'ClbAccion
+        '
+        Me.ClbAccion.FormattingEnabled = True
+        Me.ClbAccion.Location = New System.Drawing.Point(123, 122)
+        Me.ClbAccion.Name = "ClbAccion"
+        Me.ClbAccion.Size = New System.Drawing.Size(210, 124)
+        Me.ClbAccion.TabIndex = 12
         '
         'dtpFechaHasta
         '
@@ -169,51 +214,6 @@ Partial Class FormConsultaPuntosChofer
         Me.BtnConsultar.TabIndex = 8
         Me.BtnConsultar.Text = "Consultar"
         Me.BtnConsultar.UseVisualStyleBackColor = True
-        '
-        'ClbAccion
-        '
-        Me.ClbAccion.FormattingEnabled = True
-        Me.ClbAccion.Location = New System.Drawing.Point(123, 122)
-        Me.ClbAccion.Name = "ClbAccion"
-        Me.ClbAccion.Size = New System.Drawing.Size(210, 124)
-        Me.ClbAccion.TabIndex = 12
-        '
-        'cbbChofer
-        '
-        Me.cbbChofer.FormattingEnabled = True
-        Me.cbbChofer.Location = New System.Drawing.Point(123, 19)
-        Me.cbbChofer.Name = "cbbChofer"
-        Me.cbbChofer.Size = New System.Drawing.Size(210, 21)
-        Me.cbbChofer.TabIndex = 42
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(26, 99)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(40, 13)
-        Me.Label5.TabIndex = 43
-        Me.Label5.Text = "Estado"
-        '
-        'ChkActivo
-        '
-        Me.ChkActivo.AutoSize = True
-        Me.ChkActivo.Location = New System.Drawing.Point(123, 99)
-        Me.ChkActivo.Name = "ChkActivo"
-        Me.ChkActivo.Size = New System.Drawing.Size(56, 17)
-        Me.ChkActivo.TabIndex = 44
-        Me.ChkActivo.Text = "Activo"
-        Me.ChkActivo.UseVisualStyleBackColor = True
-        '
-        'ChkVigente
-        '
-        Me.ChkVigente.AutoSize = True
-        Me.ChkVigente.Location = New System.Drawing.Point(271, 99)
-        Me.ChkVigente.Name = "ChkVigente"
-        Me.ChkVigente.Size = New System.Drawing.Size(62, 17)
-        Me.ChkVigente.TabIndex = 45
-        Me.ChkVigente.Text = "Vigente"
-        Me.ChkVigente.UseVisualStyleBackColor = True
         '
         'FormConsultaPuntosChofer
         '

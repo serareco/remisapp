@@ -30,6 +30,22 @@ Public Class Chofer
         chofer.Auto = New Vehiculo().GetById(datatable.Rows(0).ItemArray(1).ToString())
         registro.GetById(chofer.Id, chofer.Registro)
         chofer.Turnos = New Turno().GetByChoferId(pId)
+
+        Dim conAcciones As New Conexion
+        Dim datatableAcciones As New DataTable
+        conAcciones.EjecutarConsulta("
+        SELECT ca.id_accion 
+          FROM dbo.Chofer c INNER JOIN dbo.Chofer_Accion ca
+            ON c.id_persona = ca.id_persona
+         WHERE c.id_persona =  " & pId)
+        conAcciones.adp.Fill(datatableAcciones)
+        If datatableAcciones.Rows.Count > 0 Then
+            chofer.Acciones = New List(Of EL.Accion)
+            For index = 0 To datatableAcciones.Rows.Count - 1
+                chofer.Acciones.Add(New Accion().GetById(datatableAcciones.Rows(index).ItemArray(0).ToString()))
+            Next
+        End If
+
         Return chofer
     End Function
 
@@ -89,6 +105,40 @@ Public Class Chofer
             choferes.Add(New Chofer().GetById(datatable.Rows(index).ItemArray(0).ToString()))
         Next
         Return choferes
+    End Function
+
+    Public Function GetAcciones(pIdChofer As Int32, pFechaDesde As Date, pFechaHasta As Date, pActivo As Boolean, pVigente As Boolean, pAcciones As String) As EL.Chofer
+        Dim con As New Conexion
+        Dim datatable As New DataTable
+        Dim chofer As New EL.Chofer()
+        Dim parametros As New List(Of SqlClient.SqlParameter)
+        parametros.Add(New SqlClient.SqlParameter("@id_chofer", pIdChofer))
+        If pFechaDesde <> Date.MinValue Then
+            parametros.Add(New SqlClient.SqlParameter("@fecha_desde", pFechaDesde))
+        End If
+        If pFechaHasta <> Date.MinValue Then
+            parametros.Add(New SqlClient.SqlParameter("@fecha_hasta", pFechaHasta))
+        End If
+        If pActivo Then
+            parametros.Add(New SqlClient.SqlParameter("@activo", "S"))
+        Else
+            parametros.Add(New SqlClient.SqlParameter("@activo", "N"))
+        End If
+        If pVigente Then
+            parametros.Add(New SqlClient.SqlParameter("@vigente", "S"))
+        Else
+            parametros.Add(New SqlClient.SqlParameter("@vigente", "N"))
+        End If
+        con.EjecutarStoredProcedureDa("dbo.ConsultaPuntosChoferes", parametros)
+        con.adp.Fill(datatable)
+        For index = 0 To datatable.Rows.Count - 1
+            If index = 0 Then
+                chofer = New Chofer().GetById(datatable.Rows(0).ItemArray(0).ToString())
+                chofer.Acciones = New List(Of EL.Accion)
+            End If
+            chofer.Acciones.Add(New Accion().GetById(datatable.Rows(index).ItemArray(1).ToString()))
+        Next
+        Return chofer
     End Function
 
 End Class

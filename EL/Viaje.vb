@@ -2,7 +2,6 @@
     Public Sub New()
         Estado = New EstadoViaje()
         ChoferEstimado = New Chofer()
-        ' Chofer = New Chofer()
         Socio = New Socio()
     End Sub
 
